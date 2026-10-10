@@ -12,7 +12,7 @@
 | 二、学位论文研究内容 | [latex/chapters/02-content.tex](latex/chapters/02-content.tex) |
 | 三、学位论文研究计划及预期目标 | [latex/chapters/03-plan.tex](latex/chapters/03-plan.tex) |
 | 四、参考文献（输出位置） | [latex/chapters/04-references.tex](latex/chapters/04-references.tex) |
-| 封面信息示例及勾选项（本地填写在 `latex/metadata.tex`） | [latex/metadata.example.tex](latex/metadata.example.tex) |
+| 姓名、学号、导师、日期及勾选项 | [latex/metadata.tex](latex/metadata.tex) |
 | 封面、页框、表格和标题样式 | [latex/npu-report-style.sty](latex/npu-report-style.sty) |
 | 学校模板的六条填写要求 | [latex/requirements.tex](latex/requirements.tex) |
 | 参考文献条目 | [latex/references.bib](latex/references.bib) |
@@ -39,13 +39,11 @@ latexmk -xelatex -halt-on-error -interaction=nonstopmode main.tex
 
 生成的报告为 `latex/build/main.pdf`，编辑器的主文件选择 `main.tex`。[latex/.latexmkrc](latex/.latexmkrc) 已统一编译目录，中间文件无需提交到仓库。
 
-首次从远端下载后可直接编译，封面默认使用 [metadata.example.tex](latex/metadata.example.tex) 中的示例信息。需要填写个人信息时，将该文件复制为同目录下的 `metadata.tex` 并修改；主稿优先读取本地配置，该文件不会提交到远端。
-
 中文字体默认回退到 TeX Live 自带的 Fandol，优先使用已安装的宋体、黑体和楷体；英文字体优先 Times New Roman，缺失时使用 TeX Gyre Termes。字体文件不随项目复制。
 
 ## 远端同步范围
 
-版本控制保留报告正文、研究笔记、文献库、排版规则、编译配置和正文引用的插图。[.gitignore](.gitignore) 排除 `材料/` 中的原始模板和参考报告、`tmp/` 中的临时检查文件、`latex/build/` 中的编译产物、系统及编辑器临时文件，以及本地封面信息 `latex/metadata.tex`。这些文件保留在本地，不随仓库同步；远端源码的编译不依赖 `材料/` 或 `tmp/`。
+版本控制保留报告正文、研究笔记、文献库、排版规则、编译配置、封面信息和正文引用的插图。[.gitignore](.gitignore) 排除 `材料/` 中的原始模板和参考报告、`tmp/` 中的临时检查文件、`latex/build/` 中的编译产物，以及系统及编辑器临时文件。这些文件保留在本地，不随仓库同步；远端源码的编译不依赖 `材料/` 或 `tmp/`。
 
 ## 模板与当前内容
 

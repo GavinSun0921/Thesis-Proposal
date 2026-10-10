@@ -2,9 +2,6 @@
 /材料/
 /tmp/
 
-# 封面个人信息仅在本地填写，仓库提供 metadata.example.tex。
-/latex/metadata.tex
-
 # 编译结果和中间文件统一放入 latex/build。
 /latex/build/
 /latex/main.pdf
