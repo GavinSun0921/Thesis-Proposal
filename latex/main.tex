@@ -1,0 +1,30 @@
+% !TeX program = xelatex
+% !TeX encoding = UTF-8
+% !TeX root = main.tex
+\documentclass[UTF8,fontset=fandol,zihao=-4]{ctexart}
+\usepackage{npu-report-style}
+\InputIfFileExists{metadata.tex}{}{\input{metadata.example.tex}}
+\hypersetup{pdftitle={\npuinnertitle},pdfauthor={\npuinnername}}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\npuMakeCover
+\npuMakeRequirements
+\npuStartBody
+
+\npuBlock*{学位论文研究依据}{学位论文的选题依据和研究意义，国内外研究现状和发展态势，主要参考文献，以及已有的工作积累和研究成果。}
+{\noindent\kaishu （图、文、参考文献格式参照《西北工业大学博士研究生学位论文编写规则》）\par}
+\input{chapters/01-basis.tex}
+
+\clearpage
+\npuBlock*{学位论文研究内容}{学位论文的研究目标、研究内容及拟解决的关键性问题（可续页）}
+\input{chapters/02-content.tex}
+
+\clearpage
+\npuBlock*{学位论文研究计划及预期目标}{1.拟采取的主要理论、研究方法、技术路线和实施方案（可续页）}
+\input{chapters/03-plan.tex}
+\npuFinish
+
+\clearpage
+\input{chapters/04-references.tex}
+\end{document}

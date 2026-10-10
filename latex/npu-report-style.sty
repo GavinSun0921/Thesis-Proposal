@@ -1,0 +1,182 @@
+%% npu-report-style.sty
+%% 本项目依据用户提供的本年度教务系统 Word 模板重写版式。
+%% 连续正文与元信息命令参考师兄工程；原工程模板署名 Yang Zongze (2018)。
+%% 本文件独立于材料目录，不加载师兄论文的内容、作者信息或旧版填写要求。
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{npu-report-style}[2026/10/09 NPU proposal form]
+\RequirePackage{geometry,eso-pic,tabularx,array,graphicx,float,caption,enumitem,needspace}
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{tikz}
+\usetikzlibrary{arrows.meta}
+\RequirePackage{gbt7714}
+\RequirePackage[hidelinks,unicode]{hyperref}
+
+% 默认 Fandol 字体随完整 TeX Live 提供；优先使用本机宋体和楷体。
+% 不复制系统字体文件，Windows / macOS / Linux 均可使用默认字体回退。
+\IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{\setmainfont{TeX Gyre Termes}}
+\IfFontExistsTF{SimSun}{%
+  \setCJKmainfont{SimSun}[AutoFakeBold=2]
+  \setCJKfamilyfont{zhsong}{SimSun}[AutoFakeBold=2]
+} {\IfFontExistsTF{Songti SC}{%
+  \setCJKmainfont{Songti SC}[AutoFakeBold=2]
+  \setCJKfamilyfont{zhsong}{Songti SC}[AutoFakeBold=2]
+}{}}
+\IfFontExistsTF{SimHei}{\setCJKfamilyfont{zhhei}{SimHei}[AutoFakeBold=2]}{%
+  \IfFontExistsTF{Heiti SC}{\setCJKfamilyfont{zhhei}{Heiti SC}[AutoFakeBold=2]}{}}
+\IfFontExistsTF{KaiTi}{\setCJKfamilyfont{zhkai}{KaiTi}[AutoFakeBold=2]}{%
+  \IfFontExistsTF{Kaiti SC}{\setCJKfamilyfont{zhkai}{Kaiti SC}[AutoFakeBold=2]}{%
+    \setCJKfamilyfont{zhkai}{FandolKai-Regular.otf}[AutoFakeBold=2]}}
+
+% 官方 Word 模板：A4，左右 24 mm，上下 22 mm；表格总宽 162 mm。
+% 正文放在同一边框内，内留 3 mm；框线与表格共用宽度，不靠固定分页凑齐。
+\geometry{a4paper,left=24mm,right=24mm,top=22mm,bottom=22mm}
+\newlength{\npuwidth}\setlength{\npuwidth}{162mm}
+\newlength{\npusep}\setlength{\npusep}{3mm}
+\setlength{\arrayrulewidth}{0.4pt}
+\setlength{\fboxrule}{0.4pt}
+\newif\ifnpucontent\npucontentfalse
+\AddToShipoutPictureBG{%
+  \ifnpucontent
+    \AtPageLowerLeft{%
+      \setlength{\unitlength}{1mm}\linethickness{0.4pt}%
+      \put(24,22){\framebox(162,253){}}}
+  \fi}
+
+\ctexset{
+ section={format={\heiti\zihao{-4}\bfseries},name={,、},number=\chinese{section},aftername=\hspace{0pt},beforeskip=8pt,afterskip=6pt},
+ subsection={format={\heiti\zihao{-4}\bfseries},beforeskip=9pt,afterskip=3pt},
+ subsubsection={format={\heiti\zihao{-4}\bfseries},beforeskip=8pt,afterskip=3pt}}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{3pt}
+\linespread{1}
+\AtBeginDocument{\fontsize{12pt}{18pt}\selectfont}
+\clubpenalty=10000\widowpenalty=10000\displaywidowpenalty=10000
+\setlength{\emergencystretch}{1em}
+\raggedbottom
+\captionsetup{font=small,labelfont=normalfont,labelsep=space,skip=5pt}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\renewcommand{\figureautorefname}{图}
+\renewcommand{\tableautorefname}{表}
+\setcitestyle{numbers,square,comma}
+% 参考文献作为末尾第四部分；URL 和访问日期由项目内的 bst 统一隐藏，DOI 保留。
+\renewcommand{\bibsection}{\section{参考文献}}
+\renewcommand{\bibfont}{\fontsize{10.5pt}{15.75pt}\selectfont\raggedright\interlinepenalty=10000}
+\setlength{\bibsep}{3pt}
+
+% 保留师兄工程常用的元信息接口，集中在 metadata.tex 填写。
+\newcommand{\nputitle}[1]{\def\npuinnertitle{#1}}
+\newcommand{\npunumber}[1]{\def\npuinnernumber{#1}}
+\newcommand{\npuschool}[1]{\def\npuinnerschool{#1}}
+\newcommand{\npumajor}[1]{\def\npuinnermajor{#1}}
+\newcommand{\npuname}[1]{\def\npuinnername{#1}}
+\newcommand{\npudegree}[1]{\def\npuinnerdegree{#1}}
+\newcommand{\npusupervisor}[1]{\def\npuinnersupervisor{#1}}
+\newcommand{\npudate}[1]{\def\npuinnerdate{#1}}
+\newif\ifnpucheckphd\newif\ifnpucheckms
+\newif\ifnpucheckfirst\newif\ifnpuchecksecond
+\newif\ifnpucheckbase\newif\ifnpucheckapply
+\newif\ifnpucheckengine\newif\ifnpucheckoverall
+\newcommand{\npubox}{\ensuremath{\Box}}
+\newcommand{\nputick}{\ensuremath{\surd}}
+\newcommand{\npuCoverLine}[2]{%
+ \makebox[28.5mm][s]{#1}\underline{\makebox[72.2mm][c]{#2}}\par\vspace{6mm}}
+\newcommand{\npuMakeCover}{%
+ \begin{titlepage}\thispagestyle{empty}\centering\kaishu
+ \vspace*{12mm}
+ {\fontsize{26pt}{34pt}\selectfont\bfseries 西\quad 北\quad 工\quad 业\quad 大\quad 学\par}
+ \vspace{13mm}
+ {\fontsize{26pt}{34pt}\selectfont\bfseries 研究生学位论文开题报告表\par}
+ \vspace{36mm}
+ {\fontsize{14pt}{21pt}\selectfont 攻读学位级别：\quad
+  \ifnpucheckphd\nputick\else\npubox\fi 博士\qquad
+  \ifnpucheckms\nputick\else\npubox\fi 硕士\par}
+ \vspace{18mm}
+ \begin{minipage}{100.7mm}\fontsize{15pt}{22.5pt}\selectfont
+  \npuCoverLine{学\hfill 院}{\npuinnerschool}
+  \npuCoverLine{姓\hfill 名}{\npuinnername}
+  \npuCoverLine{学\hfill 号}{\npuinnernumber}
+  \npuCoverLine{学科、专业}{\npuinnermajor}
+  \npuCoverLine{指\hfill 导\hfill 教\hfill 师}{\npuinnersupervisor}
+  \npuCoverLine{填\hfill 表\hfill 日\hfill 期}{\npuinnerdate}
+ \end{minipage}
+ \vfill {\fontsize{16pt}{24pt}\selectfont 西北工业大学研究生院\par}
+ \vspace*{4mm}
+ \end{titlepage}}
+
+\newcommand{\npuMakeRequirements}{%
+ \begin{titlepage}\thispagestyle{empty}\kaishu
+ \begin{center}{\fontsize{18pt}{27pt}\selectfont\bfseries 研究生学位论文开题报告的要求}\end{center}
+ \vspace{12mm}
+ \fontsize{14pt}{21pt}\selectfont
+ \input{requirements.tex}
+ \end{titlepage}}
+
+\newcommand{\npuWide}[1]{%
+ \par\noindent\makebox[\linewidth][l]{\hspace*{-\npusep}%
+ \begin{minipage}{\npuwidth}#1\end{minipage}}\par}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcommand{\npuMakeHead}{%
+ \npuWide{\renewcommand{\arraystretch}{1.35}\setlength{\tabcolsep}{3mm}
+ \begin{tabularx}{\npuwidth}{@{}>{\centering\arraybackslash}p{31mm}|Y|Y|Y|Y@{}}
+  \rule{0pt}{8mm}\textbf{论文题目}&\multicolumn{4}{>{\centering\arraybackslash}p{\dimexpr\npuwidth-31mm-6mm-\arrayrulewidth\relax}@{}}{\npuinnertitle}\\\hline
+  \rule{0pt}{8mm}\textbf{开题次数}&\multicolumn{4}{c}{%
+    \ifnpucheckfirst\nputick\else\npubox\fi 第一次\qquad\qquad
+    \ifnpuchecksecond\nputick\else\npubox\fi 第二次}\\\hline
+  \raisebox{-4.5mm}[0pt][0pt]{\parbox{30mm}{\centering\fontsize{10.5pt}{15.75pt}\selectfont\textbf{论文类型}\\（请在有关项目\\下作\nputick 记号）}}&基础研究&应用研究&工程技术&跨学科研究\\[2mm]\cline{2-5}
+  \rule{0pt}{7mm}&\ifnpucheckbase\nputick\fi&\ifnpucheckapply\nputick\fi&\ifnpucheckengine\nputick\fi&\ifnpucheckoverall\nputick\fi\\\hline
+ \end{tabularx}}}
+\newcommand{\npuStartBody}{%
+ \clearpage
+ \newgeometry{left=27mm,right=27mm,top=25mm,bottom=25mm,footskip=7.5mm}
+ \npucontenttrue\pagestyle{plain}\setcounter{page}{1}\hypersetup{pageanchor=true}
+ \fontsize{12pt}{18pt}\selectfont
+ % 消除第一页表格之前的顶端基线占位，使竖线与页框顶边相接。
+ \vspace*{-\dimexpr\npusep+\topskip+\parskip+2\arrayrulewidth\relax}\npuMakeHead}
+\newcommand{\npubreak}{%
+ \par\noindent\makebox[\linewidth][l]{\hspace*{-\npusep}\rule{\npuwidth}{\arrayrulewidth}}\par}
+\NewDocumentCommand{\npuBlock}{s m m}{%
+ \Needspace{65pt}\IfBooleanF{#1}{\npubreak}\section{#2}%
+ {\noindent\kaishu #3\par}\nobreak}
+% 模板原有的分项标题按固定文字保留，包含其字面序号；
+% 不调用 section/subsection，也不设置计数器，正文小节继续自动编号。
+\newcommand{\npuTemplateHeading}[1]{%
+ \par\Needspace{105pt}%
+ \ifdim\pagetotal>0pt\npubreak\fi
+ {\noindent\kaishu #1\par}\nobreak}
+\NewDocumentCommand{\npuFigure}{m m m}{%
+ \begin{figure}[H]\centering
+ \includegraphics[width=0.98\linewidth]{figures/#1.png}
+ \caption{#2}\label{#3}
+ \end{figure}}
+
+% 整张计划表装入同一个盒子，纵向标签与右侧表格按实际高度居中。
+% 计划表、备注、页框共用 npuwidth，避免多个表格边缘错开。
+\newsavebox{\npuplanbox}
+\newlength{\npuplanrightwidth}
+\newlength{\npuplanheight}
+\setlength{\npuplanrightwidth}{\dimexpr\npuwidth-12mm-\arrayrulewidth\relax}
+\newcommand{\npuSchedule}[1]{%
+ \npuWide{%
+  \sbox{\npuplanbox}{\begin{minipage}{\npuplanrightwidth}%
+   \fontsize{10.5pt}{15.75pt}\selectfont\renewcommand{\arraystretch}{1.25}\setlength{\tabcolsep}{2mm}%
+   \begin{tabularx}{\npuplanrightwidth}{>{\centering\arraybackslash}p{39mm}|L}
+    \textbf{起止年月}&\centering\arraybackslash\textbf{完成内容}\\[2pt]\hline
+    #1
+   \end{tabularx}\end{minipage}}
+  \setlength{\npuplanheight}{\dimexpr\ht\npuplanbox+\dp\npuplanbox\relax}%
+  \setlength{\tabcolsep}{0pt}%
+  \begin{tabular}{@{}c@{}|@{}c@{}}\hline
+   \parbox[c][\npuplanheight][c]{12mm}{\centering\fontsize{12pt}{18pt}\selectfont 研\\究\\计\\划}&%
+   \parbox[c][\npuplanheight][c]{\npuplanrightwidth}{\usebox{\npuplanbox}}\\\hline
+  \end{tabular}}}
+\newcommand{\npuFinish}{%
+ \par\Needspace{25mm}\vfill
+ % 备注固定在末页框底部；框线共用页面坐标，避免竖线断在底边之前。
+ \AddToShipoutPictureFG*{\AtPageLowerLeft{%
+  \setlength{\unitlength}{1mm}\linethickness{0.4pt}%
+  \put(24,46){\line(1,0){162}}%
+  \put(44,22){\line(0,1){24}}%
+  \put(24,22){\makebox(20,24){\fontsize{12pt}{18pt}\selectfont 备注}}}}
+ \vspace*{22mm}}

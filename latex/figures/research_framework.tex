@@ -1,0 +1,99 @@
+% !TeX root = ../main.tex
+% 本课题总体研究框架。文字和连线直接参与主稿编译，保持矢量输出。
+% 横向实线表示前三项内容的递进，虚线表示向动作条件交互的扩展。
+\begingroup
+\definecolor{frameworkBlue}{HTML}{315D7A}
+\definecolor{frameworkTeal}{HTML}{38746D}
+\definecolor{frameworkOchre}{HTML}{8B693A}
+\definecolor{frameworkViolet}{HTML}{685C82}
+\begin{tikzpicture}[
+  x=1mm,y=1mm,
+  font=\songti\fontsize{10.5pt}{14pt}\selectfont,
+  text=black!90,
+  every node/.style={align=center,outer sep=0.3mm},
+  framework goal/.style={
+    draw=frameworkBlue!80,line width=0.7pt,rounded corners=1.5mm,
+    fill=frameworkBlue!6,text width=144mm,minimum width=152.6mm,
+    minimum height=24mm,inner xsep=3mm,inner ysep=2mm,anchor=north},
+  framework content/.style={
+    line width=0.65pt,rounded corners=1.2mm,
+    text width=31.4mm,minimum width=34.4mm,minimum height=36mm,
+    inner xsep=1.3mm,inner ysep=2mm,anchor=north},
+  framework question/.style={
+    line width=0.6pt,rounded corners=1.2mm,
+    text width=31.4mm,minimum width=34.4mm,minimum height=26mm,
+    inner xsep=1.3mm,inner ysep=2mm,anchor=north},
+  framework link/.style={draw=black!55,line width=0.65pt,
+    -{Latex[length=1.8mm,width=1.25mm]}},
+  framework branch/.style={draw=frameworkBlue!65,line width=0.65pt}
+]
+  \node[framework goal] (goal) at (76.3,0) {
+    {\heiti\fontsize{9pt}{12pt}\selectfont\color{frameworkBlue}总体研究目标}\\[1mm]
+    {\heiti\bfseries 构建非完备观测下可持续维护的动态世界状态}\\[1mm]
+    实现缺测演化预测、重观测校正，验证动作条件预测的交互价值
+  };
+
+  \node[framework content,draw=frameworkBlue!80,fill=frameworkBlue!6]
+    (content1) at (17.2,-34) {
+    {\fontsize{8.5pt}{11pt}\selectfont\color{frameworkBlue}研究内容一}\\[1.5mm]
+    {\heiti\bfseries 可靠状态表征\\与观测融合}\\[1.5mm]
+    {\fontsize{9.5pt}{12.8pt}\selectfont
+      观测可靠性\\稠密约束融合\\紧凑运动结构}
+  };
+  \node[framework content,draw=frameworkTeal!80,fill=frameworkTeal!6]
+    (content2) at (56.6,-34) {
+    {\fontsize{8.5pt}{11pt}\selectfont\color{frameworkTeal}研究内容二}\\[1.5mm]
+    {\heiti\bfseries 缺测状态演化\\与未来预测}\\[1.5mm]
+    {\fontsize{9.5pt}{12.8pt}\selectfont
+      动态历史约束\\多步滚动推演\\预测可靠性}
+  };
+  \node[framework content,draw=frameworkOchre!80,fill=frameworkOchre!6]
+    (content3) at (96,-34) {
+    {\fontsize{8.5pt}{11pt}\selectfont\color{frameworkOchre}研究内容三}\\[1.5mm]
+    {\heiti\bfseries 重观测状态关联\\与持续校正}\\[1.5mm]
+    {\fontsize{9.5pt}{12.8pt}\selectfont
+      身份关联与歧义\\历史保留与恢复\\持续校正稳定性}
+  };
+  \node[framework content,draw=frameworkViolet!80,fill=frameworkViolet!6]
+    (content4) at (135.4,-34) {
+    {\fontsize{8.5pt}{11pt}\selectfont\color{frameworkViolet}研究内容四}\\[1.5mm]
+    {\heiti\bfseries 动作条件预测状态\\学习与交互验证}\\[1.5mm]
+    {\fontsize{9.5pt}{12.8pt}\selectfont
+      动作条件转移\\观测前预测约束\\空间读出与验证}
+  };
+
+  \node[framework question,draw=frameworkBlue!65,fill=frameworkBlue!3]
+    (question1) at (17.2,-80) {
+    {\fontsize{8.5pt}{11pt}\selectfont\color{frameworkBlue}科学问题一}\\[1.5mm]
+    含噪、非完备历史\\如何形成支持预测\\的紧凑状态？
+  };
+  \node[framework question,draw=frameworkTeal!65,fill=frameworkTeal!3]
+    (question2) at (56.6,-80) {
+    {\fontsize{8.5pt}{11pt}\selectfont\color{frameworkTeal}科学问题二}\\[1.5mm]
+    缺测演化中，\\历史约束与未来\\歧义如何协调？
+  };
+  \node[framework question,draw=frameworkOchre!65,fill=frameworkOchre!3]
+    (question3) at (96,-80) {
+    {\fontsize{8.5pt}{11pt}\selectfont\color{frameworkOchre}科学问题三}\\[1.5mm]
+    预测与新观测\\冲突时，如何保持\\身份并修正状态？
+  };
+  \node[framework question,draw=frameworkViolet!65,fill=frameworkViolet!3]
+    (question4) at (135.4,-80) {
+    {\fontsize{8.5pt}{11pt}\selectfont\color{frameworkViolet}科学问题四}\\[1.5mm]
+    预测带来何种\\有效信息增量，\\如何作用于交互？
+  };
+
+  % 总目标分解为四项内容，每项内容向下对应一个科学问题。
+  \draw[framework branch] (goal.south) -- (76.3,-29);
+  \draw[framework branch] (17.2,-29) -- (135.4,-29);
+  \foreach \i/\x in {1/17.2,2/56.6,3/96,4/135.4} {
+    \draw[framework link,draw=frameworkBlue!65]
+      (\x,-29) -- (content\i.north);
+    \draw[framework link] (content\i.south) -- (question\i.north);
+  }
+  \draw[framework link] (content1.east) -- (content2.west);
+  \draw[framework link] (content2.east) -- (content3.west);
+  \draw[framework link,dash pattern=on 1.6pt off 1.2pt]
+    (content3.east) -- (content4.west);
+\end{tikzpicture}
+\endgroup
