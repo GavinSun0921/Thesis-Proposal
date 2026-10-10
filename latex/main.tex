@@ -3,8 +3,32 @@
 % !TeX root = main.tex
 \documentclass[UTF8,fontset=fandol,zihao=-4]{ctexart}
 \usepackage{npu-report-style}
-\input{metadata.tex}
-\hypersetup{pdftitle={\npuinnertitle},pdfauthor={\npuinnername}}
+% 取消下一行注释以生成匿名送审版；保持注释则生成实名版。
+% \npuanonymoustrue
+
+% 基本信息与勾选项；开题次数和论文类型按本人确认填写。
+\nputitle{非完备观测下动态世界模型的状态表征与预测研究}
+\npuschool{电子信息学院}
+\npuname{孙国栋}
+\npunumber{2025100353}
+\npumajor{信息与通信工程}
+\npusupervisor{戴玉超}
+\npudegree{博士}
+\npudate{2026年10月08日}
+\npucheckphdtrue
+\npucheckfirsttrue
+% \npuchecksecondtrue
+\npucheckbasetrue
+\npucheckapplytrue
+% \npucheckenginetrue
+% \npucheckoveralltrue
+
+\hypersetup{pdftitle={\npuinnertitle}}
+\ifnpuanonymous
+  \hypersetup{pdfauthor={}}
+\else
+  \hypersetup{pdfauthor={\npuinnername}}
+\fi
 
 \begin{document}
 \hypersetup{pageanchor=false}

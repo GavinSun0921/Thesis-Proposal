@@ -12,7 +12,7 @@
 | 二、学位论文研究内容 | [latex/chapters/02-content.tex](latex/chapters/02-content.tex) |
 | 三、学位论文研究计划及预期目标 | [latex/chapters/03-plan.tex](latex/chapters/03-plan.tex) |
 | 四、参考文献（输出位置） | [latex/chapters/04-references.tex](latex/chapters/04-references.tex) |
-| 姓名、学号、导师、日期及勾选项 | [latex/metadata.tex](latex/metadata.tex) |
+| 封面信息、勾选项及实名／匿名编译开关 | [latex/main.tex](latex/main.tex) |
 | 封面、页框、表格和标题样式 | [latex/npu-report-style.sty](latex/npu-report-style.sty) |
 | 学校模板的六条填写要求 | [latex/requirements.tex](latex/requirements.tex) |
 | 参考文献条目 | [latex/references.bib](latex/references.bib) |
@@ -38,6 +38,10 @@ latexmk -xelatex -halt-on-error -interaction=nonstopmode main.tex
 ```
 
 生成的报告为 `latex/build/main.pdf`，编辑器的主文件选择 `main.tex`。[latex/.latexmkrc](latex/.latexmkrc) 已统一编译目录，中间文件无需提交到仓库。
+
+默认生成实名版。在 `main.tex` 中取消 `% \npuanonymoustrue` 这一行的注释，即生成系统送审匿名版；重新注释则恢复实名版。两种版本均编译 `main.tex`。
+
+本地 `材料/附件3：博士开题流程说明.docx` 的“开题评议流程”要求在线申请开题抽检时，上传隐去学院、姓名、学号、导师等相关信息的报告。匿名版将学院、姓名、学号、学科专业和指导教师的填写内容留空，同时清空 PDF 属性中的作者；封面项目、日期和正文保持一致。个人信息及勾选项集中保存在 `main.tex`，无需手工删除或恢复。
 
 中文字体默认回退到 TeX Live 自带的 Fandol，优先使用已安装的宋体、黑体和楷体；英文字体优先 Times New Roman，缺失时使用 TeX Gyre Termes。字体文件不随项目复制。
 

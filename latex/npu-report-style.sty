@@ -3,7 +3,8 @@
 %% 连续正文与元信息命令参考师兄工程；原工程模板署名 Yang Zongze (2018)。
 %% 本文件独立于材料目录，不加载师兄论文的内容、作者信息或旧版填写要求。
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{npu-report-style}[2026/10/09 NPU proposal form]
+\ProvidesPackage{npu-report-style}[2026/10/10 NPU proposal form]
+\newif\ifnpuanonymous
 \RequirePackage{geometry,eso-pic,tabularx,array,graphicx,float,caption,enumitem,needspace}
 \RequirePackage{amsmath,amssymb}
 \RequirePackage{tikz}
@@ -64,7 +65,7 @@
 \renewcommand{\bibfont}{\fontsize{10.5pt}{15.75pt}\selectfont\raggedright\interlinepenalty=10000}
 \setlength{\bibsep}{3pt}
 
-% 保留师兄工程常用的元信息接口，集中在 metadata.tex 填写。
+% 保留师兄工程常用的元信息接口，集中在 main.tex 填写。
 \newcommand{\nputitle}[1]{\def\npuinnertitle{#1}}
 \newcommand{\npunumber}[1]{\def\npuinnernumber{#1}}
 \newcommand{\npuschool}[1]{\def\npuinnerschool{#1}}
@@ -81,6 +82,8 @@
 \newcommand{\nputick}{\ensuremath{\surd}}
 \newcommand{\npuCoverLine}[2]{%
  \makebox[28.5mm][s]{#1}\underline{\makebox[72.2mm][c]{#2}}\par\vspace{6mm}}
+% 匿名送审时仅将身份字段的填写内容留空，保留封面项目及版式。
+\newcommand{\npuIdentityField}[1]{\ifnpuanonymous\else#1\fi}
 \newcommand{\npuMakeCover}{%
  \begin{titlepage}\thispagestyle{empty}\centering\kaishu
  \vspace*{12mm}
@@ -93,11 +96,11 @@
   \ifnpucheckms\nputick\else\npubox\fi 硕士\par}
  \vspace{18mm}
  \begin{minipage}{100.7mm}\fontsize{15pt}{22.5pt}\selectfont
-  \npuCoverLine{学\hfill 院}{\npuinnerschool}
-  \npuCoverLine{姓\hfill 名}{\npuinnername}
-  \npuCoverLine{学\hfill 号}{\npuinnernumber}
-  \npuCoverLine{学科、专业}{\npuinnermajor}
-  \npuCoverLine{指\hfill 导\hfill 教\hfill 师}{\npuinnersupervisor}
+  \npuCoverLine{学\hfill 院}{\npuIdentityField{\npuinnerschool}}
+  \npuCoverLine{姓\hfill 名}{\npuIdentityField{\npuinnername}}
+  \npuCoverLine{学\hfill 号}{\npuIdentityField{\npuinnernumber}}
+  \npuCoverLine{学科、专业}{\npuIdentityField{\npuinnermajor}}
+  \npuCoverLine{指\hfill 导\hfill 教\hfill 师}{\npuIdentityField{\npuinnersupervisor}}
   \npuCoverLine{填\hfill 表\hfill 日\hfill 期}{\npuinnerdate}
  \end{minipage}
  \vfill {\fontsize{16pt}{24pt}\selectfont 西北工业大学研究生院\par}
