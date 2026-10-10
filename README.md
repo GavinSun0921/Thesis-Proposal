@@ -30,12 +30,13 @@
 
 ## 编译
 
-使用 **XeLaTeX + BibTeX**，建议安装完整 TeX Live / MacTeX。进入 `latex/` 目录编译：
+使用 **XeLaTeX + BibTeX**，需安装包含 `latexmk` 的完整 TeX Live / MacTeX。在项目根目录运行：
 
 ```sh
-cd latex
-latexmk -xelatex -halt-on-error -interaction=nonstopmode main.tex
+./scripts/build.sh
 ```
+
+[编译脚本](scripts/build.sh) 会自动定位 `latex/`，检查编译工具并完成正文及参考文献编译；在其他目录也可通过脚本的绝对路径运行。每次修改后重新运行即可，编译失败时会返回错误，成功时显示 PDF 路径。
 
 生成的报告为 `latex/build/main.pdf`，编辑器的主文件选择 `main.tex`。[latex/.latexmkrc](latex/.latexmkrc) 已统一编译目录，中间文件无需提交到仓库。
 
