@@ -19,8 +19,8 @@
 | 参考文献排版规则 | [latex/npu-gbt7714-numerical.bst](latex/npu-gbt7714-numerical.bst) |
 | 文献发表状态核查 | [docs/reference_audit.md](docs/reference_audit.md) |
 | 插图及生成说明 | [latex/figures/](latex/figures/) |
-| 图 1 的三个 2D 子图（统一绘图脚本） | [latex/figures/draw_occlusion.py](latex/figures/draw_occlusion.py) |
-| 总体研究框架图（可编辑矢量源） | [latex/figures/research_framework.tex](latex/figures/research_framework.tex) |
+| 图 2 遮挡示意图（统一绘图脚本） | [latex/figures/draw_occlusion.py](latex/figures/draw_occlusion.py) |
+| 图 1 总体研究框架图（可编辑矢量源） | [latex/figures/research_framework.tex](latex/figures/research_framework.tex) |
 | 写作安排和此前研究讨论 | [docs/](docs/) |
 
 第一部分按“1.1 选题背景及研究意义—1.2 国内外研究现状与发展态势—1.3 已有工作积累与研究基础”组织。1.2 开头以一段总览交代四个问题组的展开逻辑，再细分为 1.2.1—1.2.4，依次为部分可观测状态与潜在动力学、动态几何点对应与运动表示、未来三维预测与持续空间状态、交互学习中的历史与预测状态；代表工作比较表及综合判断保留在 1.2 末尾。1.3 按两项已有工作细分为 1.3.1—1.3.2，依次为显式状态与连续运动（CoFuse4D）、潜在状态与交互（PS-VLA），两项的综合判断置于 1.3 末尾。
@@ -41,14 +41,14 @@
 
 生成的报告为 `latex/build/main.pdf`，编辑器的主文件选择 `main.tex`。[latex/.latexmkrc](latex/.latexmkrc) 已统一编译目录，中间文件无需提交到仓库。
 
-图 1 使用三个独立的矢量子图，编号与子标题由 LaTeX 自动生成。修改 [绘图脚本](latex/figures/draw_occlusion.py) 开头的场景或样式参数后，在根目录运行以下命令重新绘图，再编译报告：
+正文插图均保留可重绘的源：总体研究框架图以 LaTeX 原生矢量绘制，随正文编译；图 2 的遮挡示意图由 [Python 脚本](latex/figures/draw_occlusion.py)生成。修改脚本开头的场景或样式参数后，在根目录运行：
 
 ```sh
 conda run -n main python latex/figures/draw_occlusion.py
 ./scripts/build.sh
 ```
 
-脚本依赖 Matplotlib，一次生成三个子图各自的 PDF 和 PNG，并自动输出到 `latex/figures/`。PDF 用于正文排版，PNG 便于预览；已经生成的插图随源码保留，日常编译无需运行 Python。
+脚本依赖 Matplotlib，一次生成三个子图各自的 PDF 和 PNG，并自动输出到 `latex/figures/`。PDF 用于正文排版，PNG 便于预览；已经生成的插图随源码保留，日常编译无需运行 Python。新增插图应同样保留可重绘的矢量源或脚本，不直接提交手工位图。
 
 默认生成实名版。在 `main.tex` 中取消 `% \npuanonymoustrue` 这一行的注释，即生成系统送审匿名版；重新注释则恢复实名版。两种版本均编译 `main.tex`。
 
@@ -64,7 +64,7 @@ conda run -n main python latex/figures/draw_occlusion.py
 
 版式以本年度教务系统下载的 `材料/西北工业大学研究生学位论文开题报告表.doc` 为准。保留封面字段、填写要求、三个正文栏目、研究计划表和备注栏，另将参考文献独立为第四部分。A4 纸，左右页边距 24 mm、上下 22 mm，正文边框及表格总宽 162 mm，正文小四、18 pt 行距。
 
-正文围绕可靠状态表征与观测融合、缺测期间的状态演化与未来预测、重观测关联与持续校正、动作条件预测状态学习与交互验证四项内容展开，以 CoFuse4D 和 PS-VLA 为已有基础。四项内容分别明确输入输出、方法重点及评价证据。研究计划为 2026.10—2028.10，沿用已确认的题目和两幅无图内文字的概念插图；第二部分新增总体研究框架图，按“总体目标—四项研究内容—对应科学问题”组织。
+正文围绕可靠状态表征与观测融合、缺测期间的状态演化与未来预测、重观测关联与持续校正、动作条件预测状态学习与交互验证四项内容展开，以 CoFuse4D 和 PS-VLA 为已有基础。四项内容分别明确输入输出、方法重点及评价证据。研究计划为 2026.10—2028.10，沿用已确认的题目；正文含总体研究框架图与遮挡示意图两幅插图，均可由源码重新生成。
 
 两项工作暂用以下论文名称，均正在准备向 CVPR 2027 投稿。CVPR 属于 [CCF 推荐 A 类国际学术会议](https://www.ccf.org.cn/Academic_Evaluation/AI/zgjsjxhtjgjxshy/al/2017-04-25/592032.shtml)。
 

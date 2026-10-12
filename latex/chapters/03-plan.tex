@@ -18,9 +18,27 @@
 
 \noindent\begin{minipage}{\linewidth}
 \setlength{\parindent}{2em}\fontsize{12pt}{18pt}\selectfont
-图~\ref{fig:prediction}说明历史观测、内部状态、未来预测和新观测校正的功能关系。点状几何表示内部状态的概念，具体方法可采用显式几何、潜在特征或二者结合的形式。
+图~\ref{fig:occlusion}以一个俯视遮挡场景说明上述功能关系与四项内容的对应：研究内容一由子图~\subref{fig:occlusion-visible}的历史观测形成初始状态与运动历史，研究内容二在子图~\subref{fig:occlusion-hidden}的遮挡区间推演状态演化，研究内容三在子图~\subref{fig:occlusion-corrected}目标重新可见时关联并校正状态。图中点状几何与轨迹为示意，具体方法可采用显式几何、潜在特征或二者结合的形式。
 
-\npuFigure{state_prediction_loop}{历史观测、状态维护与未来预测的功能关系}{fig:prediction}
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.32\linewidth}
+  \centering
+  \includegraphics[width=\linewidth]{figures/occlusion_visible.pdf}
+  \caption{历史观测}\label{fig:occlusion-visible}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.32\linewidth}
+  \centering
+  \includegraphics[width=\linewidth]{figures/occlusion_hidden.pdf}
+  \caption{遮挡预测}\label{fig:occlusion-hidden}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.32\linewidth}
+  \centering
+  \includegraphics[width=\linewidth]{figures/occlusion_corrected.pdf}
+  \caption{重观测校正}\label{fig:occlusion-corrected}
+\end{subfigure}
+\caption{总体路线中的观测、缺测演化与重观测校正。目标自左向右经过横向墙体，浅灰色区域为相机视线被墙体阻挡的范围；(a) 蓝色表示已观测的目标位置与运动历史，对应研究内容一形成初始状态；(b) 橙色虚线表示遮挡范围内基于历史的状态预测，对应研究内容二在缺测期间推演状态；(c) 橙色虚线为按匀速或减速假设推演、尚未完全穿出遮挡区的预测位置，绿色表示目标实际加速提前出现，短箭头表示新观测带来的状态校正，对应研究内容三的重观测关联与校正。}\label{fig:occlusion}
+\end{figure}
 \end{minipage}\par
 
 \subsection{可靠状态表征与观测融合方法}
