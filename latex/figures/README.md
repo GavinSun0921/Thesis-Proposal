@@ -1,23 +1,31 @@
 # 开题报告插图说明
 
-当前包含两幅概念插图和一幅总体研究框架图。两幅概念图采用内置图像生成工具制作，无图内文字、标题、编号或图例，不代表实验结果；总体框架图使用 LaTeX 原生矢量绘制，保留必要的目标、研究内容和科学问题文字。图注及配套解释在正文中维护，图号以主稿编译结果为准。
+当前包含两幅概念插图和一幅总体研究框架图。图 1 由 Python / Matplotlib 绘制三个独立的 2D 子图，图 3 使用内置图像生成工具制作；概念图无图内文字、标题、编号或图例，不代表实验结果。总体框架图使用 LaTeX 原生矢量绘制，保留必要的目标、研究内容和科学问题文字。图注及配套解释在正文中维护，图号以主稿编译结果为准。
 
 ## 图1
 
-项目内路径：`figures/occlusion_evolution.png`
+绘图源：`figures/draw_occlusion.py`，三个子图统一由此脚本分别绘制。
 
-用途：在背景与研究意义中说明短时遮挡、状态推演及重新观测后的校正。
+| 子图 | 矢量文件 | 预览文件 | 含义 |
+| --- | --- | --- | --- |
+| (a) | `figures/occlusion_visible.pdf` | `figures/occlusion_visible.png` | 左侧可见，形成观测历史 |
+| (b) | `figures/occlusion_hidden.pdf` | `figures/occlusion_hidden.png` | 进入墙后遮挡区，基于历史预测 |
+| (c) | `figures/occlusion_corrected.pdf` | `figures/occlusion_corrected.png` | 预测尚未穿出遮挡区，真实目标加速提前出现并被校正 |
 
-生成提示词：
+场景为纯 2D 俯视布局。相机位于下方中央、朝向上方；墙体位于相机前方，沿水平方向展开；圆形表示目标位置，沿墙体后方的同一条水平路线从左向右移动。三幅图共享场景参数、范围与比例，图内不增加立体物体或文字。坐标仅用于表达布局，不表示实测尺度。
 
-```text
-Use case: scientific-educational.
-Asset type: a text-free scientific illustration for a Chinese doctoral thesis proposal, to be embedded at approximately 15 cm width.
-Primary request: explain a moving object becoming occluded and then being observed again, with a maintained prediction that is corrected by the new observation.
-Style: restrained, crisp academic illustration, simple orthographic 3D linework, white background, very light grey ground plane and occluding wall; clean blue, amber, and green accents. Wide horizontal composition, aspect ratio about 2.7:1. Minimal shadows, no decorative scenery.
-Composition: three clear moments arranged from left to right with narrow white gutters and a small thin grey forward arrow between moments. The SAME low rectangular grey occluder, ground plane, and camera viewpoint repeat in all moments. Left: a small solid blue cube is visible to the left of the occluder, and a short blue path shows its past movement toward the wall. Middle: the cube has moved behind the opaque wall; show ONLY an amber dashed outline/ghost and an amber projected path as a conceptual estimate of its hidden position, clearly distinct from a directly seen solid object. Right: a solid green cube is visible beyond the right edge of the occluder; a faint amber dashed predicted cube sits slightly offset, with a tiny correction arrow toward the green cube. A small line-art camera icon and subtle line-of-sight cue in each moment reinforce observation versus occlusion.
-Constraints: no words, no letters, no numbers, no symbols resembling labels, no panel titles, no subheadings, no legends, no captions, no watermark, no boxes around scenes. This is a conceptual schematic, not a data plot or claimed experiment. Keep all objects small enough to breathe, same object identity, same scale and stationary occluder across moments. Make dashed hidden prediction unmistakable while keeping the wall opaque.
+遮挡范围由相机经墙体近侧两端的切线计算，浅灰色区域仅绘制在墙后。子图 (b) 的蓝色实线在遮挡入口处结束，橙色虚线从该入口开始并止于预测位置；朝向隐藏目标的视线在墙前停止，不穿墙。子图 (c) 表示重观测时刻：橙色虚线与虚线圆是按匀速或减速假设推演的先验，仍处于遮挡区内、尚未完全运动出来；绿色目标表示真实运动加速后提前穿出并被再次观测，绿色箭头表示新观测把状态校正到实际位置。橙色先验轨迹止于遮挡区，不进入右侧可见区。
+
+在项目根目录重新绘图并编译：
+
+```sh
+conda run -n main python latex/figures/draw_occlusion.py
+./scripts/build.sh
 ```
+
+依赖 Matplotlib。修改脚本开头的相机、墙体、目标位置、颜色、尺寸或线型参数即可迭代；脚本会检查三个阶段的可见性次序，并从自身位置定位输出目录，因此也可从其他工作目录通过绝对路径运行。
+
+正文使用三个 PDF 进行矢量排版，PNG 用于预览。`chapters/01-basis.tex` 中的 `subfigure` 环境自动生成 (a)、(b)、(c) 及子标题，正文通过 `\subref` 引用对应子图，整个图仍使用 `fig:occlusion`。已经生成的 PDF 与 PNG 保留在工程中，日常编译无需 Matplotlib 或 conda。
 
 ## 图2
 

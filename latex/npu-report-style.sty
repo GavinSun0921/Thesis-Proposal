@@ -6,6 +6,7 @@
 \ProvidesPackage{npu-report-style}[2026/10/10 NPU proposal form]
 \newif\ifnpuanonymous
 \RequirePackage{geometry,eso-pic,tabularx,array,graphicx,float,caption,enumitem,needspace}
+\RequirePackage{subcaption}
 \RequirePackage{amsmath,amssymb}
 \RequirePackage{tikz}
 \usetikzlibrary{arrows.meta}
@@ -55,6 +56,8 @@
 \setlength{\emergencystretch}{1em}
 \raggedbottom
 \captionsetup{font=small,labelfont=normalfont,labelsep=space,skip=5pt}
+\captionsetup[subfigure]{font=small,labelformat=parens,labelsep=space,skip=2pt,justification=centering}
+\captionsetup{subrefformat=parens}
 \renewcommand{\figurename}{图}
 \renewcommand{\tablename}{表}
 \renewcommand{\figureautorefname}{图}
