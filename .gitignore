@@ -3,8 +3,9 @@
 /tmp/
 /.mimocode/
 
-# 编译结果和中间文件统一放入 latex/build。
-/latex/build/
+# 编译结果和中间文件统一放入 latex/build；仅其中的 main.pdf 入库，供远端直接查看。
+/latex/build/*
+!/latex/build/main.pdf
 /latex/main.pdf
 *.aux
 *.bbl

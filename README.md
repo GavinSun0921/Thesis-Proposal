@@ -13,7 +13,7 @@
 - [第二部分正文](latex/chapters/02-content.tex)
 - [第三部分模板](latex/chapters/03-plan.tex)
 - [第四部分参考文献](latex/chapters/04-references.tex)
-- 本地编译输出（不入库）：`latex/build/main.pdf`
+- 编译输出（唯一入库的产物）：[main.pdf](latex/build/main.pdf)，GitHub 上可直接在线查看
 - [当前插图及素材说明](latex/figures/README.md)
 - [写作约定与后续待办](docs/proposal_content_plan.md)
 - [当前引文及历史文献核查](docs/reference_audit.md)
@@ -51,10 +51,10 @@ SHA-256：`6a5565977bcfa3bea276f56c930635f36d308538a385e28d23f526e4f7b55bd5`。
 ./scripts/build.sh
 ```
 
-唯一日常编译输出是 `latex/build/main.pdf`。编辑器主文件选择 `latex/main.tex`；第一、第二部分随主文件编译。参考文献独立置于报告末尾第四部分，按全文首次引用顺序编号，当前正文实际引用 39 条文献，包括 37 条正式会议或期刊论文、1 条基金委通告及 1 条近期预印本。文献库 [references.bib](latex/references.bib) 同时保留未被新稿采用的旧条目，只有实际引用条目进入文献列表；[核查记录](docs/reference_audit.md) 区分新稿依据及旧稿历史记录。
+日常编译输出为 `latex/build/main.pdf`，这也是唯一提交到仓库的编译产物，远端可直接在线阅读；同一目录下的 `aux`、`log`、`xdv`、`synctex.gz` 等中间文件仍由 `.gitignore` 排除。改动正文后重新运行编译脚本，再单独提交这个 PDF 即可同步远端阅读版。编辑器主文件选择 `latex/main.tex`；第一、第二部分随主文件编译。参考文献独立置于报告末尾第四部分，按全文首次引用顺序编号，当前正文实际引用 39 条文献，包括 37 条正式会议或期刊论文、1 条基金委通告及 1 条近期预印本。文献库 [references.bib](latex/references.bib) 同时保留未被新稿采用的旧条目，只有实际引用条目进入文献列表；[核查记录](docs/reference_audit.md) 区分新稿依据及旧稿历史记录。
 
 在 `main.tex` 中取消 `% \npuanonymoustrue` 一行的注释即可生成匿名版，重新注释恢复实名版。学校版式及字体选择沿用原有规则；英文回退字体按 TeX 字体文件名加载。
 
 ## 文件范围
 
-学校原始模板和参考材料继续保留在本地 `材料/`，临时核验文件位于 `tmp/`，本机工具文件位于 `.mimocode/`；这些目录不提交到版本控制。`archives/` 仅保留历史 ZIP，`latex/` 维护当前正文、插图及素材来源，`docs/` 记录写作约定及研究工作设定，`scripts/` 提供日常编译入口。编译输出和脚本缓存由 `.gitignore` 排除。
+学校原始模板和参考材料继续保留在本地 `材料/`，临时核验文件位于 `tmp/`，本机工具文件位于 `.mimocode/`；这些目录不提交到版本控制。`archives/` 仅保留历史 ZIP，`latex/` 维护当前正文、插图及素材来源，`docs/` 记录写作约定及研究工作设定，`scripts/` 提供日常编译入口。除 `latex/build/main.pdf` 外的编译中间文件和脚本缓存由 `.gitignore` 排除。
