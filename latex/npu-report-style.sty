@@ -15,7 +15,12 @@
 
 % 默认 Fandol 字体随完整 TeX Live 提供；优先使用本机宋体和楷体。
 % 不复制系统字体文件，Windows / macOS / Linux 均可使用默认字体回退。
-\IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{\setmainfont{TeX Gyre Termes}}
+% 按 TeX 字体文件名加载回退字体，兼容不能访问系统字体目录的预览编译器。
+\IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{%
+  \setmainfont{texgyretermes-regular.otf}[
+    BoldFont=texgyretermes-bold.otf,
+    ItalicFont=texgyretermes-italic.otf,
+    BoldItalicFont=texgyretermes-bolditalic.otf]}
 \IfFontExistsTF{SimSun}{%
   \setCJKmainfont{SimSun}[AutoFakeBold=2]
   \setCJKfamilyfont{zhsong}{SimSun}[AutoFakeBold=2]

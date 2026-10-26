@@ -1,0 +1,141 @@
+{
+  "title": "PhysTwin: Physics-Informed Reconstruction and Simulation of Deformable Objects from Videos",
+  "publication": "ICCV 2025, pp. 7219-7230",
+  "bibtex_key": "phystwin2025",
+  "project_url": "https://jianghanxiao.github.io/phystwin-web/",
+  "formal_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Jiang_PhysTwin_Physics-Informed_Reconstruction_and_Simulation_of_Deformable_Objects_from_Videos_ICCV_2025_paper.html",
+  "download_url": "https://arxiv.org/pdf/2503.17973",
+  "source_pdf_sha256": "79389c194d83177ac4d1ef076b5d358af823361dd75423cce5087e89f836e01f",
+  "source_pdf_version": "D:20250325005021Z",
+  "panels": [
+    {
+      "file": "observation_t1.jpg",
+      "pdf_page": 6,
+      "figure": 3,
+      "case": "top red-and-gold cloth case",
+      "row": "Observation",
+      "column_zero_based": 0,
+      "xobject": [
+        "/Im5",
+        "/Image4"
+      ],
+      "phase": "observed prefix",
+      "size_px": [
+        477,
+        320
+      ],
+      "sha256": "487836d46237a7ac25374d6c1b4dc94221c5d365e239f35e3737c1abdea8bc9b"
+    },
+    {
+      "file": "observation_t2.jpg",
+      "pdf_page": 6,
+      "figure": 3,
+      "case": "top red-and-gold cloth case",
+      "row": "Observation",
+      "column_zero_based": 2,
+      "xobject": [
+        "/Im5",
+        "/Image6"
+      ],
+      "phase": "observed prefix",
+      "size_px": [
+        477,
+        320
+      ],
+      "sha256": "132b983507c901aeb1aa59e991fcba7c793b86db0f790a92cf2d1182b2664aa7"
+    },
+    {
+      "file": "state_t1_view2.jpg",
+      "pdf_page": 15,
+      "figure": 9,
+      "case": "top red-and-gold cloth case",
+      "row": "Viewpoint 2",
+      "column_zero_based": 0,
+      "xobject": [
+        "/Im11",
+        "/Image8"
+      ],
+      "phase": "reconstructed prefix",
+      "size_px": [
+        477,
+        320
+      ],
+      "sha256": "95b936f5efce5a6bfc616b651385aaeb7028a949cd3319e949defbb223e98779"
+    },
+    {
+      "file": "state_t2_view2.jpg",
+      "pdf_page": 15,
+      "figure": 9,
+      "case": "top red-and-gold cloth case",
+      "row": "Viewpoint 2",
+      "column_zero_based": 2,
+      "xobject": [
+        "/Im11",
+        "/Image13"
+      ],
+      "phase": "reconstructed prefix",
+      "size_px": [
+        477,
+        320
+      ],
+      "sha256": "88c774087c8ea510e46a72cbffb748ba536d8e988d4452cbed3c51019f31b259"
+    },
+    {
+      "file": "state_t2_view3.jpg",
+      "pdf_page": 15,
+      "figure": 9,
+      "case": "top red-and-gold cloth case",
+      "row": "Viewpoint 3",
+      "column_zero_based": 2,
+      "xobject": [
+        "/Im11",
+        "/Image18"
+      ],
+      "phase": "reconstructed prefix",
+      "size_px": [
+        477,
+        320
+      ],
+      "sha256": "a8533e22237ec011a85e69e22baa630e758d3da194e6091cbcd87ce115f0f2fe"
+    },
+    {
+      "file": "prediction_future.jpg",
+      "pdf_page": 6,
+      "figure": 3,
+      "case": "top red-and-gold cloth case",
+      "row": "PhysTwin (Ours)",
+      "column_zero_based": 3,
+      "xobject": [
+        "/Im5",
+        "/Image12"
+      ],
+      "phase": "held-out future prediction",
+      "size_px": [
+        477,
+        320
+      ],
+      "sha256": "e0b640c90faab52640498bd813da76367ca78a7744629718ccd63aac3b99f7e0"
+    },
+    {
+      "file": "execution_future.jpg",
+      "pdf_page": 6,
+      "figure": 3,
+      "case": "top red-and-gold cloth case",
+      "row": "Observation",
+      "column_zero_based": 3,
+      "xobject": [
+        "/Im5",
+        "/Image7"
+      ],
+      "phase": "held-out future reference",
+      "size_px": [
+        477,
+        320
+      ],
+      "sha256": "f8fc132f1fa0d7a7da24b1b12c29e4145492dfb146f6a9568206b76fd6d417f9"
+    }
+  ],
+  "time_labels": "t1 and t2=t indicate selected prefix order, not measured seconds; future pair uses the same held-out column",
+  "protocol": "Source paper section 4.1: 7:3 video split; only training portion used for construction; control-point positions specify actions",
+  "scope": "The selected paper supplies a visual example, not a claim that it implements every capability proposed in this thesis."
+}

@@ -1,59 +1,20 @@
-# 开题报告插图说明
+# 插图与素材
 
-正文当前使用两幅插图：总体研究框架图（图 1，LaTeX 原生矢量绘制）和遮挡示意图（图 2，由 Python / Matplotlib 脚本生成的三个矢量子图）。两幅图均可由源码重新生成。图注及配套解释在正文中维护，图号以主稿编译结果为准。
+## 当前正文插图
 
-## 图1 总体研究框架图
+[dynamic_world_motivation.tex](dynamic_world_motivation.tex)是当前唯一参与正文编译的插图，放在 1.1 第二段之后。图中采用 PhysTwin（ICCV 2025）同一布料提拉案例的真实历史观测、三维模型渲染及留出未来预测，真实执行参考另列。图题为“连续动态世界模型的状态构建与演化预测示意”，用于说明研究背景和基本范式。
 
-项目内路径：`figures/research_framework.tex`
+- [原图位置及来源说明](materials/phystwin_cloth/README.md)、[逐文件校验及时间阶段](materials/phystwin_cloth/source-manifest.json)。
+- [素材处理脚本](build_world_model_paradigm.py)：保留七张原始 JPEG，只为中央渲染制作背景透明的轮廓裁图。
+- [独立图导出脚本](export_world_model_paradigm.py)：主报告本地编译后导出[矢量图](generated/world_model_paradigm/figure.pdf)和[预览](generated/world_model_paradigm/figure.png)。文字、箭头、透明度和布局均在 TikZ 中修改。
 
-用途：在第二部分 2.1 中概括总体研究目标、四项研究内容及其对应的关键科学问题。
+素材和生成图随源码保存，日常编译只需运行项目根目录的 `scripts/build.sh`，无需重新下载论文或提取图片。修改素材时按上述来源说明重现；编译完成后可运行独立图导出脚本更新 PDF 和 PNG。
 
-框架采用三层四列布局：上层为统一目标，中层为四项研究内容及方法重点，下层为对应科学问题。纵向箭头表示目标分解与问题对应；横向实线表示可靠状态表征、缺测预测与重观测校正的递进关系，虚线表示向动作条件交互的扩展。文字凝练自 2.2 和 2.3，后续调整研究内容时同步维护。
+## 未采用的素材及草稿
 
-图形直接通过 `\input{figures/research_framework.tex}` 参与主稿编译，依赖 TikZ 与 `arrows.meta`，已在项目样式中加载。图形、文字和连线保持矢量形式，可按列修改名称与描述，无需重新生成位图。
+- [DyCheck apple 素材](materials/dycheck_apple/README.md)、[处理脚本](build_motivation_assets.py)及 `generated/motivation/` 保留为历史候选，不参与当前编译。旧版人工旋转表面是概念示意，不作为模型未来预测。
+- [research_framework.tex](research_framework.tex)为已撤下的“总体研究框架”草稿，保留待重画；相关引导文字和交叉引用已从正文移除。
 
-## 图2 遮挡示意图
+## 重写前的旧稿
 
-由 Python / Matplotlib 绘制的三个 2D 子图，用于第三部分 3.1 说明总体路线与四项内容的对应。2026-10-12 重组时该图由 1.1 移至此处。
-
-绘图源：`figures/draw_occlusion.py`，三个子图统一由此脚本分别绘制。
-
-绘图源：`figures/draw_occlusion.py`，三个子图统一由此脚本分别绘制。
-
-| 子图 | 矢量文件 | 预览文件 | 含义 |
-| --- | --- | --- | --- |
-| (a) | `figures/occlusion_visible.pdf` | `figures/occlusion_visible.png` | 左侧可见，形成观测历史 |
-| (b) | `figures/occlusion_hidden.pdf` | `figures/occlusion_hidden.png` | 进入墙后遮挡区，基于历史预测 |
-| (c) | `figures/occlusion_corrected.pdf` | `figures/occlusion_corrected.png` | 预测尚未穿出遮挡区，真实目标加速提前出现并被校正 |
-
-场景为纯 2D 俯视布局。相机位于下方中央、朝向上方；墙体位于相机前方，沿水平方向展开；圆形表示目标位置，沿墙体后方的同一条水平路线从左向右移动。三幅图共享场景参数、范围与比例，图内不增加立体物体或文字。坐标仅用于表达布局，不表示实测尺度。
-
-遮挡范围由相机经墙体近侧两端的切线计算，浅灰色区域仅绘制在墙后。子图 (b) 的蓝色实线在遮挡入口处结束，橙色虚线从该入口开始并止于预测位置；朝向隐藏目标的视线在墙前停止，不穿墙。子图 (c) 表示重观测时刻：橙色虚线与虚线圆是按匀速或减速假设推演的先验，仍处于遮挡区内、尚未完全运动出来；绿色目标表示真实运动加速后提前穿出并被再次观测，绿色箭头表示新观测把状态校正到实际位置。橙色先验轨迹止于遮挡区，不进入右侧可见区。
-
-在项目根目录重新绘图并编译：
-
-```sh
-conda run -n main python latex/figures/draw_occlusion.py
-./scripts/build.sh
-```
-
-依赖 Matplotlib。修改脚本开头的相机、墙体、目标位置、颜色、尺寸或线型参数即可迭代；脚本会检查三个阶段的可见性次序，并从自身位置定位输出目录，因此也可从其他工作目录通过绝对路径运行。
-
-正文以 `subfigure` 环境引用三个 PDF（自动生成 (a)、(b)、(c) 及子标题），整图使用 `fig:occlusion`，正文通过 `\subref` 引用对应子图。已经生成的 PDF 与 PNG 随源码保留，日常编译无需 Matplotlib 或 conda。
-
-## 概念插图（正文未使用，备用）
-
-项目内路径：`figures/state_prediction_loop.png`
-
-用途：在总体技术路线中说明历史观测、内部状态、未来预测和观测修正的功能关系。
-
-生成提示词：
-
-```text
-Use case: scientific-educational.
-Asset type: a text-free scientific illustration for the technical-route section of a Chinese doctoral thesis proposal.
-Primary request: show historical observations forming an internal dynamic state, projecting it forward, and correcting that state with a new observation.
-Style: match a restrained academic orthographic 3D illustration, white background, thin crisp grey linework, blue for observed geometry, amber for predicted geometry, green for correction. Wide horizontal composition about 2.7:1. Minimal shading. No decorative elements.
-Composition: left group is a small line-art camera beside three slightly staggered image planes showing a blue cube at successive positions near a light-grey occluder. A thin grey arrow leads to the center: a compact blue 3D point cloud/cube wireframe on a light-grey local coordinate floor, with a few motion traces showing history, visually representing a structured internal state. A thin grey arrow leads to the right: two amber dashed ghost cube/point-cloud positions along a short curved trajectory, representing successive future predictions. Under the right and central groups, a single small new-observation image plane containing a solid blue cube feeds a curved green arrow back to the central state. The returned arrow should point into the central point-cloud state and have one obvious arrowhead; distinguish this correction path from the top forward path. All arrows connect content groups cleanly; no disconnected branches.
-Constraints: absolutely no text, no titles, no subheadings, no letters, no numeric labels, no legends, no watermark, no equation, no infographic text boxes. No claim of a specific network architecture or measured result. Keep the observation-to-state-to-prediction path visually dominant and the new-observation correction loop simple and legible when scaled down.
-```
+2026-10-22 之前的全部旧稿插图及脚本封存在[归档 ZIP](../../archives/2026-10-22-before-rewrite.zip)中。需要查看时解压到项目外的临时目录，包内对应 `latex/figures/`；仓库不再保留展开副本。
