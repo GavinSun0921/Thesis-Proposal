@@ -1,10 +1,12 @@
 % !TeX root = ../main.tex
 % Background paradigm, not a method architecture or a four-task roadmap.
+% Matrix: rows are representation levels (observation / 3D state),
+% columns are time (t1 / t2=t / t+dt). Time runs left to right only.
 % All photographs and model renders show the SAME PhysTwin cloth episode.
-% Prefix: Fig. 3 columns 1,3 and Fig. 9 columns 1,3; future: Fig. 3 column 4.
+% State cutouts are pasted at one common cm/px scale, preserving the
+% relative position of the two view-2 renders inside the 477x320 frame.
 % Original JPEG panels, extraction map and SHA-256: materials/phystwin_cloth/.
-% Central transparent silhouettes only remove the render background in 2D.
-% Curves, axes and action arrow are explanatory, not measured trajectories.
+% Axis, tau marker, arrows and labels are explanatory, not measured.
 \begin{figure}[H]
   \centering
   \begingroup
@@ -13,88 +15,87 @@
   \definecolor{motLine}{HTML}{D8DDE1}
   \definecolor{motBlue}{HTML}{426A85}
   \definecolor{motAction}{HTML}{A66E38}
-  \newcommand{\motphoto}[4]{%
-    \node[anchor=north west,inner sep=0pt] at (#2,#3)
-      {\includegraphics[width=#4cm]{figures/materials/phystwin_cloth/#1.jpg}};
-    \draw[motLine,line width=0.35pt]
-      (#2,#3) rectangle ({#2+#4},{#3-#4*320/477});
-  }
   \resizebox{\linewidth}{!}{%
   \begin{tikzpicture}[
     x=1cm,y=1cm,line cap=round,line join=round,text=motInk,
     font=\fontsize{9.5pt}{12pt}\selectfont,
-    mothead/.style={font=\heiti\fontsize{10.5pt}{13pt}\selectfont},
-    motnote/.style={font=\fontsize{9pt}{11pt}\selectfont,text=motMuted},
-    motarrow/.style={-{Latex[length=1.8mm,width=1.2mm]},draw=motBlue,line width=0.85pt}
+    mothead/.style={font=\heiti\fontsize{10pt}{12pt}\selectfont},
+    motnote/.style={font=\fontsize{8.5pt}{10.5pt}\selectfont,text=motMuted},
+    rownote/.style={font=\fontsize{8pt}{9.6pt}\selectfont,text=motMuted},
+    motarrow/.style={-{Latex[length=1.6mm,width=1.1mm]},draw=motBlue,line width=0.85pt},
+    actarrow/.style={-{Latex[length=1.6mm,width=1.1mm]},draw=motAction,line width=0.9pt}
   ]
-    \path[use as bounding box] (0,0) rectangle (15.6,7.45);
-    \node[mothead] at (1.60,7.13) {有限视觉观测};
-    \node[mothead] at (7.45,7.13) {连续动态世界状态};
-    \node[mothead] at (13.95,7.13) {未来演化预测};
-    \draw[motLine,line width=0.45pt] (0,6.76) -- (15.6,6.76);
+    \path[use as bounding box] (0,0) rectangle (15.6,7.10);
 
-    % Only observed-prefix RGB frames enter the state construction side.
-    \node[motnote] at (1.60,6.44) {$t_1$};
-    \motphoto{observation_t1}{0.02}{6.15}{3.16}
-    \node[motnote] at (1.60,3.54) {$t_2=t$};
-    \motphoto{observation_t2}{0.02}{3.25}{3.16}
-    \draw[motMuted!70,line width=0.55pt,-{Latex[length=1.3mm]}]
-      (1.60,3.88) -- (1.60,3.77);
-    \node[motnote] at (1.60,0.67) {离散采样\enspace ·\enspace 局部可见};
-
-    \draw[motarrow] (3.43,4.80) -- (4.17,4.80);
-    \node[motnote] at (3.80,5.28) {构建};
-
-    % A restrained spatial reference behind two authentic model-render poses.
-    % Its projection is schematic, not the paper's calibrated camera frame.
-    \path[fill=motBlue!2,draw=motBlue!20,line width=0.4pt]
-      (4.32,2.54) -- (9.55,2.54) -- (10.61,3.22) -- (5.38,3.22) -- cycle;
-    \foreach \xx in {5.19,6.06,6.93,7.80,8.67}{%
-      \draw[motBlue!12,line width=0.3pt] (\xx,2.54) -- ({\xx+1.06},3.22);
+    % ---- time axis: it also serves as the column header ----
+    \draw[motMuted!55,line width=0.5pt,-{Latex[length=1.3mm]}]
+      (1.9,6.53) -- (15.15,6.53);
+    \foreach \xx in {3.75,8.05,13.3}{%
+      \draw[motMuted!70,line width=0.5pt] (\xx,6.53) -- (\xx,6.63);
     }
-    \draw[motBlue!12,line width=0.3pt]
-      (4.67,2.77) -- (9.90,2.77) (5.03,2.99) -- (10.26,2.99);
-    \draw[motMuted!65,line width=0.45pt,-{Latex[length=1.1mm]}]
-      (4.48,2.66) -- (5.15,2.66);
-    \draw[motMuted!65,line width=0.45pt,-{Latex[length=1.1mm]}]
-      (4.48,2.66) -- (4.89,2.93);
-    \draw[motMuted!65,line width=0.45pt,-{Latex[length=1.1mm]}]
-      (4.48,2.66) -- (4.48,3.31);
+    \draw[motMuted!70,line width=0.5pt] (5.9,6.53) -- (5.9,6.63);
+    \node at (3.75,6.78) {$t_1$};
+    \node at (8.05,6.78) {$t_2=t$};
+    \node at (13.3,6.78) {$t+\Delta t$};
+    \node[motnote] at (5.9,6.78) {$\tau$};
 
-    \node[anchor=north west,inner sep=0pt,opacity=0.48] at (4.35,4.18)
-      {\includegraphics[width=2.10cm]{figures/generated/world_model_paradigm/state_t1_view2_cutout.png}};
-    \node[motnote] at (5.00,4.55) {$S(t_1)$};
-    \node[anchor=north west,inner sep=0pt] at (7.16,5.96)
-      {\includegraphics[width=3.13cm]{figures/generated/world_model_paradigm/state_t2_view2_cutout.png}};
-    \node at (8.73,6.43) {$S(t)$};
+    % ---- row labels: observation vs state ----
+    \node[mothead] at (0.95,5.35) {视觉观测};
+    \node[rownote] at (0.95,5.00) {离散、局部};
+    \node[mothead] at (0.95,1.76) {三维状态};
+    \node[rownote] at (0.95,1.41) {连续、可更新};
 
-    % Motion link illustrates continuous state evolution, not a fitted path.
-    \draw[motarrow,line width=0.75pt]
-      (5.42,4.07) .. controls (6.05,5.37) and (7.39,5.91) .. (8.78,6.06);
-    \node[motnote,text=motBlue] at (6.40,6.08) {连续演化};
+    % ---- observation row ----
+    \node[anchor=north west,inner sep=0pt] at (1.9,6.383)
+      {\includegraphics[width=3.7cm]{figures/materials/phystwin_cloth/observation_t1.jpg}};
+    \draw[motLine,line width=0.35pt] (1.9,3.901) rectangle (5.6,6.383);
+    \node[anchor=north west,inner sep=0pt] at (6.2,6.383)
+      {\includegraphics[width=3.7cm]{figures/materials/phystwin_cloth/observation_t2.jpg}};
+    \draw[motLine,line width=0.35pt] (6.2,3.901) rectangle (9.9,6.383);
+    \node[anchor=north west,inner sep=0pt] at (11.45,6.383)
+      {\includegraphics[width=3.7cm]{figures/materials/phystwin_cloth/execution_future.jpg}};
+    \draw[dashed,motMuted!85,line width=0.55pt]
+      (11.45,3.901) rectangle (15.15,6.383);
 
-    % A second novel-view render of the SAME current state makes the spatial
-    % nature legible. It is not a later time or a second predicted future.
-    \draw[motLine,line width=0.6pt] (9.76,3.50) -- (9.76,2.37);
-    \node[anchor=north west,inner sep=0pt] at (8.70,2.29)
-      {\includegraphics[width=1.58cm]{figures/generated/world_model_paradigm/state_t2_view3_cutout.png}};
-    \node[motnote] at (9.47,0.64) {另一视角};
-    \draw[motBlue!65,line width=0.6pt,-{Latex[length=1.3mm]}]
-      (3.43,2.20) .. controls (4.18,0.93) and (6.64,0.76) .. (7.65,3.29);
-    \node[motnote] at (5.84,0.65) {观测更新};
+    % ---- state row: common scale k = 3.7cm / 280px ----
+    % crop frame x=32..312, y=67..279 of the 477x320 renders
+    \node[anchor=north west,inner sep=0pt] at (2.0057,2.5149)
+      {\includegraphics[width=3.4886cm]{figures/generated/world_model_paradigm/state_t1_view2_cutout.png}};
+    \node[anchor=north west,inner sep=0pt] at (6.5832,2.8189)
+      {\includegraphics[width=2.5636cm]{figures/generated/world_model_paradigm/state_t2_view2_cutout.png}};
+    \node[anchor=west,inner sep=0pt] at (11.45,1.5505)
+      {\includegraphics[width=3.7cm]{figures/materials/phystwin_cloth/prediction_future.jpg}};
+    \draw[motLine,line width=0.35pt] (11.45,0.3095) rectangle (15.15,2.7915);
+    % The prediction is a render of the same scene as the photographs; label it
+    % explicitly so that it cannot be read as a captured frame.
+    \node[anchor=south west,inner sep=2.2pt,fill=white,fill opacity=0.88,
+      text opacity=1,font=\fontsize{8pt}{9.6pt}\selectfont]
+      at (11.53,0.42) {模型预测};
 
-    % Current state + an externally supplied action -> a genuine forecast.
-    \draw[motarrow] (10.51,5.05) -- (11.92,5.05);
-    \node[motnote,text=motAction] at (11.22,5.84) {给定动作};
-    \node[text=motAction] at (11.22,5.46) {$+\,\mathbf a$};
-    \node[motnote,text=motBlue] at (13.95,6.44) {预测\enspace $t+\Delta t$};
-    \motphoto{prediction_future}{12.29}{6.15}{3.27}
-    \node[motnote] at (13.95,3.54) {真实执行参考};
-    \motphoto{execution_future}{12.29}{3.25}{3.27}
-    \node[motnote] at (13.95,0.67) {同一未来时刻};
+    % ---- build / update the state from observations ----
+    \draw[motarrow] (3.75,3.901) -- (3.75,2.951);
+    \node[motnote,anchor=west] at (3.87,3.45) {构建};
+    \draw[motarrow] (8.05,3.901) -- (8.05,2.951);
+    \node[motnote,anchor=west] at (8.17,3.45) {更新};
+
+    % ---- current state + given action -> forecast ----
+    \draw[actarrow] (9.3,1.5505) -- (11.45,1.5505);
+    \node[motnote,text=motAction] at (10.375,1.85) {给定动作 $\mathbf a$};
+
+    % ---- the real future frame is a reference only, not an input ----
+    \draw[dashed,motMuted,line width=0.6pt,
+      {Latex[length=1.3mm]}-{Latex[length=1.3mm]}]
+      (13.3,3.901) -- (13.3,2.7915);
+    \node[motnote,anchor=west] at (13.42,3.45) {对照};
+
+    % ---- tau: the state can be queried inside a sampling interval ----
+    \draw[dashed,motMuted!55,line width=0.45pt] (5.9,6.53) -- (5.9,2.951);
+    \fill[white] (5.9,2.951) circle (0.055);
+    \draw[motMuted!55,line width=0.45pt] (5.9,2.951) circle (0.055);
+    \node[motnote,anchor=west] at (6.02,3.19) {可查询};
   \end{tikzpicture}%
   }
   \endgroup
-  \caption{连续动态世界模型的状态构建与演化预测示意}
+  \caption{连续动态世界模型的状态构建与演化预测概念示意（PhysTwin 案例素材）}
   \label{fig:dynamic-world-motivation}
 \end{figure}

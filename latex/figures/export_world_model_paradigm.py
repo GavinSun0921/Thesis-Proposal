@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Export the vector figure from the locally compiled proposal, without caption.
 
-Run from any directory after ./scripts/build.sh. Requires pypdf, pdfplumber,
-and pdftoppm. This crops the authoritative PDF; it does not compile a separate
-LaTeX document or rasterize the PDF output. Only the PNG preview is rasterized.
+Run from any directory after ./scripts/build.sh. Requires pypdf and pdfplumber;
+the PNG preview uses pdftoppm, falling back to Ghostscript when it is absent.
+This crops the authoritative PDF; it does not compile a separate LaTeX document
+or rasterize the vector output. Only the PNG preview is rasterized.
 """
 
 from __future__ import annotations
@@ -18,7 +19,11 @@ from pypdf.generic import NameObject
 HERE = Path(__file__).resolve().parent
 MAIN = HERE.parent / "build" / "main.pdf"
 OUT = HERE / "generated" / "world_model_paradigm"
-TITLE = "连续动态世界模型的状态构建与演化预测示意"
+TITLE = "连续动态世界模型的状态构建与演化预测概念示意"
+# Layout constants in cm, matching dynamic_world_motivation.tex:
+# bounding box 15.6 x 7.10; observation_t1 at x=1.9, top y=6.383, width 3.7.
+FIG_W, FIG_H = 15.6, 7.10
+PHOTO_X, PHOTO_TOP, PHOTO_W = 1.9, 6.383, 3.7
 
 
 def main() -> None:
@@ -28,21 +33,21 @@ def main() -> None:
             raise ValueError(f"Expected one figure caption, found {len(matches)}")
         index, page = matches[0]
         caption = page.search(TITLE)[0]
-        heading = page.search("有限视觉观测")[0]
-        footers = [
-            match for label in ["离散采样", "观测更新", "另一视角", "同一未来时刻"]
-            for match in page.search(label)
-            if heading["top"] < match["top"] < caption["top"]
-        ]
-        if len(footers) != 4 or len(page.images) != 7:
+        # The row labels are the leftmost occurrences above the caption.
+        rows = [min(page.search(label), key=lambda match: match["x0"])
+                for label in ("视觉观测", "三维状态")]
+        if any(row["top"] > caption["top"] for row in rows):
             raise ValueError("Unexpected figure layout; inspect the current PDF before exporting")
-        # The left source photo starts at x=.02 and has width 3.16 in TikZ.
-        photo = min(page.images, key=lambda image: image["x0"])
-        unit = (photo["x1"] - photo["x0"]) / 3.16
-        origin = photo["x0"] - .02 * unit
-        left, right = origin - 3, origin + 15.6 * unit + 3
-        top = heading["top"] - 7
-        bottom = max(match["bottom"] for match in footers) + 6
+        if len(page.images) != 6:
+            raise ValueError("Unexpected figure images; inspect the current PDF before exporting")
+        # Topmost image is the first observation frame (top y=6.383 in TikZ).
+        photo = min(page.images, key=lambda image: (round(image["top"], 1), image["x0"]))
+        unit = (photo["x1"] - photo["x0"]) / PHOTO_W
+        origin_x = photo["x0"] - PHOTO_X * unit
+        origin_bottom = photo["top"] + PHOTO_TOP * unit
+        left, right = origin_x - 3, origin_x + FIG_W * unit + 3
+        top = origin_bottom - FIG_H * unit - 3
+        bottom = origin_bottom + 3
         page_height = page.height
 
     reader = PdfReader(MAIN)
@@ -54,10 +59,17 @@ def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     with (OUT / "figure.pdf").open("wb") as stream:
         writer.write(stream)
-    subprocess.run([
-        "pdftoppm", "-singlefile", "-scale-to", "2400", "-png",
-        str(OUT / "figure.pdf"), str(OUT / "figure"),
-    ], check=True)
+    try:
+        subprocess.run([
+            "pdftoppm", "-singlefile", "-scale-to", "2400", "-png",
+            str(OUT / "figure.pdf"), str(OUT / "figure"),
+        ], check=True)
+    except FileNotFoundError:
+        subprocess.run([
+            "gs", "-q", "-dNOPAUSE", "-dBATCH", "-sDEVICE=png16m", "-r386",
+            "-dFirstPage=1", "-dLastPage=1",
+            f"-sOutputFile={OUT / 'figure.png'}", str(OUT / "figure.pdf"),
+        ], check=True)
     print(f"Exported vector figure and 2400px preview from proposal page {index + 1} to {OUT}")
 
 

@@ -1,0 +1,115 @@
+% Original metric illustration. The 2/3 value is an example, not a result.
+%
+% The figure is two self-contained panels joined side by side. Each panel is
+% built on its own centre axis (4.00 for (a), 12.00 for (b)) and repeats the
+% same four bands, so the pair reads row by row when seen together and reads as
+% a complete little diagram when seen alone:
+%     one-line gloss / legend (5.42) -> picture (2.60-4.72)
+%     -> formula (1.75) -> panel label (1.10), centred under its own drawing
+%   (a) 二维对应：each correspondence has a tolerance disc, and a mark counts
+%       only when it falls inside; the score is a counted fraction.
+%   (b) 三维轨迹：the error is the segment between an estimated and a reference
+%       position at the same instant; the score averages those lengths.
+% No panel frames; a single hairline keeps the two panels from touching, and the
+% panel labels sit below the drawings in the same style as the dataset figure.
+\begingroup
+\linespread{1}\selectfont
+\definecolor{emBlue}{HTML}{315F8C}
+\definecolor{emOchre}{HTML}{97651F}
+\begin{tikzpicture}[x=1cm,y=1cm,text=black,line cap=round,line join=round,
+  font=\songti\fontsize{9.5pt}{12pt}\selectfont,
+  every node/.style={align=center,inner sep=1pt,outer sep=0pt},
+  emTitle/.style={font=\heiti\fontsize{9.6pt}{12pt}\selectfont},
+  emNote/.style={font=\fontsize{8.8pt}{11pt}\selectfont},
+  emLead/.style={font=\fontsize{9pt}{11.5pt}\selectfont},
+  emArrow/.style={draw=black,line width=0.7pt,-{Latex[length=1.5mm,width=1.0mm]}},
+  % legend swatches, drawn inline so the legend centres itself
+  emSwatch/.style={baseline=-0.55ex,line cap=round,line join=round}]
+  % Fixed canvas: both panels keep the same height and the same baselines.
+  \path[use as bounding box] (0,0.90) rectangle (16,5.66);
+
+  % ================= panel (a): centre axis x = 4.00 =======================
+  \node[emLead] at (4.00,5.42) {容许范围 $r=\alpha D$ 内的对应记为命中};
+
+  % Three tolerance discs share one row, centred on the panel axis. Each mark is
+  % placed at a fixed offset from its disc centre, so the verdict follows from
+  % the geometry alone: two inside, one outside.
+  \foreach \cx/\dx/\dy/\verdict in {%
+      1.72/0.28/0.20/{命中},%
+      4.00/-0.32/-0.24/{命中},%
+      6.28/0.80/-0.52/{未命中}}{%
+    \draw[draw=emBlue,fill=emBlue!6,dashed,line width=0.6pt] (\cx,3.94) circle (0.76);
+    \fill[black] (\cx,3.94) circle (0.058);
+    \draw[black!45,line width=0.55pt] (\cx,3.94) -- ({\cx+\dx},{3.94+\dy});
+    \draw[emBlue,line width=1.0pt]
+      ({\cx+\dx-0.075},{3.94+\dy-0.075}) -- ({\cx+\dx+0.075},{3.94+\dy+0.075})
+      ({\cx+\dx-0.075},{3.94+\dy+0.075}) -- ({\cx+\dx+0.075},{3.94+\dy-0.075});
+    \node[emNote] at (\cx,2.78) {\verdict};
+  }
+
+  \node[emNote] at (4.00,1.75)
+    {$\mathrm{PCK}(\alpha)=\dfrac{\text{命中数}}{\text{有效对应数}}=\dfrac{2}{3}$};
+  % Panel labels come from the caption package rather than being drawn as text,
+  % so they are numbered by LaTeX and can be cross-referenced with \subref.
+  \node[text width=7.2cm,align=center] at (4.00,1.10)
+    {{\captionsetup[subfigure]{font=figsubheiti,skip=0pt}
+      \subcaption{二维对应：阈值内计数}\label{subfig:metrics-pck}}};
+
+  % Hairline between the panels: they are independent, not one drawing.
+  \draw[black!22,line width=0.45pt] (8.00,0.98) -- (8.00,5.60);
+
+  % ================= panel (b): centre axis x = 12.00 ======================
+  % The legend is a single node, so its three entries centre on the panel axis.
+  % The orange swatch carries the symbol the formula uses, which keeps the
+  % drawing itself free of floating labels.
+  \node[emNote] at (12.00,5.42) {%
+    \tikz[emSwatch]{\draw[black,line width=0.9pt] (0,0) -- (0.48,0);
+      \fill[black] (0.24,0) circle (0.052);}~参考轨迹\hspace{0.6em}
+    \tikz[emSwatch]{\draw[emBlue,dashed,line width=0.9pt] (0,0) -- (0.48,0);
+      \draw[emBlue,line width=1.0pt]
+        (0.24-0.072,-0.072) -- (0.24+0.072,0.072)
+        (0.24-0.072,0.072) -- (0.24+0.072,-0.072);}~估计轨迹\hspace{0.6em}
+    \tikz[emSwatch]{\draw[emArrow,draw=emOchre,line width=0.75pt] (0,0) -- (0.48,0);}~误差 $e_{ik}$};
+
+  % The 3-D frame is centred on the panel axis; the formula is not set beside it.
+  \begin{scope}[shift={(10.56,2.70)},x={(0.88cm,0cm)},
+    y={(-0.44cm,0.27cm)},z={(0cm,0.55cm)}]
+    \fill[black!3] (0,0,0) -- (4.20,0,0) -- (4.20,2.20,0) -- (0,2.20,0) -- cycle;
+    \foreach \xx in {1,2,3}{\draw[black!16,line width=0.35pt] (\xx,0,0) -- (\xx,2.20,0);}
+    \foreach \yy in {0.55,1.10,1.65}{\draw[black!16,line width=0.35pt] (0,\yy,0) -- (4.20,\yy,0);}
+    \draw[black!30,dashed,line width=0.45pt]
+      (0,2.20,0) -- (0,2.20,2.80) -- (4.20,2.20,2.80)
+      -- (4.20,0,2.80) -- (4.20,0,0);
+    \draw[black!30,dashed,line width=0.45pt]
+      (0,0,2.80) -- (0,2.20,2.80) (0,0,2.80) -- (4.20,0,2.80);
+    \draw[emArrow,black!50,line width=0.6pt] (0,0,0) -- (4.48,0,0)
+      node[right=1pt] {\fontsize{8.3pt}{10pt}\selectfont $x$};
+    \draw[emArrow,black!50,line width=0.6pt] (0,0,0) -- (0,2.42,0)
+      node[left=1pt] {\fontsize{8.3pt}{10pt}\selectfont $y$};
+    \draw[emArrow,black!50,line width=0.6pt] (0,0,0) -- (0,0,3.02)
+      node[above=1pt] {\fontsize{8.3pt}{10pt}\selectfont $z$};
+    % reference and estimated paths, sampled at the same instants
+    \draw[black,line width=0.95pt] plot[smooth] coordinates {
+      (0.45,0.25,0.55) (1.30,1.40,1.45) (2.45,1.78,1.10) (3.70,2.02,2.65)};
+    \draw[emBlue,dashed,line width=0.95pt] plot[smooth] coordinates {
+      (0.80,0.38,0.30) (1.30,0.92,0.95) (2.43,1.34,1.55) (3.66,1.68,2.38)};
+    \foreach \x/\yr/\zr/\ye/\ze in {
+      1.30/1.40/1.45/0.92/0.95,
+      2.45/1.78/1.10/1.34/1.55,
+      3.70/2.02/2.65/1.68/2.38}{%
+      \draw[emArrow,draw=emOchre,line width=0.75pt] (\x,\yr,\zr) -- (\x,\ye,\ze);
+    }
+    \foreach \x/\y/\z in {0.45/0.25/0.55,1.30/1.40/1.45,2.45/1.78/1.10,3.70/2.02/2.65}{%
+      \fill[black] (\x,\y,\z) circle (0.052);}
+    \foreach \x/\y/\z in {0.80/0.38/0.30,1.30/0.92/0.95,2.43/1.34/1.55,3.66/1.68/2.38}{%
+      \draw[emBlue,line width=1.0pt] (\x-0.07,\y-0.07,\z) -- (\x+0.07,\y+0.07,\z)
+        (\x-0.07,\y+0.07,\z) -- (\x+0.07,\y-0.07,\z);}
+  \end{scope}
+
+  \node[emNote] at (12.00,1.75)
+    {$\mathrm{EPE}_{\mathrm{3D}}=\dfrac{1}{|\mathcal T|}\sum_{(i,k)\in\mathcal T} e_{ik}$};
+  \node[text width=7.2cm,align=center] at (12.00,1.10)
+    {{\captionsetup[subfigure]{font=figsubheiti,skip=0pt}
+      \subcaption{三维轨迹：同一时刻位置误差}\label{subfig:metrics-epe}}};
+\end{tikzpicture}
+\endgroup

@@ -1,0 +1,51 @@
+{
+  "kind": "proposed technical routes, editable vector diagrams",
+  "shared_styles_sha256": "4bfa13b6f9864c4e6a32b02b08dec58850f1c0bbe32ff1dc473ae6eb94e7e93b",
+  "figures": [
+    {
+      "title": "连续动态世界模型总体技术路线",
+      "source": "figures/technical_route_overview.tex",
+      "source_sha256": "edfcc8d66ea9668055dd3b748f13b348627d69f8804a2bf6638ccb2801960496",
+      "pdf": "technical_route_overview.pdf",
+      "pdf_sha256": "e6ded245796c95cda286c0d6c73fad798e5dbeaa0be1f54c90874170b9bb6aae"
+    },
+    {
+      "title": "连续时间状态构建技术路线",
+      "source": "figures/technical_route_time.tex",
+      "source_sha256": "4dfa20fb23758692bb80717988abd391499965f412b838c28edd7b7cceca03ad",
+      "pdf": "technical_route_time.pdf",
+      "pdf_sha256": "2af5061035e88cb1f5ad2e3ae659596fc9c8b66525f6b31869dc8fc95989d5c4"
+    },
+    {
+      "title": "连续运动引导的空间结构表征技术路线",
+      "source": "figures/technical_route_space.tex",
+      "source_sha256": "54b5e7823a725a52f7e39eff0d90ed308c27b3080df1a72bbcf7c3645f29c26b",
+      "pdf": "technical_route_space.pdf",
+      "pdf_sha256": "ee9ca67896e97fc437474ec3018276c61ea8a866053b97bcc23ef0ea8d56b2b6"
+    },
+    {
+      "title": "拓扑自适应表征技术路线",
+      "source": "figures/technical_route_topology.tex",
+      "source_sha256": "e57c9843587ead1bd160370a8cbe85fdf7849c8483020cd665ad853d1955ce75",
+      "pdf": "technical_route_topology.pdf",
+      "pdf_sha256": "2648d072d57cfa5119c665c1d6a618572033464c343d7760bc7b420e90393965"
+    },
+    {
+      "title": "连续状态驱动的动作响应技术路线",
+      "source": "figures/technical_route_response.tex",
+      "source_sha256": "e0130ab74c6b5d8e28008ab4a8f9700fd32aa803b02c6f9a87ee8aafa906091d",
+      "pdf": "technical_route_response.pdf",
+      "pdf_sha256": "d30df63203279744f55cc4b14ae6ad6b3bd94aed21d0f7d3e184af6ac6ff60a5"
+    }
+  ],
+  "scope": [
+    "Filled numbered markers indicate research emphasis, not originality or validated performance.",
+    "Muted blue, green, ochre and violet identify research stages; local colors distinguish trajectories, parts, connection validity, histories and actions. Text and frames stay black.",
+    "Local colors are paired with line styles, node shapes, interval markers or labels for grayscale reading.",
+    "Explanatory legends, complete-sentence sketch notes and schematic-scope notes belong to adjacent method prose. Figures retain module, variable, interval and necessary relation labels.",
+    "The integrated prediction mode uses observations available by t0 only.",
+    "Association, physical connection and proximity/contact candidates are distinct relations.",
+    "Surface history is distinct from material-motion history and first visibility.",
+    "Future geometry and motion are model predictions; new observations arrive after execution."
+  ]
+}

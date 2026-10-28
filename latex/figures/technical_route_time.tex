@@ -1,0 +1,61 @@
+% Proposed mechanisms, with qualitative sketches of support and knot allocation.
+% Four numbered stages on a shared flow line, then an unruled sketch strip.
+% Each sketch carries its lettered title BELOW it, centred on the sketch's own
+% horizontal extent (not on an arbitrary grid), so title and drawing read as one
+% unit when the strip is scanned from left to right.
+\begingroup
+\input{figures/technical_route_styles.tex}
+\trTheme{Time}
+\begin{tikzpicture}[trBase]
+
+  \trStage{0.30}{2.95}{1}{观测线索}{二维对应、几何及可见性}
+  \trStage[core]{3.95}{2.95}{2}{可靠性估计}{循环一致性、几何重投影支持}
+  \trStage[core]{7.60}{2.95}{3}{时间配置}{有效作用区间、样条表达自由度}
+  \trStage{11.25}{2.95}{4}{联合求解}{连续轨迹、几何及外观}
+
+  \trStep{3.25}{3.95}
+  \trStep{6.90}{7.60}
+  \trStep{10.55}{11.25}
+
+  % joint solving feeds back a geometric correction to the reliability estimate
+  \draw[trFeedback] (12.72,4.30) -- (12.72,3.66) -- (5.42,3.66) -- (5.42,4.30);
+  \node[trTag] at (9.05,3.66) {几何回校正};
+
+  % ---- sketch strip: drawing above, centred title below ----
+  % (a) observation support defines a local valid interval I_j   [0.60 .. 4.10]
+  \path[fill=trTimeFill] (1.35,1.85) rectangle (3.35,2.82);
+  \draw[trArrow] (0.65,2.10) -- (4.15,2.10);
+  \foreach \xx in {0.95,1.35,1.85,2.35,2.85,3.35,3.85}{
+    \draw[trSketch] (\xx,2.01) -- (\xx,2.19);
+  }
+  \fill (1.35,2.10) circle (0.058);
+  \fill (3.35,2.10) circle (0.058);
+  \draw[trMotion] (1.35,2.88) -- (1.35,3.00) -- (3.35,3.00) -- (3.35,2.88);
+  \node[trLabel] at (2.35,3.12) {$I_j$};
+  \node[trLabel,anchor=west] at (4.07,1.86) {$t$};
+  \node[text width=3.50cm,align=center] at (2.35,1.33)
+    {{\captionsetup[subfigure]{font=figsubroute,skip=0pt}
+      \subcaption{局部时间支撑}\label{subfig:route-time-support}}};
+
+  % (b) knot density follows local complexity   [5.05 .. 8.95]
+  \draw[trMotion] plot[smooth] coordinates {
+    (5.10,2.10) (6.00,2.24) (6.65,2.15) (7.25,2.92) (7.80,2.15) (8.90,2.30)};
+  \foreach \xx/\yy in {5.10/2.10,6.00/2.24,6.65/2.15,7.01/2.60,7.25/2.92,7.50/2.62,7.80/2.15,8.90/2.30}{
+    \draw[trControl] (\xx,\yy) circle (0.056);
+  }
+  \node[text width=3.90cm,align=center] at (7.00,1.33)
+    {{\captionsetup[subfigure]{font=figsubroute,skip=0pt}
+      \subcaption{表达能力配置}\label{subfig:route-time-capacity}}};
+
+  % (c) position and velocity readable at a non-sampled time   [9.75 .. 13.10]
+  \draw[trMotion] plot[smooth] coordinates {
+    (9.80,2.10) (10.60,2.72) (11.40,2.48) (12.20,2.10) (13.05,2.72)};
+  \fill (11.40,2.48) circle (0.058);
+  \draw[trArrow,draw=trResponseAccent] (11.40,2.48) -- (12.28,2.14);
+  \node[trLabel] at (11.10,2.86) {$\mathbf{x}_i(t)$};
+  \node[trLabel,anchor=west] at (12.35,1.98) {$\mathbf{v}_i(t)$};
+  \node[text width=3.35cm,align=center] at (11.42,1.33)
+    {{\captionsetup[subfigure]{font=figsubroute,skip=0pt}
+      \subcaption{连续状态查询}\label{subfig:route-time-query}}};
+\end{tikzpicture}
+\endgroup

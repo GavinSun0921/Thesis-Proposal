@@ -1,0 +1,71 @@
+% !TeX root = ../main.tex
+% Original qualitative counterfactual examples, with all other conditions fixed.
+% Row 1: same geometry, opposite initial velocity, same upward action.
+% Row 2: same body geometry, connected/separated pair, same action on the right body.
+% Pale outlines mark current reference positions; dashed outlines are conceptual
+% future responses, not measured trajectories or actual model predictions.
+\begingroup
+\input{figures/research_problem_styles.tex}
+\begin{tikzpicture}[rpBase]
+  \path[use as bounding box] (0,0) rectangle (16,6.75);
+
+  \path[draw=black,fill=black!5,line width=0.65pt] (0.10,6.05) rectangle (15.90,6.60);
+  \foreach \xx in {2.30,7.45,10.10}{\draw[rpFrame] (\xx,6.05) -- (\xx,6.60);}
+  \node[rpTitle] at (1.20,6.325) {状态差异};
+  \node[rpTitle] at (4.875,6.325) {当前状态};
+  \node[rpTitle] at (8.775,6.325) {同一动作};
+  \node[rpTitle] at (13.00,6.325) {未来响应示意};
+  \foreach \yb/\yt in {3.55/5.95,1.00/3.40}{%
+    \draw[rpFrame] (0.10,\yb) rectangle (15.90,\yt);
+    \foreach \xx in {2.30,7.45,10.10}{\draw[rpFrame] (\xx,\yb) -- (\xx,\yt);}
+  }
+
+  \node[rpTitle] at (1.20,5.02) {运动趋势};
+  \node[rpNote] at (1.20,4.48) {当前几何相同};
+  \foreach \yy in {5.12,4.02}{%
+    \draw[draw=black!45,line width=0.4pt] (3.00,\yy-0.30) -- (6.70,\yy-0.30);
+    \filldraw[draw=black,fill=black!5,line width=0.75pt] (4.60,\yy) circle[radius=0.22];
+    \draw[rpAction] (8.775,\yy-0.27) -- (8.775,\yy+0.40);
+    \node at (9.36,\yy+0.10) {$a$};
+  }
+  \draw[rpMotion] (4.30,5.52) -- (3.35,5.52);
+  \node at (5.15,5.52) {$v_0$};
+  \draw[rpMotion] (4.90,4.42) -- (5.85,4.42);
+  \node at (4.10,4.42) {$v_0$};
+
+  \draw[draw=black!45,line width=0.55pt] (13.00,5.12) circle[radius=0.22];
+  \draw[draw=black!45,line width=0.55pt] (13.00,4.02) circle[radius=0.22];
+  \draw[rpFuture,-{Latex[length=1.5mm,width=1mm]}]
+    (12.80,5.15) .. controls (12.40,5.18) and (12.05,5.35) .. (11.78,5.48);
+  \draw[rpFuture,-{Latex[length=1.5mm,width=1mm]}]
+    (13.20,4.05) .. controls (13.60,4.08) and (13.95,4.25) .. (14.22,4.38);
+  \draw[rpFuture] (11.55,5.53) circle[radius=0.22];
+  \draw[rpFuture] (14.45,4.43) circle[radius=0.22];
+
+  \node[rpTitle] at (1.20,2.48) {连接关系};
+  \node[rpNote] at (1.20,1.94) {物体几何相近};
+  \foreach \yy in {2.65,1.55}{%
+    \draw[draw=black,fill=black!5,line width=0.65pt] (4.00,\yy-0.24) rectangle ++(0.62,0.48);
+    \draw[draw=black,fill=white,line width=0.65pt] (5.35,\yy-0.24) rectangle ++(0.62,0.48);
+    \draw[rpAction] (8.15,\yy) -- (9.20,\yy);
+    \node at (9.56,\yy) {$a$};
+  }
+  \draw[draw=black,line width=1.05pt] (4.62,2.65) -- (5.35,2.65);
+  \node[rpNote] at (3.07,2.65) {连接};
+  \node[rpNote] at (3.07,1.55) {分离};
+
+  % Reference and future positions share a coordinate frame in both cases.
+  \foreach \yy in {2.65,1.55}{%
+    \draw[draw=black!40,line width=0.5pt] (10.65,\yy-0.24) rectangle ++(0.50,0.48);
+    \draw[draw=black!40,line width=0.5pt] (11.80,\yy-0.24) rectangle ++(0.50,0.48);
+    \draw[rpFuture] (13.60,\yy-0.24) rectangle ++(0.50,0.48);
+  }
+  \draw[rpFuture] (12.45,2.41) rectangle ++(0.50,0.48);
+  \draw[rpFuture] (12.95,2.65) -- (13.60,2.65);
+  \draw[rpFuture] (10.65,1.31) rectangle ++(0.50,0.48);
+  \node[rpNote] at (14.95,2.65) {整体响应};
+  \node[rpNote] at (14.95,1.55) {局部响应};
+
+  \rpFooter{研究关注：运动趋势和有效连接如何约束动作响应？}
+\end{tikzpicture}
+\endgroup

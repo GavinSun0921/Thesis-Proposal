@@ -1,0 +1,52 @@
+% Causal initial state, given actions, typed interaction graph and predictions.
+% Five numbered stages on a shared flow line, then an unruled sketch strip.
+% Each sketch carries its lettered title BELOW it, centred on the sketch's own
+% horizontal extent.
+\begingroup
+\input{figures/technical_route_styles.tex}
+\trTheme{Response}
+\begin{tikzpicture}[trBase]
+
+  \trStage{0.35}{2.55}{1}{状态读取}{位置及速度、归属及连接}
+  \trStage[core]{3.55}{2.55}{2}{条件编码}{历史上下文、动作位置及时段}
+  \trStage[core]{6.75}{2.55}{3}{关系传播}{物理连接、邻近及动作作用}
+  \trStage[core]{9.95}{2.55}{4}{连续演化}{速度及加速度、分步积分}
+  \trStage{13.15}{2.55}{5}{未来状态}{预测几何及运动}
+
+  \trStep{2.90}{3.55}
+  \trStep{6.10}{6.75}
+  \trStep{9.30}{9.95}
+  \trStep{12.50}{13.15}
+
+  % feedback routed in the gap between the stage band and the sketches
+  \draw[trFeedback] (14.42,4.30) -- (14.42,3.66) -- (1.62,3.66) -- (1.62,4.30);
+  \node[trNote,fill=white,inner xsep=4pt,inner ysep=1pt] at (8.02,3.66)
+    {执行后新观测修正状态与预测起点};
+
+  % ---- sketch strip: drawing above, centred title below ----
+  % (a) three relation types carry different meanings and parameters  [0.95 .. 4.95]
+  \draw[trMotion] (1.05,2.00) -- (2.05,2.98) -- (3.05,2.00);
+  \draw[trPossible] (3.05,2.00) -- (4.25,2.00);
+  \draw[trAction] (4.25,2.00) -- (5.00,2.98);
+  \foreach \xx/\yy in {1.05/2.00,2.05/2.98,3.05/2.00,4.25/2.00}{\fill (\xx,\yy) circle (0.06);}
+  \draw[trFrame,draw=trResponseAccent,fill=trResponseFill] (4.89,2.88) rectangle (5.11,3.10);
+  \node[trLabel] at (2.05,1.70) {材料连接};
+  \node[trLabel] at (3.65,1.70) {空间邻近};
+  \node[trLabel] at (4.78,3.34) {动作作用};
+  \node[text width=4.00cm,align=center] at (2.95,1.02)
+    {{\captionsetup[subfigure]{font=figsubroute,skip=0pt}
+      \subcaption{区分关系类型}\label{subfig:route-response-relations}}};
+
+  % (b) the prediction starts exactly at t0   [8.95 .. 13.45]
+  \draw[trMotion] (9.05,2.25) -- (11.15,2.25);
+  \draw[trFeedback,draw=trResponseAccent] (11.15,2.25) -- (13.45,2.25);
+  \draw[trFrame] (11.15,1.88) -- (11.15,2.65);
+  \foreach \xx in {9.30,9.95,10.60}{\fill (\xx,2.25) circle (0.06);}
+  \node[trLabel] at (11.15,2.84) {$t_0$};
+  \node[trLabel] at (10.00,1.66) {历史输入};
+  \node[trLabel] at (12.40,1.66) {条件预测};
+  \node[text width=4.50cm,align=center] at (11.20,1.02)
+    {{\captionsetup[subfigure]{font=figsubroute,skip=0pt}
+      \subcaption{预测信息边界}\label{subfig:route-response-boundary}}};
+\end{tikzpicture}
+\endgroup

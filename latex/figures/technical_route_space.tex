@@ -1,0 +1,62 @@
+% Association graph and physical connections have distinct meanings.
+% Four numbered stages on a shared flow line, then an unruled sketch strip.
+% Each sketch carries its lettered title BELOW it, centred on the sketch's own
+% horizontal extent.
+\begingroup
+\input{figures/technical_route_styles.tex}
+\trTheme{Space}
+\begin{tikzpicture}[trBase]
+
+  \trStage{0.30}{2.95}{1}{连续状态}{轨迹、可信程度\\几何及外观}
+  \trStage[core]{3.95}{2.95}{2}{多证据关联}{相对运动、可见性及观测联系}
+  \trStage[core]{7.60}{2.95}{3}{软归属推断}{部件归属、对象身份及待定项}
+  \trStage[core]{11.25}{2.95}{4}{共享约束}{限定信息传递、更新几何及运动}
+
+  \trStep{3.25}{3.95}
+  \trStep{6.90}{7.60}
+  \trStep{10.55}{11.25}
+
+  % membership gates the shared constraints, which in turn correct the state
+  \draw[trFeedback] (12.72,4.30) -- (12.72,3.66) -- (1.77,3.66) -- (1.77,4.30);
+  \node[trTag] at (7.25,3.66) {归属约束反向校正连续状态};
+
+  % ---- sketch strip: drawing above, centred title below ----
+  % (a) two tracks: persistent relative motion separates A from B   [0.85 .. 4.15]
+  \draw[trObjectA,line width=1.0pt] plot[smooth] coordinates
+    {(1.15,1.92) (2.05,2.50) (2.95,2.32) (4.05,2.75)};
+  \draw[trObjectB,line width=1.0pt,dashed] plot[smooth] coordinates
+    {(1.15,2.45) (2.05,3.03) (2.95,2.85) (4.05,3.28)};
+  \foreach \xx/\yy in {1.15/1.92,2.05/2.50,4.05/2.75}{\draw[trObjectA,fill=white] (\xx,\yy) circle (0.055);}
+  \foreach \xx/\yy in {1.15/2.45,2.05/3.03,4.05/3.28}{\draw[trObjectB,fill=white] (\xx-0.05,\yy-0.05) rectangle ++(0.10,0.10);}
+  \node[trLabel,anchor=east] at (1.03,1.86) {$A$};
+  \node[trLabel,anchor=east] at (1.03,2.42) {$B$};
+  \node[text width=3.30cm,align=center] at (2.55,1.33)
+    {{\captionsetup[subfigure]{font=figsubroute,skip=0pt}
+      \subcaption{跨时刻相对运动}\label{subfig:route-space-motion}}};
+
+  % (b) soft membership with an explicit undecided unit   [6.00 .. 10.10]
+  \draw[trPossible,draw=trTimeAccent,fill=trTimeFill] (6.20,1.82) rectangle (7.45,3.24);
+  \draw[trPossible,draw=trTopologyAccent,fill=trTopologyFill] (8.65,1.82) rectangle (9.90,3.24);
+  \foreach \xx/\yy in {6.45/2.15,7.00/2.95,6.68/2.55}{\draw[trObjectA,fill=white] (\xx,\yy) circle (0.068);}
+  \foreach \xx/\yy in {8.92/2.15,9.47/2.95,9.20/2.55}{\draw[trObjectB,fill=white] (\xx-0.058,\yy-0.058) rectangle ++(0.116,0.116);}
+  \draw[trFrame,fill=white] (8.00,2.44) -- (8.22,2.66) -- (8.00,2.88) -- (7.78,2.66) -- cycle;
+  \node[trLabel,anchor=west] at (8.34,2.66) {待定};
+  \node[trLabel] at (6.82,1.98) {$A$};
+  \node[trLabel] at (9.28,1.98) {$B$};
+  \node[text width=4.10cm,align=center] at (8.05,1.33)
+    {{\captionsetup[subfigure]{font=figsubroute,skip=0pt}
+      \subcaption{部件软归属}\label{subfig:route-space-membership}}};
+
+  % (c) no information shared across the inferred boundary   [11.30 .. 15.30]
+  \draw[trObjectA,fill=trTimeFill] (11.40,2.00) -- (12.25,3.22) -- (13.10,2.00) -- cycle;
+  \draw[trObjectB,fill=trTopologyFill] (13.60,2.00) -- (14.45,3.22) -- (15.30,2.00) -- cycle;
+  \foreach \xx/\yy in {11.40/2.00,12.25/3.22,13.10/2.00}{\draw[trObjectA,fill=white] (\xx,\yy) circle (0.055);}
+  \foreach \xx/\yy in {13.60/2.00,14.45/3.22,15.30/2.00}{\draw[trObjectB,fill=white] (\xx-0.05,\yy-0.05) rectangle ++(0.10,0.10);}
+  \draw[trFrame] (13.23,1.85) -- (13.47,2.35) (13.23,2.35) -- (13.47,1.85);
+  \node[trLabel] at (12.25,1.82) {$A$};
+  \node[trLabel] at (14.45,1.82) {$B$};
+  \node[text width=4.00cm,align=center] at (13.35,1.33)
+    {{\captionsetup[subfigure]{font=figsubroute,skip=0pt}
+      \subcaption{信息共享范围}\label{subfig:route-space-sharing}}};
+\end{tikzpicture}
+\endgroup

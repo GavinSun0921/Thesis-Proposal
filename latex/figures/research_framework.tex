@@ -1,98 +1,148 @@
 % !TeX root = ../main.tex
-% 新稿总体框架：四个科学问题逐一对应四项内容，前三项递进完善场景状态并支撑第四项。
+% Research framework, Section 2.2, print revision dated 2026-10-27.
+% Black text, explicit module borders, and line styles preserve hierarchy in grayscale.
+% Three representation capabilities contribute to ONE common state S(t).
+% Work 4 learns action-conditioned evolution; real operation observations update S(t).
+% Scientific questions are not repeated here; their full wording is in Section 2.3.
+% All curves, surfaces and connectivity changes are editable vector concept sketches.
 \begingroup
-\definecolor{frameworkBlue}{HTML}{315D7A}
-\definecolor{frameworkTeal}{HTML}{38746D}
-\definecolor{frameworkOchre}{HTML}{8B693A}
-\definecolor{frameworkViolet}{HTML}{685C82}
+\linespread{1}\selectfont
+\definecolor{rfTint}{HTML}{EDF1F4}
 \begin{tikzpicture}[
-  x=1mm,y=1mm,
-  font=\songti\fontsize{9.5pt}{12.5pt}\selectfont,
-  text=black!90,
-  every node/.style={align=center,outer sep=0.3mm},
-  framework goal/.style={
-    draw=frameworkBlue!80,line width=0.7pt,rounded corners=1.4mm,
-    fill=frameworkBlue!5,text width=143mm,minimum width=152mm,
-    minimum height=18mm,inner xsep=3mm,inner ysep=2mm,anchor=north},
-  framework box/.style={
-    line width=0.65pt,rounded corners=1.2mm,
-    text width=31mm,minimum width=34mm,minimum height=28mm,
-    inner xsep=1.3mm,inner ysep=2mm,anchor=north},
-  framework link/.style={draw=black!55,line width=0.65pt,
-    -{Latex[length=1.8mm,width=1.2mm]}},
-  framework branch/.style={draw=frameworkBlue!60,line width=0.65pt}
+  x=1cm,y=1cm,line cap=round,line join=round,text=black,
+  font=\songti\fontsize{10pt}{13pt}\selectfont,
+  every node/.style={align=center,outer sep=0pt},
+  rfTitle/.style={font=\heiti\fontsize{10.5pt}{13pt}\selectfont},
+  rfLabel/.style={font=\heiti\fontsize{9.5pt}{12pt}\selectfont},
+  rfNote/.style={font=\fontsize{9.2pt}{12pt}\selectfont},
+  rfProblem/.style={font=\fontsize{9.7pt}{12.5pt}\selectfont},
+  rfFrame/.style={draw=black,line width=0.7pt},
+  rfArrow/.style={draw=black,line width=0.9pt,
+    -{Latex[length=1.9mm,width=1.25mm]}},
+  rfMesh/.style={draw=black,line width=0.6pt},
+  rfFeedback/.style={draw=black,line width=0.8pt,dash pattern=on 3pt off 2pt,
+    -{Latex[length=1.8mm,width=1.2mm]}}
 ]
-  \node[framework goal] (goal) at (76,0) {
-    {\heiti\bfseries 动态世界模型的时空一致表征与交互建模}\\[1mm]
-    形成可持续更新的场景状态，支撑动作后果预测和具身交互
-  };
+  \path[use as bounding box] (0,2.20) rectangle (16,12.92);
 
-  \node[framework box,draw=frameworkBlue!70,fill=frameworkBlue!3]
-    (question1) at (17,-27) {
-    {\color{frameworkBlue}科学问题一}\\[1.5mm]
-    离散观测如何有效\\约束连续场景运动？
-  };
-  \node[framework box,draw=frameworkTeal!70,fill=frameworkTeal!3]
-    (question2) at (56.3,-27) {
-    {\color{frameworkTeal}科学问题二}\\[1.5mm]
-    连续运动如何支持\\稳定的空间组织？
-  };
-  \node[framework box,draw=frameworkOchre!70,fill=frameworkOchre!3]
-    (question3) at (95.7,-27) {
-    {\color{frameworkOchre}科学问题三}\\[1.5mm]
-    真实结构变化后\\哪些历史联系能够\\延续或需要调整？
-  };
-  \node[framework box,draw=frameworkViolet!70,fill=frameworkViolet!3]
-    (question4) at (135,-27) {
-    {\color{frameworkViolet}科学问题四}\\[1.5mm]
-    哪些场景信息能够\\有效约束动作后果？
-  };
+  % Observation is the input; the caption carries the overall research title.
+  \draw[rfFrame] (5.20,11.67) rectangle (10.80,12.72);
+  \node[rfTitle] at (8,12.39) {时序视觉观测};
+  \node[rfNote] at (8,11.97) {离散采样\enspace ·\enspace 局部可见};
+  \draw[rfArrow] (8,11.62) -- (8,11.17);
 
-  \node[framework box,draw=frameworkBlue!80,fill=frameworkBlue!6,
-    minimum height=31mm] (content1) at (17,-63) {
-    {\color{frameworkBlue}研究内容一}\\[1.5mm]
-    {\heiti\bfseries 连续时间\\动态场景表征}\\[1.5mm]
-    连续可查询的场景状态
-  };
-  \node[framework box,draw=frameworkTeal!80,fill=frameworkTeal!6,
-    minimum height=31mm] (content2) at (56.3,-63) {
-    {\color{frameworkTeal}研究内容二}\\[1.5mm]
-    {\heiti\bfseries 连续时间动态场景的\\结构化空间表征}\\[1.5mm]
-    空间归属稳定的状态
-  };
-  \node[framework box,draw=frameworkOchre!80,fill=frameworkOchre!6,
-    minimum height=31mm] (content3) at (95.7,-63) {
-    {\color{frameworkOchre}研究内容三}\\[1.5mm]
-    {\heiti\bfseries 拓扑变化下的\\动态表面表征}\\[1.5mm]
-    适应真实结构变化的状态
-  };
-  \node[framework box,draw=frameworkViolet!80,fill=frameworkViolet!6,
-    minimum height=31mm] (content4) at (135,-63) {
-    {\color{frameworkViolet}研究内容四}\\[1.5mm]
-    {\heiti\bfseries 动态表征驱动的\\交互建模}\\[1.5mm]
-    动作条件演化预测
-  };
+  % One construction area encloses all three capabilities and their shared state.
+  \draw[rfFrame,line width=0.85pt] (0.45,6.10) rectangle (15.55,11.12);
+  \path[fill=rfTint] (0.46,10.57) rectangle (15.54,11.11);
+  \draw[rfFrame] (0.45,10.57) -- (15.55,10.57);
+  \node[rfTitle] at (8,10.84) {场景状态构建};
 
-  \draw[framework branch] (goal.south) -- (76,-22);
-  \draw[framework branch] (17,-22) -- (135,-22);
-  \foreach \i/\x in {1/17,2/56.3,3/95.7,4/135} {
-    \draw[framework link] (\x,-22) -- (question\i.north);
-    \draw[framework link] (question\i.south) -- (content\i.north);
+  % Each module encloses its title and visual example only.
+  \foreach \xl/\xr/\xc/\rfWork in {
+    0.75/5.10/2.925/研究一,
+    5.825/10.175/8.000/研究二,
+    10.90/15.25/13.075/研究三}{%
+    \path[fill=rfTint] (\xl,8.95) rectangle (\xr,10.42);
+    \draw[rfFrame] (\xl,7.65) rectangle (\xr,10.42);
+    \draw[rfFrame,line width=0.55pt]
+      (\xl,8.95) -- (\xr,8.95);
+    \node[rfLabel] at (\xc,10.17) {\rfWork};
   }
-  \draw[framework link] (content1.east) -- (content2.west);
-  \draw[framework link] (content2.east) -- (content3.west);
+  \node[rfTitle] at (2.925,9.72) {连续时间};
+  \node[rfTitle] at (2.925,9.27) {场景状态构建};
+  \node[rfTitle] at (8.000,9.72) {连续运动引导的};
+  \node[rfTitle] at (8.000,9.27) {空间结构表征};
+  \node[rfTitle] at (13.075,9.72) {拓扑自适应的};
+  \node[rfTitle] at (13.075,9.27) {动态场景表征};
+  \draw[rfArrow] (5.15,9.47) -- (5.77,9.47);
+  \draw[rfArrow] (10.23,9.47) -- (10.85,9.47);
 
-  \node[draw=frameworkBlue!60,fill=frameworkBlue!3,
-    rounded corners=1.2mm,line width=0.65pt,
-    text width=104mm,minimum width=112mm,minimum height=11mm,
-    inner sep=1.5mm,anchor=north] (state) at (56.3,-105) {
-    {\heiti 动态场景状态：几何、运动、空间归属及局部结构}
-  };
-  \foreach \i/\x in {1/17,2/56.3,3/95.7} {
-    \draw[framework branch] (content\i.south) -- (\x,-100);
+  % Time: solid trajectory and discrete sample markers remain distinct in print.
+  \draw[black,line width=0.5pt,-{Latex[length=1.2mm]}]
+    (1.05,8.07) -- (4.82,8.07);
+  \draw[black,line width=1.05pt]
+    plot[smooth,tension=0.75] coordinates {
+      (1.25,8.27) (1.95,8.67) (2.80,8.42) (3.80,8.24) (4.65,8.62)};
+  \foreach \xx/\yy/\idx in {1.25/8.27/1,2.80/8.42/2,4.65/8.62/3}{%
+    \draw[black,line width=0.45pt,densely dashed] (\xx,8.07) -- (\xx,\yy);
+    \filldraw[fill=black,draw=white,line width=0.5pt]
+      (\xx,\yy) circle[radius=0.05];
+    \node[font=\fontsize{8.8pt}{11pt}\selectfont] at (\xx,7.86) {$t_{\idx}$};
   }
-  \draw[framework branch] (17,-100) -- (95.7,-100);
-  \draw[framework link] (56.3,-100) -- (state.north);
-  \draw[framework link] (state.east) -- (135,-110.5) -- (content4.south);
+
+  % Space: different shapes and mesh structures identify distinct spatial units.
+  \begin{scope}[shift={(6.15,7.95)}]
+    \path[fill=black!6,rfMesh] (0,0) -- (0.92,0) -- (0.92,0.64) -- (0,0.64) -- cycle;
+    \path[fill=white,rfMesh] (0,0.64) -- (0.28,0.84) -- (1.20,0.84) -- (0.92,0.64) -- cycle;
+    \path[fill=black!12,rfMesh] (0.92,0) -- (1.20,0.20) -- (1.20,0.84) -- (0.92,0.64) -- cycle;
+    \draw[black,line width=0.4pt] (0,0) -- (0.92,0.64) (0,0.64) -- (0.92,0);
+    \foreach \xx/\yy in {0/0,0.92/0,0/0.64,0.92/0.64,0.28/0.84,1.20/0.84,1.20/0.20}{%
+      \fill[black] (\xx,\yy) circle[radius=0.027];
+    }
+    \path[draw=black,line width=0.7pt,fill=white]
+      (2.00,0.10) .. controls (1.66,0.36) and (1.85,0.84) .. (2.30,0.84)
+      .. controls (2.83,0.87) and (3.22,0.50) .. (2.98,0.18)
+      .. controls (2.75,-0.04) and (2.27,-0.04) .. (2.00,0.10);
+    \draw[black,line width=0.4pt]
+      (2.00,0.10) -- (2.30,0.84) -- (2.98,0.18) -- (2.00,0.10)
+      (1.85,0.45) -- (3.06,0.47) (2.30,0.84) -- (2.50,0.02);
+    \foreach \xx/\yy in {2.00/0.10,2.30/0.84,2.98/0.18,1.85/0.45,3.06/0.47,2.50/0.02}{%
+      \fill[black] (\xx,\yy) circle[radius=0.027];
+    }
+  \end{scope}
+
+  % Topology: thick new boundary segments are visible without color coding.
+  \path[draw=black,line width=0.6pt,fill=black!4]
+    (11.15,8.07) -- (12.10,7.87) -- (12.30,8.67) -- (11.35,8.87) -- cycle;
+  \draw[black,line width=0.4pt]
+    (11.15,8.07) -- (12.30,8.67) (11.35,8.87) -- (12.10,7.87);
+  \draw[rfArrow,line width=0.6pt,-{Latex[length=1.2mm,width=0.9mm]}]
+    (12.42,8.37) -- (12.78,8.37);
+  \path[draw=black,line width=0.6pt,fill=black!4]
+    (12.92,8.11) -- (13.50,7.97) -- (13.69,8.74) -- (13.11,8.88) -- cycle;
+  \path[draw=black,line width=0.6pt,fill=black!4]
+    (14.03,7.87) -- (14.64,8.03) -- (14.83,8.79) -- (14.22,8.63) -- cycle;
+  \draw[black,line width=0.4pt]
+    (12.92,8.11) -- (13.69,8.74) (14.03,7.87) -- (14.83,8.79);
+  \draw[black,line width=1.65pt]
+    (13.50,7.97) -- (13.69,8.74) (14.03,7.87) -- (14.22,8.63);
+
+  % The heavier shared-state border makes the common output explicit in grayscale.
+  \foreach \xx in {2.925,8.000,13.075}{%
+    \draw[rfArrow] (\xx,7.60) -- (\xx,7.30);
+  }
+  \path[draw=black,line width=1.1pt,fill=rfTint]
+    (0.80,6.25) rectangle (15.20,7.25);
+  \node[rfTitle] at (8,6.97) {共同场景状态\enspace $S(t)$};
+  \node[rfNote] at (8,6.52)
+    {几何\enspace ·\enspace 外观\enspace ·\enspace 运动\enspace ·\enspace 归属\enspace ·\enspace 拓扑};
+  \draw[rfArrow] (8,6.20) -- (8,5.85);
+
+  % Work 4 is a single titled card; the scientific questions are left to Section 2.3.
+  \path[fill=rfTint] (5.40,4.50) rectangle (10.60,5.80);
+  \draw[rfFrame,line width=0.85pt] (5.40,4.50) rectangle (10.60,5.80);
+  \node[rfLabel] at (8,5.55) {研究四};
+  \node[rfTitle] at (8,5.20) {连续状态驱动的};
+  \node[rfTitle] at (8,4.85) {动作响应建模};
+
+  \draw[rfFrame] (0.80,4.50) rectangle (4.40,5.80);
+  \node[rfTitle] at (2.60,5.45) {给定动作};
+  \node at (2.60,4.90) {$\mathbf a_{t:t+\Delta t}$};
+  \draw[rfArrow] (4.45,5.15) -- (5.35,5.15);
+  \draw[rfFrame,dash pattern=on 2pt off 1.4pt]
+    (11.60,4.50) rectangle (15.20,5.80);
+  \node[rfTitle] at (13.40,5.45) {预测未来状态};
+  \node at (13.40,4.90) {$\widehat S(t+\Delta t)$};
+  \draw[rfArrow] (10.65,5.15) -- (11.55,5.15);
+
+  % Real validation observations provide feedback; predicted states are not ground truth.
+  \draw[rfFrame] (4.50,2.65) rectangle (11.50,3.95);
+  \node[rfTitle] at (8,3.57) {代表性具身操作验证};
+  \node[rfNote] at (8,3.05)
+    {表征质量\enspace ·\enspace 预测精度\enspace ·\enspace 操作效果};
+  \draw[rfArrow] (13.40,4.45) -- (13.40,3.30) -- (11.55,3.30);
+  \draw[rfFeedback] (4.45,3.30) -- (0.20,3.30) -- (0.20,6.75) -- (0.75,6.75);
+  \node[rfFrame,fill=white,inner xsep=5pt,inner ysep=4pt,
+    font=\fontsize{9.2pt}{12pt}\selectfont] at (2.65,3.30) {新观测更新};
 \end{tikzpicture}
 \endgroup

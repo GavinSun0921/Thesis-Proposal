@@ -1,0 +1,69 @@
+% !TeX root = ../main.tex
+% Original qualitative cutting example. Hatched caps are physical cut surfaces;
+% the crossed dashed relation is an invalid old shared constraint, not a method
+% result. Stable surface histories and newborn boundary histories differ.
+\begingroup
+\input{figures/research_problem_styles.tex}
+\newcommand{\rpSplitBody}{%
+  % Two pieces face the opening so both newborn cut surfaces can be seen.
+  \path[draw=black,fill=white,line width=0.65pt]
+    (0,1.10) -- (0.40,1.45) -- (1.50,1.45) -- (1.10,1.10) -- cycle;
+  \path[draw=black,fill=black!5,line width=0.65pt] (0,0) rectangle (1.10,1.10);
+  \rpHatchFace{(1.10,0) -- (1.50,0.35) -- (1.50,1.45) -- (1.10,1.10) -- cycle}
+  \path[draw=black,fill=white,line width=0.65pt]
+    (3.00,1.10) -- (2.60,1.45) -- (3.70,1.45) -- (4.10,1.10) -- cycle;
+  \path[draw=black,fill=black!5,line width=0.65pt] (3.00,0) rectangle (4.10,1.10);
+  \rpHatchFace{(3.00,0) -- (2.60,0.35) -- (2.60,1.45) -- (3.00,1.10) -- cycle}
+  \fill[black] (0.55,0.55) circle[radius=0.055];
+  \fill[black] (3.55,0.55) circle[radius=0.055];
+}
+\begin{tikzpicture}[rpBase]
+  \path[use as bounding box] (0,0) rectangle (16,5.35);
+  \rpPanel{0.10}{1.05}{5.00}{5.20}{结构事件前}
+  \rpPanel{5.55}{1.05}{10.45}{5.20}{结构事件后}
+  \rpPanel{11.00}{1.05}{15.90}{5.20}{预期表征能力}
+
+  \begin{scope}[shift={(0.90,2.35)}]
+    \path[draw=black,fill=white,line width=0.65pt]
+      (0,1.10) -- (0.40,1.45) -- (3.10,1.45) -- (2.70,1.10) -- cycle;
+    \path[draw=black,fill=black!5,line width=0.65pt] (0,0) rectangle (2.70,1.10);
+    \path[draw=black,fill=black!10,line width=0.65pt]
+      (2.70,0) -- (3.10,0.35) -- (3.10,1.45) -- (2.70,1.10) -- cycle;
+    \draw[rpHistory] (1.35,0) -- (1.35,1.10) -- (1.75,1.45);
+    \fill[black] (0.55,0.55) circle[radius=0.055];
+    \fill[black] (2.15,0.55) circle[radius=0.055];
+  \end{scope}
+  \draw[rpFrame] (1.35,4.03) rectangle (3.75,4.55);
+  \node[rpNote] at (2.55,4.29) {局部切割};
+  \draw[draw=black,line width=0.55pt] (2.55,4.03) -- (2.25,3.35);
+  \draw[rpFrame] (0.40,1.30) rectangle (4.70,1.85);
+  \node[rpNote] at (2.55,1.575) {原有表面和连接};
+  \draw[rpArrow] (5.07,3.05) -- (5.48,3.05);
+
+  \begin{scope}[shift={(5.95,2.35)}]
+    \rpSplitBody
+    \draw[rpHistory,line width=0.85pt] (1.52,0.65) -- (2.58,0.65);
+    \draw[black,line width=1.0pt]
+      (1.90,0.50) -- (2.20,0.80) (1.90,0.80) -- (2.20,0.50);
+  \end{scope}
+  \draw[rpFrame] (6.80,4.03) rectangle (9.20,4.55);
+  \node[rpNote] at (8.00,4.29) {物理新生表面};
+  \draw[draw=black,line width=0.55pt]
+    (7.65,4.03) -- (7.25,3.30) (8.35,4.03) -- (8.75,3.30);
+  \draw[rpFrame] (5.85,1.30) rectangle (10.15,1.85);
+  \node[rpNote] at (8.00,1.575) {旧共享约束可能失效};
+  \draw[rpArrow] (10.52,3.05) -- (10.93,3.05);
+
+  \begin{scope}[shift={(11.40,2.35)}]
+    \rpSplitBody
+    \draw[rpHistory] (0.15,0.25) .. controls (0.20,0.45) and (0.35,0.55) .. (0.55,0.55);
+    \draw[rpHistory] (3.15,0.25) .. controls (3.20,0.45) and (3.35,0.55) .. (3.55,0.55);
+  \end{scope}
+  \draw[rpFrame] (11.30,4.03) rectangle (15.60,4.55);
+  \node[rpNote] at (13.45,4.29) {稳定区域延续有效历史};
+  \draw[rpFrame] (11.30,1.30) rectangle (15.60,1.85);
+  \node[rpNote] at (13.45,1.575) {新生边界从形成时刻记录};
+
+  \rpFooter{研究关注：如何表达局部结构改变并延续可信历史？}
+\end{tikzpicture}
+\endgroup

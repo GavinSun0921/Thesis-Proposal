@@ -1,0 +1,49 @@
+% Physical connection edits and surface birth are not visibility changes.
+% Four numbered stages on a shared flow line, then an unruled sketch strip.
+% Each sketch carries its lettered title BELOW it, centred on the sketch's own
+% horizontal extent.
+\begingroup
+\input{figures/technical_route_styles.tex}
+\trTheme{Topology}
+\begin{tikzpicture}[trBase]
+
+  \trStage{0.30}{2.95}{1}{状态及事件信息}{连续状态、变化区域或时间提示}
+  \trStage[core]{3.95}{2.95}{2}{局部关系判断}{物理连接有效性、变化区及稳定区}
+  \trStage[core]{7.60}{2.95}{3}{表面连接更新}{局部表面代理、解除失效约束}
+  \trStage[core]{11.25}{2.95}{4}{历史有效性维护}{延续材料运动、建立新边界历史}
+
+  \trStep{3.25}{3.95}
+  \trStep{6.90}{7.60}
+  \trStep{10.55}{11.25}
+
+  \draw[trFeedback] (12.72,4.30) -- (12.72,3.66) -- (5.42,3.66) -- (5.42,4.30);
+  \node[trTag] at (9.05,3.66) {新观测修正局部结构};
+
+  % ---- sketch strip: drawing above, centred title below ----
+  % (a) one relation is released; the new physical boundary is marked  [0.75 .. 6.20]
+  \draw[trMotion] (0.95,1.95) -- (1.90,3.05) -- (2.85,1.95) -- cycle;
+  \draw[trMotion] (4.25,1.95) -- (5.20,3.05) -- (6.15,1.95) -- cycle;
+  \draw[trPossible,draw=trTopologyAccent,line width=0.95pt] (2.85,1.95) -- (4.25,1.95);
+  \draw[trSketch] (3.38,1.72) -- (3.72,2.18) (3.38,2.18) -- (3.72,1.72);
+  \foreach \xx/\yy in {0.95/1.95,1.90/3.05,2.85/1.95,4.25/1.95,5.20/3.05,6.15/1.95}{
+    \fill[trTimeAccent] (\xx,\yy) circle (0.055);
+  }
+  \node[trLabel,anchor=west] at (1.60,1.52) {交叉标记为已失效的共享约束};
+  \node[text width=5.45cm,align=center] at (3.55,1.02)
+    {{\captionsetup[subfigure]{font=figsubroute,skip=0pt}
+      \subcaption{连接有效性}\label{subfig:route-topology-links}}};
+
+  % (b) material motion continues; surface history starts at birth  [7.30 .. 13.60]
+  \node[trLabel,anchor=east] at (7.72,2.55) {材料运动};
+  \node[trLabel,anchor=east] at (7.72,1.98) {表面历史};
+  \path[fill=trTopologyFill] (10.35,1.72) rectangle (11.10,2.82);
+  \draw[trArrow,draw=trTimeAccent,line width=0.8pt] (7.80,2.55) -- (13.55,2.55);
+  \draw[trPossible,draw=trTopologyAccent,line width=0.95pt] (10.35,1.98) -- (11.10,1.98);
+  \draw[trArrow,draw=trTopologyAccent,line width=0.8pt] (11.10,1.98) -- (13.55,1.98);
+  \draw[trPossible] (10.35,1.72) -- (10.35,2.82) (11.10,1.72) -- (11.10,2.82);
+  \node[trLabel] at (10.72,1.52) {形成区间};
+  \node[text width=6.30cm,align=center] at (10.45,1.02)
+    {{\captionsetup[subfigure]{font=figsubroute,skip=0pt}
+      \subcaption{两类历史分别维护}\label{subfig:route-topology-history}}};
+\end{tikzpicture}
+\endgroup

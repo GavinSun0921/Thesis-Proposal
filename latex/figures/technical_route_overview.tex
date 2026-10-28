@@ -1,0 +1,94 @@
+% Overview of the shared-state architecture; no experimental outputs.
+% Unlike the detailed routes, the three reconstruction studies are not drawn
+% as an ordered pipeline: each writes a different component of the shared state.
+% The visual language follows Figures 11--14: numbered markers, top rules,
+% tinted mechanism cards, solid information flow and dashed observation feedback.
+\begingroup
+\input{figures/technical_route_styles.tex}
+\trTheme{Time}
+\begin{tikzpicture}[trBase]
+
+  % ---------- observation bus ----------
+  \path[fill=black!3] (0.30,8.20) rectangle (15.70,9.10);
+  \draw[black,line width=0.75pt] (0.30,9.10) -- (15.70,9.10);
+  \node[trMarker] at (0.88,8.65) {1};
+  \node[trTitle,anchor=west] at (1.30,8.65) {历史观测};
+  \node[trNote,anchor=east] at (15.25,8.65)
+    {截至 $t_0$ 的图像及几何线索};
+
+  % ---------- three parallel studies ----------
+  % All cards share the same vertical grid; no horizontal arrows imply an
+  % ordering among the three studies.
+  \path[fill=trTimeFill]      (0.30,5.90) rectangle (5.10,7.70);
+  \path[fill=trSpaceFill]     (5.60,5.90) rectangle (10.40,7.70);
+  \path[fill=trTopologyFill] (10.90,5.90) rectangle (15.70,7.70);
+  \draw[black,line width=0.75pt] (0.30,7.70) -- (5.10,7.70);
+  \draw[black,line width=0.75pt] (5.60,7.70) -- (10.40,7.70);
+  \draw[black,line width=0.75pt] (10.90,7.70) -- (15.70,7.70);
+
+  \foreach \xx in {2.70,8.00,13.30}{
+    \draw[trArrow] (\xx,8.14) -- (\xx,7.76);
+    \draw[trArrow] (\xx,5.84) -- (\xx,5.56);
+  }
+
+  \node[trMarkerCore] at (2.70,7.20) {2};
+  \node[trTitle] at (2.70,6.72) {连续时间状态};
+  \node[trNote,text width=4.20cm] at (2.70,6.20)
+    {连续轨迹及可信程度};
+
+  \node[trMarkerCore] at (8.00,7.20) {3};
+  \node[trTitle] at (8.00,6.72) {空间结构表征};
+  \node[trNote,text width=4.20cm] at (8.00,6.20)
+    {对象或部件归属及共享范围};
+
+  \node[trMarkerCore] at (13.30,7.20) {4};
+  \node[trTitle] at (13.30,6.72) {拓扑适应表征};
+  \node[trNote,text width=4.20cm] at (13.30,6.20)
+    {有效连接及表面历史};
+
+  % ---------- shared state hub ----------
+  \draw[black,line width=0.9pt] (0.30,4.35) rectangle (15.70,5.50);
+  \node[trTitle] at (8.00,5.15) {共同场景状态 $S(t)$};
+  \node[trNote] at (2.23,4.60) {几何及外观};
+  \node[trNote] at (6.08,4.60) {连续运动};
+  \node[trNote] at (9.93,4.60) {空间归属};
+  \node[trNote] at (13.78,4.60) {有效连接及表面历史};
+
+  % ---------- action-conditioned branch ----------
+  \draw[trArrow] (8.00,4.29) -- (8.00,3.11);
+  \node[trTag] at (8.00,3.70) {读取 $t_0$ 状态};
+
+  % Action input, response model and execution/evaluation share one row and
+  % one arrow line. Their text stays inside separate fixed-width cards.
+  \path[fill=black!3]       (0.30,1.00) rectangle (3.20,3.05);
+  \path[fill=trResponseFill] (3.75,1.00) rectangle (12.25,3.05);
+  \path[fill=black!3]       (12.80,1.00) rectangle (15.70,3.05);
+  \draw[black,line width=0.75pt] (0.30,3.05) -- (3.20,3.05);
+  \draw[black,line width=0.75pt] (3.75,3.05) -- (12.25,3.05);
+  \draw[black,line width=0.75pt] (12.80,3.05) -- (15.70,3.05);
+  \draw[trArrow] (3.26,2.05) -- (3.69,2.05);
+  \draw[trArrow] (12.31,2.05) -- (12.74,2.05);
+
+  \node[trTitle] at (1.75,2.45) {给定动作};
+  \node[trNote,text width=2.55cm] at (1.75,1.72)
+    {作用位置、方向\\及作用时段};
+
+  \node[trMarkerCore] at (4.30,2.55) {5};
+  \node[trTitle,anchor=west] at (4.72,2.55) {动作条件演化};
+  \node[trNote] at (8.00,1.85)
+    {历史上下文、关系传播及连续动力学};
+  \node[trNote] at (8.00,1.38)
+    {输出未来几何、位移及速度};
+
+  \node[trTitle] at (14.25,2.45) {执行与评价};
+  \node[trNote,text width=2.55cm] at (14.25,1.72)
+    {预测及动作评价\\新观测反馈};
+
+  % Only observations obtained after execution are written back.
+  \draw[trFeedback] (14.25,3.11) -- (14.25,4.29);
+  \node[trTag] at (14.25,3.70) {执行后新观测};
+
+  \node[trNote] at (8.00,0.55)
+    {预测仅使用截至 $t_0$ 的历史；未来观测用于评价，实际执行后的新观测再写回状态};
+\end{tikzpicture}
+\endgroup

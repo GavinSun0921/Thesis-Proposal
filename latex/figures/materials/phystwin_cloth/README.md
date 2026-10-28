@@ -15,13 +15,13 @@
 | --- | --- | --- |
 | `observation_t1.jpg`、`observation_t2.jpg` | Figure 3，Observation 行，第 1、3 列 | 已观测的建模区间，图中标为 $t_1$ 和 $t_2=t$ |
 | `state_t1_view2.jpg`、`state_t2_view2.jpg` | Figure 9，Viewpoint 2 行，第 1、3 列 | 同一模型在前述时刻的另一视角渲染，表示历史和当前三维状态 |
-| `state_t2_view3.jpg` | Figure 9，Viewpoint 3 行，第 3 列 | 当前状态的又一视角，不是更晚时刻 |
+| `state_t2_view3.jpg` | Figure 9，Viewpoint 3 行，第 3 列 | 当前状态的又一视角，不是更晚时刻；本次图 1 版面未采用，保留备用 |
 | `prediction_future.jpg` | Figure 3，PhysTwin (Ours) 行，第 4 列 | 论文明确标注的未观测未来预测 |
 | `execution_future.jpg` | Figure 3，Observation 行，第 4 列 | 与预测同列、同一未来时刻的真实执行参考，不作为历史输入 |
 
 论文第 4.1 节说明 RGB-D 视频按 7:3 划分建模和测试区间，仅前段用于构建；交互由控制点位置给定。图中两张 RGB 是历史视觉证据的代表帧，**不表示 PhysTwin 仅以两帧单目 RGB 为输入**。$t_1,t_2$ 及 $t+\Delta t$ 只表达顺序和预测边界，不赋予原论文未提供的秒数。给定动作采用符号 $\mathbf a$ 表示，未伪造动作测量或控制轨迹。
 
-中央使用真实三维模型的多视角渲染，并非本仓库另行恢复的点云或网格。[素材脚本](../../build_world_model_paradigm.py)仅按图像轮廓和颜色掩膜裁去背景，保留原 JPEG，不改写前景 RGB 像素；不改变物体姿态、合成中间帧、补全不可见表面或生成未来。透明度、三维参照平面、时间曲线及更新箭头在 [TikZ 图源](../../dynamic_world_motivation.tex)中绘制，用于说明基本范式，不是标定几何、实测轨迹或该文已完成连续观测更新的证据。
+中央使用真实三维模型的多视角渲染，并非本仓库另行恢复的点云或网格。[素材脚本](../../build_world_model_paradigm.py)仅按图像轮廓和颜色掩膜裁去背景，保留原 JPEG，不改写前景 RGB 像素；不改变物体姿态、合成中间帧、补全不可见表面或生成未来。两块状态裁图按同一像素比例放置，相对位置取自 477×320 原帧，避免同一视角下的尺寸被排版放大或缩小。两行三列的排布、时间轴、查询时刻、动作箭头及对照箭头在 [TikZ 图源](../../dynamic_world_motivation.tex)中绘制，用于说明基本范式，不是标定几何、实测轨迹或该文已完成连续观测更新的证据。
 
 ## 选材理由
 
@@ -39,7 +39,7 @@ python3 latex/figures/build_world_model_paradigm.py
 python3 latex/figures/export_world_model_paradigm.py
 ```
 
-素材处理需要 Pillow；PDF 导出需要 pypdf、pdfplumber 和 pdftoppm。从作者 PDF 重新提取七张原图时，另需 pypdf：
+素材处理需要 Pillow；PDF 导出需要 pypdf 和 pdfplumber，预览优先用 pdftoppm，缺少时回退到 Ghostscript。从作者 PDF 重新提取七张原图时，另需 pypdf：
 
 ```sh
 python3 latex/figures/build_world_model_paradigm.py --paper /path/to/phystwin-paper.pdf

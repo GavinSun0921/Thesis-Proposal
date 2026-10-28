@@ -1,0 +1,44 @@
+% Shared local styles for the four original problem illustrations in Section 2.2.
+% Loaded inside each figure's group; all meanings remain legible in grayscale.
+\linespread{1}\selectfont
+\tikzset{
+  rpBase/.style={x=1cm,y=1cm,text=black,line cap=round,line join=round,
+    font=\songti\fontsize{9.8pt}{12pt}\selectfont,
+    every node/.style={align=center,inner sep=0pt,outer sep=0pt}},
+  rpTitle/.style={font=\heiti\fontsize{10.3pt}{13pt}\selectfont},
+  rpNote/.style={font=\songti\fontsize{9.3pt}{12pt}\selectfont},
+  rpFrame/.style={draw=black,line width=0.65pt},
+  rpArrow/.style={draw=black,line width=0.8pt,
+    -{Latex[length=1.7mm,width=1.15mm]}},
+  rpMotion/.style={draw=black,line width=0.95pt,
+    -{Latex[length=1.6mm,width=1.1mm]}},
+  rpAction/.style={draw=black,line width=1.5pt,
+    -{Latex[length=2.2mm,width=1.7mm]}},
+  rpHistory/.style={draw=black!65,line width=0.65pt,
+    dash pattern=on 1.4pt off 1.6pt},
+  rpFuture/.style={draw=black,line width=0.75pt,
+    dash pattern=on 3pt off 2pt},
+  rpBoundary/.style={draw=black,line width=1.25pt}
+}
+\newcommand{\rpPanel}[5]{%
+  \draw[rpFrame] (#1,#2) rectangle (#3,#4);
+  \path[fill=black!5] (#1+0.01,#4-0.55) rectangle (#3-0.01,#4-0.01);
+  \draw[rpFrame] (#1,#4-0.55) -- (#3,#4-0.55);
+  \node[rpTitle] at ({(#1+#3)/2},{#4-0.275}) {#5};
+}
+\newcommand{\rpFooter}[1]{%
+  \draw[rpFrame] (0.10,0.10) rectangle (15.90,0.77);
+  \node at (8,0.435) {#1};
+}
+% Hatching is explicitly drawn and clipped, so no additional TikZ libraries
+% or color meanings are required. Argument: a closed local-coordinate path.
+\newcommand{\rpHatchFace}[1]{%
+  \path[fill=black!5] #1;
+  \begin{scope}
+    \clip #1;
+    \foreach \rhx in {-6,-5.8,...,8}{%
+      \draw[black,line width=0.35pt] (\rhx,-1) -- ++(3,6);
+    }
+  \end{scope}
+  \draw[rpBoundary] #1;
+}

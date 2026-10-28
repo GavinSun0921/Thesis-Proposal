@@ -1,0 +1,47 @@
+% !TeX root = ../main.tex
+% Original qualitative illustration: neither curve is a measured ground truth
+% or a result of a proposed method. Both pass the same three sampled positions.
+\begingroup
+\input{figures/research_problem_styles.tex}
+\begin{tikzpicture}[rpBase]
+  \path[use as bounding box] (0,0) rectangle (16,5.35);
+  \rpPanel{0.10}{1.05}{5.65}{5.20}{有限离散观测}
+  \rpPanel{6.35}{1.05}{15.90}{5.20}{多种连续运动解释}
+
+  % Three observations of the same object in the same image coordinate frame.
+  \foreach \xl/\xc/\idx in {0.42/1.13/1,2.18/2.89/2,3.94/4.65/3}{%
+    \draw[draw=black,line width=0.5pt] (\xl,2.50) rectangle ++(1.42,1.35);
+    \draw[draw=black!45,line width=0.4pt] (\xl+0.08,2.82) -- ++(1.26,0);
+    \node at (\xc,2.18) {$t_{\idx}$};
+  }
+  \filldraw[draw=black,fill=black!12,line width=0.7pt] (0.80,3.18) circle[radius=0.16];
+  \filldraw[draw=black,fill=black!12,line width=0.7pt] (2.88,3.18) circle[radius=0.16];
+  \filldraw[draw=black,fill=black!12,line width=0.7pt] (4.95,3.18) circle[radius=0.16];
+  \draw[rpFrame] (0.42,1.30) rectangle (5.33,1.85);
+  \node[rpNote] at (2.875,1.575) {采样位置已知，帧间过程待恢复};
+  \draw[rpArrow] (5.73,3.05) -- (6.27,3.05);
+
+  % Position against time. The continuous candidates agree at ALL observations.
+  \draw[rpArrow,line width=0.55pt] (7.05,2.00) -- (15.35,2.00);
+  \draw[rpArrow,line width=0.55pt] (7.05,2.00) -- (7.05,4.30);
+  \node at (15.48,2.00) {$t$};
+  \node[anchor=east] at (7.00,4.28) {$x(t)$};
+  \foreach \xx/\yy/\idx in {7.55/2.50/1,10.80/3.10/2,14.05/3.70/3}{%
+    \draw[draw=black!45,line width=0.4pt,densely dotted] (\xx,2.00) -- (\xx,\yy);
+    \node[rpNote] at (\xx,1.77) {$t_{\idx}$};
+  }
+  \draw[draw=black,line width=0.95pt] (7.55,2.50) -- (14.05,3.70);
+  \draw[draw=black,line width=0.9pt,dash pattern=on 3pt off 2pt]
+    (7.55,2.50) .. controls (8.35,4.40) and (9.80,4.40) .. (10.80,3.10)
+    .. controls (11.65,1.95) and (13.10,1.90) .. (14.05,3.70);
+  \foreach \xx/\yy in {7.55/2.50,10.80/3.10,14.05/3.70}{%
+    \filldraw[fill=black,draw=white,line width=0.5pt] (\xx,\yy) circle[radius=0.065];
+  }
+  \draw[draw=black,line width=0.95pt] (8.05,1.36) -- (8.85,1.36);
+  \node[rpNote,anchor=west] at (9.05,1.36) {解释 A};
+  \draw[draw=black,line width=0.9pt,dash pattern=on 3pt off 2pt] (11.55,1.36) -- (12.35,1.36);
+  \node[rpNote,anchor=west] at (12.55,1.36) {解释 B};
+
+  \rpFooter{研究关注：有效观测如何约束帧间运动？}
+\end{tikzpicture}
+\endgroup

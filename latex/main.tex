@@ -25,13 +25,22 @@
   \hypersetup{pdfauthor={\npuinnername}}
 \fi
 
+% 子图标题字体：图中的 (a)(b) 由 subcaption 编号，可被 \subref 引用。
+% \DeclareCaptionFont 只能在导言区使用，故在此统一定义，各插图按名字选用，
+% 使子图标题的字族和字号与原先手工排入的标题完全一致。
+% 模板已设 subfigure 字体为 small，这些定义用于覆盖该默认值。
+\DeclareCaptionFont{figsubheiti}{\heiti\fontsize{9.6pt}{12pt}\selectfont}
+\DeclareCaptionFont{figsubsongti}{\songti\fontsize{9.4pt}{11.5pt}\selectfont}
+\DeclareCaptionFont{figsublittitle}{\heiti\fontsize{10.2pt}{12.5pt}\selectfont}
+\DeclareCaptionFont{figsubroute}{\heiti\fontsize{9.2pt}{11.5pt}\selectfont}
+
 \begin{document}
 \hypersetup{pageanchor=false}
 \npuMakeCover
 \npuMakeRequirements
 \npuStartBody
 
-% 第一、第二部分为当前正文；第三部分保留学校模板；参考文献独立置于第四部分。
+% 第一、第二部分及第三部分三个栏目为当前正文；参考文献独立置于第四部分。
 \npuBlock*{学位论文研究依据}{学位论文的选题依据和研究意义，国内外研究现状和发展态势，主要参考文献，以及已有的工作积累和研究成果。}
 {\noindent\kaishu （图、文、参考文献格式参照《西北工业大学博士研究生学位论文编写规则》）\par}
 \input{chapters/01-basis.tex}
