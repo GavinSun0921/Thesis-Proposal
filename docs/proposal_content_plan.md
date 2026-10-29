@@ -87,7 +87,7 @@
 
 caption 为“连续动态世界模型的状态构建与演化预测概念示意（PhysTwin 案例素材）”。素材来源、原工作画面与本课题添加的概念标注在 1.1 第二段明确区分。图源为[可编辑 TikZ](../latex/figures/dynamic_world_motivation.tex)，[素材脚本](../latex/figures/build_world_model_paradigm.py)仅裁去中央渲染的背景并保留校验；[导出脚本](../latex/figures/export_world_model_paradigm.py)从本地编译主报告裁出独立矢量 PDF 及 PNG 预览，不编译替代文档。
 
-此前使用的 [DyCheck apple 素材](../latex/figures/materials/dycheck_apple/README.md)、[处理脚本](../latex/figures/build_motivation_assets.py)及其派生图继续保留，当前背景图不再引用该派生图；3.3 的数据示例复用其中原始观测。它们适合说明 RGB-D、局部几何及可见性，但先前人工旋转的右侧图只属概念示意，不能满足本次“真实模型预测”的要求。研究框架另作为第二部分图 5 维护，同图 1 分别说明研究组织和背景范式。
+此前的 DyCheck 背景图已由 PhysTwin 案例替代；3.3 的数据示例仍使用一帧 [DyCheck apple 原始观测](../latex/figures/materials/dycheck_apple/README.md)。研究框架另作为第二部分图 5 维护，同图 1 分别说明研究组织和背景范式。
 
 ## 参考文献的位置
 

@@ -4,7 +4,7 @@
 
 - 正式论文：Hanxiao Jiang 等，*PhysTwin: Physics-Informed Reconstruction and Simulation of Deformable Objects from Videos*，ICCV 2025，7219–7230。
 - [正式出版记录](https://openaccess.thecvf.com/content/ICCV2025/html/Jiang_PhysTwin_Physics-Informed_Reconstruction_and_Simulation_of_Deformable_Objects_from_Videos_ICCV_2025_paper.html)、[作者项目页](https://jianghanxiao.github.io/phystwin-web/)、[作者全文](https://arxiv.org/pdf/2503.17973)。正文引用键为 `phystwin2025`。
-- 七张 JPEG 均从作者全文的 PDF 内嵌图像直接提取，保留原始编码字节；不截取基线方法，也不保留原图的箭头、标题和基线标签。
+- 六张 JPEG 均从作者全文的 PDF 内嵌图像直接提取，保留原始编码字节；不截取基线方法，也不保留原图的箭头、标题和基线标签。
 - [source-manifest.json](source-manifest.json)记录原 PDF 校验值、页码、图号、行列、XObject 路径、时间阶段、尺寸和逐文件 SHA-256。这里的页码指下载 PDF 的物理页码，列号从零计数。
 
 ## 同一场景的对应关系
@@ -15,7 +15,6 @@
 | --- | --- | --- |
 | `observation_t1.jpg`、`observation_t2.jpg` | Figure 3，Observation 行，第 1、3 列 | 已观测的建模区间，图中标为 $t_1$ 和 $t_2=t$ |
 | `state_t1_view2.jpg`、`state_t2_view2.jpg` | Figure 9，Viewpoint 2 行，第 1、3 列 | 同一模型在前述时刻的另一视角渲染，表示历史和当前三维状态 |
-| `state_t2_view3.jpg` | Figure 9，Viewpoint 3 行，第 3 列 | 当前状态的又一视角，不是更晚时刻；本次图 1 版面未采用，保留备用 |
 | `prediction_future.jpg` | Figure 3，PhysTwin (Ours) 行，第 4 列 | 论文明确标注的未观测未来预测 |
 | `execution_future.jpg` | Figure 3，Observation 行，第 4 列 | 与预测同列、同一未来时刻的真实执行参考，不作为历史输入 |
 
@@ -39,7 +38,7 @@ python3 latex/figures/build_world_model_paradigm.py
 python3 latex/figures/export_world_model_paradigm.py
 ```
 
-素材处理需要 Pillow；PDF 导出需要 pypdf 和 pdfplumber，预览优先用 pdftoppm，缺少时回退到 Ghostscript。从作者 PDF 重新提取七张原图时，另需 pypdf：
+素材处理需要 Pillow；PDF 导出需要 pypdf 和 pdfplumber，预览优先用 pdftoppm，缺少时回退到 Ghostscript。从作者 PDF 重新提取六张原图时，另需 pypdf：
 
 ```sh
 python3 latex/figures/build_world_model_paradigm.py --paper /path/to/phystwin-paper.pdf

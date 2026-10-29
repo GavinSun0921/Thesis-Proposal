@@ -81,24 +81,6 @@
       "sha256": "88c774087c8ea510e46a72cbffb748ba536d8e988d4452cbed3c51019f31b259"
     },
     {
-      "file": "state_t2_view3.jpg",
-      "pdf_page": 15,
-      "figure": 9,
-      "case": "top red-and-gold cloth case",
-      "row": "Viewpoint 3",
-      "column_zero_based": 2,
-      "xobject": [
-        "/Im11",
-        "/Image18"
-      ],
-      "phase": "reconstructed prefix",
-      "size_px": [
-        477,
-        320
-      ],
-      "sha256": "a8533e22237ec011a85e69e22baa630e758d3da194e6091cbcd87ce115f0f2fe"
-    },
-    {
       "file": "prediction_future.jpg",
       "pdf_page": 6,
       "figure": 3,

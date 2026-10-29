@@ -18,36 +18,6 @@
       "width": 720,
       "height": 960,
       "sha256": "0db96ddcd1905bd54836870a86eebb3847c33482b1ff955b619274321bdc0070"
-    },
-    {
-      "file": "0_00120.png",
-      "remote_path": "/remote_databuffer/pomelo4d/datasets/DyCheck/iphone/apple/rgb/1x/0_00120.png",
-      "frame_index": 120,
-      "camera_id": 0,
-      "time_seconds_from_first_frame": 4.0,
-      "width": 720,
-      "height": 960,
-      "sha256": "c3860c8fb468ece5ac6a184b53649e6bd20e457fac1c9853429dfd2d2550a9a6"
-    },
-    {
-      "file": "0_00210.png",
-      "remote_path": "/remote_databuffer/pomelo4d/datasets/DyCheck/iphone/apple/rgb/1x/0_00210.png",
-      "frame_index": 210,
-      "camera_id": 0,
-      "time_seconds_from_first_frame": 7.0,
-      "width": 720,
-      "height": 960,
-      "sha256": "79fc33c827d2d920d382c519f67c1b6e06a9d6d4abe8016a2c5f561bda1f20e1"
-    },
-    {
-      "file": "0_00330.png",
-      "remote_path": "/remote_databuffer/pomelo4d/datasets/DyCheck/iphone/apple/rgb/1x/0_00330.png",
-      "frame_index": 330,
-      "camera_id": 0,
-      "time_seconds_from_first_frame": 11.0,
-      "width": 720,
-      "height": 960,
-      "sha256": "0986332bd42901e64b4dbef34604a391da8a2ea23751ea4d6574408ccd8e6327"
     }
   ]
 }

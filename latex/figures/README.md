@@ -33,7 +33,7 @@
 共用样式见 [technical_route_styles.tex](technical_route_styles.tex)。运行 [build_technical_route_figures.py](build_technical_route_figures.py) 可用本地 MacTeX 导出[五图的矢量 PDF、预览和灰度稿](generated/technical_routes/)，来源及校验映射见 [manifest.json](generated/technical_routes/manifest.json)。主报告直接载入 TikZ 源码，日常编译无需先导出独立图。
 
 - [原图位置及来源说明](materials/phystwin_cloth/README.md)、[逐文件校验及时间阶段](materials/phystwin_cloth/source-manifest.json)。
-- [素材处理脚本](build_world_model_paradigm.py)：保留七张原始 JPEG，只为中央渲染制作背景透明的轮廓裁图。
+- [素材处理脚本](build_world_model_paradigm.py)：保留六张原始 JPEG，只为中央渲染制作背景透明的轮廓裁图。
 - [独立图导出脚本](export_world_model_paradigm.py)：主报告本地编译后导出[矢量图](generated/world_model_paradigm/figure.pdf)和[预览](generated/world_model_paradigm/figure.png)。文字、箭头、显示比例和布局均在 TikZ 中修改。
 
 素材和生成图随源码保存，日常编译只需运行项目根目录的 `scripts/build.sh`，无需重新下载论文或提取图片。修改素材时按上述来源说明重现；编译完成后可运行独立图导出脚本更新 PDF 和 PNG。
@@ -78,10 +78,6 @@
 - [本地导出脚本](build_research_problem_figures.py)只使用 Python 标准库、本地 MacTeX/XeLaTeX 及 pdftoppm，不下载媒体，不依赖照片。运行 `python3 latex/figures/build_research_problem_figures.py` 更新四份独立矢量图、彩色和 `-gray.png` 灰度预览。
 - 独立图：[时间](generated/research_problems/research_problem_time.pdf)、[空间](generated/research_problems/research_problem_space.pdf)、[拓扑](generated/research_problems/research_problem_topology.pdf)、[响应](generated/research_problems/research_problem_response.pdf)；[生成清单及语义范围](generated/research_problems/manifest.json)记录图源及导出文件校验值。
 - 示意图用于说明研究矛盾和拟达到的能力，不代表实验结果，也不预设网络、训练流程或已经验证的改进。图 7 的首次显露和图 8 的物理新生依据物理含义区分，斜线仅突出当前讨论的表面区域。
-
-## 未采用的素材及草稿
-
-- [DyCheck apple 素材](materials/dycheck_apple/README.md)中的原始观测用于图 15；旧版[背景图处理脚本](build_motivation_assets.py)及 `generated/motivation/` 保留为历史候选，不参与当前编译。旧版人工旋转表面是概念示意，不作为模型未来预测。
 
 ## 重写前的旧稿
 

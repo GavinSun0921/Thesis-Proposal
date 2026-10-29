@@ -2,10 +2,10 @@
 
 所有图片用于介绍候选数据的观测类型，不作为本课题的实验结果。正文图 15 的四类数据按当前研究范围选用，不承诺使用完整数据集或覆盖全部任务。
 
-- **DyCheck iPhone**：复用 [apple 原始素材及来源](../dycheck_apple/README.md)中的第 0、332 帧，仅作矩形裁剪。两幅均为相机 0 的真实跨时刻观测，相机位姿可以变化；图中不叠加推断轨迹。
-- **PointOdyssey**：`pointodyssey_pipeline.jpg` 从[作者项目](https://pointodyssey.com/)链接的[原始配图](https://pointodyssey.com/assets/pipeline.jpg)保存，原图 2338 × 968，保留原始字节。取右侧第一行和第三行的首幅合成 RGB 示例；两图属于不同场景。项目说明提供深度、实例、相机和二维／三维轨迹，图中展示的是 RGB，不能将实例标签当作部件级标注。
-- **PhysTwin**：复用 [PhysTwin 素材](../phystwin_cloth/README.md)的 `observation_t1.jpg`、`observation_t2.jpg`。两幅均为论文 Figure 3 同一布料案例的真实观测，未使用模型渲染或未来预测图。
-- **DROID / PointWorld**：复用[已有观测素材](../literature_review/README.md)中的 `point_observation_v1.jpg`、`point_observation_v2.jpg`，来自 PointWorld 作者全文 Figure 16 的同一 DROID 布料案例、同一时刻两视角 RGB。候选三维标注由 [PointWorld-DROID 官方发布](https://huggingface.co/datasets/nvidia/PointWorld-DROID)核查，包含自动估计的轨迹、可见性和有效深度标记；使用时须遵循其有效性及置信度规则。正式论文引用同时保留 PointWorld 和 [DROID](https://www.roboticsproceedings.org/rss20/p120.html)。
+- **DyCheck iPhone**：复用 [apple 原始素材及来源](../dycheck_apple/README.md)中的第 0 帧，仅作矩形裁剪。该图是相机 0 的真实观测，未叠加推断轨迹。
+- **PointOdyssey**：`pointodyssey_pipeline.jpg` 从[作者项目](https://pointodyssey.com/)链接的[原始配图](https://pointodyssey.com/assets/pipeline.jpg)保存，原图 2338 × 968，保留原始字节。取右侧第一行的首幅合成 RGB 示例。项目说明提供深度、实例、相机和二维／三维轨迹，图中展示的是 RGB，不能将实例标签当作部件级标注。
+- **PhysTwin**：复用 [PhysTwin 素材](../phystwin_cloth/README.md)的 `observation_t1.jpg`，为论文 Figure 3 布料案例的真实观测，未使用模型渲染或未来预测图。
+- **DROID / PointWorld**：复用[已有观测素材](../literature_review/README.md)中的 `point_observation_v1.jpg`，来自 PointWorld 作者全文 Figure 16 的 DROID 布料案例。候选三维标注由 [PointWorld-DROID 官方发布](https://huggingface.co/datasets/nvidia/PointWorld-DROID)核查，包含自动估计的轨迹、可见性和有效深度标记；使用时须遵循其有效性及置信度规则。正式论文引用同时保留 PointWorld 和 [DROID](https://www.roboticsproceedings.org/rss20/p120.html)。
 
 局部切割与撕裂的几何、材料连接及形成时间验证计划由可控序列补充。GauSTAR [官方实现](https://github.com/eth-ait/GauSTAR)说明论文演示序列受许可限制未发布，不能将演示图充作已经可用的公共切割数据。当前数据图不包含未采集的切割、撕裂画面。
 

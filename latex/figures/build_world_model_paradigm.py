@@ -39,7 +39,6 @@ PANELS = [
     ("observation_t2", 6, 3, "Observation", 2, "/Image6", "observed prefix"),
     ("state_t1_view2", 15, 9, "Viewpoint 2", 0, "/Image8", "reconstructed prefix"),
     ("state_t2_view2", 15, 9, "Viewpoint 2", 2, "/Image13", "reconstructed prefix"),
-    ("state_t2_view3", 15, 9, "Viewpoint 3", 2, "/Image18", "reconstructed prefix"),
     ("prediction_future", 6, 3, "PhysTwin (Ours)", 3, "/Image12", "held-out future prediction"),
     ("execution_future", 6, 3, "Observation", 3, "/Image7", "held-out future reference"),
 ]
@@ -62,15 +61,6 @@ SILHOUETTES = {
         (145, 242), (132, 240), (120, 233), (106, 214), (104, 196),
         (100, 178), (92, 162), (85, 151), (70, 140), (63, 127),
         (64, 116), (80, 113), (96, 105), (117, 94), (141, 84),
-    ],
-    "state_t2_view3": [
-        (210, 45), (226, 52), (241, 72), (245, 102), (253, 118),
-        (274, 135), (293, 143), (300, 150), (292, 165), (276, 177),
-        (257, 178), (242, 173), (232, 183), (222, 188), (221, 203),
-        (211, 214), (199, 215), (194, 230), (184, 220), (178, 216),
-        (166, 216), (159, 204), (145, 204), (130, 203), (120, 194),
-        (111, 180), (105, 161), (87, 158), (78, 151), (67, 147),
-        (68, 139), (91, 119), (111, 103), (133, 82), (159, 67), (185, 53),
     ],
 }
 
@@ -144,7 +134,8 @@ def build() -> None:
         "source_manifest": "../../materials/phystwin_cloth/source-manifest.json",
         "operation": "image-space polygon and chroma alpha masking; transparent background; no RGB recoloring, geometric transformation or prediction synthesis",
         "silhouettes_px": SILHOUETTES,
-        "files": {p.name: sha256(p) for p in sorted(GENERATED.glob("*_cutout.png"))},
+        "files": {f"{name}_cutout.png": sha256(GENERATED / f"{name}_cutout.png")
+                  for name in SILHOUETTES},
     }, indent=2) + "\n")
 
 
@@ -157,7 +148,7 @@ def main() -> None:
     if args.paper:
         extract(args.paper)
     build()
-    print(f"Verified 7 original panels; wrote 3 display silhouettes to {GENERATED}")
+    print(f"Verified {len(PANELS)} original panels; wrote {len(SILHOUETTES)} display silhouettes to {GENERATED}")
 
 
 if __name__ == "__main__":

@@ -28,20 +28,12 @@ MATERIALS = FIGURES / "materials" / "evaluation"
 PANELS = [
     ("dycheck_a", "materials/dycheck_apple/0_00000.png", (40, 370, 700, 810),
      "DyCheck iPhone apple, camera 0, frame 0; real observation"),
-    ("dycheck_b", "materials/dycheck_apple/0_00332.png", (60, 420, 720, 860),
-     "DyCheck iPhone apple, camera 0, frame 332; real observation"),
     ("pointodyssey_snow", "materials/evaluation/pointodyssey_pipeline.jpg", (1235, 170, 1565, 350),
      "Official PointOdyssey pipeline visual, first synthetic snow-scene RGB example"),
-    ("pointodyssey_kitchen", "materials/evaluation/pointodyssey_pipeline.jpg", (1235, 676, 1565, 856),
-     "Official PointOdyssey pipeline visual, first synthetic kitchen-scene RGB example"),
     ("phystwin_a", "materials/phystwin_cloth/observation_t1.jpg", None,
      "PhysTwin Figure 3, cloth case, first observed prefix example"),
-    ("phystwin_b", "materials/phystwin_cloth/observation_t2.jpg", None,
-     "PhysTwin Figure 3, same cloth case, later observed prefix example"),
     ("droid_view1", "materials/literature_review/point_observation_v1.jpg", None,
      "PointWorld Figure 16, DROID cloth episode, RGB observation view 1"),
-    ("droid_view2", "materials/literature_review/point_observation_v2.jpg", None,
-     "PointWorld Figure 16, same DROID episode and instant, RGB observation view 2"),
 ]
 FIGURE_NAMES = [
     ("evaluation_datasets", "拟采用的动态场景与交互数据示例"),
@@ -141,8 +133,7 @@ def main() -> None:
         "pck_example": {"radius": radius, "errors": errors, "correct": correct, "score": 2/3},
         "scope": [
             "Dataset panels show real observations or author-published synthetic inputs, never model predictions.",
-            "The two PointOdyssey panels are different synthetic scenes, not successive frames of one scene.",
-            "DyCheck and PhysTwin time labels indicate ordering only; the DROID pair is synchronized views.",
+            "Each dataset is represented by one observation; individual panels do not show temporal or multiview correspondence.",
             "The PCK example is a count illustration, not a measured result. The 3D trajectory sketch is qualitative.",
             "PCK is evaluated in image coordinates; 3D position error requires 3D references in a common coordinate system.",
             "PointWorld-DROID annotations are estimated references with validity/confidence masks, not complete physical ground truth.",
