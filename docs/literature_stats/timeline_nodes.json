@@ -1,0 +1,348 @@
+{
+  "convention": "年份采用参考文献表中的正式出版年；预印本使用空心节点和†。横轴采用分段不等距映射：较早年份压缩，2023—2026年展开。该布局仅用于展示代表工作，不以节点疏密衡量发表增速；各路线并行，节点间不表示直接继承关系。",
+  "axis": {
+    "recent_start": 2023,
+    "recent_step_cm": 2.3,
+    "early_left_cm": 2.65,
+    "early_right_cm": 5.25,
+    "recent_left_cm": 6.15,
+    "right_cm": 13.05
+  },
+  "topics": {
+    "T1": {
+      "stem": "reconstruction",
+      "figure": "literature_timeline_reconstruction.tex",
+      "label": "四维动态场景重建",
+      "start_year": 2015,
+      "early_ticks": [
+        2015,
+        2021
+      ],
+      "routes": [
+        {
+          "name": "隐式场表征",
+          "nodes": [
+            {
+              "year": 2015,
+              "name": "DynamicFusion",
+              "key": "dynamicfusion2015",
+              "cap": "非刚性表面融合",
+              "side": "up"
+            },
+            {
+              "year": 2021,
+              "name": "D-NeRF",
+              "key": "dnerf2021",
+              "cap": "规范空间变形",
+              "side": "down"
+            },
+            {
+              "year": 2021,
+              "name": "HyperNeRF",
+              "key": "hypernerf2021",
+              "cap": "高维拓扑表征",
+              "side": "up"
+            },
+            {
+              "year": 2026,
+              "name": "4DSurf",
+              "key": "surf4d2026",
+              "cap": "时空表面一致",
+              "side": "up"
+            }
+          ]
+        },
+        {
+          "name": "显式图元表征",
+          "nodes": [
+            {
+              "year": 2024,
+              "name": "4D-GS",
+              "key": "gs4d2024",
+              "cap": "时空图元变形",
+              "side": "up"
+            },
+            {
+              "year": 2025,
+              "name": "MoSca",
+              "key": "ref05",
+              "cap": "共享运动组织",
+              "side": "down"
+            },
+            {
+              "year": 2025,
+              "name": "GauSTAR",
+              "key": "gaustar2025",
+              "cap": "表面绑定更新",
+              "side": "up"
+            },
+            {
+              "year": 2026,
+              "name": "RetimeGS",
+              "key": "retimegs2026",
+              "cap": "连续帧间重建",
+              "side": "down"
+            }
+          ]
+        },
+        {
+          "name": "点级几何表征",
+          "nodes": [
+            {
+              "year": 2024,
+              "name": "DUSt3R",
+              "key": "dust3r2024",
+              "cap": "点图回归基础",
+              "side": "up"
+            },
+            {
+              "year": 2025,
+              "name": "MonST3R",
+              "key": "monst3r2025",
+              "cap": "运动场景恢复",
+              "side": "up"
+            },
+            {
+              "year": 2025,
+              "name": "CUT3R",
+              "key": "cut3r2025",
+              "cap": "持久记忆读取",
+              "side": "down"
+            },
+            {
+              "year": 2026,
+              "name": "D4RT",
+              "key": "d4rt2026",
+              "cap": "统一重建与跟踪",
+              "side": "up"
+            }
+          ]
+        }
+      ]
+    },
+    "T2": {
+      "stem": "worldmodel",
+      "figure": "literature_timeline_worldmodel.tex",
+      "label": "面向交互的世界模型",
+      "start_year": 2018,
+      "early_ticks": [
+        2018,
+        2020,
+        2022
+      ],
+      "routes": [
+        {
+          "name": "潜在状态预测",
+          "nodes": [
+            {
+              "year": 2019,
+              "name": "PlaNet",
+              "key": "ref01",
+              "cap": "潜在空间规划",
+              "side": "down"
+            },
+            {
+              "year": 2020,
+              "name": "Dreamer",
+              "key": "dreamer2020",
+              "cap": "想象轨迹训练",
+              "side": "up"
+            },
+            {
+              "year": 2025,
+              "name": "DreamerV3",
+              "key": "ref02",
+              "cap": "多任务通用控制",
+              "side": "up"
+            }
+          ]
+        },
+        {
+          "name": "视觉表征预测",
+          "nodes": [
+            {
+              "year": 2022,
+              "name": "SAVi",
+              "key": "savi2022",
+              "cap": "对象槽表征基础",
+              "side": "up"
+            },
+            {
+              "year": 2023,
+              "name": "SlotFormer",
+              "key": "slotformer2023",
+              "cap": "对象表征预测",
+              "side": "down"
+            },
+            {
+              "year": 2025,
+              "name": "DINO-WM",
+              "key": "ref03",
+              "cap": "动作条件特征预测",
+              "side": "up"
+            }
+          ]
+        },
+        {
+          "name": "三维结构预测",
+          "nodes": [
+            {
+              "year": 2020,
+              "name": "GNS",
+              "key": "gns2020",
+              "cap": "粒子图动力学",
+              "side": "up"
+            },
+            {
+              "year": 2025,
+              "name": "PhysTwin",
+              "key": "phystwin2025",
+              "cap": "可模拟数字孪生",
+              "side": "down"
+            },
+            {
+              "year": 2025,
+              "name": "GWM",
+              "key": "gwm2025",
+              "cap": "高斯场景预测",
+              "side": "up"
+            },
+            {
+              "year": 2026,
+              "name": "PointWorld",
+              "key": "ref06",
+              "cap": "三维点流预测",
+              "side": "up"
+            }
+          ]
+        },
+        {
+          "name": "未来观测生成",
+          "nodes": [
+            {
+              "year": 2024,
+              "name": "Genie",
+              "key": "genie2024",
+              "cap": "交互视频生成",
+              "side": "up"
+            },
+            {
+              "year": 2025,
+              "name": "TesserAct",
+              "key": "tesseract2025",
+              "cap": "任务条件四维生成",
+              "side": "down"
+            },
+            {
+              "year": 2026,
+              "name": "PERSIST",
+              "key": "ref10",
+              "cap": "持久三维记忆",
+              "side": "up"
+            }
+          ]
+        }
+      ]
+    },
+    "T3": {
+      "stem": "action",
+      "figure": "literature_timeline_action.tex",
+      "label": "具身操作中的动作学习",
+      "start_year": 2020,
+      "early_ticks": [
+        2020,
+        2022
+      ],
+      "routes": [
+        {
+          "name": "直接策略学习",
+          "nodes": [
+            {
+              "year": 2023,
+              "name": "PerAct",
+              "key": "peract2023",
+              "cap": "体素动作预测",
+              "side": "down"
+            },
+            {
+              "year": 2023,
+              "name": "RT-2",
+              "key": "rt22023",
+              "cap": "视觉语言迁移",
+              "side": "up"
+            },
+            {
+              "year": 2024,
+              "name": "RVT-2",
+              "key": "rvt22024",
+              "cap": "多视角精细操作",
+              "side": "down"
+            },
+            {
+              "year": 2025,
+              "name": "OpenVLA",
+              "key": "openvla2025",
+              "cap": "开放模型微调",
+              "side": "up"
+            },
+            {
+              "year": 2025,
+              "name": "$\\pi_0$",
+              "key": "pi02025",
+              "cap": "连续动作生成",
+              "side": "down"
+            }
+          ]
+        },
+        {
+          "name": "预测辅助决策",
+          "nodes": [
+            {
+              "year": 2020,
+              "name": "Dreamer",
+              "key": "dreamer2020",
+              "cap": "想象行为学习基础",
+              "side": "up"
+            },
+            {
+              "year": 2025,
+              "name": "DINO-WM",
+              "key": "ref03",
+              "cap": "预测辅助动作优化",
+              "side": "up"
+            },
+            {
+              "year": 2026,
+              "name": "PointWorld",
+              "key": "ref06",
+              "cap": "三维预测辅助控制",
+              "side": "down"
+            }
+          ]
+        },
+        {
+          "name": "世界动作联合生成",
+          "display_name": "世界动作\\\\联合生成",
+          "nodes": [
+            {
+              "year": 2025,
+              "name": "WorldVLA",
+              "key": "worldvla2025",
+              "cap": "动作图像联合预测",
+              "side": "up",
+              "preprint": true
+            },
+            {
+              "year": 2026,
+              "name": "DreamZero",
+              "key": "dreamzero2026",
+              "cap": "视频动作联合生成",
+              "side": "down",
+              "preprint": true
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -3,6 +3,12 @@
 /tmp/
 /.mimocode/
 
+# 文献统计的抓取缓存、逐条大表与过程预览只在本地生成，不纳入仓库。
+/docs/literature_stats/raw/
+/docs/literature_stats/official_titles.json
+/docs/literature_stats/excluded.csv
+/docs/revision-assets/
+
 # 编译结果和中间文件统一放入 latex/build；当前阅读版及命名版本 PDF 入库。
 /latex/build/*
 !/latex/build/main.pdf

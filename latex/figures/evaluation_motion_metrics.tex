@@ -13,15 +13,16 @@
 % No panel frames; a single hairline keeps the two panels from touching, and the
 % panel labels sit below the drawings in the same style as the dataset figure.
 \begingroup
-\linespread{1}\selectfont
-\definecolor{emBlue}{HTML}{315F8C}
-\definecolor{emOchre}{HTML}{97651F}
-\begin{tikzpicture}[x=1cm,y=1cm,text=black,line cap=round,line join=round,
-  font=\songti\fontsize{9.5pt}{12pt}\selectfont,
+\input{figures/technical_route_styles.tex}
+\colorlet{emBlue}{trBlueDark}
+\colorlet{emOchre}{trOchreDark}
+\begin{tikzpicture}[x=.9725cm,y=1cm,text=black,line cap=round,line join=round,
+  font=\trFontBody,
   every node/.style={align=center,inner sep=1pt,outer sep=0pt},
-  emTitle/.style={font=\heiti\fontsize{9.6pt}{12pt}\selectfont},
-  emNote/.style={font=\fontsize{8.8pt}{11pt}\selectfont},
-  emLead/.style={font=\fontsize{9pt}{11.5pt}\selectfont},
+  emTitle/.style={font=\trFontHead},
+  emNote/.style={font=\trFontSmall},
+  emLead/.style={font=\trFontBody},
+  emMath/.style={font=\trFontMath},
   emArrow/.style={draw=black,line width=0.7pt,-{Latex[length=1.5mm,width=1.0mm]}},
   % legend swatches, drawn inline so the legend centres itself
   emSwatch/.style={baseline=-0.55ex,line cap=round,line join=round}]
@@ -47,12 +48,12 @@
     \node[emNote] at (\cx,2.78) {\verdict};
   }
 
-  \node[emNote] at (4.00,1.75)
+  \node[emMath] at (4.00,1.75)
     {$\mathrm{PCK}(\alpha)=\dfrac{\text{命中数}}{\text{有效对应数}}=\dfrac{2}{3}$};
   % Panel labels come from the caption package rather than being drawn as text,
   % so they are numbered by LaTeX and can be cross-referenced with \subref.
-  \node[text width=7.2cm,align=center] at (4.00,1.10)
-    {{\captionsetup[subfigure]{font=figsubheiti,skip=0pt}
+  \node[font=\trFontSubcaption,text width=7.2cm,align=center] at (4.00,1.10)
+    {{\captionsetup[subfigure]{font=figsubroute,skip=0pt}
       \subcaption{二维对应：阈值内计数}\label{subfig:metrics-pck}}};
 
   % Hairline between the panels: they are independent, not one drawing.
@@ -83,11 +84,11 @@
     \draw[black!30,dashed,line width=0.45pt]
       (0,0,2.80) -- (0,2.20,2.80) (0,0,2.80) -- (4.20,0,2.80);
     \draw[emArrow,black!50,line width=0.6pt] (0,0,0) -- (4.48,0,0)
-      node[right=1pt] {\fontsize{8.3pt}{10pt}\selectfont $x$};
+      node[right=1pt] {\trFontSmall $x$};
     \draw[emArrow,black!50,line width=0.6pt] (0,0,0) -- (0,2.42,0)
-      node[left=1pt] {\fontsize{8.3pt}{10pt}\selectfont $y$};
+      node[left=1pt] {\trFontSmall $y$};
     \draw[emArrow,black!50,line width=0.6pt] (0,0,0) -- (0,0,3.02)
-      node[above=1pt] {\fontsize{8.3pt}{10pt}\selectfont $z$};
+      node[above=1pt] {\trFontSmall $z$};
     % reference and estimated paths, sampled at the same instants
     \draw[black,line width=0.95pt] plot[smooth] coordinates {
       (0.45,0.25,0.55) (1.30,1.40,1.45) (2.45,1.78,1.10) (3.70,2.02,2.65)};
@@ -106,10 +107,10 @@
         (\x-0.07,\y+0.07,\z) -- (\x+0.07,\y-0.07,\z);}
   \end{scope}
 
-  \node[emNote] at (12.00,1.75)
+  \node[emMath] at (12.00,1.75)
     {$\mathrm{EPE}_{\mathrm{3D}}=\dfrac{1}{|\mathcal T|}\sum_{(i,k)\in\mathcal T} e_{ik}$};
-  \node[text width=7.2cm,align=center] at (12.00,1.10)
-    {{\captionsetup[subfigure]{font=figsubheiti,skip=0pt}
+  \node[font=\trFontSubcaption,text width=7.2cm,align=center] at (12.00,1.10)
+    {{\captionsetup[subfigure]{font=figsubroute,skip=0pt}
       \subcaption{三维轨迹：同一时刻位置误差}\label{subfig:metrics-epe}}};
 \end{tikzpicture}
 \endgroup

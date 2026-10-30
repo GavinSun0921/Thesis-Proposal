@@ -1,96 +1,22 @@
 {
-  "retrieved_date": "2026-10-27",
-  "panels": [
-    {
-      "name": "dycheck_a",
-      "source": "materials/dycheck_apple/0_00000.png",
-      "source_sha256": "0db96ddcd1905bd54836870a86eebb3847c33482b1ff955b619274321bdc0070",
-      "source_size_px": [
-        720,
-        960
-      ],
-      "crop": [
-        40,
-        370,
-        700,
-        810
-      ],
-      "role": "DyCheck iPhone apple, camera 0, frame 0; real observation",
-      "output": "dycheck_a.png",
-      "output_sha256": "9e5c465c8e592a3b43cd7537a9e6f08716ab643166eb4b6c1687f69837f95b27"
-    },
-    {
-      "name": "pointodyssey_snow",
-      "source": "materials/evaluation/pointodyssey_pipeline.jpg",
-      "source_sha256": "2c3340af2d0a8c88776e0f7c497399d5bbab63ae2dadfbb64be7bcc33677f885",
-      "source_size_px": [
-        2338,
-        968
-      ],
-      "crop": [
-        1235,
-        170,
-        1565,
-        350
-      ],
-      "role": "Official PointOdyssey pipeline visual, first synthetic snow-scene RGB example",
-      "output": "pointodyssey_snow.png",
-      "output_sha256": "935b5a389496250d4c5e8eb57be385a109dc697d1bd6037d898df2ecfcbebd52"
-    },
-    {
-      "name": "phystwin_a",
-      "source": "materials/phystwin_cloth/observation_t1.jpg",
-      "source_sha256": "487836d46237a7ac25374d6c1b4dc94221c5d365e239f35e3737c1abdea8bc9b",
-      "source_size_px": [
-        477,
-        320
-      ],
-      "crop": null,
-      "role": "PhysTwin Figure 3, cloth case, first observed prefix example",
-      "output": "phystwin_a.png",
-      "output_sha256": "4f26b50706931844a919c62c5741b99739e18fe310dfce18c681977f7bd0c249"
-    },
-    {
-      "name": "droid_view1",
-      "source": "materials/literature_review/point_observation_v1.jpg",
-      "source_sha256": "bf3c672c6703882ed750e761d86984e983d3d63de4315640c54d3c2a4cdb5c76",
-      "source_size_px": [
-        320,
-        180
-      ],
-      "crop": null,
-      "role": "PointWorld Figure 16, DROID cloth episode, RGB observation view 1",
-      "output": "droid_view1.png",
-      "output_sha256": "b901b905e3d07d5a2c9a7639bf586a5cdd5ac60e20f62c4c685d7f342985b81f"
-    }
-  ],
+  "updated_date": "2026-10-30",
   "figures": [
-    {
-      "title": "拟采用的动态场景与交互数据示例",
-      "source": "figures/evaluation_datasets.tex",
-      "source_sha256": "ce447477e584bb48c7c7d271ddaf2f4373cc86a6ccb2a9cce029613d73f9ffed",
-      "pdf": "evaluation_datasets.pdf",
-      "pdf_sha256": "18042612f4af93ac2615e3349b903e248e2ea0b7a3f5f84c6609af422d9e5715"
-    },
     {
       "title": "二维对应与三维轨迹误差评价示意",
       "source": "figures/evaluation_motion_metrics.tex",
-      "source_sha256": "9a424c74496721a7e978a0e4b20b2ea09d8931e5d760376adb4d7a82a2d1dbfa",
+      "source_sha256": "78e67869078141cccf544df596b844e83dfd922a444086ce9e6800096dc71152",
       "pdf": "evaluation_motion_metrics.pdf",
-      "pdf_sha256": "ac49ac4af0259b5e6b9e7053922460da642f8844b821b9fe784417cceb970efe"
+      "pdf_sha256": "e249792bd373401adbf8662e557727d4a3546c455e9a02b4749989513bde3c78"
     }
   ],
-  "new_media": {
-    "path": "materials/evaluation/pointodyssey_pipeline.jpg",
-    "url": "https://pointodyssey.com/assets/pipeline.jpg",
-    "sha256": "2c3340af2d0a8c88776e0f7c497399d5bbab63ae2dadfbb64be7bcc33677f885"
-  },
+  "typography_source": "figures/technical_route_styles.tex",
+  "shared_styles_sha256": "28a2c5c6be8d148518408d8b2741e993adcd6f943ace207db0d1e832be13baf3",
   "metric_definition_source": "https://github.com/KAIR-BAIR/dycheck/blob/main/dycheck/core/metrics/keypoint.py",
   "pck_example": {
     "radius": 0.8,
     "errors": [
-      0.3720215047547655,
-      0.42801869118065394,
+      0.37202150475476553,
+      0.4280186911806539,
       1.0154801819828883
     ],
     "correct": [
@@ -101,11 +27,8 @@
     "score": 0.6666666666666666
   },
   "scope": [
-    "Dataset panels show real observations or author-published synthetic inputs, never model predictions.",
-    "Each dataset is represented by one observation; individual panels do not show temporal or multiview correspondence.",
     "The PCK example is a count illustration, not a measured result. The 3D trajectory sketch is qualitative.",
-    "PCK is evaluated in image coordinates; 3D position error requires 3D references in a common coordinate system.",
-    "PointWorld-DROID annotations are estimated references with validity/confidence masks, not complete physical ground truth.",
-    "True cutting/tearing validation remains a planned controlled-data component and is not depicted as an existing public dataset."
+    "PCK is evaluated in image coordinates; 3D position error requires corresponding references in a common coordinate system.",
+    "Illustrations explain metric definitions and do not imply a data-collection or application experiment."
   ]
 }

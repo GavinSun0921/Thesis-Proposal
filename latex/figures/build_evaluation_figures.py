@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Build source-backed dataset examples and original motion-metric diagrams.
+"""Export the editable motion-metric illustration and grayscale proof.
 
-Uses only local saved sources. Default execution never downloads data or media.
-Exports editable vector figures, color/grayscale proofs, crops and provenance.
+The PCK count and 3D error sketch explain evaluation definitions. No dataset
+capture, application benchmark or physical experiment is implied.
 """
 from __future__ import annotations
 
@@ -13,8 +13,6 @@ import shutil
 import subprocess
 from pathlib import Path
 
-from PIL import Image
-
 from build_research_framework import WRAPPER
 
 FIGURES = Path(__file__).resolve().parent
@@ -22,24 +20,9 @@ LATEX = FIGURES.parent
 ROOT = LATEX.parent
 OUTPUT = FIGURES / "generated" / "evaluation"
 WORK = ROOT / "tmp" / "evaluation-figures-build"
-MATERIALS = FIGURES / "materials" / "evaluation"
-
-# Only rectangular crops; original colors, geometry and annotation content stay intact.
-PANELS = [
-    ("dycheck_a", "materials/dycheck_apple/0_00000.png", (40, 370, 700, 810),
-     "DyCheck iPhone apple, camera 0, frame 0; real observation"),
-    ("pointodyssey_snow", "materials/evaluation/pointodyssey_pipeline.jpg", (1235, 170, 1565, 350),
-     "Official PointOdyssey pipeline visual, first synthetic snow-scene RGB example"),
-    ("phystwin_a", "materials/phystwin_cloth/observation_t1.jpg", None,
-     "PhysTwin Figure 3, cloth case, first observed prefix example"),
-    ("droid_view1", "materials/literature_review/point_observation_v1.jpg", None,
-     "PointWorld Figure 16, DROID cloth episode, RGB observation view 1"),
-]
 FIGURE_NAMES = [
-    ("evaluation_datasets", "拟采用的动态场景与交互数据示例"),
     ("evaluation_motion_metrics", "二维对应与三维轨迹误差评价示意"),
 ]
-
 
 def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -69,25 +52,6 @@ def main() -> None:
     if not shutil.which("xelatex"):
         raise SystemExit("Required local tool is missing: xelatex")
     OUTPUT.mkdir(parents=True, exist_ok=True)
-    source_records = []
-    for name, source, crop, role in PANELS:
-        original = FIGURES / source
-        with Image.open(original) as image:
-            raw_size = image.size
-            image = image.convert("RGB")
-            if crop:
-                x0, y0, x1, y1 = crop
-                if not (0 <= x0 < x1 <= image.width and 0 <= y0 < y1 <= image.height):
-                    raise ValueError(f"Crop outside original image: {name}")
-                image = image.crop(crop)
-            target = OUTPUT / f"{name}.png"
-            image.save(target)
-        source_records.append({
-            "name": name, "source": source, "source_sha256": digest(original),
-            "source_size_px": raw_size, "crop": crop, "role": role,
-            "output": target.name, "output_sha256": digest(target),
-        })
-
     # Check the illustrated geometric count: each mark is drawn at a fixed offset
     # from its disc centre, and only the third one falls outside the tolerance.
     radius = 0.80
@@ -123,25 +87,19 @@ def main() -> None:
         })
 
     manifest = {
-        "retrieved_date": "2026-10-27", "panels": source_records, "figures": records,
-        "new_media": {
-            "path": "materials/evaluation/pointodyssey_pipeline.jpg",
-            "url": "https://pointodyssey.com/assets/pipeline.jpg",
-            "sha256": digest(MATERIALS / "pointodyssey_pipeline.jpg"),
-        },
+        "updated_date": "2026-10-30", "figures": records,
+        "typography_source": "figures/technical_route_styles.tex",
+        "shared_styles_sha256": digest(FIGURES / "technical_route_styles.tex"),
         "metric_definition_source": "https://github.com/KAIR-BAIR/dycheck/blob/main/dycheck/core/metrics/keypoint.py",
         "pck_example": {"radius": radius, "errors": errors, "correct": correct, "score": 2/3},
         "scope": [
-            "Dataset panels show real observations or author-published synthetic inputs, never model predictions.",
-            "Each dataset is represented by one observation; individual panels do not show temporal or multiview correspondence.",
             "The PCK example is a count illustration, not a measured result. The 3D trajectory sketch is qualitative.",
-            "PCK is evaluated in image coordinates; 3D position error requires 3D references in a common coordinate system.",
-            "PointWorld-DROID annotations are estimated references with validity/confidence masks, not complete physical ground truth.",
-            "True cutting/tearing validation remains a planned controlled-data component and is not depicted as an existing public dataset.",
+            "PCK is evaluated in image coordinates; 3D position error requires corresponding references in a common coordinate system.",
+            "Illustrations explain metric definitions and do not imply a data-collection or application experiment.",
         ],
     }
     (OUTPUT / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n")
-    print(f"Built dataset and motion-metric figures, source map and grayscale proofs in {OUTPUT}")
+    print(f"Built motion-metric illustration and grayscale proof in {OUTPUT}")
 
 
 if __name__ == "__main__":

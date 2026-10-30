@@ -30,7 +30,7 @@ WRAPPER = r"""\documentclass[border=3mm]{standalone}
 \DeclareCaptionFont{figsubheiti}{\heiti\fontsize{9.6pt}{12pt}\selectfont}
 \DeclareCaptionFont{figsubsongti}{\songti\fontsize{9.4pt}{11.5pt}\selectfont}
 \DeclareCaptionFont{figsublittitle}{\heiti\fontsize{10.2pt}{12.5pt}\selectfont}
-\DeclareCaptionFont{figsubroute}{\heiti\fontsize{9.2pt}{11.5pt}\selectfont}
+\DeclareCaptionFont{figsubroute}{\songti\fontsize{9.2pt}{11.2pt}\selectfont}
 \usetikzlibrary{arrows.meta,calc}
 \IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{%
   \setmainfont{texgyretermes-regular.otf}[
@@ -75,7 +75,14 @@ def main() -> None:
     WORK.mkdir(parents=True, exist_ok=True)
     OUTPUT.mkdir(parents=True, exist_ok=True)
     source = WORK / "research-framework.tex"
-    source.write_text(WRAPPER)
+    # Keep the shared float/minipage wrapper unchanged for the other figure
+    # builders. This overview has no subfigures and exports at its natural size.
+    framework_wrapper = WRAPPER.replace("border=3mm", "border=1mm")
+    framework_wrapper = framework_wrapper.split(r"\begin{document}", 1)[0] + r"""\begin{document}
+\input{figures/research_framework.tex}
+\end{document}
+"""
+    source.write_text(framework_wrapper)
     with (WORK / "build.log").open("w") as log:
         result = subprocess.run([
             "xelatex", "-halt-on-error", "-interaction=nonstopmode",

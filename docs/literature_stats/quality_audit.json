@@ -1,0 +1,97 @@
+{
+  "T1": {
+    "retrieved": 9450,
+    "included": 490,
+    "excluded_by_reason": {
+      "topic_scope_mismatch": 7566,
+      "source_outside_scope": 953,
+      "preprint_or_workshop": 291,
+      "workshop": 33,
+      "cutoff_formal_publication_evidence_missing": 60,
+      "outside_formal_year_range": 8,
+      "formal_year_unresolved": 14,
+      "non_research_paper_type": 6,
+      "crossref_source_outside_scope": 7,
+      "publication_date_interval_crosses_cutoff": 8,
+      "non_main_findings_track": 10,
+      "publication_after_cutoff": 1,
+      "duplicate_doi_or_title": 3
+    },
+    "year_basis": {
+      "formal_conference_doi": 219,
+      "formal_dblp_key": 79,
+      "crossref_formal_metadata": 40,
+      "official_proceedings_title": 152
+    },
+    "corrected_years": 155,
+    "partial_year_included": 83,
+    "partial_year_evidence": {
+      "official_catalog_observed_by_cutoff": 71,
+      "crossref_published-print_before_cutoff": 8,
+      "crossref_published-online_before_cutoff": 4
+    }
+  },
+  "T2": {
+    "retrieved": 5866,
+    "included": 471,
+    "excluded_by_reason": {
+      "preprint_or_workshop": 1114,
+      "topic_scope_mismatch": 2631,
+      "source_outside_scope": 1533,
+      "cutoff_formal_publication_evidence_missing": 50,
+      "publication_after_cutoff": 2,
+      "formal_year_unresolved": 27,
+      "workshop": 14,
+      "non_main_findings_track": 13,
+      "non_research_paper_type": 3,
+      "publication_date_interval_crosses_cutoff": 5,
+      "crossref_source_outside_scope": 1,
+      "outside_formal_year_range": 1,
+      "duplicate_doi_or_title": 1
+    },
+    "year_basis": {
+      "official_proceedings_title": 325,
+      "formal_conference_doi": 82,
+      "formal_dblp_key": 50,
+      "crossref_formal_metadata": 14
+    },
+    "corrected_years": 150,
+    "partial_year_included": 139,
+    "partial_year_evidence": {
+      "official_catalog_observed_by_cutoff": 129,
+      "crossref_published-print_before_cutoff": 10
+    }
+  },
+  "T3": {
+    "retrieved": 15696,
+    "included": 2205,
+    "excluded_by_reason": {
+      "topic_scope_mismatch": 6880,
+      "source_outside_scope": 4256,
+      "cutoff_formal_publication_evidence_missing": 310,
+      "formal_year_unresolved": 102,
+      "preprint_or_workshop": 1839,
+      "publication_date_interval_crosses_cutoff": 18,
+      "workshop": 31,
+      "outside_formal_year_range": 8,
+      "non_main_findings_track": 12,
+      "crossref_source_outside_scope": 11,
+      "non_research_paper_type": 2,
+      "publication_after_cutoff": 19,
+      "duplicate_doi_or_title": 3
+    },
+    "year_basis": {
+      "formal_conference_doi": 1040,
+      "formal_dblp_key": 428,
+      "official_proceedings_title": 556,
+      "crossref_formal_metadata": 181
+    },
+    "corrected_years": 768,
+    "partial_year_included": 209,
+    "partial_year_evidence": {
+      "official_catalog_observed_by_cutoff": 160,
+      "crossref_published-print_before_cutoff": 40,
+      "crossref_published-online_before_cutoff": 9
+    }
+  }
+}

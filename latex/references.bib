@@ -3,6 +3,17 @@
 % GB/T 7714 数字顺序制；引用顺序由正文自动确定。
 % URL 作为核查元数据保留在库中，排版时统一隐藏 URL 和访问日期，保留 DOI。
 
+% 2026-10-30：案例采用机构公开资料；未标发布日期的网页不以访问年冒充发表年。
+@inproceedings{splinegs2025,
+  author = {Park, Jongmin and Bui, Minh-Quan Viet and Bello, Juan Luis Gonzalez and Moon, Jaeho and Oh, Jihyong and Kim, Munchurl},
+  title = {{SplineGS: Robust Motion-Adaptive Spline for Real-Time Dynamic 3D Gaussians from Monocular Video}},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year = {2025},
+  pages = {26866--26875},
+  url = {https://openaccess.thecvf.com/content/CVPR2025/html/Park_SplineGS_Robust_Motion-Adaptive_Spline_for_Real-Time_Dynamic_3D_Gaussians_from_CVPR_2025_paper.html},
+  urldate = {2026-10-30},
+}
+
 % 2026-10-25：1.1 背景图使用同一 PhysTwin 布料案例的观测、三维渲染和未来预测。
 @inproceedings{phystwin2025,
   author = {Jiang, Hanxiao and Hsu, Hao-Yu and Zhang, Kaifeng and Yu, Hsin-Ni and Wang, Shenlong and Li, Yunzhu},
@@ -14,7 +25,7 @@
   urldate = {2026-10-25},
 }
 
-% 2026-10-26：第二部分重构，补充连续运动表达及观测可靠性的正式研究。
+% 2026-10-26：第二部分重构，补充连续运动表达及观测不确定性的正式研究。
 @inproceedings{se3bspline2026,
   author = {Zhang, Xuankai and Xiao, Junjin and Huang, Shangwei and Zheng, Wei-shi and Zhang, Qing},
   title = {{Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos}},
@@ -169,15 +180,6 @@
   urldate = {2026-10-09},
 }
 
-@online{ref04,
-  author = {Assran, Mido and Bardes, Adrien and Fan, David and others},
-  title = {{V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning}},
-  year = {2025},
-  note = {arXiv:2506.09985},
-  url = {https://arxiv.org/abs/2506.09985},
-  urldate = {2026-10-09},
-}
-
 @inproceedings{ref05,
   author = {Lei, Jiahui and Weng, Yijia and Harley, Adam W. and Guibas, Leonidas and Daniilidis, Kostas},
   title = {{MoSca: Dynamic Gaussian Fusion from Casual Videos via 4D Motion Scaffolds}},
@@ -222,16 +224,6 @@
   urldate = {2026-10-09},
 }
 
-@inproceedings{ref09,
-  author = {Duan, Zicheng and Xia, Jiatong and Zhang, Zeyu and Zhang, Wenbo and Zhou, Gengze and Gou, Chenhui and He, Yefei and Chen, Feng and Zhang, Xinyu and Liu, Lingqiao},
-  title = {{LiveWorld: Simulating Out-of-Sight Dynamics in Generative Video World Models}},
-  year = {2026},
-  booktitle = {European Conference on Computer Vision (ECCV)},
-  note = {Accepted at ECCV 2026},
-  url = {https://zichengduan.github.io/pages/LiveWorld/},
-  urldate = {2026-10-09},
-}
-
 @inproceedings{ref10,
   author = {Garcin, Samuel and Walker, Thomas and McDonagh, Steven and Pearce, Tim and Bilen, Hakan and He, Tianyu and Wang, Kaixin and Bian, Jiang},
   title = {{Beyond Pixel Histories: World Models with Persistent 3D State}},
@@ -241,15 +233,6 @@
   volume = {306},
   pages = {34048--34070},
   url = {https://proceedings.mlr.press/v306/garcin26a.html},
-  urldate = {2026-10-09},
-}
-
-@online{ref11,
-  author = {Yin, Yifan and Wen, Zehao and Ye, Suyu and Chen, Jieneng and Zheng, Zehan and Dai, Nanru and Shi, Haojun and Huang, Aydan and Zhang, Zheyuan and Yuille, Alan and Xie, Jianwen and Tewari, Ayush and Shu, Tianmin},
-  title = {{3D-Belief: Embodied Belief Inference via Generative 3D World Modeling}},
-  year = {2026},
-  note = {arXiv:2605.11367},
-  url = {https://arxiv.org/abs/2605.11367},
   urldate = {2026-10-09},
 }
 
@@ -266,34 +249,6 @@
   urldate = {2026-10-09},
 }
 
-@online{ref13,
-  author = {Li, Peiyan and Zhu, Yuze and Chen, Yixiang and Ma, Qisen and Xu, Yuan and Yang, Jiabing and Guan, He and Huang, Yan and Wu, Hongtao and Ma, Xiao and Kong, Tao and Wang, Liang and Tan, Tieniu},
-  title = {{BridgeVLA++: A Data-Efficient, Generalizable, and Memory-Augmented Vision-Language-Action Framework for 3D Manipulation}},
-  year = {2026},
-  note = {arXiv:2608.05042},
-  url = {https://arxiv.org/abs/2608.05042},
-  urldate = {2026-10-09},
-}
-
-@inproceedings{vsiwild2026,
-  author = {Gu, Tianjun and Xin, Tianyu and Zhang, Kuan and others},
-  title = {{Towards Spatial Supersensing in the Wild}},
-  year = {2026},
-  booktitle = {European Conference on Computer Vision (ECCV)},
-  note = {Accepted at ECCV 2026},
-  url = {https://arxiv.org/abs/2607.13681},
-  urldate = {2026-10-12},
-}
-
-@online{ovggt2026,
-  author = {Lu, Si-Yu and Chen, Po-Ting and Hsu, Hui-Che and Jhong, Sin-Ye and Cheng, Wen-Huang and Chen, Yung-Yao},
-  title = {{OVGGT: O(1) Constant-Cost Streaming Visual Geometry Transformer}},
-  year = {2026},
-  note = {arXiv:2603.05959},
-  url = {https://arxiv.org/abs/2603.05959},
-  urldate = {2026-10-12},
-}
-
 @article{pomdp1998,
   author = {Kaelbling, Leslie Pack and Littman, Michael L. and Cassandra, Anthony R.},
   title = {{Planning and acting in partially observable stochastic domains}},
@@ -303,16 +258,6 @@
   number = {1--2},
   pages = {99--134},
   doi = {10.1016/S0004-3702(98)00023-X},
-}
-
-@book{gpml2006,
-  author = {Rasmussen, Carl Edward and Williams, Christopher K. I.},
-  title = {{Gaussian Processes for Machine Learning}},
-  year = {2006},
-  publisher = {MIT Press},
-  address = {Cambridge, MA},
-  url = {https://gaussianprocess.org/gpml/},
-  urldate = {2026-10-09},
 }
 
 @article{gs2023,
@@ -405,17 +350,6 @@
   publisher = {Curran Associates, Inc.},
   volume = {31},
   url = {https://proceedings.neurips.cc/paper_files/paper/2018/hash/2de5d16682c3c35007e4e92982f1a2ba-Abstract.html},
-  urldate = {2026-10-09},
-}
-
-@inproceedings{psr2001,
-  author = {Littman, Michael L. and Sutton, Richard S. and Singh, Satinder},
-  title = {{Predictive Representations of State}},
-  year = {2001},
-  booktitle = {Advances in Neural Information Processing Systems},
-  publisher = {MIT Press},
-  volume = {14},
-  url = {https://proceedings.neurips.cc/paper_files/paper/2001/hash/1e4d36177d71bbb3558e43af9577d70e-Abstract.html},
   urldate = {2026-10-09},
 }
 
@@ -607,20 +541,6 @@
   urldate = {2026-10-09},
 }
 
-@article{cnvisualrl2026,
-  author = {王荣荣 and 程玉虎 and 王雪松},
-  title = {{视觉强化学习方法研究综述}},
-  year = {2026},
-  journal = {自动化学报},
-  volume = {52},
-  number = {3},
-  pages = {381--410},
-  doi = {10.16383/j.aas.c250422},
-  language = {chinese},
-  url = {https://www.aas.net.cn/cn/article/doi/10.16383/j.aas.c250422},
-  urldate = {2026-10-09},
-}
-
 @article{cnnerf2025,
   author = {陈涛 and 杨启亮 and 陈寅},
   title = {{神经辐射场技术及应用综述}},
@@ -686,6 +606,77 @@
   language = {chinese},
 }
 
+@online{nsfworldmodel2025,
+  author = {{National Science Foundation}},
+  title = {{CAREER: From Language Models to World Models: New Inference, Learning, and Modeling for Machine Reasoning}},
+  year = {2025},
+  number = {2443468},
+  url = {https://www.nsf.gov/awardsearch/showAward?AWD_ID=2443468},
+  urldate = {2026-10-29},
+}
+
+@online{deepmindgenie2025,
+  author = {Parker-Holder, Jack and Fruchter, Shlomi},
+  title = {{Genie 3: A new frontier for world models}},
+  year = {2025},
+  organization = {{Google DeepMind}},
+  url = {https://deepmind.google/blog/genie-3-a-new-frontier-for-world-models/},
+  urldate = {2026-10-29},
+}
+
+@online{nvidiacosmos2025,
+  author = {{NVIDIA}},
+  title = {{NVIDIA Launches Cosmos World Foundation Model Platform to Accelerate Physical AI Development}},
+  year = {2025},
+  url = {https://investor.nvidia.com/news/press-release-details/2025/NVIDIA-Launches-Cosmos-World-Foundation-Model-Platform-to-Accelerate-Physical-AI-Development/default.aspx},
+  urldate = {2026-10-29},
+}
+
+@online{tencentworld2025,
+  author = {{腾讯}},
+  title = {{腾讯混元3D世界模型1.0}},
+  year = {2025},
+  url = {https://3d-models.hunyuan.tencent.com/world/?currentTab=HunyuanWorld-1.0},
+  urldate = {2026-10-29},
+  language = {chinese},
+}
+
+@online{aiplus2025,
+  author = {{国务院}},
+  title = {{关于深入实施“人工智能+”行动的意见}},
+  year = {2025},
+  number = {国发〔2025〕11号},
+  url = {https://www.cac.gov.cn/2025-08/27/c_1758018277755538.htm},
+  urldate = {2026-10-29},
+  language = {chinese},
+}
+
+@online{nasadrone2025,
+  author = {{NASA}},
+  title = {{Testing Drones for Mars in the Mojave Desert}},
+  year = {2025},
+  url = {https://www.nasa.gov/image-article/testing-drones-for-mars-in-the-mojave-desert/},
+  urldate = {2026-10-29},
+}
+
+@online{nasamaintenance2026,
+  author = {Whiting, Teresa},
+  title = {{Keeping NASA Flying: Ground Crews Ensure Aircraft Readiness}},
+  year = {2026},
+  organization = {{NASA}},
+  url = {https://www.nasa.gov/centers-and-facilities/armstrong/keeping-nasa-flying-ground-crews-ensure-aircraft-readiness/},
+  urldate = {2026-10-29},
+}
+
+@online{nasavms2026,
+  author = {{NASA}},
+  title = {{Vertical Motion Simulator (VMS)}},
+  year = {2026},
+  organization = {{Ames Research Center}},
+  url = {https://www.nasa.gov/ames/aviationsystems/vms/},
+  urldate = {2026-10-29},
+}
+
 @article{muzero2020,
   author = {Schrittwieser, Julian and Antonoglou, Ioannis and Hubert, Thomas and Simonyan, Karen and Sifre, Laurent and Schmitt, Simon and Guez, Arthur and Lockhart, Edward and Hassabis, Demis and Graepel, Thore and Lillicrap, Timothy and Silver, David},
   title = {{Mastering Atari, Go, chess and shogi by planning with a learned model}},
@@ -725,60 +716,7 @@
   doi = {10.1145/3478513.3480487},
 }
 
-@inproceedings{omnimotion2023,
-  author = {Wang, Qianqian and Chang, Yen-Yu and Cai, Ruojin and Li, Zhengqi and Hariharan, Bharath and Holynski, Aleksander and Snavely, Noah},
-  title = {{Tracking Everything Everywhere All at Once}},
-  year = {2023},
-  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
-  pages = {19795--19806},
-  doi = {10.1109/ICCV51070.2023.01813},
-}
-
 % 2026-10-13：状态估计、遮挡跟踪、对象动力学及交互综述增补。
-@article{kalman1960,
-  author = {Kalman, R. E.},
-  title = {{A New Approach to Linear Filtering and Prediction Problems}},
-  journal = {Journal of Basic Engineering},
-  year = {1960},
-  volume = {82},
-  number = {1},
-  pages = {35--45},
-  doi = {10.1115/1.3662552},
-  url = {https://doi.org/10.1115/1.3662552},
-}
-
-@book{probrobotics2005,
-  author = {Thrun, Sebastian and Burgard, Wolfram and Fox, Dieter},
-  title = {{Probabilistic Robotics}},
-  year = {2005},
-  publisher = {MIT Press},
-  address = {Cambridge, MA},
-  isbn = {9780262201629},
-  url = {https://mitpress.mit.edu/9780262201629/probabilistic-robotics/},
-}
-
-@inproceedings{rkn2019,
-  author = {Becker, Philipp and Pandya, Harit and Gebhardt, Gregor and Zhao, Cheng and Taylor, C. James and Neumann, Gerhard},
-  title = {{Recurrent Kalman Networks: Factorized Inference in High-Dimensional Deep Feature Spaces}},
-  booktitle = {Proceedings of the 36th International Conference on Machine Learning},
-  year = {2019},
-  volume = {97},
-  pages = {544--552},
-  publisher = {PMLR},
-  url = {https://proceedings.mlr.press/v97/becker19a.html},
-}
-
-@inproceedings{dvrl2018,
-  author = {Igl, Maximilian and Zintgraf, Luisa and Le, Tuan Anh and Wood, Frank and Whiteson, Shimon},
-  title = {{Deep Variational Reinforcement Learning for POMDPs}},
-  booktitle = {Proceedings of the 35th International Conference on Machine Learning},
-  year = {2018},
-  volume = {80},
-  pages = {2117--2126},
-  publisher = {PMLR},
-  url = {https://proceedings.mlr.press/v80/igl18a.html},
-}
-
 @inproceedings{savi2022,
   author = {Kipf, Thomas and Elsayed, Gamaleldin F. and Mahendran, Aravindh and Stone, Austin and Sabour, Sara and Heigold, Georg and Jonschkowski, Rico and Dosovitskiy, Alexey and Greff, Klaus},
   title = {{Conditional Object-Centric Learning from Video}},
@@ -795,23 +733,6 @@
   url = {https://openreview.net/forum?id=TFbwV6I0VLg},
 }
 
-@inproceedings{cater2020,
-  author = {Girdhar, Rohit and Ramanan, Deva},
-  title = {{CATER: A Diagnostic Dataset for Compositional Actions and TEmporal Reasoning}},
-  booktitle = {International Conference on Learning Representations},
-  year = {2020},
-  url = {https://openreview.net/forum?id=HJgzt2VKPB},
-}
-
-@inproceedings{permatrack2021,
-  author = {Tokmakov, Pavel and Li, Jie and Burgard, Wolfram and Gaidon, Adrien},
-  title = {{Learning To Track With Object Permanence}},
-  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision},
-  year = {2021},
-  pages = {10860--10869},
-  url = {https://openaccess.thecvf.com/content/ICCV2021/html/Tokmakov_Learning_To_Track_With_Object_Permanence_ICCV_2021_paper.html},
-}
-
 @inproceedings{dynamicfusion2015,
   author = {Newcombe, Richard A. and Fox, Dieter and Seitz, Steven M.},
   title = {{DynamicFusion: Reconstruction and Tracking of Non-Rigid Scenes in Real-Time}},
@@ -819,18 +740,6 @@
   year = {2015},
   pages = {343--352},
   url = {https://openaccess.thecvf.com/content_cvpr_2015/html/Newcombe_DynamicFusion_Reconstruction_and_2015_CVPR_paper.html},
-}
-
-@article{dynaslam2018,
-  author = {Besc{\'o}s, Berta and F{\'a}cil, Jos{\'e} M. and Civera, Javier and Neira, Jos{\'e}},
-  title = {{DynaSLAM: Tracking, Mapping, and Inpainting in Dynamic Scenes}},
-  journal = {IEEE Robotics and Automation Letters},
-  year = {2018},
-  volume = {3},
-  number = {4},
-  pages = {4076--4083},
-  doi = {10.1109/LRA.2018.2860039},
-  url = {https://doi.org/10.1109/LRA.2018.2860039},
 }
 
 @inproceedings{nsff2021,
@@ -861,47 +770,6 @@
   year = {2021},
   pages = {8375--8384},
   url = {https://openaccess.thecvf.com/content/CVPR2021/html/Teed_RAFT-3D_Scene_Flow_Using_Rigid-Motion_Embeddings_CVPR_2021_paper.html},
-}
-
-@inproceedings{cotracker2024,
-  author = {Karaev, Nikita and Rocco, Ignacio and Graham, Benjamin and Neverova, Natalia and Vedaldi, Andrea and Rupprecht, Christian},
-  title = {{CoTracker: It Is Better to Track Together}},
-  booktitle = {Computer Vision -- ECCV 2024},
-  year = {2025},
-  volume = {15120},
-  pages = {18--35},
-  publisher = {Springer},
-  doi = {10.1007/978-3-031-73033-7_2},
-  url = {https://link.springer.com/chapter/10.1007/978-3-031-73033-7_2},
-}
-
-@inproceedings{sort2016,
-  author = {Bewley, Alex and Ge, Zongyuan and Ott, Lionel and Ramos, Fabio and Upcroft, Ben},
-  title = {{Simple Online and Realtime Tracking}},
-  booktitle = {2016 IEEE International Conference on Image Processing},
-  year = {2016},
-  pages = {3464--3468},
-  doi = {10.1109/ICIP.2016.7533003},
-  url = {https://doi.org/10.1109/ICIP.2016.7533003},
-}
-
-@inproceedings{deepsort2017,
-  author = {Wojke, Nicolai and Bewley, Alex and Paulus, Dietrich},
-  title = {{Simple Online and Realtime Tracking with a Deep Association Metric}},
-  booktitle = {2017 IEEE International Conference on Image Processing},
-  year = {2017},
-  pages = {3645--3649},
-  doi = {10.1109/ICIP.2017.8296962},
-  url = {https://doi.org/10.1109/ICIP.2017.8296962},
-}
-
-@inproceedings{ocsort2023,
-  author = {Cao, Jinkun and Pang, Jiangmiao and Weng, Xinshuo and Khirodkar, Rawal and Kitani, Kris},
-  title = {{Observation-Centric SORT: Rethinking SORT for Robust Multi-Object Tracking}},
-  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-  year = {2023},
-  pages = {9686--9696},
-  url = {https://openaccess.thecvf.com/content/CVPR2023/html/Cao_Observation-Centric_SORT_Rethinking_SORT_for_Robust_Multi-Object_Tracking_CVPR_2023_paper.html},
 }
 
 @inproceedings{bundlesdf2023,
@@ -953,15 +821,6 @@
   pages = {1684--1704},
   doi = {10.1177/02783649241273668},
   url = {https://journals.sagepub.com/doi/10.1177/02783649241273668},
-}
-
-@online{wam_survey2026,
-  author = {Lu, Zuxing and Zhai, Hongjia and Wang, Guanzhi and Zeng, Huajian and Yang, Jiaqi and Liu, Jingyu and Cheng, Lei and Zhang, Yuantai and Qiu, Yuheng and Cheng, Zezhou and Laptev, Ivan and Xu, Danfei and Riviere, Benjamin and Loianno, Giuseppe and Xing, Eric and Zuo, Xingxing},
-  title = {{World-Action Models for Robot Learning and Control: A Survey}},
-  year = {2026},
-  note = {arXiv:2609.16074},
-  url = {https://arxiv.org/abs/2609.16074},
-  urldate = {2026-10-15},
 }
 
 @online{worldvla2025,
@@ -1126,4 +985,43 @@
   note = {arXiv:2602.15922},
   url = {https://arxiv.org/abs/2602.15922},
   urldate = {2026-10-23},
+}
+
+% 2026-10-29：重写 1.2 时按分类与时间轴需要补充，均为正式会议论文。
+@inproceedings{dust3r2024,
+  author = {Wang, Shuzhe and Leroy, Vincent and Cabon, Yohann and Chidlovskii, Boris and Revaud, Jerome},
+  title = {{DUSt3R: Geometric 3D Vision Made Easy}},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year = {2024},
+  pages = {20697--20709},
+  url = {https://openaccess.thecvf.com/content/CVPR2024/html/Wang_DUSt3R_Geometric_3D_Vision_Made_Easy_CVPR_2024_paper.html},
+  urldate = {2026-10-29},
+}
+
+@inproceedings{vggt2025,
+  author = {Wang, Jianyuan and Chen, Minghao and Karaev, Nikita and Vedaldi, Andrea and Rupprecht, Christian and Novotny, David},
+  title = {{VGGT: Visual Geometry Grounded Transformer}},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year = {2025},
+  pages = {5294--5306},
+  url = {https://openaccess.thecvf.com/content/CVPR2025/html/Wang_VGGT_Visual_Geometry_Grounded_Transformer_CVPR_2025_paper.html},
+  urldate = {2026-10-29},
+}
+
+@online{semanticscholarapi2026,
+  author  = {{Allen Institute for AI}},
+  title   = {{Semantic Scholar Academic Graph API}},
+  year    = {2026},
+  url     = {https://api.semanticscholar.org/api-docs/graph},
+  urldate = {2026-10-29}
+}
+
+@inproceedings{d4rt2026,
+  author = {Zhang, Chuhan and Le Moing, Guillaume and Koppula, Skanda and Rocco, Ignacio and Momeni, Liliane and Xie, Junyu and Sun, Shuyang and Sukthankar, Rahul and Barral, Jo{\"e}lle K. and Hadsell, Raia and Ghahramani, Zoubin and Zisserman, Andrew and Zhang, Junlin and Sajjadi, Mehdi S. M.},
+  title = {{Efficiently Reconstructing Dynamic Scenes One D4RT at a Time}},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year = {2026},
+  pages = {7382--7392},
+  url = {https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Efficiently_Reconstructing_Dynamic_Scenes_One_D4RT_at_a_Time_CVPR_2026_paper.html},
+  urldate = {2026-10-29},
 }

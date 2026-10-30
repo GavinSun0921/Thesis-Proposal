@@ -1,0 +1,94 @@
+{
+  "retrieval_date": "2026-10-29",
+  "year_range": [
+    2015,
+    2026
+  ],
+  "partial_year": 2026,
+  "partial_year_cutoff": "2026-10-29",
+  "annualized": false,
+  "cutoff_applied": true,
+  "cutoff_policy": "Public official catalog observed by cutoff or authentic Crossref publication-date interval ending on or before cutoff; no S2 preprint date, created date, or missing-date imputation.",
+  "script_and_data_sha256": {
+    "scripts/literature_stats_v2.py": "79d023bcb695da6c0b3c239cac9933ac94d06b92abca51b02b03f4fb6888fa48",
+    "scripts/literature_catalogs.py": "03d40f8f05d37029a9532f433d016fbcc3e2de1852cf062ce2464920aec39775",
+    "docs/literature_stats/queries.json": "014ca138f0636fb830cb35c9fc11c7b344878813f55581f157dcfcaa7ef6ea20",
+    "docs/literature_stats/papers.csv": "b3c60c5348176e397f7b3e8414434c06243b72976a3726c2fbe241eba49f7f6a",
+    "docs/literature_stats/excluded.csv": "3aed4460c1e4db1432b95609f999f209cee64a68d332337a782e2d285764d7a4",
+    "docs/literature_stats/yearly.json": "d6a34dc212faa8688d035ce883a95ce6655c0012177790a6cf8780702cf7f25e",
+    "docs/literature_stats/official_titles.json": "b7e501a7b762fe36dcb30fc4ea0703eb46cc15ed5d6b154a8634796e35add54a",
+    "docs/literature_stats/proceedings_sources.json": "87243d0cd734ed4207e8b126bccb131a79534e43984fcbf9159719af11f62cdd",
+    "docs/literature_stats/relevance_review.csv": "9a3da4edd9ff48a828f0a911e6d8069e63cfe2c5b7847fc6c418a5b75211e86a",
+    "docs/literature_stats/cutoff_2026_review.csv": "8d3cc2048a25afb058855d4989e980045c2349557e8f382cd8e37b6aec27452b",
+    "docs/literature_stats/README.md": "1bc9a0f9a03797fb9587ccca4b7d10e73eb51cc66434a6b387a2ffc55268e8da"
+  },
+  "raw_v2_pages": 32,
+  "crossref_records": 342,
+  "official_title_records": 60100,
+  "annual_counts": {
+    "T1": {
+      "2015": 5,
+      "2016": 8,
+      "2017": 9,
+      "2018": 10,
+      "2019": 8,
+      "2020": 12,
+      "2021": 29,
+      "2022": 18,
+      "2023": 38,
+      "2024": 84,
+      "2025": 186,
+      "2026": 83
+    },
+    "T2": {
+      "2015": 3,
+      "2016": 0,
+      "2017": 2,
+      "2018": 3,
+      "2019": 6,
+      "2020": 5,
+      "2021": 13,
+      "2022": 23,
+      "2023": 36,
+      "2024": 71,
+      "2025": 170,
+      "2026": 139
+    },
+    "T3": {
+      "2015": 11,
+      "2016": 13,
+      "2017": 11,
+      "2018": 71,
+      "2019": 92,
+      "2020": 127,
+      "2021": 192,
+      "2022": 207,
+      "2023": 300,
+      "2024": 377,
+      "2025": 595,
+      "2026": 209
+    }
+  },
+  "quality_checks": [
+    "per-topic formal DOI and normalized-title deduplication",
+    "whole-name canonical Crossref source matching",
+    "2026 records require independent formal-publication evidence by 2026-10-29",
+    "month/year date intervals are retained; cutoff-crossing intervals remain excluded",
+    "no annualization and no substitution of preprint/created dates",
+    "CSV and yearly counts independently reconcilable"
+  ],
+  "independent_csv_reconciliation": "passed",
+  "manual_review_records": 90,
+  "manual_review_unique_topic_paper_ids": 80,
+  "targeted_cutoff_review_records": 15,
+  "historical_counts_2015_2025": {
+    "T1": 407,
+    "T2": 332,
+    "T3": 1996
+  },
+  "partial_year_counts_2026": {
+    "T1": 83,
+    "T2": 139,
+    "T3": 209
+  }
+}

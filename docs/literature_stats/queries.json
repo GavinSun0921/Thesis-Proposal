@@ -1,0 +1,344 @@
+{
+  "source": "Semantic Scholar Graph API（paper/search/bulk）",
+  "source_url": "https://api.semanticscholar.org/graph/v1/paper/search/bulk",
+  "retrieval_date": "2026-10-29",
+  "year_range": [
+    2015,
+    2026
+  ],
+  "notes": [
+    "题名与摘要检索，不预先限定学科和publicationTypes，以免漏掉分类缺失或合并记录。",
+    "统计2015—2026年，2026年为截至2026-10-29的部分年度、不作年化；正式归年与截止公开证据分别核定。",
+    "正式年份优先依据官方论文集精确题名记录，其次采用正式会议DOI、正式DBLP键及Crossref出版元数据；不使用预印本首发年份代替正式年。",
+    "排除可识别的工作坊、海报、演示、扩展摘要和非纳入来源；来源按正式标识和实际名称匹配，不使用混合主会与工作坊的alternate_names。",
+    "同一主题内按正式DOI和规范化题名去重，保留最早正式版本；主题间允许交叉，不能相加。",
+    "题名与摘要命中后执行本地主题筛选，排除动态范围、静态相机定位、静态建图、医学断层、small-world、神经群体动力学、纯导航及仅在展望提及学习等无关含义。",
+    "结果为指定主要来源中的相关正式论文检索数量，不等于全领域产出。",
+    "2026记录须精确命中截至日公开可访问的官方主会论文集，或有真实Crossref发表时间区间且整段不晚于截止日；不使用S2预印本publicationDate、Crossref created/indexed/deposited作为正式出版日期。",
+    "仅有2026年或2026年10月的发表日期、11—12月未来卷期且无更早正式online证据的记录，保守留待定；不得以1月1日或10月1日填补日期。",
+    "Crossref来源按完整规范名称匹配，不将ICCVDM/ICMLC/ICRAS/ICRAE等相似会议或CVPR Findings归入所列主会。"
+  ],
+  "venues": [
+    {
+      "name": "Nature Machine Intelligence",
+      "full": "Nature Machine Intelligence",
+      "patterns": [
+        "nature\\ machine\\ intelligence"
+      ],
+      "dblp_prefixes": [
+        "journals/natmi"
+      ]
+    },
+    {
+      "name": "RA-L",
+      "full": "IEEE Robotics and Automation Letters",
+      "patterns": [
+        "robotics\\ and\\ automation\\ letters"
+      ],
+      "dblp_prefixes": [
+        "journals/ral"
+      ]
+    },
+    {
+      "name": "3DV",
+      "full": "International Conference on 3D Vision",
+      "patterns": [
+        "3d\\ vision",
+        "3dv"
+      ],
+      "dblp_prefixes": [
+        "conf/3dim"
+      ]
+    },
+    {
+      "name": "AAAI",
+      "full": "AAAI Conference on Artificial Intelligence",
+      "patterns": [
+        "aaai"
+      ],
+      "dblp_prefixes": [
+        "conf/aaai"
+      ]
+    },
+    {
+      "name": "CVIU",
+      "full": "Computer Vision and Image Understanding",
+      "patterns": [
+        "computer\\ vision\\ and\\ image\\ understanding"
+      ],
+      "dblp_prefixes": [
+        "journals/cviu"
+      ]
+    },
+    {
+      "name": "CVPR",
+      "full": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "patterns": [
+        "computer\\ vision\\ and\\ pattern\\ recognition",
+        "cvpr"
+      ],
+      "dblp_prefixes": [
+        "conf/cvpr"
+      ]
+    },
+    {
+      "name": "CoRL",
+      "full": "Conference on Robot Learning",
+      "patterns": [
+        "conference\\ on\\ robot\\ learning",
+        "corl"
+      ],
+      "dblp_prefixes": [
+        "conf/corl"
+      ]
+    },
+    {
+      "name": "ECCV",
+      "full": "European Conference on Computer Vision",
+      "patterns": [
+        "european\\ conference\\ on\\ computer\\ vision",
+        "eccv"
+      ],
+      "dblp_prefixes": [
+        "conf/eccv"
+      ]
+    },
+    {
+      "name": "ICCV",
+      "full": "IEEE/CVF International Conference on Computer Vision",
+      "patterns": [
+        "international conference on computer vision(?! theory)",
+        "\\biccv\\b"
+      ],
+      "dblp_prefixes": [
+        "conf/iccv"
+      ]
+    },
+    {
+      "name": "ICLR",
+      "full": "International Conference on Learning Representations",
+      "patterns": [
+        "learning\\ representations",
+        "iclr"
+      ],
+      "dblp_prefixes": [
+        "conf/iclr"
+      ]
+    },
+    {
+      "name": "ICML",
+      "full": "International Conference on Machine Learning",
+      "patterns": [
+        "international\\ conference\\ on\\ machine\\ learning",
+        "icml"
+      ],
+      "dblp_prefixes": [
+        "conf/icml"
+      ]
+    },
+    {
+      "name": "ICRA",
+      "full": "IEEE International Conference on Robotics and Automation",
+      "patterns": [
+        "(?:international conference|int\\.? conf\\.?).*robotics and automation(?! engineering)",
+        "\\bicra\\b"
+      ],
+      "dblp_prefixes": [
+        "conf/icra"
+      ]
+    },
+    {
+      "name": "IJCAI",
+      "full": "International Joint Conference on Artificial Intelligence",
+      "patterns": [
+        "ijcai",
+        "joint\\ conference\\ on\\ artificial\\ intelligence"
+      ],
+      "dblp_prefixes": [
+        "conf/ijcai"
+      ]
+    },
+    {
+      "name": "IJCV",
+      "full": "International Journal of Computer Vision",
+      "patterns": [
+        "international\\ journal\\ of\\ computer\\ vision",
+        "ijcv"
+      ],
+      "dblp_prefixes": [
+        "journals/ijcv"
+      ]
+    },
+    {
+      "name": "IJRR",
+      "full": "The International Journal of Robotics Research",
+      "patterns": [
+        "international\\ journal\\ of\\ robotics\\ research"
+      ],
+      "dblp_prefixes": [
+        "journals/ijrr"
+      ]
+    },
+    {
+      "name": "IROS",
+      "full": "IEEE/RSJ International Conference on Intelligent Robots and Systems",
+      "patterns": [
+        "intelligent\\ robots\\ and\\ systems",
+        "iros"
+      ],
+      "dblp_prefixes": [
+        "conf/iros"
+      ]
+    },
+    {
+      "name": "JMLR",
+      "full": "Journal of Machine Learning Research",
+      "patterns": [
+        "journal\\ of\\ machine\\ learning\\ research",
+        "jmlr"
+      ],
+      "dblp_prefixes": [
+        "journals/jmlr"
+      ]
+    },
+    {
+      "name": "Nature",
+      "full": "Nature",
+      "patterns": [
+        "(?:^| ; )nature(?:$| ; )"
+      ],
+      "dblp_prefixes": [
+        "journals/nature"
+      ]
+    },
+    {
+      "name": "NeurIPS",
+      "full": "Conference on Neural Information Processing Systems",
+      "patterns": [
+        "neural\\ information\\ processing\\ systems",
+        "neurips",
+        "nips"
+      ],
+      "dblp_prefixes": [
+        "conf/nips"
+      ]
+    },
+    {
+      "name": "RSS",
+      "full": "Robotics: Science and Systems",
+      "patterns": [
+        "robotics:\\ science\\ and\\ systems",
+        "robotics\\ science\\ and\\ systems"
+      ],
+      "dblp_prefixes": [
+        "conf/rss"
+      ]
+    },
+    {
+      "name": "SIGGRAPH",
+      "full": "ACM SIGGRAPH / ACM Transactions on Graphics",
+      "patterns": [
+        "siggraph",
+        "acm\\ transactions\\ on\\ graphics"
+      ],
+      "dblp_prefixes": [
+        "conf/siggraph",
+        "conf/siggrapha",
+        "journals/tog"
+      ]
+    },
+    {
+      "name": "Science Robotics",
+      "full": "Science Robotics",
+      "patterns": [
+        "science\\ robotics"
+      ],
+      "dblp_prefixes": [
+        "journals/scirobotics"
+      ]
+    },
+    {
+      "name": "T-RO",
+      "full": "IEEE Transactions on Robotics",
+      "patterns": [
+        "transactions\\ on\\ robotics"
+      ],
+      "dblp_prefixes": [
+        "journals/trob"
+      ]
+    },
+    {
+      "name": "TMLR",
+      "full": "Transactions on Machine Learning Research",
+      "patterns": [
+        "transactions\\ on\\ machine\\ learning\\ research",
+        "tmlr"
+      ],
+      "dblp_prefixes": [
+        "journals/tmlr"
+      ]
+    },
+    {
+      "name": "TPAMI",
+      "full": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+      "patterns": [
+        "pattern\\ analysis\\ and\\ machine\\ intelligence",
+        "tpami"
+      ],
+      "dblp_prefixes": [
+        "journals/pami"
+      ]
+    },
+    {
+      "name": "TVCG",
+      "full": "IEEE Transactions on Visualization and Computer Graphics",
+      "patterns": [
+        "visualization\\ and\\ computer\\ graphics",
+        "tvcg"
+      ],
+      "dblp_prefixes": [
+        "journals/tvcg"
+      ]
+    },
+    {
+      "name": "WACV",
+      "full": "IEEE/CVF Winter Conference on Applications of Computer Vision",
+      "patterns": [
+        "applications\\ of\\ computer\\ vision",
+        "wacv"
+      ],
+      "dblp_prefixes": [
+        "conf/wacv"
+      ]
+    }
+  ],
+  "excluded_venue_patterns": [
+    "arxiv",
+    "biorxiv",
+    "ssrn",
+    "research square",
+    "preprints.org"
+  ],
+  "topics": [
+    {
+      "id": "T1",
+      "name": "四维动态场景重建",
+      "query": "((dynamic | deformable | nonrigid | \"non-rigid\" | \"time-varying\" | \"time varying\" | \"space-time\" | \"spatio-temporal\" | \"4D\") + (\"neural radiance field\" | \"Gaussian splatting\" | \"3D reconstruction\" | \"scene reconstruction\" | \"view synthesis\" | \"surface reconstruction\" | \"scene representation\")) | \"non-rigid fusion\" | \"nonrigid fusion\" | \"topologically varying\"",
+      "supplemental_query": "((nonrigid | \"non-rigid\" | \"non rigid\") + (reconstruction | fusion | tracking)) | ((dynamic | continuous | motion) + (pointmap | pointmaps | \"point map\" | \"3D perception\" | \"video geometry\"))"
+    },
+    {
+      "id": "T2",
+      "name": "面向交互的世界模型",
+      "query": "((\"world model\" | \"world models\" | \"world simulator\" | \"latent dynamics\" | \"action-conditioned prediction\" | \"action conditioned prediction\") + (learning | learned | neural | generative | control | planning | reinforcement | robot))"
+    },
+    {
+      "id": "T3",
+      "name": "具身操作中的动作学习",
+      "query": "((robot | robotic | visuomotor | \"vision-language-action\") + (manipulation | grasping | dexterous)) + (learning | learned | policy | imitation | diffusion | transformer | predictive)"
+    }
+  ],
+  "retrieval_year_range": "2014-2026",
+  "partial_year": 2026,
+  "partial_year_cutoff": "2026-10-29",
+  "annualized": false
+}

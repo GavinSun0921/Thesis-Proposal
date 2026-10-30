@@ -1,8 +1,80 @@
 # 参考文献发表状态核查
 
-## 2026-10-27 当前新稿引文
+## 2026-10-30 当前引用与公开数据核查
 
-2026-10-27 按当前题目扩充并复核全文实际引用：**84 条**，其中正式会议论文 68 篇、正式期刊论文 13 篇、正式出版专著 1 部、国家自然科学基金委员会通告 1 条、近期预印本 1 篇。新增引用均进入相应正文论述，主要补充动态重建与点跟踪、状态与动作条件建模，以及机器人操作数据和评价；不以未引用条目增加文末数量。旧版著录的 CoTracker 属于 ECCV 2024，Springer 将论文集引用年份著录为 2025；Diffusion Policy 采用 IJRR 2025 卷期版本，区别于 2024 在线发表。RVT-2 的作者分隔按正式记录整理，TD-MPC2 和 RoboFlamingo 指向 ICLR 会议记录。
+本轮撤销航空维修替代试件及实采、实机验证安排。`cairepublic`、`ifamscarf` 随案例退出正文，`probrobotics2005` 不再单独引用；`splinegs2025` 和 `pointodyssey2023` 在第一部分补引。第二、三部分均无编号引文，方法名保留归属。当前 96 条实际引用全部在第一部分出现，文献库由 121 条清理至 96 条；移除的是 25 条当前未引用记录，保留原有在用键名。
+
+下列为 2026-10-30 根据作者项目、官方代码或正式数据发布页面核对的验证来源；本次未下载完整数据，也未执行研究实验。
+
+| 来源 | 可用证据与用途 | 核查入口与限制 |
+| --- | --- | --- |
+| DyCheck iPhone | 真实动态观测，共可见区域及关键点评价；按序列的相机和深度条件使用 | [官方数据说明](https://github.com/KAIR-BAIR/dycheck/blob/main/docs/DATASETS.md)、[PCK 实现](https://github.com/KAIR-BAIR/dycheck/blob/main/dycheck/core/metrics/keypoint.py) |
+| PointOdyssey | 合成 RGB、深度、实例、相机与二维／三维轨迹；部分序列有同步多视角 | [作者发布](https://pointodyssey.com/)。实例标注不直接等同于任意部件粒度 |
+| Nerfies-HyperNeRF | 公开动态序列及相应训练／测试划分，支持观测恢复与结构变化分析 | [HyperNeRF 官方数据发布](https://github.com/google/hypernerf/releases/tag/v0.1)、[DyCheck 处理说明](https://github.com/KAIR-BAIR/dycheck/blob/main/docs/DATASETS.md)。图像序列不直接提供完整材料连接或新生表面形成真值 |
+| DROID | 公开交互示范和动作记录，按片段筛选预测输入与后续参考 | [作者项目及读取说明](https://droid-dataset.github.io/) |
+| PointWorld-DROID | 作者处理后的三维轨迹及有效性信息 | [NVIDIA 数据发布](https://huggingface.co/datasets/nvidia/PointWorld-DROID)、[官方实现](https://github.com/NVlabs/PointWorld)。自动估计轨迹按带误差参考单列 |
+| PhysTwin | 作者公开原始数据、处理数据及结果，按具体片段核对响应参考 | [官方代码与数据下载说明](https://github.com/Jianghanxiao/PhysTwin)。不把重建或优化结果直接当作独立物理真值 |
+| GauSTAR 比较条件 | 公开实现提供 ActorsHQ 数据处理路径 | [作者说明](https://github.com/eth-ait/GauSTAR)：论文捕获序列受许可限制未发布，不能据演示序列承诺公共切割基准 |
+
+PCK 的阈值与三维误差定义保留为评价约定，不属于性能目标。物理连接精确率、召回率及形成时间误差仅在存在直接参考时计算；其他公开序列的结论限于其可评价分量。默认验证不新增自建数据或实体实验。
+
+## 历史核查记录
+
+以下保留此前的来源核验与写作变化，其中已退出正文的条目、案例及旧引用数量仅用于追溯，当前范围以上节为准。
+
+
+
+2026-10-30：暂定题名统一为“连续动态世界模型构建方法研究”；当前正文与方法图按语义使用观测置信度、不确定性及观测支持等表述。文献原始题名、作者、发表信息及引文键不因本轮术语调整而改动；下文按日期记录的旧题名保留用于追溯。
+
+2026-10-30：贯穿案例改为公开航空维修背景下的薄壁替代试件局部切除与夹持移取。西北工业大学官网“学校简介”仅用于核实学校公开介绍的航空航天、材料和国防装备研究背景；Lufthansa Technik 与 Fraunhofer IFAM 的公开页面仅用于说明航空复合材料维修中的扫描、材料去除和修补准备等工艺背景。替代试件、切除过程、动作序列及预测结果均为拟建验证场景，不把上述公开资料表述为本课题数据或实验结果。
+
+| 文献键 | 题名 | 正式出版信息或状态 | 核验来源 |
+| --- | --- | --- | --- |
+| `nwpuintro2026` | 学校简介 | 西北工业大学官网公开页面，页面数据截至 2026-08-05 | [学校官方页面](https://www.nwpu.edu.cn/xxgk/xxjj.htm) |
+| `cairepublic` | CAIRE repair robot: Robot for inspection and repairs | Lufthansa Technik 官方公开产品页面，未标发布日期 | [机构公开页面](https://www.lufthansa-technik.com/en/caire-repair-robot) |
+| `ifamscarf` | Abrasive pre-treatment with vacuum suction blasting | Fraunhofer IFAM 官方公开技术页面，未标发布日期 | [机构公开页面](https://www.ifam.fraunhofer.de/en/technologies/abrasive-pre-treatment-vacuum-suction-blasting.html) |
+| `splinegs2025` | SplineGS: Robust Motion-Adaptive Spline for Real-Time Dynamic 3D Gaussians from Monocular Video | CVPR 2025：26866–26875 | [CVF 正式记录](https://openaccess.thecvf.com/content/CVPR2025/html/Park_SplineGS_Robust_Motion-Adaptive_Spline_for_Real-Time_Dynamic_3D_Gaussians_from_CVPR_2025_paper.html) |
+## 2026-10-29 重写 1.2 后的当前引文
+
+2026-10-29 按导师意见重写 1.2“国内外研究现状及发展态势”，保留四维动态场景重建、面向交互的世界模型、
+具身操作中的动作学习三个主题，各主题重建为总分总结构并按方法类别重新组织。本轮文献调整如下。
+
+**新增三条正式会议论文**，用于支撑学习式前馈恢复路线的论述与时间轴节点：
+
+| 文献键 | 题名 | 正式出版信息 | 核验来源 |
+| --- | --- | --- | --- |
+| `dust3r2024` | DUSt3R: Geometric 3D Vision Made Easy | CVPR 2024：20697–20709 | [CVF 正式记录](https://openaccess.thecvf.com/content/CVPR2024/html/Wang_DUSt3R_Geometric_3D_Vision_Made_Easy_CVPR_2024_paper.html) |
+| `vggt2025` | VGGT: Visual Geometry Grounded Transformer | CVPR 2025：5294–5306 | [CVF 正式记录](https://openaccess.thecvf.com/content/CVPR2025/html/Wang_VGGT_Visual_Geometry_Grounded_Transformer_CVPR_2025_paper.html) |
+| `d4rt2026` | Efficiently Reconstructing Dynamic Scenes One D4RT at a Time | CVPR 2026：7382–7392；CVPR 2026 最佳论文 | [CVF 正式记录](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Efficiently_Reconstructing_Dynamic_Scenes_One_D4RT_at_a_Time_CVPR_2026_paper.html)、[CVPR 2026 最佳论文公告](https://cvpr.thecvf.com/Conferences/2026/News/Best_Papers) |
+
+三条均为作者、题名、年份、页码由 CVF 正式记录逐项核对的前馈几何恢复代表工作；正文仅用于说明
+免标定点图回归与单次前馈几何的能力，不据此推断其在动态场景上的连续时间建模能力。D4RT 是用户在
+2026-10-29 讨论中特别指出的工作，最佳论文身份来自 CVPR 官方公告；正文只据其统一查询接口说明重建
+与跟踪的联系，不把最佳论文奖项当作方法适用范围的证据。
+
+**新增两条已在库中但此前未引用的条目**：`genie2024`（Genie，ICML 2024，PMLR 235：4603–4623）与
+`worldvla2025`（WorldVLA，arXiv:2506.21539，预印本）。前者用于说明可交互环境的生成式建模，
+后者用于说明动作与后续图像的联合预测。WorldVLA 与 DreamZero 均按预印本处理，在正文中明确标注，
+并在时间轴图中以空心节点和 `†` 区分。
+
+**移除三条结果示例图及其图源引用**：原图 2“动态场景重建的代表性结果”、图 3“动作条件下的三维场景预测”、
+图 4“具身操作的典型建模仿真”不再载入正文，相应读图文字一并删除；Shape of Motion、RetimeGS、PointWorld、
+OpenVLA 的引用改由正文论证承担，引用关系保留。图源文件、素材与来源记录按用户要求保留供追溯。
+
+**新增 1.2 的统计与时间轴图**：图 2—4 分别为三个主题的年度论文检索数量，图 5—7 为三个主题的方法路线时间轴。
+时间轴节点全部对应上表及既有核查记录中的正式出版条目，年份取论文集或卷期出版年；预印本节点单独标注。
+按用户要求，年度统计由 2015—2025 扩展到 2026 年，2026 年只计入截至 2026-10-29 已正式发表的记录，
+图中以星号和白柱标出，不能与完整年度直接比较。统计口径、检索式、清单与年度表见[统计说明](literature_stats/README.md)。
+
+本轮重写后全文实际引用 **96 条**：正式会议论文 70 篇、正式期刊论文 13 篇、正式出版专著 1 部、
+政策、基金项目、企业、图片来源及数据接口的官方在线资料 10 条、预印本 2 篇（WorldVLA、DreamZero）。
+原有文献键保持不变，首次引用编号由 BibTeX 按正文顺序重新生成。
+
+## 2026-10-29 1.1 重写时的引文记录（保留）
+
+2026-10-29 重写 1.1 后，全文实际引用 **92 条**：正式会议论文 68 篇、正式期刊论文 13 篇、正式出版专著 1 部、政策、基金项目、企业及图片来源的官方在线资料 9 条、近期预印本 1 篇。本轮新增八条在线资料，其中五条用于国家政策、美国 NSF 相关项目及国内外企业布局的事实说明，三条用于真实照片的来源引用，不计入正式学术论文数量；既有论文发表状态沿用 2026-10-27 的逐条核验记录。新增条目均被正文引用，全文首次引用编号随新结构重新生成。
+
+本轮核查中，美国 NSF 项目网页未能由浏览工具读取，改由 [NSF 官方公开 API](https://api.nsf.gov/services/v1/awards/2443468.json) 读取项目 2443468 的正式题名、摘要及 2025—2030 年执行期；摘要明确涉及世界模型、多模态建模和具身交互经验，正文只据此说明相关项目内容，不泛化为 NSF 专项指南。国家政策依据网信办转载的国务院原文，区分一般人工智能需求与世界模型研究的关联。企业资料仅用于说明公开布局及所述研究方向，不以企业宣传替代方法性能评价。基金委通告只核实专项名称和发布事实。
 
 DreamZero 为 **2026 年预印本**：截至本轮核查，作者项目与 arXiv 页面未给出可确认的正式期刊或会议论文集版本。它用于说明近期世界动作模型联合生成视频和动作的代表方向，保留预印本标识，不作为已正式发表论文。其余实际引用不含长期未发表的旧预印本；较早的文献均有正式出版记录，并用于交代基础方法或经典进展。
 
@@ -12,14 +84,23 @@ DreamZero 为 **2026 年预印本**：截至本轮核查，作者项目与 arXiv
 
 | 文献键 | 题名 | 正式出版信息或状态 | 核验来源 |
 | --- | --- | --- | --- |
-| `nsfcworldmodel2026` | 关于发布2026年度国家自然科学基金“空间智能与世界模型”专项项目申请指南的通告 | 国家自然科学基金委员会公开通告，2026 | [出版或来源记录](https://www.nsfc.gov.cn/p1/3381/2824/142425.html) |
-| `phystwin2025` | PhysTwin: Physics-Informed Reconstruction and Simulation of Deformable Objects from Videos | Proceedings of the IEEE/CVF International Conference on Computer Vision，2025：7219–7230 | [出版或来源记录](https://openaccess.thecvf.com/content/ICCV2025/html/Jiang_PhysTwin_Physics-Informed_Reconstruction_and_Simulation_of_Deformable_Objects_from_Videos_ICCV_2025_paper.html) |
-| `cndynamicgs2026` | 基于三维高斯泼溅的动态场景重建研究综述 | 计算机辅助设计与图形学学报，2026，卷 38（1）：61–77 | [出版或来源记录](https://www.jcad.cn/article/doi/10.3724/SP.J.1089.2025-00251) |
-| `monst3r2025` | MonST3R: A Simple Approach for Estimating Geometry in the Presence of Motion | International Conference on Learning Representations，2025 | [出版或来源记录](https://proceedings.iclr.cc/paper_files/paper/2025/hash/ce1710ff5b66f89b0d707bf1ec2850bf-Abstract-Conference.html) |
-| `cut3r2025` | Continuous 3D Perception Model with Persistent State | Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition，2025：10510–10522 | [出版或来源记录](https://openaccess.thecvf.com/content/CVPR2025/html/Wang_Continuous_3D_Perception_Model_with_Persistent_State_CVPR_2025_paper.html) |
 | `cnworld2026` | 大模型技术演进：世界模型让人工智能从感知走向决策(特邀) | 计算机工程，2026，卷 52（2）：1–6 | [出版或来源记录](https://www.ecice06.com/CN/10.19678/j.issn.1000-3428.0253281) |
 | `ref02` | Mastering diverse control tasks through world models | Nature，2025，卷 640（8059）：647–653 | [出版或来源记录](https://doi.org/10.1038/s41586-025-08744-2) |
-| `cnvla2026` | 面向具身操作的视觉–语言–动作模型综述 | 自动化学报，2026，卷 52（1）：18–51 | [出版或来源记录](https://www.aas.net.cn/article/2026/1) |
+| `nsfcworldmodel2026` | 关于发布2026年度国家自然科学基金“空间智能与世界模型”专项项目申请指南的通告 | 国家自然科学基金委员会公开通告，2026 | [出版或来源记录](https://www.nsfc.gov.cn/p1/3381/2824/142425.html) |
+| `nsfworldmodel2025` | CAREER: From Language Models to World Models: New Inference, Learning, and Modeling for Machine Reasoning | NSF 官方项目记录，2025；项目 2443468 | [NSF 官方 API](https://api.nsf.gov/services/v1/awards/2443468.json) |
+| `deepmindgenie2025` | Genie 3: A new frontier for world models | Google DeepMind 官方发布，2025-08-05 | [官方发布](https://deepmind.google/blog/genie-3-a-new-frontier-for-world-models/) |
+| `nvidiacosmos2025` | NVIDIA Launches Cosmos World Foundation Model Platform to Accelerate Physical AI Development | NVIDIA 官方发布，2025-01-06 | [官方发布](https://investor.nvidia.com/news/press-release-details/2025/NVIDIA-Launches-Cosmos-World-Foundation-Model-Platform-to-Accelerate-Physical-AI-Development/default.aspx) |
+| `tencentworld2025` | 腾讯混元3D世界模型1.0 | 腾讯官方模型页，2025；以指定版本介绍为依据 | [官方模型页](https://3d-models.hunyuan.tencent.com/world/?currentTab=HunyuanWorld-1.0) |
+| `aiplus2025` | 关于深入实施“人工智能+”行动的意见 | 国务院政策文件，国发〔2025〕11号；2025-08-21 成文，网信办 2025-08-27 转载 | [官方转载全文](https://www.cac.gov.cn/2025-08/27/c_1758018277755538.htm) |
+| `nasadrone2025` | Testing Drones for Mars in the Mojave Desert | NASA 官方图片页，2025-12-05；图片署名 NASA/JPL-Caltech | [官方图源](https://www.nasa.gov/image-article/testing-drones-for-mars-in-the-mojave-desert/) |
+| `nasamaintenance2026` | Keeping NASA Flying: Ground Crews Ensure Aircraft Readiness | NASA 官方文章，2026-05-22；选用 AFRC2026-0004-036，署名 NASA/Christopher LC Clark | [官方图源](https://www.nasa.gov/centers-and-facilities/armstrong/keeping-nasa-flying-ground-crews-ensure-aircraft-readiness/) |
+| `nasavms2026` | Vertical Motion Simulator (VMS) | NASA Ames 官方设施介绍，网页元数据更新于 2026-03-27；选用驾驶舱照片 acd26-0039-005 | [官方图源](https://www.nasa.gov/ames/aviationsystems/vms/) |
+| `cndynamicgs2026` | 基于三维高斯泼溅的动态场景重建研究综述 | 计算机辅助设计与图形学学报，2026，卷 38（1）：61–77 | [出版或来源记录](https://www.jcad.cn/article/doi/10.3724/SP.J.1089.2025-00251) |
+| `retimegs2026` | RetimeGS: Continuous-Time Reconstruction of 4D Gaussian Splatting | Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition，2026：7340–7350 | [出版或来源记录](https://openaccess.thecvf.com/content/CVPR2026/html/Wang_RetimeGS_Continuous-Time_Reconstruction_of_4D_Gaussian_Splatting_CVPR_2026_paper.html) |
+| `cut3r2025` | Continuous 3D Perception Model with Persistent State | Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition，2025：10510–10522 | [出版或来源记录](https://openaccess.thecvf.com/content/CVPR2025/html/Wang_Continuous_3D_Perception_Model_with_Persistent_State_CVPR_2025_paper.html) |
+| `d4rt2026` | Efficiently Reconstructing Dynamic Scenes One D4RT at a Time | Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition，2026：7382–7392；CVPR 2026 最佳论文 | [出版或来源记录](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Efficiently_Reconstructing_Dynamic_Scenes_One_D4RT_at_a_Time_CVPR_2026_paper.html)、[最佳论文公告](https://cvpr.thecvf.com/Conferences/2026/News/Best_Papers) |
+| `phystwin2025` | PhysTwin: Physics-Informed Reconstruction and Simulation of Deformable Objects from Videos | Proceedings of the IEEE/CVF International Conference on Computer Vision，2025：7219–7230 | [出版或来源记录](https://openaccess.thecvf.com/content/ICCV2025/html/Jiang_PhysTwin_Physics-Informed_Reconstruction_and_Simulation_of_Deformable_Objects_from_Videos_ICCV_2025_paper.html) |
+| `ref06` | PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation | Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition，2026：20765–20779 | [出版或来源记录](https://openaccess.thecvf.com/content/CVPR2026/html/Huang_PointWorld_Scaling_3D_World_Models_for_In-The-Wild_Robotic_Manipulation_CVPR_2026_paper.html) |
 | `cndynamic2024` | 动态场景的三维重建研究综述 | 计算机科学与探索，2024，卷 18（4）：831–860 | [出版或来源记录](https://opaj.napstic.cn/periodicalArticle/0120240401922522) |
 | `cnnerf2025` | 神经辐射场技术及应用综述 | 计算机辅助设计与图形学学报，2025，卷 37（1）：51–74 | [出版或来源记录](https://jcad.cn/cn/article/Y2025/I1/51) |
 | `nerf2020` | NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis | Computer Vision – ECCV 2020，2020，卷 12346：405–421 | [出版或来源记录](https://link.springer.com/chapter/10.1007/978-3-030-58452-8_24) |
@@ -49,7 +130,7 @@ DreamZero 为 **2026 年预印本**：截至本轮核查，作者项目与 arXiv
 | `cotracker2024` | CoTracker: It Is Better to Track Together | Computer Vision – ECCV 2024，2025，卷 15120：18–35 | [出版或来源记录](https://link.springer.com/chapter/10.1007/978-3-031-73033-7_2) |
 | `cotracker3` | CoTracker3: Simpler and Better Point Tracking by Pseudo-Labelling Real Videos | Proceedings of the IEEE/CVF International Conference on Computer Vision，2025：6013–6022 | [出版或来源记录](https://openaccess.thecvf.com/content/ICCV2025/html/Karaev_CoTracker3_Simpler_and_Better_Point_Tracking_by_Pseudo-Labelling_Real_Videos_ICCV_2025_paper.html) |
 | `omnimotion2023` | Tracking Everything Everywhere All at Once | Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)，2023：19795–19806 | [出版或来源记录](https://openaccess.thecvf.com/content/ICCV2023/html/Wang_Tracking_Everything_Everywhere_All_at_Once_ICCV_2023_paper.html) |
-| `retimegs2026` | RetimeGS: Continuous-Time Reconstruction of 4D Gaussian Splatting | Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition，2026：7340–7350 | [出版或来源记录](https://openaccess.thecvf.com/content/CVPR2026/html/Wang_RetimeGS_Continuous-Time_Reconstruction_of_4D_Gaussian_Splatting_CVPR_2026_paper.html) |
+| `monst3r2025` | MonST3R: A Simple Approach for Estimating Geometry in the Presence of Motion | International Conference on Learning Representations，2025 | [出版或来源记录](https://proceedings.iclr.cc/paper_files/paper/2025/hash/ce1710ff5b66f89b0d707bf1ec2850bf-Abstract-Conference.html) |
 | `se3bspline2026` | Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos | Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition，2026：33291–33300 | [出版或来源记录](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Learning_Explicit_Continuous_Motion_Representation_for_Dynamic_Gaussian_Splatting_from_CVPR_2026_paper.html) |
 | `particlegs2026` | ParticleGS: Learning Neural Gaussian Particle Dynamics from Videos for Prior-free Physical Motion Extrapolation | Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition，2026：8331–8341 | [出版或来源记录](https://openaccess.thecvf.com/content/CVPR2026/html/Quan_ParticleGS_Learning_Neural_Gaussian_Particle_Dynamics_from_Videos_for_Prior-free_CVPR_2026_paper.html) |
 | `usplat4d2026` | Uncertainty Matters in Dynamic Gaussian Splatting for Monocular 4D Reconstruction | International Conference on Learning Representations，2026 | [出版或来源记录](https://proceedings.iclr.cc/paper_files/paper/2026/hash/26300457961c3e056ea61c9d3ebec2a4-Abstract-Conference.html) |
@@ -73,10 +154,10 @@ DreamZero 为 **2026 年预印本**：截至本轮核查，作者项目与 arXiv
 | `tesseract2025` | Learning 4D Embodied World Models | Proceedings of the IEEE/CVF International Conference on Computer Vision，2025：5337–5347 | [出版或来源记录](https://openaccess.thecvf.com/content/ICCV2025/html/Zhen_Learning_4D_Embodied_World_Models_ICCV_2025_paper.html) |
 | `gwm2025` | GWM: Towards Scalable Gaussian World Models for Robotic Manipulation | Proceedings of the IEEE/CVF International Conference on Computer Vision，2025：9263–9274 | [出版或来源记录](https://openaccess.thecvf.com/content/ICCV2025/html/Lu_GWM_Towards_Scalable_Gaussian_World_Models_for_Robotic_Manipulation_ICCV_2025_paper.html) |
 | `ref10` | Beyond Pixel Histories: World Models with Persistent 3D State | Proceedings of the 43rd International Conference on Machine Learning，2026，卷 306：34048–34070 | [出版或来源记录](https://proceedings.mlr.press/v306/garcin26a.html) |
-| `ref06` | PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation | Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition，2026：20765–20779 | [出版或来源记录](https://openaccess.thecvf.com/content/CVPR2026/html/Huang_PointWorld_Scaling_3D_World_Models_for_In-The-Wild_Robotic_Manipulation_CVPR_2026_paper.html) |
 | `ref07` | Future Dynamic 3D Reconstruction: Toward 3D World Modeling with Disentangled Ego-Motion | Proceedings of the 43rd International Conference on Machine Learning，2026，卷 306：90232–90250 | [出版或来源记录](https://proceedings.mlr.press/v306/morbitzer26a.html) |
 | `ref08` | Flow Equivariant World Models: Structured Memory for Dynamic Environments | Proceedings of the 43rd International Conference on Machine Learning，2026，卷 306：73968–74002 | [出版或来源记录](https://proceedings.mlr.press/v306/lillemark26a.html) |
 | `mvmwm2023` | Multi-View Masked World Models for Visual Robotic Manipulation | Proceedings of the 40th International Conference on Machine Learning，2023，卷 202：30613–30632 | [出版或来源记录](https://proceedings.mlr.press/v202/seo23a.html) |
+| `cnvla2026` | 面向具身操作的视觉–语言–动作模型综述 | 自动化学报，2026，卷 52（1）：18–51 | [出版或来源记录](https://www.aas.net.cn/article/2026/1) |
 | `rt22023` | RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control | Proceedings of The 7th Conference on Robot Learning，2023，卷 229：2165–2183 | [出版或来源记录](https://proceedings.mlr.press/v229/zitkovich23a.html) |
 | `openvla2025` | OpenVLA: An Open-Source Vision-Language-Action Model | Proceedings of The 8th Conference on Robot Learning，2025，卷 270：2679–2713 | [出版或来源记录](https://proceedings.mlr.press/v270/kim25c.html) |
 | `pi02025` | π₀: A Vision-Language-Action Flow Model for General Robot Control | Proceedings of Robotics: Science and Systems，2025 | [出版或来源记录](https://roboticsproceedings.org/rss21/p010.html) |
@@ -111,7 +192,7 @@ DreamZero 为 **2026 年预印本**：截至本轮核查，作者项目与 arXiv
 
 2026-10-26 在 1.2 三个主题分别加入重建结果、交互预测及动作学习示意图，复用已有的 `shapeofmotion2025`、`retimegs2026`、`ref06`、`openvla2025`、`dreamzero2026`，不新增书目或改变发表状态。来源段落放在相关论文首次介绍之后，实际引用仍为 41 条，首次出现顺序保持不变。素材来自对应作者项目及 PointWorld 作者 PDF Figure 16，来源、提取位置和校验值见[素材说明](../latex/figures/materials/literature_review/README.md)。RetimeGS 中间图为观测区间内插值；PointWorld 预测和参考标注来自同一案例、同一时域，参考标注不充作模型结果；动作学习图的三幅照片为各自工作的独立场景示例。
 
-2026-10-26 本次重构第二部分，增补 `se3bspline2026`、`usplat4d2026` 两条正式会议论文，实际引文由 39 条增至 41 条。第一项承认连续轨迹、自适应运动表达及不确定性传播已有直接基础，进一步提出观测可靠性、有效时间范围及表达自由度的研究思路。同步在 1.2.1 补充领域比较，未新增预印本，四个科学问题名称保持不变。
+2026-10-26 本次重构第二部分，增补 `se3bspline2026`、`usplat4d2026` 两条正式会议论文，实际引文由 39 条增至 41 条。第一项承认连续轨迹、自适应运动表达及不确定性传播已有直接基础，进一步提出观测置信度、有效时间范围及表达自由度的研究思路。同步在 1.2.1 补充领域比较，未新增预印本，四个科学问题名称保持不变。
 
 本次事实核查使用一手来源：[SE(3) B 样条正式记录](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Learning_Explicit_Continuous_Motion_Representation_for_Dynamic_Gaussian_Splatting_from_CVPR_2026_paper.html)、[作者全文](https://arxiv.org/html/2603.25058)、[USplat4D 正式记录](https://proceedings.iclr.cc/paper_files/paper/2026/hash/26300457961c3e056ea61c9d3ebec2a4-Abstract-Conference.html)、[RetimeGS 作者第 5 节及附录 B、C.8](https://arxiv.org/html/2603.13783v1)、[Shape of Motion 作者第 5 节](https://arxiv.org/html/2407.13764)、[GauSTAR 作者第 5 节](https://arxiv.org/html/2501.10283)、[AT-GS 作者方法及结论](https://arxiv.org/html/2411.06602)、[GWM 作者第 3.2 节](https://arxiv.org/html/2508.17600)、[PointWorld 作者附录 A.1](https://arxiv.org/html/2601.03782)。论文报告的限制只用于相应方法及条件，本课题拟研究机制和预期收益不作为原论文已经证明的结论。
 
@@ -136,7 +217,7 @@ DreamZero 为 **2026 年预印本**：截至本轮核查，作者项目与 arXiv
 | 文献库键 | 正式版本及用途 | 核查来源 |
 | --- | --- | --- |
 | se3bspline2026 | CVPR 2026：33291–33300；联合位置和朝向的连续 SE(3) B 样条运动，自适应运动基及控制点；作者、题名、年份和页码由正式记录核对 | [CVF 正式记录](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Learning_Explicit_Continuous_Motion_Representation_for_Dynamic_Gaussian_Splatting_from_CVPR_2026_paper.html)、[作者全文](https://arxiv.org/html/2603.25058) |
-| usplat4d2026 | ICLR 2026；时变不确定性及可靠运动信息传播，用于说明观测可靠性已有研究基础；作者、题名、年份由正式论文集核对 | [ICLR 正式记录](https://proceedings.iclr.cc/paper_files/paper/2026/hash/26300457961c3e056ea61c9d3ebec2a4-Abstract-Conference.html) |
+| usplat4d2026 | ICLR 2026；时变不确定性及运动信息传播，用于说明观测置信度已有研究基础；作者、题名、年份由正式论文集核对 | [ICLR 正式记录](https://proceedings.iclr.cc/paper_files/paper/2026/hash/26300457961c3e056ea61c9d3ebec2a4-Abstract-Conference.html) |
 | phystwin2025 | ICCV 2025：7219–7230；用于图 1 同一布料案例的历史观测、三维渲染、留出未来预测和真实执行参考；不将其内部方法或更新能力等同于本课题范式 | [CVF 正式记录](https://openaccess.thecvf.com/content/ICCV2025/html/Jiang_PhysTwin_Physics-Informed_Reconstruction_and_Simulation_of_Deformable_Objects_from_Videos_ICCV_2025_paper.html)、[作者全文](https://arxiv.org/pdf/2503.17973)、[项目页](https://jianghanxiao.github.io/phystwin-web/) |
 | nsfcworldmodel2026 | 2026-09-18 基金委信息科学部公开通告；仅用于研究背景 | [官方通告](https://www.nsfc.gov.cn/p1/3381/2824/142425.html) |
 | cnvla2026 | 自动化学报 52(1)：18–51，2026；具身操作及 VLA 发展背景 | [期刊记录](https://www.aas.net.cn/cn/article/doi/10.16383/j.aas.c250394) |
@@ -144,6 +225,7 @@ DreamZero 为 **2026 年预印本**：截至本轮核查，作者项目与 arXiv
 | openvla2025 | CoRL，PMLR 270：2679–2713，2025；开放 VLA 及任务微调；年份采用正式论文集年份 | [正式版本](https://proceedings.mlr.press/v270/kim25c.html) |
 | monst3r2025 | ICLR 2025；动态逐时刻点图及几何恢复，区分预测和后续对齐 | [正式版本](https://proceedings.iclr.cc/paper_files/paper/2025/hash/ce1710ff5b66f89b0d707bf1ec2850bf-Abstract-Conference.html)、[作者项目](https://monst3r-project.github.io/) |
 | cut3r2025 | CVPR 2025：10510–10522；持续循环状态及三维点图读取，支持静态和动态内容；不据“continuous updating”推断显式连续时间运动 | [正式记录](https://openaccess.thecvf.com/content/CVPR2025/html/Wang_Continuous_3D_Perception_Model_with_Persistent_State_CVPR_2025_paper.html)、[作者全文](https://arxiv.org/abs/2501.12387) |
+| d4rt2026 | CVPR 2026：7382–7392；统一查询接口同时给出深度、时空对应和相机参数，用于说明重建与跟踪的联系；最佳论文以官方公告为据，不据此扩展方法能力 | [正式记录](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Efficiently_Reconstructing_Dynamic_Scenes_One_D4RT_at_a_Time_CVPR_2026_paper.html)、[最佳论文公告](https://cvpr.thecvf.com/Conferences/2026/News/Best_Papers) |
 | pi02025 | RSS 2025，DOI 10.15607/RSS.2025.XXI.010；视觉语言模型基础上的连续动作流匹配 | [正式版本](https://roboticsproceedings.org/rss21/p010.html) |
 | tesseract2025 | ICCV 2025：5337–5347；RGB、深度、法向联合生成、四维场景恢复及逆动力学 | [正式记录](https://openaccess.thecvf.com/content/ICCV2025/html/Zhen_Learning_4D_Embodied_World_Models_ICCV_2025_paper.html)、[正式全文](https://openaccess.thecvf.com/content/ICCV2025/papers/Zhen_Learning_4D_Embodied_World_Models_ICCV_2025_paper.pdf) |
 | dreamzero2026 | arXiv:2602.15922，2026 预印本；未来视频和机器人动作的联合建模，明确保留版本身份 | [作者预印本](https://arxiv.org/abs/2602.15922)、[项目页](https://dreamzero0.github.io/) |
@@ -164,13 +246,13 @@ PointWorld 的静态初始状态限制以[作者全文附录 A.1](https://arxiv.
 
 ## 归档旧稿的历史核查记录
 
-以下记录适用于[归档旧稿 ZIP](../archives/2026-10-22-before-rewrite.zip)，保留供文献库维护和复核。下述 87 条数量及引用分布均指旧稿。
+以下记录对应于 2026-10-22 之前的旧稿（存档于标签 `20261028v1` 的 Git 历史中），保留供文献库维护和复核。下述 87 条数量及引用分布均指旧稿。
 
 核查日期：2026-10-09，增补日期：2026-10-12、2026-10-13、2026-10-15、2026-10-18、2026-10-20。范围：归档旧稿实际引用的 87 条文献，其中中文 7 条、英文 80 条。优先核对会议论文集、出版社页面及其书目元数据；未找到正式出版记录时再核对作者项目页和 arXiv。以下链接仅供维护与复核，报告参考文献列表统一隐藏 URL、访问日期，保留 DOI。
 
 8 条原先按预印本引用的论文已改为正式出版版本。LiveWorld 已确认被 ECCV 2026 录用，但本次未找到正式卷页及 DOI，单独注明录用状态。V-JEPA 2、3D-Belief 和 BridgeVLA++ 未查到正式出版记录，继续注明预印本身份。本记录只核查书目信息与发表状态，不能替代对实验协议和结论的深入阅读。
 
-此前综述扩充新增 23 条文献：6 条中文正式期刊文章、17 条英文正式会议论文。2026-10-12 另增补 2 条英文研究文献与 1 条中文政策公告。新增引用分别落实到背景、状态基础、特征预测、动态三维表示、预测可靠性和机器人操作的论述中，未通过未引用条目扩充列表。代表工作比较表中，每个代表工作名称后均标注对应文献，并补充持续高斯/稀疏运动控制和三维操作两个比较条目。中文文献按原文语言著录；PerAct 与 OpenVLA 的年份采用 PMLR 正式论文集年份 2023、2025，与会议举行年份区分。
+此前综述扩充新增 23 条文献：6 条中文正式期刊文章、17 条英文正式会议论文。2026-10-12 另增补 2 条英文研究文献与 1 条中文政策公告。新增引用分别落实到背景、状态基础、特征预测、动态三维表示、预测不确定性和机器人操作的论述中，未通过未引用条目扩充列表。代表工作比较表中，每个代表工作名称后均标注对应文献，并补充持续高斯/稀疏运动控制和三维操作两个比较条目。中文文献按原文语言著录；PerAct 与 OpenVLA 的年份采用 PMLR 正式论文集年份 2023、2025，与会议举行年份区分。
 
 2026-10-13 扩充 1.1 与 1.2：在现稿 53 条基础上新增 22 条正式论文或学术专著，补充状态估计、观测融合、遮挡对象持续性、身份关联、三维对象跟踪、对象动力学、预测校准和交互学习。1.1 实际引用由 2 条增至 10 条，1.2 由 49 条增至 73 条，两节合并去重为 75 条。另补记现稿此前已增加的 MuZero、TD-MPC2、Genie、HyperNeRF 和 OmniMotion 五条。新增条目核对正式论文集、作者项目或出版社登记元数据；对 PermaTrack、OC-SORT 和 BundleSDF 进一步检查论文正文，区分隐藏标注来源、重观测后的回溯更新、刚体与输入掩码等条件。
 

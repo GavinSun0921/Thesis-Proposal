@@ -1,49 +1,165 @@
-% Physical connection edits and surface birth are not visibility changes.
-% Four numbered stages on a shared flow line, then an unruled sketch strip.
-% Each sketch carries its lettered title BELOW it, centred on the sketch's own
-% horizontal extent.
+% Physical connection change: one split event, two local branches, one output.
+% The event sketch keeps only the before/after cube pair; the left branch
+% updates local connections and surfaces, the right branch keeps the material
+% motion history and the surface-existence history apart.  Visibility gaps are
+% not drawn as surface birth or as a physical disconnection.
 \begingroup
 \input{figures/technical_route_styles.tex}
-\trTheme{Topology}
-\begin{tikzpicture}[trBase]
+\trTheme{Ochre}
+% ---- local panel helpers (scoped to this figure) -------------------------
+\newcommand{\trkPanel}[5]{%
+  \path[fill=white,draw=trMid,line width=0.6pt] (#1,#2) rectangle (#3,#4);
+  \path[fill=trDark] (#1,#2) rectangle (#3,{#2+0.56});
+  \node[trRouteHead] at ({#1/2+#3/2},{#2+0.28}) {#5};}
+\newcommand{\trkFocus}[5]{%
+  \path[fill=trPale,draw=trDark,line width=0.7pt] (#1,#2) rectangle (#3,#4);
+  \path[fill=trDark] (#1,#2) rectangle (#3,{#2+0.56});
+  \node[trRouteHead] at ({#1/2+#3/2},{#2+0.28}) {#5};}
+\newcommand{\trkPanelMain}[5]{%
+  \path[fill=white,draw=trMid,line width=0.6pt] (#1,#2) rectangle (#3,#4);
+  \path[fill=trDark] (#1,#2) rectangle (#3,{#2+0.56});
+  \node[trRouteHead] at ({#1/2+#3/2},{#2+0.28}) {#5};}
+% ---- local block primitives ----------------------------------------------
+% front face + top face; the right side is added only where it is visible
+\newcommand{\trkBody}[6]{%
+  \path[fill=trBluePale,draw=trBlueDark,line width=0.6pt]
+    (#1,#2) rectangle ({#1+#3},{#2+#4});
+  \path[fill=trBlueWash,draw=trBlueDark,line width=0.6pt]
+    (#1,#2) -- ({#1+#5},{#2+#6}) -- ({#1+#3+#5},{#2+#6}) --
+    ({#1+#3},#2) -- cycle;}
+\newcommand{\trkBodySide}[6]{%
+  \trkBody{#1}{#2}{#3}{#4}{#5}{#6}%
+  \path[fill=trBluePale!70,draw=trBlueDark,line width=0.6pt]
+    ({#1+#3},#2) -- ({#1+#3+#5},{#2+#6}) --
+    ({#1+#3+#5},{#2+#4+#6}) -- ({#1+#3},{#2+#4}) -- cycle;}
+% new cut face: a vertical face at the split, drawn as a parallelogram
+\newcommand{\trkCut}[5]{%
+  \path[fill=trOchrePale,draw=trOchreDark,line width=0.85pt]
+    (#1,#2) -- ({#1+#4},{#2+#5}) -- ({#1+#4},{#2+#3+#5}) --
+    (#1,{#2+#3}) -- cycle;}
+\begin{tikzpicture}[trRouteBase]
+  \path[use as bounding box] (0.12,0) rectangle (15.68,8.27);
 
-  \trStage{0.30}{2.95}{1}{状态及事件信息}{连续状态、变化区域或时间提示}
-  \trStage[core]{3.95}{2.95}{2}{局部关系判断}{物理连接有效性、变化区及稳定区}
-  \trStage[core]{7.60}{2.95}{3}{表面连接更新}{局部表面代理、解除失效约束}
-  \trStage[core]{11.25}{2.95}{4}{历史有效性维护}{延续材料运动、建立新边界历史}
+  % ======================= event: one split ==============================
+  \trkPanelMain{0.15}{0.15}{15.65}{3.00}{切分事件与连接判断}
 
-  \trStep{3.25}{3.95}
-  \trStep{6.90}{7.60}
-  \trStep{10.55}{11.25}
+  % intact body and the connection that survives in the stable region
+  \trkBodySide{1.30}{1.38}{1.15}{1.10}{0.28}{-0.18}
+  \draw[trOchreDark,line width=1.5pt] (1.42,1.68) -- (2.33,1.68);
+  \draw[trOchreDark,line width=0.8pt] (1.42,1.60) -- (1.42,1.76);
+  \draw[trOchreDark,line width=0.8pt] (2.33,1.60) -- (2.33,1.76);
+  \node[trRouteSmall] at (1.95,1.00) {稳定区连接};
 
-  \draw[trFeedback] (12.72,4.30) -- (12.72,3.66) -- (5.42,3.66) -- (5.42,4.30);
-  \node[trTag] at (9.05,3.66) {新观测修正局部结构};
+  % the one physical event
+  \draw[trRouteFlow] (3.05,1.83) -- (4.38,1.83);
+  \node[trRouteSmall] at (3.71,1.54) {切分};
 
-  % ---- sketch strip: drawing above, centred title below ----
-  % (a) one relation is released; the new physical boundary is marked  [0.75 .. 6.20]
-  \draw[trMotion] (0.95,1.95) -- (1.90,3.05) -- (2.85,1.95) -- cycle;
-  \draw[trMotion] (4.25,1.95) -- (5.20,3.05) -- (6.15,1.95) -- cycle;
-  \draw[trPossible,draw=trTopologyAccent,line width=0.95pt] (2.85,1.95) -- (4.25,1.95);
-  \draw[trSketch] (3.38,1.72) -- (3.72,2.18) (3.38,2.18) -- (3.72,1.72);
-  \foreach \xx/\yy in {0.95/1.95,1.90/3.05,2.85/1.95,4.25/1.95,5.20/3.05,6.15/1.95}{
-    \fill[trTimeAccent] (\xx,\yy) circle (0.055);
-  }
-  \node[trLabel,anchor=west] at (1.60,1.52) {交叉标记为已失效的共享约束};
-  \node[text width=5.45cm,align=center] at (3.55,1.02)
-    {{\captionsetup[subfigure]{font=figsubroute,skip=0pt}
-      \subcaption{连接有效性}\label{subfig:route-topology-links}}};
+  % the two halves: same height and depth, complementary cut faces
+  \trkBody{4.55}{1.38}{0.55}{1.10}{0.20}{-0.15}
+  \trkCut{5.10}{1.38}{1.10}{0.20}{-0.15}
+  \trkBodySide{5.72}{1.38}{0.55}{1.10}{0.20}{-0.15}
+  \trkCut{5.72}{1.38}{1.10}{-0.20}{-0.15}
 
-  % (b) material motion continues; surface history starts at birth  [7.30 .. 13.60]
-  \node[trLabel,anchor=east] at (7.72,2.55) {材料运动};
-  \node[trLabel,anchor=east] at (7.72,1.98) {表面历史};
-  \path[fill=trTopologyFill] (10.35,1.72) rectangle (11.10,2.82);
-  \draw[trArrow,draw=trTimeAccent,line width=0.8pt] (7.80,2.55) -- (13.55,2.55);
-  \draw[trPossible,draw=trTopologyAccent,line width=0.95pt] (10.35,1.98) -- (11.10,1.98);
-  \draw[trArrow,draw=trTopologyAccent,line width=0.8pt] (11.10,1.98) -- (13.55,1.98);
-  \draw[trPossible] (10.35,1.72) -- (10.35,2.82) (11.10,1.72) -- (11.10,2.82);
-  \node[trLabel] at (10.72,1.52) {形成区间};
-  \node[text width=6.30cm,align=center] at (10.45,1.02)
-    {{\captionsetup[subfigure]{font=figsubroute,skip=0pt}
-      \subcaption{两类历史分别维护}\label{subfig:route-topology-history}}};
-\end{tikzpicture}
+  % the released connection across the split
+  \draw[trRoutePossible,draw=black!60] (5.30,1.74) -- (5.52,1.74);
+  \draw[black!65,line width=1.0pt] (5.33,1.66) -- (5.49,1.82)
+    (5.33,1.82) -- (5.49,1.66);
+  \node[trRouteSmall] at (5.41,1.00) {失效连接};
+
+  % the cut faces are the only new surfaces
+  \draw[trOchreDark,line width=0.5pt] (5.30,2.56) -- (5.30,2.36);
+  \draw[trOchreDark,line width=0.5pt] (5.52,2.56) -- (5.52,2.36);
+  \node[trRouteSmall,text=trOchreDark] at (5.40,2.78)
+    {新生表面};
+
+  % evidence and the visibility boundary, kept to the right of the sketch
+  \path[trRouteStrip] (7.85,1.08) rectangle (15.50,2.62);
+  \fill[trOchreDark] (7.98,1.395) rectangle ++(0.09,0.09);
+  \node[trRouteSmall,anchor=west] at (8.16,1.44)
+    {判据：分离运动 · 轮廓／深度 · 事件};
+  \draw[black!60,fill=white,line width=0.55pt]
+    (7.98,1.805) rectangle ++(0.09,0.09);
+  \node[trRouteSmall,anchor=west] at (8.16,1.85)
+    {边界：观测中断不判新生/断连};
+  \draw[black!60,fill=white,line width=0.55pt] (8.025,2.26) circle (0.055);
+  \node[trRouteSmall,anchor=west] at (8.16,2.26)
+    {对象：同一物体};
+
+  % ================= split to the two local branches =====================
+  \draw[draw=trDark,line width=0.72pt] (7.90,3.00) -- (7.90,3.20) --
+    (3.85,3.20) -- (11.95,3.20);
+  \draw[trRouteFlow] (3.85,3.20) -- (3.85,3.36);
+  \draw[trRouteFlow] (11.95,3.20) -- (11.95,3.36);
+
+  % ================= left branch: local update ===========================
+  \trkPanel{0.15}{3.40}{7.55}{6.60}{局部连接与表面更新}
+  \draw[trOchreDark,line width=1.4pt] (0.46,4.24) -- (0.70,4.24);
+  \node[trRouteBody,anchor=west] at (0.85,4.24)
+    {保持稳定区关系};
+  \draw[black!65,line width=0.9pt] (0.525,4.505) -- (0.635,4.615)
+    (0.525,4.615) -- (0.635,4.505);
+  \node[trRouteBody,anchor=west] at (0.85,4.56)
+    {解除失效连接};
+  \fill[trOchreDark] (0.53,4.83) rectangle ++(0.10,0.10);
+  \node[trRouteBody,anchor=west] at (0.85,4.88)
+    {更新表面与新生边界};
+
+  \path[fill=trOchrePale,draw=trOchreSoft,line width=0.55pt]
+    (1.65,5.16) rectangle (6.05,5.64);
+  \node[trRouteMath] at (3.85,5.40) {$g_{ij}e_{ij}(t)$};
+  \node[trRouteSmall] at (3.85,5.94)
+    {$g_{ij}$：共享权重，非物理连接};
+  \node[trRouteSmall] at (3.85,6.33)
+    {$e_{ij}(t)$：$\mathcal E(t)$ 物理连接支持度};
+
+  % ================= right branch: two histories =========================
+  \trkPanel{8.25}{3.40}{15.65}{6.60}{材料运动与表面历史}
+  \node[trRouteSmall,text=trOchreDark] at (12.525,4.20) {形成区间待定};
+  \node[trRouteSmall,text=trBlueDark] at (9.35,4.87)
+    {有效关联下延续};
+
+  % formation-time interval: the surface history is pending inside it
+  \path[fill=trOchrePale] (12.10,4.40) rectangle (12.95,5.85);
+  \draw[trOchreSoft,line width=0.55pt,dash pattern=on 2pt off 1.5pt]
+    (12.10,4.40) -- (12.10,5.85) (12.95,4.40) -- (12.95,5.85);
+
+  % material motion history: solid where association support is available
+  \draw[draw=trBlueDark,line width=0.95pt,
+    -{Latex[length=1.3mm,width=0.9mm]}] plot[smooth] coordinates
+    {(10.55,4.60) (11.20,4.50) (12.10,4.54) (12.95,4.49)
+     (13.80,4.56) (14.50,4.48) (15.30,4.55)};
+  \foreach \xx/\yy in {10.62/4.59,11.20/4.50,11.70/4.53,12.30/4.52,13.15/4.49,13.80/4.54,14.50/4.52,15.00/4.49}{
+    \fill[trBlueDark] (\xx,\yy) circle (0.045);}
+  \node[trRouteSmall,text=trBlueDark] at (9.35,4.42) {材料运动历史};
+
+  % new-surface history: pending (hollow) before the confirmed formation
+  \draw[draw=trOchreDark,line width=0.85pt,dash pattern=on 2pt off 1.5pt]
+    (12.10,5.42) -- (12.95,5.42);
+  \foreach \xx in {12.10,12.38,12.66}{
+    \draw[trOchreDark,fill=white,line width=0.6pt]
+      (\xx,5.42) circle (0.045);}
+  \draw[draw=trOchreDark,line width=0.85pt,
+    -{Latex[length=1.3mm,width=0.9mm]}] (12.95,5.42) -- (15.30,5.42);
+  \foreach \xx in {12.95,13.60,14.25,14.90}{
+    \fill[trOchreDark] (\xx,5.42) circle (0.045);}
+  \node[trRouteSmall,text=trOchreDark] at (9.35,5.38) {新生表面历史};
+  \node[trRouteMathSmall,text=trOchreDark] at (9.35,5.78) {$I_i^{\mathrm{surf}}$};
+  \node[trRouteSmall,text=trOchreDark] at (13.85,5.14) {形成后记录};
+
+  % shared time axis
+  \draw[draw=black!60,line width=0.55pt,
+    -{Latex[length=1.2mm,width=0.8mm]}] (10.55,6.25) -- (15.320,6.25);
+  \node[trRouteSmall,text=black!75] at (15.386,6.25) {$t$};
+
+  % ================= merge and output ====================================
+  \draw[draw=trDark,line width=0.72pt] (3.85,6.60) -- (3.85,6.78) --
+    (11.95,6.78) -- (11.95,6.60);
+  \draw[trRouteFlow] (7.90,6.78) -- (7.90,6.96);
+  \trkFocus{2.55}{7.00}{13.25}{8.12}
+    {更新几何 $\mathcal G(t)$ 与物理连接 $\mathcal E(t)$}
+  \node[trRouteSmall,text=black!75] at (7.90,7.84)
+    {辅助：双历史与待定连接};
+% \ignorespaces absorbs the wrapper's newline after \input; without it the
+% standalone minipage adds an empty bottom line to the preview/export.
+\end{tikzpicture}\ignorespaces
 \endgroup

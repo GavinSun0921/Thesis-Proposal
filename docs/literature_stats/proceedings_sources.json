@@ -1,0 +1,176 @@
+[
+  {
+    "venue": "CoRL",
+    "year": 2018,
+    "url": "https://proceedings.mlr.press/v78/"
+  },
+  {
+    "venue": "CoRL",
+    "year": 2018,
+    "url": "https://proceedings.mlr.press/v87/"
+  },
+  {
+    "venue": "CoRL",
+    "year": 2020,
+    "url": "https://proceedings.mlr.press/v100/"
+  },
+  {
+    "venue": "CoRL",
+    "year": 2021,
+    "url": "https://proceedings.mlr.press/v155/"
+  },
+  {
+    "venue": "CoRL",
+    "year": 2022,
+    "url": "https://proceedings.mlr.press/v164/"
+  },
+  {
+    "venue": "CoRL",
+    "year": 2023,
+    "url": "https://proceedings.mlr.press/v205/"
+  },
+  {
+    "venue": "CoRL",
+    "year": 2023,
+    "url": "https://proceedings.mlr.press/v229/"
+  },
+  {
+    "venue": "CoRL",
+    "year": 2025,
+    "url": "https://proceedings.mlr.press/v270/"
+  },
+  {
+    "venue": "ECCV",
+    "year": null,
+    "url": "https://www.ecva.net/papers.php"
+  },
+  {
+    "venue": "ICLR",
+    "year": 2024,
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2024"
+  },
+  {
+    "venue": "ICLR",
+    "year": 2025,
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2025"
+  },
+  {
+    "venue": "ICML",
+    "year": 2018,
+    "url": "https://proceedings.mlr.press/v80/"
+  },
+  {
+    "venue": "ICML",
+    "year": 2019,
+    "url": "https://proceedings.mlr.press/v97/"
+  },
+  {
+    "venue": "ICML",
+    "year": 2020,
+    "url": "https://proceedings.mlr.press/v119/"
+  },
+  {
+    "venue": "ICML",
+    "year": 2021,
+    "url": "https://proceedings.mlr.press/v139/"
+  },
+  {
+    "venue": "ICML",
+    "year": 2022,
+    "url": "https://proceedings.mlr.press/v162/"
+  },
+  {
+    "venue": "ICML",
+    "year": 2023,
+    "url": "https://proceedings.mlr.press/v202/"
+  },
+  {
+    "venue": "ICML",
+    "year": 2024,
+    "url": "https://proceedings.mlr.press/v235/"
+  },
+  {
+    "venue": "ICML",
+    "year": 2025,
+    "url": "https://proceedings.mlr.press/v267/"
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2015,
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2015"
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2016,
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2016"
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2017,
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2017"
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2018,
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2018"
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2019,
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2019"
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2020,
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2020"
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2021,
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2021"
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2022,
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2022"
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2023,
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2023"
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2024,
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2024"
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2025,
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2025/vol38-main-conference"
+  },
+  {
+    "venue": "CVPR",
+    "year": 2026,
+    "url": "https://openaccess.thecvf.com/CVPR2026?day=all",
+    "cutoff_observed_on": "2026-10-29",
+    "availability_evidence": "official_proceedings_publicly_accessible_on_cutoff",
+    "retrieved_at_utc": "2026-10-29T11:56:35.526464+00:00"
+  },
+  {
+    "venue": "ICLR",
+    "year": 2026,
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2026",
+    "cutoff_observed_on": "2026-10-29",
+    "availability_evidence": "official_proceedings_publicly_accessible_on_cutoff",
+    "retrieved_at_utc": "2026-10-29T11:55:47.150751+00:00"
+  },
+  {
+    "venue": "ICML",
+    "year": 2026,
+    "url": "https://proceedings.mlr.press/v306/",
+    "cutoff_observed_on": "2026-10-29",
+    "availability_evidence": "official_proceedings_publicly_accessible_on_cutoff",
+    "retrieved_at_utc": "2026-10-29T11:55:50.973261+00:00"
+  }
+]

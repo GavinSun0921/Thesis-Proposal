@@ -1,14 +1,20 @@
-# 3.3 数据与评价示例的来源
+# 3.3 公开数据与评价示例来源
 
-所有图片用于介绍候选数据的观测类型，不作为本课题的实验结果。正文图 15 的四类数据按当前研究范围选用，不承诺使用完整数据集或覆盖全部任务。
+更新：2026-10-30。原候选数据拼图和后续航空维修试件图均已退出当前正文，现行 3.3 只保留原创指标图。历史素材仅作来源追溯，公开数据核查统一见[当前记录](../../../../docs/reference_audit.md)。
 
-- **DyCheck iPhone**：复用 [apple 原始素材及来源](../dycheck_apple/README.md)中的第 0 帧，仅作矩形裁剪。该图是相机 0 的真实观测，未叠加推断轨迹。
-- **PointOdyssey**：`pointodyssey_pipeline.jpg` 从[作者项目](https://pointodyssey.com/)链接的[原始配图](https://pointodyssey.com/assets/pipeline.jpg)保存，原图 2338 × 968，保留原始字节。取右侧第一行的首幅合成 RGB 示例。项目说明提供深度、实例、相机和二维／三维轨迹，图中展示的是 RGB，不能将实例标签当作部件级标注。
-- **PhysTwin**：复用 [PhysTwin 素材](../phystwin_cloth/README.md)的 `observation_t1.jpg`，为论文 Figure 3 布料案例的真实观测，未使用模型渲染或未来预测图。
-- **DROID / PointWorld**：复用[已有观测素材](../literature_review/README.md)中的 `point_observation_v1.jpg`，来自 PointWorld 作者全文 Figure 16 的 DROID 布料案例。候选三维标注由 [PointWorld-DROID 官方发布](https://huggingface.co/datasets/nvidia/PointWorld-DROID)核查，包含自动估计的轨迹、可见性和有效深度标记；使用时须遵循其有效性及置信度规则。正式论文引用同时保留 PointWorld 和 [DROID](https://www.roboticsproceedings.org/rss20/p120.html)。
+## 当前指标图
 
-局部切割与撕裂的几何、材料连接及形成时间验证计划由可控序列补充。GauSTAR [官方实现](https://github.com/eth-ait/GauSTAR)说明论文演示序列受许可限制未发布，不能将演示图充作已经可用的公共切割数据。当前数据图不包含未采集的切割、撕裂画面。
+[运动指标图源](../../evaluation_motion_metrics.tex)解释 PCK 与三维位置误差。PCK 遵循 [DyCheck 官方实现](https://github.com/KAIR-BAIR/dycheck/blob/main/dycheck/core/metrics/keypoint.py)，误差严格小于 `ratio * max(image_width, image_height)`，默认比率为 0.05。图中的两个命中点和一个未命中点给出 2/3 的示例分数。
 
-图 16 为原创 TikZ 指标图解。PCK 按 [DyCheck 官方实现](https://github.com/KAIR-BAIR/dycheck/blob/main/dycheck/core/metrics/keypoint.py)使用误差严格小于 `ratio * max(image_width, image_height)` 的判定，默认比率为 0.05。图中的两个阈值内点和一个阈值外点给出 2/3 的示意分数，不是数据集得分。三维轨迹图以斜轴测坐标框、底面网格及投影辅助线表示空间关系，误差线连接相同单元、相同时刻的参考与估计位置；它不是二维 PCK 的直接三维推广，也不替代无对应表面距离。
+三维图以坐标框及误差段表示同一单元、同一时刻的估计与参考位置偏差。数值和图形用于解释定义，不是研究结果；三维位置误差需要相应参考与统一坐标尺度。
 
-[生成脚本](../../build_evaluation_figures.py)仅依赖本地原图、Pillow、MacTeX 和 Poppler；默认不下载媒体或数据集。逐图裁剪、源文件与导出文件哈希及语义范围见[清单](../../generated/evaluation/manifest.json)。两张图的文字和标注保持黑色，使用实心点、叉号、线型及公式保证灰度阅读。
+[导出脚本](../../build_evaluation_figures.py)仅导出指标图的独立矢量 PDF、彩色和灰度预览；不下载媒体，不生成应用场景图。校验及语义范围见[清单](../../generated/evaluation/manifest.json)。
+
+## 保留的历史素材
+
+- DyCheck apple 的真实观测来自[原素材](../dycheck_apple/README.md)。
+- PointOdyssey 配图取自[作者项目](https://pointodyssey.com/)，保留本地原始字节。
+- PhysTwin 观测素材见[原来源](../phystwin_cloth/README.md)。
+- DROID／PointWorld 示例来源见[文献素材](../literature_review/README.md)。
+
+这些素材不构成完整基准、物理连接真值或新增实验承诺。连接等参考不足时按其可评价部分限定结论，不追加采集或定制场景建设。

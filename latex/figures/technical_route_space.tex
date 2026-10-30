@@ -1,62 +1,124 @@
-% Association graph and physical connections have distinct meanings.
-% Four numbered stages on a shared flow line, then an unruled sketch strip.
-% Each sketch carries its lettered title BELOW it, centred on the sketch's own
-% horizontal extent.
+% Continuous-motion-guided spatial structure: multi-evidence association,
+% cross-time soft membership, membership-gated sharing, and joint recovery.
+% The two time sketches keep the same units; the undecided diamond is a unit
+% whose membership is corrected, not a physically new surface.
 \begingroup
 \input{figures/technical_route_styles.tex}
-\trTheme{Space}
-\begin{tikzpicture}[trBase]
+\trTheme{Green}
+\newcommand{\trsPanel}[5]{%
+  \path[fill=white,draw=trMid,line width=.6pt] (#1,#2) rectangle (#3,#4);
+  \path[fill=trDark] (#1,#2) rectangle (#3,{#2+.56});
+  \node[trRouteHead] at ({#1/2+#3/2},{#2+.28}) {#5};}
+\newcommand{\trsCircle}[2]{%
+  \path[draw=trBlueDark,fill=trBluePale,line width=.7pt] (#1,#2) circle (.085);}
+\newcommand{\trsSquare}[2]{%
+  \path[draw=trGreenDark,fill=trGreenPale,line width=.7pt]
+    ({#1-.075},{#2-.075}) rectangle ++(.15,.15);}
+\newcommand{\trsDiamond}[4]{%
+  \path[draw=#3,fill=#4,line width=.7pt]
+    (#1,{#2+.115}) -- ({#1+.115},#2) -- (#1,{#2-.115}) --
+    ({#1-.115},#2) -- cycle;}
+\newcommand{\trsRegion}[6]{%
+  \path[fill=#5,draw=#6,line width=.45pt] (#1,#2) ellipse (#3 and #4);}
+\tikzset{
+  trsShareA/.style={draw=trBlueDark,line width=.75pt},
+  trsShareB/.style={draw=trGreenDark,line width=.75pt},
+  trsBoundary/.style={draw=black!55,line width=.6pt,
+    dash pattern=on 2pt off 1.6pt}
+}
+\begin{tikzpicture}[trRouteBase]
+  \path[use as bounding box] (0.12,0) rectangle (15.68,8.57);
 
-  \trStage{0.30}{2.95}{1}{连续状态}{轨迹、可信程度\\几何及外观}
-  \trStage[core]{3.95}{2.95}{2}{多证据关联}{相对运动、可见性及观测联系}
-  \trStage[core]{7.60}{2.95}{3}{软归属推断}{部件归属、对象身份及待定项}
-  \trStage[core]{11.25}{2.95}{4}{共享约束}{限定信息传递、更新几何及运动}
+  % ---- 1. multi-evidence association --------------------------------
+  \trsPanel{0.15}{0.15}{15.65}{1.80}{多证据关联}
+  \node[trRouteMath] at (7.90,1.04)
+    {$A_{ij}=c_{ij}\exp\!\bigl(
+      -d^{\mathrm{mot}}_{ij}/\sigma_m
+      -d^{\mathrm{geo}}_{ij}/\sigma_g
+      -d^{\mathrm{app}}_{ij}/\sigma_a\bigr)$};
+  \node[trRouteSmall] at (7.90,1.53)
+    {证据：轨迹 · 几何 · 外观 · 可见性 · 置信度};
+  \draw[trRouteFlow] (3.85,1.80) -- (3.85,2.08);
 
-  \trStep{3.25}{3.95}
-  \trStep{6.90}{7.60}
-  \trStep{10.55}{11.25}
+  % The mechanism row and everything below keep their internal layout; the
+  % 0.35 cm shift gives the taller association block room without squeezing it.
+  \begin{scope}[yshift=-0.35cm]
 
-  % membership gates the shared constraints, which in turn correct the state
-  \draw[trFeedback] (12.72,4.30) -- (12.72,3.66) -- (1.77,3.66) -- (1.77,4.30);
-  \node[trTag] at (7.25,3.66) {归属约束反向校正连续状态};
+  % ---- 2. cross-time identity and soft membership --------------------
+  \trsPanel{0.15}{1.75}{7.55}{6.05}{跨时刻身份与软归属}
 
-  % ---- sketch strip: drawing above, centred title below ----
-  % (a) two tracks: persistent relative motion separates A from B   [0.85 .. 4.15]
-  \draw[trObjectA,line width=1.0pt] plot[smooth] coordinates
-    {(1.15,1.92) (2.05,2.50) (2.95,2.32) (4.05,2.75)};
-  \draw[trObjectB,line width=1.0pt,dashed] plot[smooth] coordinates
-    {(1.15,2.45) (2.05,3.03) (2.95,2.85) (4.05,3.28)};
-  \foreach \xx/\yy in {1.15/1.92,2.05/2.50,4.05/2.75}{\draw[trObjectA,fill=white] (\xx,\yy) circle (0.055);}
-  \foreach \xx/\yy in {1.15/2.45,2.05/3.03,4.05/3.28}{\draw[trObjectB,fill=white] (\xx-0.05,\yy-0.05) rectangle ++(0.10,0.10);}
-  \node[trLabel,anchor=east] at (1.03,1.86) {$A$};
-  \node[trLabel,anchor=east] at (1.03,2.42) {$B$};
-  \node[text width=3.30cm,align=center] at (2.55,1.33)
-    {{\captionsetup[subfigure]{font=figsubroute,skip=0pt}
-      \subcaption{跨时刻相对运动}\label{subfig:route-space-motion}}};
+  \begin{scope}[xshift=-.175cm]
+  % t1
+  \node[trRouteMathSmall] at (1.80,2.50) {$t_1$};
+  \node[trRouteSmall,text=trBlueDark] at (1.15,2.76) {A};
+  \node[trRouteSmall,text=trGreenDark] at (2.50,2.76) {B};
+  \trsRegion{1.15}{3.68}{.32}{.72}{trBluePale}{trBlueSoft}
+  \trsRegion{2.50}{3.68}{.32}{.72}{trGreenPale}{trGreenSoft}
+  \trsCircle{1.15}{3.45}\trsCircle{1.15}{3.95}
+  \trsSquare{2.50}{3.45}\trsSquare{2.50}{3.95}
+  \trsDiamond{1.65}{4.05}{black!60}{white}
+  \node[trRouteSmall,text=black!75] at (1.65,4.40) {待定};
 
-  % (b) soft membership with an explicit undecided unit   [6.00 .. 10.10]
-  \draw[trPossible,draw=trTimeAccent,fill=trTimeFill] (6.20,1.82) rectangle (7.45,3.24);
-  \draw[trPossible,draw=trTopologyAccent,fill=trTopologyFill] (8.65,1.82) rectangle (9.90,3.24);
-  \foreach \xx/\yy in {6.45/2.15,7.00/2.95,6.68/2.55}{\draw[trObjectA,fill=white] (\xx,\yy) circle (0.068);}
-  \foreach \xx/\yy in {8.92/2.15,9.47/2.95,9.20/2.55}{\draw[trObjectB,fill=white] (\xx-0.058,\yy-0.058) rectangle ++(0.116,0.116);}
-  \draw[trFrame,fill=white] (8.00,2.44) -- (8.22,2.66) -- (8.00,2.88) -- (7.78,2.66) -- cycle;
-  \node[trLabel,anchor=west] at (8.34,2.66) {待定};
-  \node[trLabel] at (6.82,1.98) {$A$};
-  \node[trLabel] at (9.28,1.98) {$B$};
-  \node[text width=4.10cm,align=center] at (8.05,1.33)
-    {{\captionsetup[subfigure]{font=figsubroute,skip=0pt}
-      \subcaption{部件软归属}\label{subfig:route-space-membership}}};
+  % t2
+  \node[trRouteMathSmall] at (6.10,2.50) {$t_2$};
+  \node[trRouteSmall,text=trBlueDark] at (5.65,2.76) {A};
+  \node[trRouteSmall,text=trGreenDark] at (7.00,2.76) {B};
+  \trsRegion{5.65}{3.68}{.80}{.75}{trBluePale}{trBlueSoft}
+  \trsRegion{7.00}{3.68}{.32}{.72}{trGreenPale}{trGreenSoft}
+  \trsCircle{5.45}{3.45}\trsCircle{5.45}{3.95}
+  \trsDiamond{6.05}{4.05}{trBlueDark}{trBluePale}
+  \trsSquare{7.00}{3.45}\trsSquare{7.00}{3.95}
 
-  % (c) no information shared across the inferred boundary   [11.30 .. 15.30]
-  \draw[trObjectA,fill=trTimeFill] (11.40,2.00) -- (12.25,3.22) -- (13.10,2.00) -- cycle;
-  \draw[trObjectB,fill=trTopologyFill] (13.60,2.00) -- (14.45,3.22) -- (15.30,2.00) -- cycle;
-  \foreach \xx/\yy in {11.40/2.00,12.25/3.22,13.10/2.00}{\draw[trObjectA,fill=white] (\xx,\yy) circle (0.055);}
-  \foreach \xx/\yy in {13.60/2.00,14.45/3.22,15.30/2.00}{\draw[trObjectB,fill=white] (\xx-0.05,\yy-0.05) rectangle ++(0.10,0.10);}
-  \draw[trFrame] (13.23,1.85) -- (13.47,2.35) (13.23,2.35) -- (13.47,1.85);
-  \node[trLabel] at (12.25,1.82) {$A$};
-  \node[trLabel] at (14.45,1.82) {$B$};
-  \node[text width=4.00cm,align=center] at (13.35,1.33)
-    {{\captionsetup[subfigure]{font=figsubroute,skip=0pt}
-      \subcaption{信息共享范围}\label{subfig:route-space-sharing}}};
+  \draw[trRouteFlow] (3.00,3.68) -- (4.50,3.68);
+  \node[trRouteSmall,text=black!80] at (3.75,3.43) {新证据};
+  \node[trRouteSmall,text=black!80] at (3.75,3.93) {修正归属};
+
+  \node[trRouteMathSmall] at (4.025,4.80)
+    {软归属 $q_{ic}$（对应 $\mathcal Z(t)$）};
+  \node[trRouteSmall] at (4.025,5.28)
+    {待定关系随新证据修正，保留部件索引};
+  \node[trRouteSmall] at (4.025,5.72)
+    {已有表面首次显露时关联原部件};
+
+  \end{scope}
+  % ---- 3. membership-constrained sharing ----------------------------
+  \trsPanel{8.25}{1.75}{15.65}{6.05}{归属约束信息共享}
+
+  \begin{scope}[xshift=-.15cm]
+  \trsRegion{10.20}{3.68}{1.10}{.73}{trBluePale}{trBlueSoft}
+  \trsRegion{14.00}{3.68}{.95}{.73}{trGreenPale}{trGreenSoft}
+  \draw[trsShareA] (9.70,3.55) -- (10.60,3.55) -- (10.15,3.10) -- cycle;
+  \trsCircle{9.70}{3.55}\trsDiamond{10.60}{3.55}{trBlueDark}{trBluePale}\trsCircle{10.15}{3.10}
+  \draw[trsShareB] (13.65,3.40) -- (14.25,3.80);
+  \trsSquare{13.65}{3.40}\trsSquare{14.25}{3.80}
+  \draw[trsBoundary] (12.15,2.97) -- (12.15,4.39);
+  \node[trRouteSmall,text=trBlueDark] at (10.20,2.76) {A};
+  \node[trRouteSmall,text=trGreenDark] at (14.00,2.76) {B};
+
+
+  \node[trRouteMath] at (12.10,4.76)
+    {$g_{ij}=\sum_{c=1}^{K}q_{ic}q_{jc}$};
+  \node[trRouteSmall] at (12.10,5.28)
+    {同部件增强 · 跨部件抑制；不含待定项};
+  \node[trRouteSmall] at (12.10,5.72)
+    {$g_{ij}$：共享权重，非物理连接};
+
+  \end{scope}
+  \draw[trRouteFlow] (7.55,3.68) -- (8.25,3.68);
+
+  % ---- 4. joint recovery --------------------------------------------
+  \draw[trRouteFlow] (3.85,6.05) -- (3.85,6.46);
+  \draw[trRouteFlow] (11.95,6.05) -- (11.95,6.46);
+
+  \trsPanel{2.55}{6.48}{13.25}{7.00}{运动、几何与归属联合恢复}
+
+  \draw[trRouteBack] (2.55,7.00) -- (1.20,7.00) -- (1.20,6.07);
+  \node[trRouteSmall,text=black!75] at (1.90,6.30) {反向校正};
+
+  \draw[trRouteFlow] (7.90,7.00) -- (7.90,7.24);
+  \path[trRouteStrip] (2.55,7.26) rectangle (13.25,8.07);
+  \node[font=\trFontBody] at (7.90,7.665)
+    {$\mathcal Z(t)$ 与共享范围\qquad 校正 $\mathcal G(t)$、$\mathcal M(t)$};
+  \end{scope}
 \end{tikzpicture}
 \endgroup

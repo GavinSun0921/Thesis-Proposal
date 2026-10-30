@@ -1,0 +1,233 @@
+% PS-VLA method figure for Section 1.3.2.
+% Architecture follows the BridgeVLA two-stage figure; the belief strip is PS-VLA-specific.
+\begingroup
+\linespread{1}\selectfont
+\definecolor{cfBlue}{HTML}{2E6DA4}
+\definecolor{cfBlueBg}{HTML}{EAF3FB}
+\definecolor{cfGreen}{HTML}{2E7D4F}
+\definecolor{cfGreenBg}{HTML}{EAF6EE}
+\definecolor{cfOrange}{HTML}{B9770E}
+\definecolor{cfOrangeBg}{HTML}{FDF4E3}
+\definecolor{cfPurple}{HTML}{6C5B9E}
+\definecolor{cfPurpleBg}{HTML}{F0EDF7}
+\definecolor{cfGray}{HTML}{7F8C8D}
+\definecolor{cfInk}{HTML}{1F2A36}
+\definecolor{cfRed}{HTML}{C0392B}
+\newcommand{\snowflake}[2]{%
+  \begin{scope}[shift={(#1,#2)}]
+    \foreach \a in {0,60,120,180,240,300}{%
+      \draw[cfBlue,line width=.45pt,rotate=\a] (0,0) -- (0,.13);
+      \draw[cfBlue,line width=.4pt,rotate=\a] (0,.065) -- (-.03,.09);
+      \draw[cfBlue,line width=.4pt,rotate=\a] (0,.065) -- (.03,.09);
+    }
+    \fill[cfBlue] (0,0) circle (.018);
+  \end{scope}}
+\newcommand{\flame}[2]{%
+  \begin{scope}[shift={(#1,#2)}]
+    \fill[cfOrange] (0,-.09) .. controls (-.10,.00) and (-.05,.07) .. (0,.16)
+      .. controls (.05,.07) and (.10,.00) .. (0,-.09);
+    \fill[cfOrange!35] (0,-.035) .. controls (-.045,.00) and (-.022,.045) .. (0,.10)
+      .. controls (.022,.045) and (.045,.00) .. (0,-.035);
+  \end{scope}}
+\noindent\begin{tikzpicture}[
+  x=1cm,y=1cm,line cap=round,line join=round,text=cfInk,
+  font=\songti\fontsize{9.4pt}{11.4pt}\selectfont,
+  every node/.style={align=center,outer sep=0pt,inner sep=0pt},
+  cfLane/.style={draw=cfGray!35,line width=.5pt,fill=cfGray!5,rounded corners=8pt},
+  cfModule/.style={draw=cfBlue,line width=.7pt,fill=cfBlueBg,rounded corners=3pt},
+  cfModuleFrozen/.style={draw=cfBlue,line width=.7pt,fill=cfBlueBg,rounded corners=3pt},
+  cfModuleTrain/.style={draw=cfOrange,line width=.7pt,fill=cfOrangeBg,rounded corners=3pt},
+  cfTitle/.style={font=\heiti\fontsize{11pt}{13.4pt}\selectfont},
+  cfSub/.style={font=\heiti\fontsize{9.6pt}{11.8pt}\selectfont},
+  cfSmall/.style={font=\songti\fontsize{8.8pt}{10.8pt}\selectfont},
+  cfTiny/.style={font=\songti\fontsize{8.1pt}{9.8pt}\selectfont},
+  cfEq/.style={font=\songti\fontsize{8.5pt}{10.5pt}\selectfont},
+  cfArrow/.style={draw=cfGray,line width=1.1pt,-{Latex[length=1.7mm,width=1.2mm]}},
+  cfThin/.style={draw=cfInk,line width=.55pt,-{Latex[length=1.2mm,width=.8mm]}},
+  cfDash/.style={draw=cfPurple,line width=.8pt,dash pattern=on 3pt off 2pt,
+    -{Latex[length=1.5mm,width=1.0mm]}},
+  cfGate/.style={draw=cfPurple!65,line width=.6pt,dash pattern=on 2.5pt off 2pt,
+    -{Latex[length=1.2mm,width=.85mm]}},
+  cfTokenI/.style={draw=cfGreen,line width=.45pt,fill=cfGreenBg,rounded corners=1pt},
+  cfTokenT/.style={draw=cfOrange,line width=.45pt,fill=cfOrangeBg,rounded corners=1pt}
+]
+  \noindent
+  \path[use as bounding box] (0,0.1) rectangle (18.30,11.05);
+
+  % ================= top lane =================
+  \path[cfLane] (0.15,7.35) rectangle (18.15,10.85);
+  \node[cfTitle,anchor=west] at (0.40,10.48) {2D 热图预训练（BridgeVLA 底座）};
+
+  % inputs
+  \begin{scope}[shift={(0.45,8.46)}]
+    \foreach \i/\x in {0/0,1/0.45,2/0.90}{
+      \foreach \j/\y in {0/0,1/0.45,2/0.90}{
+        \draw[cfGray!50,fill=white,line width=.3pt,rounded corners=.5pt] (\x,\y) rectangle ++(0.38,0.38);
+        \fill[cfBlue!20] (\x+0.09,\y+0.09) circle (.055);
+        \fill[cfOrange!55] (\x+0.25,\y+0.23) rectangle ++(0.07,0.12);
+      }
+    }
+  \end{scope}
+  \node[cfSmall,draw=cfGray!45,fill=white,rounded corners=2pt,text width=0.85cm,inner sep=2pt]
+    at (1.10,7.85) {检测目标};
+
+  % SigLIP / tokenizer
+  \node[cfModuleFrozen,minimum width=1.65cm,minimum height=0.72cm] (sig) at (3.75,9.10) {SigLIP};
+  \node[cfModuleFrozen,minimum width=1.65cm,minimum height=0.62cm] (tok) at (3.75,7.85) {Tokenizer};
+  \snowflake{4.52}{9.32}
+  \snowflake{4.52}{8.03}
+  \foreach \i in {0,1,2}{%
+    \draw[cfTokenI] (4.87,8.88+\i*0.16) rectangle ++(0.15,0.12);
+    \draw[cfTokenT] (4.87,7.63+\i*0.16) rectangle ++(0.15,0.12);
+  }
+  \draw[cfArrow] (1.78,9.10) -- (sig.west);
+  \draw[cfArrow] (1.60,7.85) -- (tok.west);
+
+  % Gemma
+  \node[cfModuleTrain,minimum width=1.85cm,minimum height=1.80cm] (gemma2d) at (6.35,8.55) {Gemma};
+  \flame{7.08}{9.28}
+  \draw[cfArrow] (sig.east) -- (4.87,9.10);
+  \draw[cfArrow] (5.02,9.10) -- (5.425,9.10);
+  \draw[cfArrow] (tok.east) -- (4.87,7.85);
+  \draw[cfArrow] (5.02,7.85) -- (5.425,7.85);
+
+  % Gemma output tokens are rearranged before upsampling.
+  \draw[cfArrow] (gemma2d.east) -- (7.60,8.55);
+  \foreach \i in {0,1,2}{\draw[cfTokenI] (7.60,8.33+\i*0.16) rectangle ++(0.15,0.12);}
+  \node[cfTiny,fill=white,inner sep=1pt] at (8.02,9.08) {重排};
+
+  % convex upsample
+  \node[cfModuleTrain,minimum width=1.75cm,minimum height=1.40cm] (cvx) at (9.30,8.55) {Convex\\Upsample};
+  \flame{10.03}{9.08}
+  \draw[cfArrow] (7.75,8.55) -- (cvx.west);
+  % heatmap
+  \begin{scope}[shift={(10.55,7.70)}]
+    \draw[cfGray!55,fill=white,line width=.4pt] (0,0) rectangle (1.45,1.70);
+    \fill[cfBlue!12] (0.10,0.10) rectangle (1.35,1.60);
+    \fill[cfRed!60] (0.72,0.84) circle (.18);
+    \fill[cfRed!25] (0.72,0.84) circle (.31);
+    \draw[cfRed,line width=.6pt] (0.72,0.84) circle (.11);
+  \end{scope}
+  \draw[cfArrow] (cvx.east) -- (10.55,8.55);
+  \node[cfTiny,fill=cfGray!5,inner sep=1pt] at (11.28,9.67) {2D 热图};
+
+  % legend
+  \begin{scope}[shift={(13.25,7.65)}]
+    \draw[cfGray!40,fill=white,rounded corners=4pt] (0,0) rectangle (4.55,2.65);
+    \snowflake{0.30}{2.28} \node[cfTiny,anchor=west] at (0.55,2.28) {冻结权重};
+    \flame{0.30}{1.90} \node[cfTiny,anchor=west] at (0.55,1.90) {训练权重};
+    \draw[cfTokenI] (0.22,1.42) rectangle ++(0.15,0.12); \node[cfTiny,anchor=west] at (0.55,1.48) {图像 token};
+    \draw[cfTokenT] (0.22,1.06) rectangle ++(0.15,0.12); \node[cfTiny,anchor=west] at (0.55,1.12) {文本 token};
+    \node[cfTiny,anchor=west,text width=4.05cm] at (0.22,0.58) {PS-VLA 只训练\\filter、gate 与 LoRA};
+  \end{scope}
+
+  % ================= bottom lane =================
+  \path[cfLane] (0.15,3.45) rectangle (18.15,7.05);
+  \node[cfTitle,anchor=west] at (0.40,6.78) {3D 动作微调（PS-VLA）};
+
+  % robot / point cloud
+  \begin{scope}[shift={(0.45,3.75)}]
+    \path[fill=cfOrangeBg,draw=cfOrange!60,line width=.4pt] (0.10,0.18) -- (0.62,0.02) -- (1.72,0.02) -- (1.20,0.18) -- cycle;
+    \draw[cfGray,line width=1.4pt] (0.52,0.20) -- (0.62,0.88) -- (1.04,1.22) -- (1.32,1.62);
+    \fill[cfInk] (0.52,0.20) circle (.07);
+    \fill[cfInk] (0.62,0.88) circle (.05);
+    \fill[cfInk] (1.04,1.22) circle (.05);
+    \draw[cfInk,line width=1.1pt] (1.32,1.62) -- (1.23,1.80) (1.32,1.62) -- (1.43,1.80);
+    \foreach \x/\y in {0.76/0.36,0.92/0.44,1.08/0.31,0.68/0.58,1.02/0.62,1.34/0.46,1.22/0.72,0.86/0.80}{%
+      \fill[cfBlue!70] (\x,\y) circle (.028);
+    }
+    \draw[cfRed,line width=.7pt,dashed] (1.12,0.28) rectangle (1.46,0.56);
+    \fill[cfRed!70] (1.29,0.42) circle (.06);
+    \node[cfTiny,anchor=west] at (0.38,0.00) {3D 点云};
+    \foreach \i/\x in {0/1.52,1/1.66,2/1.80}{%
+      \draw[cfGray!60,fill=white,line width=.35pt] (\x,0.55) rectangle ++(0.12,0.44);
+      \fill[cfBlue!55] (\x+0.04,0.63) circle (.02);
+    }
+  \end{scope}
+  % language
+  \node[cfSmall,draw=cfGray!45,fill=white,rounded corners=2pt,text width=0.85cm,inner sep=2pt]
+    (language) at (3.05,4.52) {放环};
+  \node[cfTiny] at (3.05,4.98) {语言指令};
+
+  % PaliGemma
+  \node[cfModuleFrozen,minimum width=1.60cm,minimum height=0.72cm] (sig3d) at (4.75,5.48) {SigLIP};
+  \node[cfModuleFrozen,minimum width=1.60cm,minimum height=0.62cm] (tok3d) at (4.75,4.52) {Tokenizer};
+  \snowflake{5.47}{5.75}
+  \snowflake{5.47}{4.78}
+  \node[cfModuleFrozen,minimum width=1.55cm,minimum height=1.75cm] (gemma3d) at (7.00,4.95) {Gemma};
+  \snowflake{7.70}{5.82}
+  \draw[cfArrow] (2.40,5.48) -- (sig3d.west);
+  \draw[cfArrow] (language.east) -- (tok3d.west);
+  \draw[cfArrow] (sig3d.east) -- (gemma3d.west |- sig3d.east);
+  \draw[cfArrow] (tok3d.east) -- (gemma3d.west |- tok3d.east);
+  \draw[cfGray,line width=.5pt,dashed] (3.85,4.08) rectangle (7.86,5.92);
+  \node[cfTiny,text=cfBlue,fill=white,inner sep=1pt] at (7.10,3.82) {PaliGemma 冻结};
+
+  % H_t
+  \draw[cfArrow] (gemma3d.east) -- (8.15,4.95);
+  \foreach \i in {0,1,2}{\draw[cfTokenI] (8.15,4.73+\i*0.16) rectangle ++(0.15,0.12);}
+  \node[cfTiny,text=cfGreen] at (8.22,5.60) {$H_t$};
+
+  % dynamic LoRA
+  \node[cfModuleTrain,minimum width=2.35cm,minimum height=0.48cm] (lora) at (10.95,6.13) {动态 LoRA（gate $g_t$）};
+  \flame{11.98}{6.33}
+
+  % action heads
+  \node[cfModuleFrozen,minimum width=2.10cm,minimum height=1.35cm] (heads) at (10.95,4.95) {Convex\\Upsample\\+ MLP};
+  \draw[cfArrow] (8.30,4.95) -- (heads.west);
+  \draw[cfArrow] (lora.south) -- (heads.north);
+
+  % outputs
+  \node[cfModuleFrozen,minimum width=2.55cm,minimum height=0.95cm] (out) at (13.85,4.95) {平移热图\ \ 旋转\\夹爪\ \ 碰撞};
+  \node[cfSmall,text=cfOrange,anchor=west] at (12.45,5.72) {动作输出};
+  \draw[cfArrow] (heads.east) -- (out.west);
+
+  % execution
+  \node[cfModuleFrozen,minimum width=1.70cm,minimum height=0.95cm] (exec) at (16.60,4.95) {机器人执行\\下一观测};
+  \draw[cfArrow] (out.east) -- (exec.west);
+
+  % ================= belief strip =================
+  \path[cfLane,fill=cfPurpleBg!55,draw=cfPurple!35] (0.15,0.30) rectangle (18.15,3.25);
+  \node[cfTiny,text=cfPurple,anchor=east] at (16.90,3.10) {PS-VLA 持续状态};
+
+  % panel 1
+  \path[draw=cfPurple!45,fill=white,rounded corners=3pt] (0.40,0.50) rectangle (6.05,2.90);
+  \node[cfSub,text=cfPurple,anchor=west] at (0.58,2.66) {动作条件先验};
+  \node[cfSmall,anchor=west] at (0.58,2.26) {$\mu_{t-1}^{+}$，$u_{t-1}$，$f_t$};
+  \node[cfEq,anchor=west] at (0.58,1.72) {$\mu_t^{-}=F_\phi(\mu_{t-1}^{+},u_{t-1},f_t)$};
+  \node[cfEq,anchor=west] at (0.58,1.30) {$\Sigma_t^{-}=A\Sigma_{t-1}^{+}A^{\top}+Q_t$};
+  \node[cfTiny,text=cfOrange] at (4.75,0.92) {执行反馈残差};
+
+  % panel 2
+  \path[draw=cfPurple!45,fill=white,rounded corners=3pt] (6.35,0.50) rectangle (12.00,2.90);
+  \node[cfSub,text=cfPurple,anchor=west] at (6.53,2.66) {观测更新};
+  \node[cfSmall,anchor=west] at (6.53,2.26) {视觉 tokens $H_t$ $\rightarrow$ 测量 $z_t=P(H_t)$};
+  \node[cfEq,anchor=west] at (6.53,1.78) {$e_t=z_t-C(\mu_t^{-})$};
+  \node[cfEq,anchor=west] at (6.53,1.36) {$\mu_t^{+}=\mu_t^{-}+K_t e_t$};
+  \node[cfEq,anchor=west] at (6.53,0.94) {$\Sigma_t^{+}=(I-K_tC)\Sigma_t^{-}$};
+
+  % panel 3
+  \path[draw=cfPurple!45,fill=white,rounded corners=3pt] (12.30,0.50) rectangle (17.90,2.90);
+  \node[cfSub,text=cfPurple,anchor=west] at (12.48,2.66) {动态动作适配};
+  \node[cfSmall,anchor=west] at (12.48,2.26) {$c_t=[\mathrm{LN}(\mu_t^{+}),\log\mathrm{diag}\Sigma_t^{+},$};
+  \node[cfSmall,anchor=west] at (12.48,2.00) {$e_t,f_t]$};
+  \node[cfEq,anchor=west] (gateeq) at (12.48,1.56) {$g_t=2\sigma(\mathrm{MLP}(c_t))$};
+  \node[cfEq,anchor=west] at (12.48,1.14) {$y=Wx+\frac{\alpha}{r}B[g_t\odot Ax]$};
+  \node[cfTiny,text=cfOrange] at (15.90,0.80) {只训练 LoRA 与 gate};
+
+  % panel arrows are omitted; the three state panels read left to right.
+
+  % lane-to-belief arrows
+  \draw[cfDash,draw=cfOrange] (1.55,3.75) -- (1.55,2.90);
+  \node[cfTiny,text=cfOrange,fill=white,inner sep=1pt] at (1.90,3.42) {反馈 $f_t$};
+  \draw[cfDash,draw=cfGreen] (8.30,5.00) -- (8.30,2.90);
+  \node[cfTiny,text=cfGreen,fill=white,inner sep=1pt] at (8.65,3.55) {$H_t$};
+  \draw[cfGate] (gateeq.east) -- (17.72,1.56) -- (17.72,6.60) -- (10.95,6.60) -- (lora.north);
+  \node[cfTiny,text=cfPurple,fill=white,inner sep=1pt] at (17.42,4.12) {gate};
+
+  % recurrence
+  \draw[cfDash] (15.10,0.50) -- (15.10,0.26) -- (2.05,0.26) -- (2.05,0.50);
+  \node[cfTiny,text=cfPurple,fill=cfPurpleBg,inner sep=1pt] at (8.55,0.26) {状态延续 $t\to t+1$};
+
+\end{tikzpicture}
+\endgroup

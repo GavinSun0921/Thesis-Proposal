@@ -1,0 +1,91 @@
+topic,year,title,venue,doi,judgement
+T1,2024,4D Scaffold Gaussian Splatting with Dynamic-Aware Anchor Growing for Efficient and High-Fidelity Dynamic Scene Reconstruction,AAAI,10.1609/aaai.v40i5.37332,相关
+T1,2025,1000+ FPS 4D Gaussian Splatting for Dynamic Scene Rendering,NeurIPS,10.48550/arxiv.2503.16422,相关
+T1,2025,Splat4D: Diffusion-Enhanced 4D Gaussian Splatting for Temporally and Spatially Consistent Content Creation,SIGGRAPH,10.1145/3721238.3730752,相关
+T1,2024,Robot See Robot Do: Imitating Articulated Object Manipulation with Monocular 4D Reconstruction,CoRL,10.48550/arxiv.2409.18121,部分相关
+T1,2025,PAD3R: Pose-Aware Dynamic 3D Reconstruction from Casual Videos,SIGGRAPH,10.1145/3757377.3763836,相关
+T1,2025,Prior-Enhanced Gaussian Splatting for Dynamic Scene Reconstruction from Casual Video,SIGGRAPH,10.1145/3757377.3763910,相关
+T1,2024,Improving Gaussian Splatting with Localized Points Management,CVPR,10.1109/cvpr52734.2025.02021,不相关
+T1,2025,4DSloMo: 4D Reconstruction for High Speed Scene with Asynchronous Capture,SIGGRAPH,10.1145/3757377.3763908,相关
+T1,2016,Temporally Coherent 4D Reconstruction of Complex Dynamic Scenes,CVPR,10.1109/cvpr.2016.504,相关
+T1,2017,Dense Batch Non-Rigid Structure from Motion in a Second,WACV,10.1109/wacv.2017.35,相关
+T1,2025,CoDa-4DGS: Dynamic Gaussian Splatting with Context and Deformation Awareness for Autonomous Driving,ICCV,10.1109/iccv51701.2025.02602,相关
+T1,2023,Decoupling Dynamic Monocular Videos for Dynamic View Synthesis,TVCG,10.1109/tvcg.2024.3434361,相关
+T1,2016,Spatiotemporal Bundle Adjustment for Dynamic 3D Reconstruction,CVPR,10.1109/cvpr.2016.189,相关
+T1,2024,Deblur4DGS: 4D Gaussian Splatting from Blurry Monocular Video,AAAI,10.48550/arxiv.2412.06424,相关
+T1,2025,Reconstructing Heterogeneous Biomolecules via Hierarchical Gaussian Mixtures and Part Discovery,NeurIPS,10.48550/arxiv.2506.09063,不相关
+T1,2021,TöRF: Time-of-Flight Radiance Fields for Dynamic Scene View Synthesis,NeurIPS,,相关
+T1,2025,MoAngelo: Motion-Aware Neural Surface Reconstruction for Dynamic Scenes,3DV,10.1109/3dv69130.2026.00104,相关
+T1,2022,NerfCap: Human Performance Capture With Dynamic Neural Radiance Fields,TVCG,10.1109/tvcg.2022.3202503,相关
+T1,2023,AnimatableDreamer: Text-Guided Non-rigid 3D Model Generation and Reconstruction with Canonical Score Distillation,ECCV,10.48550/arxiv.2312.03795,相关
+T1,2022,Instant Volumetric Head Avatars,CVPR,10.1109/cvpr52729.2023.00444,相关
+T1,2022,Unbiased 4D: Monocular 4D Reconstruction with a Neural Deformation Model,CVPR,10.1109/cvprw59228.2023.00701,相关
+T1,2025,FaceCraft4D: Animated 3D Facial Avatar Generation from a Single Image,ICCV,10.1109/iccv51701.2025.01080,相关
+T1,2020,Dynamic Neural Radiance Fields for Monocular 4D Facial Avatar Reconstruction,CVPR,10.1109/cvpr46437.2021.00854,相关
+T1,2024,3D Geometry-aware Deformable Gaussian Splatting for Dynamic View Synthesis,CVPR,10.1109/cvpr52733.2024.00850,相关
+T1,2024,DriveDreamer4D: World Models Are Effective Data Machines for 4D Driving Scene Representation,CVPR,10.1109/cvpr52734.2025.01122,相关
+T1,2024,Superpoint Gaussian Splatting for Real-Time High-Fidelity Dynamic Scene Reconstruction,ICML,10.48550/arxiv.2406.03697,相关
+T1,2021,AD-NeRF: Audio Driven Neural Radiance Fields for Talking Head Synthesis,ICCV,10.1109/iccv48922.2021.00573,相关
+T1,2025,4DRecon: Spatio-Temporal Reconstruction of Multiple Dynamic Objects in LiDAR Streams,ICRA,10.1109/icras65818.2025.11108731,相关
+T1,2023,Robust Dynamic Radiance Fields,CVPR,10.1109/cvpr52729.2023.00010,相关
+T1,2024,DynoSurf: Neural Deformation-based Temporally Consistent Dynamic Surface Reconstruction,ECCV,10.48550/arxiv.2403.11586,相关
+T2,2021,Multi-Modal Mutual Information (MuMMI) Training for Robust Self-Supervised Deep Reinforcement Learning,ICRA,10.1109/icra48506.2021.9561187,相关
+T2,2025,Learning View-invariant World Models for Visual Robotic Manipulation,ICLR,,部分相关
+T2,2025,Unifying Deep Predicate Invention with Pre-trained Foundation Models,T-RO,10.48550/arxiv.2512.17992,相关
+T2,2023,Leveraging Pre-trained Large Language Models to Construct and Utilize World Models for Model-based Task Planning,NeurIPS,10.48550/arxiv.2305.14909,相关
+T2,2021,Learning Behaviors through Physics-driven Latent Imagination,CoRL,,相关
+T2,2025,Ego-Vision World Model for Humanoid Contact Planning,ICRA,10.1109/icra57385.2026.11697055,相关
+T2,2020,World Model as a Graph: Learning Latent Landmarks for Planning,ICML,,相关
+T2,2016,Reduction of the State Observation Problem to an Identifiability Problem,AAAI,,不相关
+T2,2025,Learning 3D Persistent Embodied World Models,NeurIPS,10.48550/arxiv.2505.05495,相关
+T2,2015,Fast Wavefront Propagation (FWP) for Computing Exact Geodesic Distances on Meshes,TVCG,10.1109/tvcg.2015.2407404,不相关
+T2,2024,"Thinking in Space: How Multimodal Large Language Models See, Remember, and Recall Spaces",CVPR,10.1109/cvpr52734.2025.00994,相关
+T2,2025,World Models for Anomaly Detection during Model-Based Reinforcement Learning Inference,IROS,10.1109/iros60139.2025.11245876,相关
+T2,2024,UnO: Unsupervised Occupancy Fields for Perception and Forecasting,CVPR,10.1109/cvpr52733.2024.01373,部分相关
+T2,2025,PartRM: Modeling Part-Level Dynamics with Large Cross-State Reconstruction Model,CVPR,10.1109/cvpr52734.2025.00657,部分相关
+T2,2023,Learning Interactive Real-World Simulators,ICLR,10.48550/arxiv.2310.06114,相关
+T2,2022,Curious Exploration via Structured World Models Yields Zero-Shot Object Manipulation,NeurIPS,10.48550/arxiv.2206.11403,相关
+T2,2025,Variance-Based Membership Inference Attacks Against Large-Scale Image Captioning Models,CVPR,10.1109/cvpr52734.2025.00860,不相关
+T2,2023,Hieros: Hierarchical Imagination on Structured State Space Sequence World Models,ICML,10.48550/arxiv.2310.05167,相关
+T2,2023,SafeDreamer: Safe Reinforcement Learning with World Models,ICLR,,相关
+T2,2022,Choreographer: Learning and Adapting Skills in Imagination,ICLR,10.48550/arxiv.2211.13350,相关
+T2,2019,Learning by Abstraction: The Neural State Machine,NeurIPS,,相关
+T2,2020,Ready Policy One: World Building Through Active Learning,ICML,,相关
+T2,2018,Closed-Loop Robot Task Planning Based on Referring Expressions,IROS,10.1109/iros.2018.8593371,相关
+T2,2024,Meta-DT: Offline Meta-RL as Conditional Sequence Modeling with World Model Disentanglement,NeurIPS,10.48550/arxiv.2410.11448,相关
+T2,2021,Connecting Semantic Building Information Models and Robotics: An application to 2D LiDAR-based localization,ICRA,10.1109/icra48506.2021.9561129,相关
+T2,2021,Conditional Object-Centric Learning from Video,ICLR,,相关
+T2,2025,Inference-Time Enhancement of Generative Robot Policies via Predictive World Modeling,ICRA,10.1109/lra.2026.3673995,部分相关
+T2,2022,A Framework for Improving the Reliability of Black-box Variational Inference,JMLR,,不相关
+T2,2024,The Matrix: Infinite-Horizon World Generation with Real-Time Moving Control,NeurIPS,10.48550/arxiv.2412.03568,相关
+T2,2025,General agents need world models,ICML,10.48550/arxiv.2506.01622,部分相关
+T3,2017,A framework for sensorless and autonomous probe-tissue contact management in robotic endomicroscopic scanning,ICRA,10.1109/icra.2017.7989205,相关
+T3,2023,Visual Contact Pressure Estimation for Grippers in the Wild,IROS,10.1109/iros55552.2023.10342124,相关
+T3,2015,A non-rigid point and normal registration algorithm with applications to learning from demonstrations,ICRA,10.1109/icra.2015.7139289,相关
+T3,2022,Learning Object Manipulation Skills from Video via Approximate Differentiable Physics,IROS,10.1109/iros47612.2022.9982084,相关
+T3,2025,FlowVLA: Visual Chain of Thought-Based Motion Reasoning for Vision-Language-Action Models,T-RO,10.1109/tro.2026.3732824,相关
+T3,2024,Hand-Object Interaction Pretraining from Videos,ICRA,10.1109/icra55743.2025.11127811,相关
+T3,2025,Refined Policy Distillation: From VLA Generalists to RL Experts,IROS,10.1109/iros60139.2025.11246761,相关
+T3,2023,Finding Biomechanically Safe Trajectories for Robot Manipulation of the Human Body in a Search and Rescue Scenario,IROS,10.1109/iros55552.2023.10342353,相关
+T3,2025,Self-Correcting Robot Manipulation via Gaussian-Splatted Foresight,AAAI,10.1609/aaai.v39i25.34866,相关
+T3,2025,TASTE-Rob: Advancing Video Generation of Task-Oriented Hand-Object Interaction for Generalizable Robotic Manipulation,CVPR,10.1109/cvpr52734.2025.02578,相关
+T3,2024,Sequential Manipulation of Deformable Linear Object Networks with Endpoint Pose Measurements using Adaptive Model Predictive Control,ICRA,10.1109/icra57147.2024.10611551,相关
+T3,2021,ManiSkill: Generalizable Manipulation Skill Benchmark with Large-Scale Demonstrations,NeurIPS,,相关
+T3,2025,RoboDexVLM: Visual Language Model-Enabled Task Planning and Motion Control for Dexterous Robot Manipulation,IROS,10.1109/iros60139.2025.11247714,相关
+T3,2025,ACGD: Visual Multitask Policy Learning with Asymmetric Critic Guided Distillation,IROS,10.1109/iros60139.2025.11247025,相关
+T3,2022,LISA: Learning Interpretable Skill Abstractions from Language,NeurIPS,10.48550/arxiv.2203.00054,相关
+T3,2024,GRAPE: Generalizing Robot Policy via Preference Alignment,ICRA,10.1109/icra57385.2026.11695972,相关
+T3,2023,TouchSDF: A DeepSDF Approach for 3D Shape Reconstruction Using Vision-Based Tactile Sensing,ICRA,10.1109/lra.2024.3396054,相关
+T3,2023,Learning Any-View 6DoF Robotic Grasping in Cluttered Scenes via Neural Surface Rendering,RSS,10.48550/arxiv.2306.07392,相关
+T3,2016,Co-optimizing task and motion planning,IROS,10.1109/iros.2016.7759698,相关
+T3,2018,Deep Object Pose Estimation for Semantic Robotic Grasping of Household Objects,CoRL,,相关
+T3,2024,Fast and Robust Visuomotor Riemannian Flow Matching Policy,T-RO,10.1109/tro.2025.3601293,相关
+T3,2024,Arc-Length-Based Warping for Robot Skill Synthesis from Multiple Demonstrations,IROS,10.1109/iros60139.2025.11245947,相关
+T3,2021,ManipNet,SIGGRAPH,10.1145/3476576.3476690,相关
+T3,2023,SoftGPT: Learn Goal-Oriented Soft Object Manipulation Skills by Generative Pre-Trained Heterogeneous Graph Transformer,IROS,10.1109/iros55552.2023.10341846,相关
+T3,2023,POMDP Planning Under Object Composition Uncertainty: Application to Robotic Manipulation,T-RO,10.1109/tro.2022.3188168,相关
+T3,2018,ROS Reality: A Virtual Reality Framework Using Consumer-Grade Hardware for ROS-Enabled Robots,IROS,10.1109/iros.2018.8593513,相关
+T3,2021,Encoding Human Domain Knowledge to Warm Start Reinforcement Learning,AAAI,10.1609/aaai.v35i6.16638,相关
+T3,2025,Task-Specific Embodied Tactile Sensing for Dexterous Hand,ICRA,10.1109/icra55743.2025.11127318,部分相关
+T3,2025,ShapeForce: Low-Cost Soft Robotic Wrist for Contact-Rich Manipulation,ICRA,10.1109/icra57385.2026.11697322,相关
+T3,2024,GRAPPA: Generalizing and Adapting Robot Policies via Online Agentic Guidance,ICRA,10.1109/lra.2026.3664527,相关

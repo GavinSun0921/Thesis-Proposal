@@ -1,51 +1,83 @@
 {
   "kind": "proposed technical routes, editable vector diagrams",
-  "shared_styles_sha256": "4bfa13b6f9864c4e6a32b02b08dec58850f1c0bbe32ff1dc473ae6eb94e7e93b",
+  "shared_styles_sha256": "28a2c5c6be8d148518408d8b2741e993adcd6f943ace207db0d1e832be13baf3",
+  "typography_source": "figures/technical_route_styles.tex",
+  "style_review": "2026-10-30: shared type hierarchy, natural-width text, equal peer panels and unobstructed connector labels.",
   "figures": [
     {
       "title": "连续动态世界模型总体技术路线",
+      "status": "redrawn",
+      "note": "Redrawn 2026-10-29 from the confirmed v2 preview; five-component formula, offline prediction evaluation and recorded-observation updates; application experiment commitments removed 2026-10-30.",
       "source": "figures/technical_route_overview.tex",
-      "source_sha256": "edfcc8d66ea9668055dd3b748f13b348627d69f8804a2bf6638ccb2801960496",
+      "source_sha256": "e1d33213ba150fa6d94b3ba91ea9b09afe5bda08a46e11e30055efd6077cc505",
       "pdf": "technical_route_overview.pdf",
-      "pdf_sha256": "e6ded245796c95cda286c0d6c73fad798e5dbeaa0be1f54c90874170b9bb6aae"
+      "pdf_sha256": "fa0452e47487fde97624f7ca6901851a2b976cf8940b3a752cb20eb26c53be6b",
+      "page_width_cm": 16.16,
+      "page_height_cm": 16.26,
+      "png": "technical_route_overview.png",
+      "png_gray": "technical_route_overview-gray.png"
     },
     {
-      "title": "连续时间状态构建技术路线",
+      "title": "不确定性感知的连续时间场景表征技术路线",
+      "status": "integrated",
+      "note": "Redrawn 2026-10-30 from the v3 mechanism preview: compact three-stage evidence/support/joint-solve route with symbolic observation input (Omega_k, Pi), both residual and shared-constraint inputs, and a two-line output strip.",
       "source": "figures/technical_route_time.tex",
-      "source_sha256": "4dfa20fb23758692bb80717988abd391499965f412b838c28edd7b7cceca03ad",
+      "source_sha256": "0966ca2f69e6000456978d9102f2de05ce1cabc75a1ec1e7fe49cb088fa28e45",
       "pdf": "technical_route_time.pdf",
-      "pdf_sha256": "2af5061035e88cb1f5ad2e3ae659596fc9c8b66525f6b31869dc8fc95989d5c4"
+      "pdf_sha256": "af1fed0dd70b741eaa28c6ac9c5a45a5ca15c37db5538ea34bf2fb657cf422b9",
+      "page_width_cm": 15.76,
+      "page_height_cm": 8.45,
+      "png": "technical_route_time.png",
+      "png_gray": "technical_route_time-gray.png"
     },
     {
       "title": "连续运动引导的空间结构表征技术路线",
+      "status": "integrated",
+      "note": "Redrawn 2026-10-30: compact cross-time membership and shared-range panels with the joint motion-geometry-membership recovery.",
       "source": "figures/technical_route_space.tex",
-      "source_sha256": "54b5e7823a725a52f7e39eff0d90ed308c27b3080df1a72bbcf7c3645f29c26b",
+      "source_sha256": "919b0b38aeef698fac6817d88e46373da5dbfef506131b54c79630ee8f05241d",
       "pdf": "technical_route_space.pdf",
-      "pdf_sha256": "ee9ca67896e97fc437474ec3018276c61ea8a866053b97bcc23ef0ea8d56b2b6"
+      "pdf_sha256": "bd626cf4c7e045acf8a15d7d812ca53a9d56b951e809505bd2f52c8e22459c4d",
+      "page_width_cm": 15.76,
+      "page_height_cm": 8.77,
+      "png": "technical_route_space.png",
+      "png_gray": "technical_route_space-gray.png"
     },
     {
-      "title": "拓扑自适应表征技术路线",
+      "title": "物理连接变化下的连续动态场景表征技术路线",
+      "status": "integrated",
+      "note": "Redrawn 2026-10-30: one split event, local connection/surface update and separate material-motion and surface-existence histories.",
       "source": "figures/technical_route_topology.tex",
-      "source_sha256": "e57c9843587ead1bd160370a8cbe85fdf7849c8483020cd665ad853d1955ce75",
+      "source_sha256": "024bb6d06d47215a209c465d327d701658812d91406807f5f532c7663faeb8b3",
       "pdf": "technical_route_topology.pdf",
-      "pdf_sha256": "2648d072d57cfa5119c665c1d6a618572033464c343d7760bc7b420e90393965"
+      "pdf_sha256": "c1567e4d7aaa89133f42909ce567c8dbe3b2cb38c042d16371c592907c544e42",
+      "page_width_cm": 15.76,
+      "page_height_cm": 8.47,
+      "png": "technical_route_topology.png",
+      "png_gray": "technical_route_topology-gray.png"
     },
     {
-      "title": "连续状态驱动的动作响应技术路线",
+      "title": "基于连续动态表征的动作后果预测技术路线",
+      "status": "integrated",
+      "note": "Redrawn 2026-10-30: typed relation propagation, learned dynamics with stepwise integration, offline prediction evaluation and subsequent recorded-observation correction.",
       "source": "figures/technical_route_response.tex",
-      "source_sha256": "e0130ab74c6b5d8e28008ab4a8f9700fd32aa803b02c6f9a87ee8aafa906091d",
+      "source_sha256": "96da0ae7548b91551b04a223743c16a1451ed52d98a5f498795ed3f13df9f5c1",
       "pdf": "technical_route_response.pdf",
-      "pdf_sha256": "d30df63203279744f55cc4b14ae6ad6b3bd94aed21d0f7d3e184af6ac6ff60a5"
+      "pdf_sha256": "dbffd344ac4dc44bd4710a9ea440648bb30f1e8e2701d83fd9cf8351c1c0ef8b",
+      "page_width_cm": 15.76,
+      "page_height_cm": 8.45,
+      "png": "technical_route_response.png",
+      "png_gray": "technical_route_response-gray.png"
     }
   ],
   "scope": [
-    "Filled numbered markers indicate research emphasis, not originality or validated performance.",
-    "Muted blue, green, ochre and violet identify research stages; local colors distinguish trajectories, parts, connection validity, histories and actions. Text and frames stay black.",
-    "Local colors are paired with line styles, node shapes, interval markers or labels for grayscale reading.",
-    "Explanatory legends, complete-sentence sketch notes and schematic-scope notes belong to adjacent method prose. Figures retain module, variable, interval and necessary relation labels.",
-    "The integrated prediction mode uses observations available by t0 only.",
-    "Association, physical connection and proximity/contact candidates are distinct relations.",
-    "Surface history is distinct from material-motion history and first visibility.",
-    "Future geometry and motion are model predictions; new observations arrive after execution."
+    "The overall route is the 2026-10-29 redraw; the four detailed routes were compacted and integrated on 2026-10-30 from the reviewed v3 mechanism previews.",
+    "Filled numbered markers or dark header bands indicate stages that carry the study's own mechanism, not originality or validated performance.",
+    "Muted blue, green, ochre and violet identify the four studies; local colours distinguish trajectories, parts, connection validity, histories and actions. Body text is black; headers and frames use the corresponding theme.",
+    "Local colours are paired with line styles, node shapes, interval markers or labels for grayscale reading.",
+    "Explanatory legends and complete-sentence notes belong to the adjacent method prose; figures retain module, variable, interval and necessary relation labels.",
+    "The integrated prediction mode uses observations and action history available by t0 only; subsequent recorded observations update only later prediction starts; evaluation uses public sequences.",
+    "Material connection, spatial proximity and action effect are distinct relations; association edges and membership-derived shared weights are not physical connections.",
+    "Surface history is distinct from material-motion history and from first visibility; a new boundary has no pre-formation surface history."
   ]
 }

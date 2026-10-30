@@ -1,0 +1,75 @@
+{
+  "source": "Semantic Scholar Graph API（paper/search/bulk）",
+  "source_url": "https://api.semanticscholar.org/graph/v1/paper/search/bulk",
+  "retrieval_date": "2026-10-29",
+  "year_range": [
+    2015,
+    2026
+  ],
+  "partial_year": 2026,
+  "partial_year_cutoff": "2026-10-29",
+  "annualized": false,
+  "cutoff_policy": "Public official catalog observed by cutoff or authentic Crossref publication-date interval ending on or before cutoff; no S2 preprint date, created date, or missing-date imputation.",
+  "topics": [
+    {
+      "id": "T1",
+      "name": "四维动态场景重建",
+      "query": "((dynamic | deformable | nonrigid | \"non-rigid\" | \"time-varying\" | \"time varying\" | \"space-time\" | \"spatio-temporal\" | \"4D\") + (\"neural radiance field\" | \"Gaussian splatting\" | \"3D reconstruction\" | \"scene reconstruction\" | \"view synthesis\" | \"surface reconstruction\" | \"scene representation\")) | \"non-rigid fusion\" | \"nonrigid fusion\" | \"topologically varying\"",
+      "counts": {
+        "2015": 5,
+        "2016": 8,
+        "2017": 9,
+        "2018": 10,
+        "2019": 8,
+        "2020": 12,
+        "2021": 29,
+        "2022": 18,
+        "2023": 38,
+        "2024": 84,
+        "2025": 186,
+        "2026": 83
+      },
+      "total": 490
+    },
+    {
+      "id": "T2",
+      "name": "面向交互的世界模型",
+      "query": "((\"world model\" | \"world models\" | \"world simulator\" | \"latent dynamics\" | \"action-conditioned prediction\" | \"action conditioned prediction\") + (learning | learned | neural | generative | control | planning | reinforcement | robot))",
+      "counts": {
+        "2015": 3,
+        "2016": 0,
+        "2017": 2,
+        "2018": 3,
+        "2019": 6,
+        "2020": 5,
+        "2021": 13,
+        "2022": 23,
+        "2023": 36,
+        "2024": 71,
+        "2025": 170,
+        "2026": 139
+      },
+      "total": 471
+    },
+    {
+      "id": "T3",
+      "name": "具身操作中的动作学习",
+      "query": "((robot | robotic | visuomotor | \"vision-language-action\") + (manipulation | grasping | dexterous)) + (learning | learned | policy | imitation | diffusion | transformer | predictive)",
+      "counts": {
+        "2015": 11,
+        "2016": 13,
+        "2017": 11,
+        "2018": 71,
+        "2019": 92,
+        "2020": 127,
+        "2021": 192,
+        "2022": 207,
+        "2023": 300,
+        "2024": 377,
+        "2025": 595,
+        "2026": 209
+      },
+      "total": 2205
+    }
+  ]
+}
