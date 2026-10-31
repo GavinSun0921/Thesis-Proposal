@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" baseProfile="full" height="1380px" version="1.1" viewBox="0 0 2280 1380" width="2280px">
+  <defs />
+  <rect fill="#FFF" height="1380" rx="0" ry="0" stroke="none" stroke-width="1.6" width="2280" x="0" y="0" />
+  <rect fill="#F4F8FC" height="182" rx="15" ry="15" stroke="#CAD8E7" stroke-width="1.7" width="702" x="46" y="28" />
+  <rect fill="#E4EDF8" height="64" rx="14" ry="14" stroke="none" stroke-width="1.6" width="700" x="47" y="29" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="48" font-weight="700" text-anchor="middle" x="397.5" y="79.0" xml:space="preserve">承接前两项研究</text>
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="46" font-weight="700" text-anchor="middle" x="397.0" y="164.0" xml:space="preserve">G(t) · C(t) · M(t) · Z(t)</text>
+  <rect fill="#F4F8FC" height="182" rx="15" ry="15" stroke="#CAD8E7" stroke-width="1.7" width="702" x="787" y="28" />
+  <rect fill="#E4EDF8" height="64" rx="14" ry="14" stroke="none" stroke-width="1.6" width="700" x="788" y="29" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="48" font-weight="700" text-anchor="middle" x="1138.5" y="79.5" xml:space="preserve">视频观测与模型先验</text>
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="46" font-weight="700" text-anchor="middle" x="1138" y="142.0" xml:space="preserve"><tspan x="1146.0" y="142.0">视频 · 相机 / 深度 · </tspan><tspan x="1138.5" y="196.0">跨时对应 · 轮廓</tspan></text>
+  <rect fill="#F4F8FC" height="182" rx="15" ry="15" stroke="#CAD8E7" stroke-width="1.7" width="702" x="1528" y="28" />
+  <rect fill="#E4EDF8" height="64" rx="14" ry="14" stroke="none" stroke-width="1.6" width="700" x="1529" y="29" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="48" font-weight="700" text-anchor="middle" x="1878.5" y="79.5" xml:space="preserve">局部结构建模单元</text>
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="46" font-weight="700" text-anchor="middle" x="1879" y="142.5" xml:space="preserve"><tspan x="1884.0" y="142.5">图元 + 局部表面代理 + </tspan><tspan x="1879.5" y="196.5">候选联系</tspan></text>
+  <line stroke="#2167A6" stroke-linecap="round" stroke-width="4" x1="752" x2="766" y1="119" y2="119" />
+  <polygon fill="#2167A6" points="766,110 766,128 781,119" />
+  <line stroke="#2167A6" stroke-linecap="round" stroke-width="4" x1="1493" x2="1507" y1="119" y2="119" />
+  <polygon fill="#2167A6" points="1507,110 1507,128 1522,119" />
+  <line stroke="#2167A6" stroke-linecap="round" stroke-width="4" x1="1138" x2="1138" y1="214" y2="254" />
+  <polygon fill="#2167A6" points="1131,254 1145,254 1138,266" />
+  <rect fill="#FAFCFE" height="804" rx="17" ry="17" stroke="#A4C8E7" stroke-width="2.2" width="702" x="46" y="270" />
+  <rect fill="#E8F2FC" height="130" rx="16" ry="16" stroke="none" stroke-width="1.6" width="700" x="47" y="271" />
+  <rect fill="#2167A6" height="56" rx="28" ry="28" stroke="none" stroke-width="1.6" width="56" x="68" y="308" />
+  <text fill="#FFF" font-family="Arial Unicode MS" font-size="42" font-weight="700" text-anchor="middle" x="97.5" y="351.0" xml:space="preserve">1</text>
+  <text fill="#2167A6" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="426.5" y="356.0" xml:space="preserve">局部连接与结构变化判断</text>
+  <rect fill="#FFF" height="136" rx="12" ry="12" stroke="#A4C8E7" stroke-width="1.6" width="658" x="68" y="420" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="397" y="478.0" xml:space="preserve"><tspan x="395.5" y="478.0">1. 局部表面代理</tspan><tspan x="396.5" y="536.0">与候选邻域构建</tspan></text>
+  <line stroke="#2167A6" stroke-linecap="round" stroke-width="2.4" x1="397" x2="397" y1="557" y2="566" />
+  <polygon fill="#2167A6" points="390,566 404,566 397,575" />
+  <rect fill="#FFF" height="136" rx="12" ry="12" stroke="#A4C8E7" stroke-width="1.6" width="658" x="68" y="580" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="397" y="638.5" xml:space="preserve"><tspan x="398.0" y="638.5">2. 时序分离与</tspan><tspan x="397.0" y="696.5">新边界证据融合</tspan></text>
+  <line stroke="#2167A6" stroke-linecap="round" stroke-width="2.4" x1="397" x2="397" y1="717" y2="726" />
+  <polygon fill="#2167A6" points="390,726 404,726 397,735" />
+  <rect fill="#FFF" height="136" rx="12" ry="12" stroke="#A4C8E7" stroke-width="1.6" width="658" x="68" y="740" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="397" y="798.5" xml:space="preserve"><tspan x="412.5" y="798.5">3. 连接的保持、</tspan><tspan x="397.5" y="856.5">失效与待定判别</tspan></text>
+  <rect fill="#E8F2FC" height="162" rx="11" ry="11" stroke="#A4C8E7" stroke-width="1.6" width="658" x="68" y="900" />
+  <text fill="#2167A6" font-family="Arial Unicode MS" font-size="42" font-weight="700" text-anchor="middle" x="395.5" y="941.5" xml:space="preserve">阶段结果</text>
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="46" font-weight="700" text-anchor="middle" x="397.5" y="1019.5" xml:space="preserve">变化区域 · 候选连接状态</text>
+  <rect fill="#FAFCFE" height="804" rx="17" ry="17" stroke="#EDC19B" stroke-width="2.2" width="702" x="787" y="270" />
+  <rect fill="#FFF2E5" height="130" rx="16" ry="16" stroke="none" stroke-width="1.6" width="700" x="788" y="271" />
+  <rect fill="#CD762A" height="56" rx="28" ry="28" stroke="none" stroke-width="1.6" width="56" x="809" y="308" />
+  <text fill="#FFF" font-family="Arial Unicode MS" font-size="42" font-weight="700" text-anchor="middle" x="837.0" y="351.5" xml:space="preserve">2</text>
+  <text fill="#CD762A" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1168.5" y="355.0" xml:space="preserve">连接约束与表面局部更新</text>
+  <rect fill="#FFF" height="136" rx="12" ry="12" stroke="#EDC19B" stroke-width="1.6" width="658" x="809" y="420" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1138" y="478.5" xml:space="preserve"><tspan x="1137.0" y="478.5">1. 失效连接解绑</tspan><tspan x="1137.5" y="536.5">与运动联系调整</tspan></text>
+  <line stroke="#CD762A" stroke-linecap="round" stroke-width="2.4" x1="1138" x2="1138" y1="557" y2="566" />
+  <polygon fill="#CD762A" points="1131,566 1145,566 1138,575" />
+  <rect fill="#FFF" height="136" rx="12" ry="12" stroke="#EDC19B" stroke-width="1.6" width="658" x="809" y="580" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1138" y="638.5" xml:space="preserve"><tspan x="1139.0" y="638.5">2. 新生可见表面</tspan><tspan x="1137.5" y="696.5">与局部图元恢复</tspan></text>
+  <line stroke="#CD762A" stroke-linecap="round" stroke-width="2.4" x1="1138" x2="1138" y1="717" y2="726" />
+  <polygon fill="#CD762A" points="1131,726 1145,726 1138,735" />
+  <rect fill="#FFF" height="136" rx="12" ry="12" stroke="#EDC19B" stroke-width="1.6" width="658" x="809" y="740" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1138" y="798.5" xml:space="preserve"><tspan x="1138.5" y="798.5">3. 稳定区保持与</tspan><tspan x="1137.5" y="856.5">局部联合优化</tspan></text>
+  <rect fill="#FFF2E5" height="162" rx="11" ry="11" stroke="#EDC19B" stroke-width="1.6" width="658" x="809" y="900" />
+  <text fill="#CD762A" font-family="Arial Unicode MS" font-size="42" font-weight="700" text-anchor="middle" x="1136.5" y="941.5" xml:space="preserve">阶段结果</text>
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="46" font-weight="700" text-anchor="middle" x="1138" y="993.5" xml:space="preserve"><tspan x="1144.5" y="993.5">更新 G(t)、M(t) </tspan><tspan x="1138.5" y="1045.5">及局部连接候选</tspan></text>
+  <rect fill="#FAFCFE" height="804" rx="17" ry="17" stroke="#A9D9CF" stroke-width="2.2" width="702" x="1528" y="270" />
+  <rect fill="#E7F6F2" height="130" rx="16" ry="16" stroke="none" stroke-width="1.6" width="700" x="1529" y="271" />
+  <rect fill="#168477" height="56" rx="28" ry="28" stroke="none" stroke-width="1.6" width="56" x="1550" y="308" />
+  <text fill="#FFF" font-family="Arial Unicode MS" font-size="42" font-weight="700" text-anchor="middle" x="1578.0" y="351.5" xml:space="preserve">3</text>
+  <text fill="#168477" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1911.0" y="355.0" xml:space="preserve">材料与表面双历史维护</text>
+  <rect fill="#FFF" height="136" rx="12" ry="12" stroke="#A9D9CF" stroke-width="1.6" width="658" x="1550" y="420" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1879" y="478.5" xml:space="preserve"><tspan x="1877.5" y="478.5">1. 材料运动历史</tspan><tspan x="1878.0" y="536.5">的有效延续</tspan></text>
+  <line stroke="#168477" stroke-linecap="round" stroke-width="2.4" x1="1879" x2="1879" y1="557" y2="566" />
+  <polygon fill="#168477" points="1872,566 1886,566 1879,575" />
+  <rect fill="#FFF" height="136" rx="12" ry="12" stroke="#A9D9CF" stroke-width="1.6" width="658" x="1550" y="580" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1879" y="638.0" xml:space="preserve"><tspan x="1882.0" y="638.0">2. 表面存在区间</tspan><tspan x="1878.5" y="696.0">与历史门控</tspan></text>
+  <line stroke="#168477" stroke-linecap="round" stroke-width="2.4" x1="1879" x2="1879" y1="717" y2="726" />
+  <polygon fill="#168477" points="1872,726 1886,726 1879,735" />
+  <rect fill="#FFF" height="136" rx="12" ry="12" stroke="#A9D9CF" stroke-width="1.6" width="658" x="1550" y="740" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1879" y="798.5" xml:space="preserve"><tspan x="1879.0" y="798.5">3. 首次显露 / 新生边界</tspan><tspan x="1878.0" y="856.5">区分与修正</tspan></text>
+  <rect fill="#E7F6F2" height="162" rx="11" ry="11" stroke="#A9D9CF" stroke-width="1.6" width="658" x="1550" y="900" />
+  <text fill="#168477" font-family="Arial Unicode MS" font-size="42" font-weight="700" text-anchor="middle" x="1877.5" y="941.5" xml:space="preserve">阶段结果</text>
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="46" font-weight="700" text-anchor="middle" x="1879" y="993.0" xml:space="preserve"><tspan x="1886.0" y="993.0">物理连接 E(t) · </tspan><tspan x="1879.0" y="1045.0">表面历史与待定关系</tspan></text>
+  <line stroke="#638BA9" stroke-linecap="round" stroke-width="5" x1="752" x2="766" y1="656" y2="656" />
+  <polygon fill="#638BA9" points="766,647 766,665 781,656" />
+  <line stroke="#638BA9" stroke-linecap="round" stroke-width="5" x1="1493" x2="1507" y1="656" y2="656" />
+  <polygon fill="#638BA9" points="1507,647 1507,665 1522,656" />
+  <path d="M 1879,1075 L 1879,1084 L 2102,1084 L 2102,1087" fill="none" stroke="#89A5BB" stroke-dasharray="8 7" stroke-width="2.6" />
+  <polygon fill="#89A5BB" points="2096,1087 2108,1087 2102,1094" />
+  <path d="M 146,1148 L 126,1148 L 126,1084 L 397,1084 L 397,1081" fill="none" stroke="#89A5BB" stroke-dasharray="8 7" stroke-width="2.6" />
+  <polygon fill="#89A5BB" points="391,1081 403,1081 397,1074" />
+  <rect fill="#F1F6FA" height="108" rx="12" ry="12" stroke="#C4D6E6" stroke-width="1.7" width="1988" x="146" y="1094" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="44" font-weight="700" text-anchor="middle" x="1141.0" y="1165.0" xml:space="preserve">局部回校正：结构证据重估 → 更新连接状态 → 恢复局部几何 → 调整历史有效范围</text>
+  <rect fill="#E8F1FA" height="124" rx="14" ry="14" stroke="#97BCD9" stroke-width="1.8" width="2184" x="46" y="1220" />
+  <rect fill="#6955AD" height="124" rx="2" ry="2" stroke="none" stroke-width="1.6" width="12" x="46" y="1220" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="48" font-weight="700" text-anchor="middle" x="1138.0" y="1297.5" xml:space="preserve">输出：结构变化后有效的场景表征  G(t)、C(t)、M(t)、Z(t)、E(t)</text>
+</svg>

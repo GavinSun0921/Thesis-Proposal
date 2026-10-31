@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2050" height="1335" viewBox="0 -110 2050 1335">
+<title>具身操作中的动作学习：代表性工作与发展脉络</title>
+<defs><marker id="ax" markerWidth="11" markerHeight="11" refX="10" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#1A2B49" /></marker><filter id="shadow" x="-14%" y="-25%" width="130%" height="160%"><feGaussianBlur in="SourceAlpha" stdDeviation="1.7" result="b" /><feOffset in="b" dy="2" dx="1" result="off" /><feComponentTransfer in="off" result="a"><feFuncA type="linear" slope="0.12" /></feComponentTransfer><feMerge><feMergeNode in="a" /><feMergeNode in="SourceGraphic" /></feMerge></filter></defs>
+<rect width="2050" height="1285" fill="#FFFFFF" y="-60" />
+<rect x="35" y="-55" width="620" height="246" fill="#FFFFFF" opacity="0.94" /><rect x="55" y="-35" width="40" height="40" rx="5" fill="#E2ECF9" stroke="#86A2D8" stroke-width="2" />
+<text x="112" y="-5" fill="#2A3950" font-family="Noto Sans CJK SC" font-size="46" font-weight="600">直接策略与动作生成</text>
+<rect x="55" y="27" width="40" height="40" rx="5" fill="#E3F1E6" stroke="#89BC9B" stroke-width="2" />
+<text x="112" y="57" fill="#2A3950" font-family="Noto Sans CJK SC" font-size="46" font-weight="600">预测辅助决策</text>
+<rect x="55" y="89" width="40" height="40" rx="5" fill="#F0E7FA" stroke="#AE91D7" stroke-width="2" />
+<text x="112" y="119" fill="#2A3950" font-family="Noto Sans CJK SC" font-size="46" font-weight="600">世界—动作联合生成</text>
+<line x1="175" y1="-180" x2="175" y2="1147" stroke="#D5DFEB" stroke-width="2" stroke-dasharray="5 11" />
+<line x1="505" y1="-180" x2="505" y2="1147" stroke="#D5DFEB" stroke-width="2" stroke-dasharray="5 11" />
+<line x1="835" y1="-180" x2="835" y2="1147" stroke="#D5DFEB" stroke-width="2" stroke-dasharray="5 11" />
+<line x1="1165" y1="-180" x2="1165" y2="1147" stroke="#D5DFEB" stroke-width="2" stroke-dasharray="5 11" />
+<line x1="1495" y1="-180" x2="1495" y2="1147" stroke="#D5DFEB" stroke-width="2" stroke-dasharray="5 11" />
+<line x1="1825" y1="-180" x2="1825" y2="1147" stroke="#D5DFEB" stroke-width="2" stroke-dasharray="5 11" />
+<polyline points="175.00,1022.69 505.00,959.46 835.00,885.96 1165.00,825.11 1495.00,652.81" fill="none" stroke="#9AA3AD" opacity="0.80" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+<circle cx="175.00" cy="1022.69" r="8" fill="#858F9A" stroke="white" stroke-width="3" opacity="0.9" />
+<circle cx="505.00" cy="959.46" r="8" fill="#858F9A" stroke="white" stroke-width="3" opacity="0.9" />
+<circle cx="835.00" cy="885.96" r="8" fill="#858F9A" stroke="white" stroke-width="3" opacity="0.9" />
+<circle cx="1165.00" cy="825.11" r="8" fill="#858F9A" stroke="white" stroke-width="3" opacity="0.9" />
+<circle cx="1495.00" cy="652.81" r="8" fill="#858F9A" stroke="white" stroke-width="3" opacity="0.9" />
+<g id="forecast-2026">
+  <path d="M 1495 652.81 L 1825 -50" fill="none" stroke="#9AA3AD" stroke-width="8" stroke-dasharray="10 9" opacity="0.75" stroke-linecap="round"/>
+  <circle cx="1825" cy="-50" r="9" fill="white" stroke="#9AA3AD" stroke-width="4" opacity="0.95"/>
+  <text x="1825" y="-78" font-family="Arial Unicode MS" font-size="36" font-weight="700" text-anchor="middle" fill="#36445A">2026 预测 ≈800</text>
+</g>
+<g filter="url(#shadow)"><rect x="14.0" y="1035.0" width="322" height="100" rx="8" fill="#E3F1E6" stroke="#89BC9B" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
+<text x="175" y="1079.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">Dreamer</text>
+<text x="175" y="1109" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">ICLR 2020</text>
+<g filter="url(#shadow)"><rect x="344.0" y="1035.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
+<text x="505" y="1079.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">PerAct</text>
+<text x="505" y="1109" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">CoRL 2022</text>
+<g filter="url(#shadow)"><rect x="344.0" y="920.0" width="322" height="100" rx="8" fill="#E3F1E6" stroke="#89BC9B" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
+<text x="505" y="964.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="28.3" text-anchor="middle" fill="#152238" font-weight="700">DayDreamer</text>
+<text x="505" y="994" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">CoRL 2022</text>
+<g filter="url(#shadow)"><rect x="674.0" y="1035.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
+<text x="835" y="1079.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="24.8" text-anchor="middle" fill="#152238" font-weight="700">Diffusion Policy</text>
+<text x="835" y="1109" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">RSS 2023</text>
+<g filter="url(#shadow)"><rect x="674.0" y="920.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
+<text x="835" y="964.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">RT-2</text>
+<text x="835" y="994" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">CoRL 2023</text>
+<g filter="url(#shadow)"><rect x="674.0" y="805.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
+<text x="835" y="849.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">RVT</text>
+<text x="835" y="879" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">CoRL 2023</text>
+<g filter="url(#shadow)"><rect x="1004.0" y="1035.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
+<text x="1165" y="1079.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="27.1" text-anchor="middle" fill="#152238" font-weight="700">RoboFlamingo</text>
+<text x="1165" y="1109" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">ICLR 2024</text>
+<g filter="url(#shadow)"><rect x="1004.0" y="920.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
+<text x="1165" y="964.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">RVT-2</text>
+<text x="1165" y="994" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">RSS 2024</text>
+<g filter="url(#shadow)"><rect x="1004.0" y="805.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
+<text x="1165" y="849.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">Octo</text>
+<text x="1165" y="879" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">RSS 2024</text>
+<g filter="url(#shadow)"><rect x="1004.0" y="690.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
+<text x="1165" y="734.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">OpenVLA</text>
+<text x="1165" y="764" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">CoRL 2024</text>
+<g filter="url(#shadow)"><rect x="1334.0" y="1035.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
+<text x="1495" y="1079.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">π0</text>
+<text x="1495" y="1109" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">RSS 2025</text>
+<g filter="url(#shadow)"><rect x="1334.0" y="920.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
+<text x="1495" y="964.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">BridgeVLA</text>
+<text x="1495" y="994" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">NeurIPS 2025</text>
+<g filter="url(#shadow)"><rect x="1334.0" y="805.0" width="322" height="100" rx="8" fill="#E3F1E6" stroke="#89BC9B" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
+<text x="1495" y="849.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">DINO-WM</text>
+<text x="1495" y="879" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">ICML 2025</text>
+<g filter="url(#shadow)"><rect x="1334.0" y="690.0" width="322" height="100" rx="8" fill="#F0E7FA" stroke="#AE91D7" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
+<text x="1495" y="734.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">WorldVLA</text>
+<text x="1495" y="764" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">arXiv 2025†</text>
+<g filter="url(#shadow)"><rect x="1664.0" y="1035.0" width="322" height="100" rx="8" fill="#E3F1E6" stroke="#89BC9B" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
+<text x="1825" y="1079.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="28.3" text-anchor="middle" fill="#152238" font-weight="700">PointWorld</text>
+<text x="1825" y="1109" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">CVPR 2026</text>
+<g filter="url(#shadow)"><rect x="1664.0" y="920.0" width="322" height="100" rx="8" fill="#E3F1E6" stroke="#89BC9B" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
+<text x="1825" y="964.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">SIMPACT</text>
+<text x="1825" y="994" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">CVPR 2026</text>
+<g filter="url(#shadow)"><rect x="1664.0" y="805.0" width="322" height="100" rx="8" fill="#E3F1E6" stroke="#89BC9B" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
+<text x="1825" y="849.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">VLA-MBPO</text>
+<text x="1825" y="879" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">ICML 2026</text>
+<g filter="url(#shadow)"><rect x="1664.0" y="690.0" width="322" height="100" rx="8" fill="#F0E7FA" stroke="#AE91D7" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
+<text x="1825" y="734.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">Motus</text>
+<text x="1825" y="764" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">CVPR 2026</text>
+<g filter="url(#shadow)"><rect x="1664.0" y="575.0" width="322" height="100" rx="8" fill="#F0E7FA" stroke="#AE91D7" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
+<text x="1825" y="619.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">VITA</text>
+<text x="1825" y="649" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">CVPR 2026</text>
+<g filter="url(#shadow)"><rect x="1664.0" y="460.0" width="322" height="100" rx="8" fill="#F0E7FA" stroke="#AE91D7" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
+<text x="1825" y="504.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">MM-ACT</text>
+<text x="1825" y="534" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">CVPR 2026</text>
+<g filter="url(#shadow)"><rect x="1664.0" y="345.0" width="322" height="100" rx="8" fill="#F0E7FA" stroke="#AE91D7" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
+<text x="1825" y="389.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">DreamZero</text>
+<text x="1825" y="419" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">arXiv 2026†</text>
+<g filter="url(#shadow)"><rect x="1664.0" y="230.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
+<text x="1825" y="274.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="24.8" text-anchor="middle" fill="#152238" font-weight="700">Action-Sketcher</text>
+<text x="1825" y="304" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">CVPR 2026</text>
+<g filter="url(#shadow)"><rect x="1664.0" y="115.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
+<text x="1825" y="159.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="22.4" text-anchor="middle" fill="#152238" font-weight="700">Move-Then-Operate</text>
+<text x="1825" y="189" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">ICML 2026</text>
+<g filter="url(#shadow)"><rect x="1664.0" y="0.0" width="322" height="100" rx="8" fill="#F0E7FA" stroke="#AE91D7" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
+<text x="1825" y="44.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">WLA-0</text>
+<text x="1825" y="74" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">arXiv 2026†</text>
+<line x1="50" y1="1172" x2="1982" y2="1172" stroke="#1A2B49" stroke-width="4" marker-end="url(#ax)" />
+<line x1="175" y1="1148" x2="175" y2="1158" stroke="#1A2B49" stroke-width="2" />
+<rect x="119" y="1149" width="112" height="45" rx="22" fill="white" stroke="#1A2B49" stroke-width="2.5" />
+<text x="175" y="1180" text-anchor="middle" font-family="DejaVu Sans,Noto Sans CJK SC" font-weight="700" font-size="26.0" fill="#1A2B49">2020</text>
+<line x1="505" y1="1148" x2="505" y2="1158" stroke="#1A2B49" stroke-width="2" />
+<rect x="449" y="1149" width="112" height="45" rx="22" fill="white" stroke="#1A2B49" stroke-width="2.5" />
+<text x="505" y="1180" text-anchor="middle" font-family="DejaVu Sans,Noto Sans CJK SC" font-weight="700" font-size="26.0" fill="#1A2B49">2022</text>
+<line x1="835" y1="1148" x2="835" y2="1158" stroke="#1A2B49" stroke-width="2" />
+<rect x="779" y="1149" width="112" height="45" rx="22" fill="white" stroke="#1A2B49" stroke-width="2.5" />
+<text x="835" y="1180" text-anchor="middle" font-family="DejaVu Sans,Noto Sans CJK SC" font-weight="700" font-size="26.0" fill="#1A2B49">2023</text>
+<line x1="1165" y1="1148" x2="1165" y2="1158" stroke="#1A2B49" stroke-width="2" />
+<rect x="1109" y="1149" width="112" height="45" rx="22" fill="white" stroke="#1A2B49" stroke-width="2.5" />
+<text x="1165" y="1180" text-anchor="middle" font-family="DejaVu Sans,Noto Sans CJK SC" font-weight="700" font-size="26.0" fill="#1A2B49">2024</text>
+<line x1="1495" y1="1148" x2="1495" y2="1158" stroke="#1A2B49" stroke-width="2" />
+<rect x="1439" y="1149" width="112" height="45" rx="22" fill="white" stroke="#1A2B49" stroke-width="2.5" />
+<text x="1495" y="1180" text-anchor="middle" font-family="DejaVu Sans,Noto Sans CJK SC" font-weight="700" font-size="26.0" fill="#1A2B49">2025</text>
+<line x1="1825" y1="1148" x2="1825" y2="1158" stroke="#1A2B49" stroke-width="2" />
+<rect x="1769" y="1149" width="112" height="45" rx="22" fill="white" stroke="#1A2B49" stroke-width="2.5" />
+<text x="1825" y="1180" text-anchor="middle" font-family="DejaVu Sans,Noto Sans CJK SC" font-weight="700" font-size="26.0" fill="#1A2B49">2026</text>
+</svg>

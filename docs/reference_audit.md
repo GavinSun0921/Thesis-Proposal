@@ -4,6 +4,16 @@
 
 本轮撤销航空维修替代试件及实采、实机验证安排。`cairepublic`、`ifamscarf` 随案例退出正文，`probrobotics2005` 不再单独引用；`splinegs2025` 和 `pointodyssey2023` 在第一部分补引。第二、三部分均无编号引文，方法名保留归属。当前 96 条实际引用全部在第一部分出现，文献库由 121 条清理至 96 条；移除的是 25 条当前未引用记录，保留原有在用键名。
 
+2026-10-31：“研究条件落实情况—数据与验证条件”改为以数据源表汇总各候选数据源的类型、主要观测与参考、适用验证及使用条件，表内逐行标注文献，正文不再逐一列举；复用 `dycheck2022`、`pointodyssey2023`、`nerfies2021`、`hypernerf2021`、`droid2024`、`ref06`、`phystwin2025`，分别对应 DyCheck、PointOdyssey、Nerfies-HyperNeRF、DROID、PointWorld-DROID 及 PhysTwin。七个键均已在第一部分引用，实际引用仍为 96 条，首次引用编号不变；第三部分其余段落未加编号引文。
+
+2026-10-31：3.1 补写“动态场景表示与连续时间运动”“空间结构与拓扑关系”“状态空间模型与动态演化”三小节，复用 `dnerf2021`、`nerfies2021`、`nsff2021`、`dynamicgs2024`、`gs4d2024`、`pomdp1998`、`worldmodels2018`、`ref01`、`dreamer2020`、`ref02`，均为第一部分已引条目，实际引用仍为 96 条。
+
+2026-10-31：按作者新稿重写 1.1“选题依据及研究意义”，正文按首次引用顺序使用 12 条资料，对应 `worldmodels2018`、`ref02`、`nsfcworldmodel2026`、`nsfworldmodel2025`、`deepmindgenie2025`、`nvidiacosmos2025`、`nasarrrm2026`、`retimegs2026`、`consistentinstance2026`、`gaustar2025`、`ref06`、`phystwin2025`，即新编号 [1]–[12]。新增 NASA RRM 条目 `nasarrrm2026`；原 1.1 使用而新稿不再引用的 `cnworld2026`、`tencentworld2025`、`aiplus2025`、`nasadrone2025`、`nasamaintenance2026`、`nasavms2026` 退出正文，实际引用由 96 条调整为 91 条。核查：NSFC 通告日期为 2026-09-18；NSF Award 2443468 经 NSF 公开奖项接口核对（CAREER，2025，UCSD，PI Zhiting Hu）；Genie 3 博文日期为 2025-08-05；Cosmos 新闻稿日期为 2025-01-06；NASA 官网对 RRM 页面限流，未能直接打开，RRM 任务内容按 NASA RRM 资料与 NTRS 记录交叉核对。
+
+2026-10-31：1.2 按作者新稿整体重写，1.2.2 标题由“面向交互的世界模型”调整为“世界模型”，1.2.1—1.2.3 均改用以代表性工作脉络图为核心的叙述。新增 `savostyanov2026`、`vjepa2_2025`、`deepmindgenie2_2024`、`deepmindgenie4_2026`、`infiniteworld2026`、`tasksufficientwm2026`、`geniedrive2026`、`vectorworld2026`、`gamengen2024`、`drivedreamer2024`、`drivedreamer2_2025`、`epona2025`、`occworld2024` 共 13 条；由于新条目在 1.2.2 首次引用，全文编号按首次引用顺序重排，实际引用为 98 条。原 1.2 使用而新稿不再引用的 `semanticscholarapi2026`、`bundlesdf2023`、`tesseract2025`、`ensembles2017`、`calibration2017` 等退出正文。另据 [Google DeepMind 官方页面](https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/)核对，`deepmindgenie4_2026` 作者为 Raia Hadsell、Diego Rivas、Hang Qi，文献库作者字段已据此更正。
+
+2026-10-31：1.2.1“四维动态场景重建”按作者新稿重写，按隐式场、显式图元与点级几何三类组织，并以现行图 3（2021—2026 年代表性工作脉络，SVG 导出版）为纲；图题年份范围与图中刻度一致，未改图。新稿不再引用 `sobolevfusion2018`、`gaussianflow2024`、`se3bspline2026`、`atgs2025`、`raft2020`、`raft3d2021`、`tapir2023`、`cotracker3`，按“文献库只保留正文实际引用条目”的约定从 `references.bib` 清除，实际引用由 98 条调整为 90 条，文献库由 110 条调整为 102 条。编号由 BibTeX 按首次引用顺序重排，1.2.1 现为 DynamicFusion [16]、NeRF [17]、D-NeRF [18]、Nerfies [19]、NSFF [20]、HyperNeRF [21]、3DGS [22]、Dynamic 3D Gaussians [23]、4D-GS [24]、Deformable 3D Gaussians [25]、SC-GS [26]、SplineGS [27]、ParticleGS [28]、MoSca [29]、Shape of Motion [30]、MovingParts [31]、USplat4D [32]、DUSt3R [33]、VGGT [34]、MonST3R [35]、CUT3R [36]、D4RT [37]、DyCheck [38]、TAP-Vid [39]、TAPVid-3D [40]、PointOdyssey [41]；RetimeGS [8]、Consistent Instance Field [9]、GauSTAR [10] 已在 1.1 首次引用，此处沿用。新稿开头的三类综述引用 `cndynamic2024`、`cnnerf2025`、`cndynamicgs2026` 予以保留。图 3 仍列 AT-GS、4DSurf 等正文未逐一点名的节点，按代表性工作概览处理，不据此新增引用；`surf4d2026` 仅见于图 3 节点，与其余 11 条历史未引用记录暂留库中，未在本轮一并清理。
+
 下列为 2026-10-30 根据作者项目、官方代码或正式数据发布页面核对的验证来源；本次未下载完整数据，也未执行研究实验。
 
 | 来源 | 可用证据与用途 | 核查入口与限制 |
@@ -190,7 +200,7 @@ DreamZero 为 **2026 年预印本**：截至本轮核查，作者项目与 arXiv
 
 本轮复核采用一手来源：[MIT Press 专著信息](https://mitpress.mit.edu/9780262201629/probabilistic-robotics/)、[连续 SE(3) 样条作者摘要及 CVPR 2026 录用说明](https://arxiv.org/abs/2603.25058)、[MoSca 作者全文](https://arxiv.org/html/2405.17421)、[HyperNeRF 作者项目](https://hypernerf.github.io/)、[GauSTAR 作者全文](https://arxiv.org/html/2501.10283)、[PlaNet 正式论文集](https://proceedings.mlr.press/v97/hafner19a.html)、[图网络物理模拟正式论文集](https://proceedings.mlr.press/v119/sanchez-gonzalez20a.html)。同胚形变的拓扑保持仅用于其适用假设，不泛化为全部连续场均不能表达拓扑变化；图元或网格增加不直接等同于真实物理表面新生；标准滤波形式不作为本课题已实现精确后验推断的证据。
 
-2026-10-26 在 1.2 三个主题分别加入重建结果、交互预测及动作学习示意图，复用已有的 `shapeofmotion2025`、`retimegs2026`、`ref06`、`openvla2025`、`dreamzero2026`，不新增书目或改变发表状态。来源段落放在相关论文首次介绍之后，实际引用仍为 41 条，首次出现顺序保持不变。素材来自对应作者项目及 PointWorld 作者 PDF Figure 16，来源、提取位置和校验值见[素材说明](../latex/figures/materials/literature_review/README.md)。RetimeGS 中间图为观测区间内插值；PointWorld 预测和参考标注来自同一案例、同一时域，参考标注不充作模型结果；动作学习图的三幅照片为各自工作的独立场景示例。
+2026-10-26 在 1.2 三个主题分别加入重建结果、交互预测及动作学习示意图，复用已有的 `shapeofmotion2025`、`retimegs2026`、`ref06`、`openvla2025`、`dreamzero2026`，不新增书目或改变发表状态。来源段落放在相关论文首次介绍之后，实际引用仍为 41 条，首次出现顺序保持不变。素材来自对应作者项目及 PointWorld 作者 PDF Figure 16，当时的素材来源、提取位置和校验记录可通过 Git 历史追溯。RetimeGS 中间图为观测区间内插值；PointWorld 预测和参考标注来自同一案例、同一时域，参考标注不充作模型结果；动作学习图的三幅照片为各自工作的独立场景示例。
 
 2026-10-26 本次重构第二部分，增补 `se3bspline2026`、`usplat4d2026` 两条正式会议论文，实际引文由 39 条增至 41 条。第一项承认连续轨迹、自适应运动表达及不确定性传播已有直接基础，进一步提出观测置信度、有效时间范围及表达自由度的研究思路。同步在 1.2.1 补充领域比较，未新增预印本，四个科学问题名称保持不变。
 
@@ -202,7 +212,7 @@ DreamZero 为 **2026 年预印本**：截至本轮核查，作者项目与 arXiv
 
 本轮方法事实复核来源：[基金委通告](https://www.nsfc.gov.cn/p1/3381/2824/142425.html)、[MonST3R 作者项目](https://monst3r-project.github.io/)、[CUT3R 作者项目](https://cut3r.github.io/)、[PhysTwin 作者项目](https://jianghanxiao.github.io/phystwin-web/)、[GWM 作者全文](https://arxiv.org/html/2508.17600)、[PointWorld 作者全文附录 A.1](https://arxiv.org/html/2601.03782)、[PERSIST 正式摘要](https://proceedings.mlr.press/v306/garcin26a.html)、[RetimeGS 补充材料](https://openaccess.thecvf.com/content/CVPR2026/supplemental/Wang_RetimeGS_Continuous-Time_Reconstruction_CVPR_2026_supplemental.pdf)、[DreamZero 作者预印本](https://arxiv.org/abs/2602.15922)。
 
-2026-10-25 重新设计 1.1 背景图，新增 PhysTwin 的 ICCV 2025 正式论文作为图源。作者、题名、年份和 7219–7230 页由 CVF 正式出版记录核对；图中原始图像从作者公开 PDF 内嵌对象提取，来源映射和校验记录见[素材说明](../latex/figures/materials/phystwin_cloth/README.md)。Figure 3、Figure 9 的同一布料案例分别提供建模区间观测、多视角模型渲染及留出未来预测，真实未来参考单独标识。动态图的概念曲线及观测更新箭头不作为该论文已经实现连续状态更新的证据。实际引用增加为 39 条，未新增预印本。
+2026-10-25 重新设计 1.1 背景图，新增 PhysTwin 的 ICCV 2025 正式论文作为图源。作者、题名、年份和 7219–7230 页由 CVF 正式出版记录核对；图中原始图像从作者公开 PDF 内嵌对象提取，当时的来源映射和校验记录可通过 Git 历史追溯。Figure 3、Figure 9 的同一布料案例分别提供建模区间观测、多视角模型渲染及留出未来预测，真实未来参考单独标识。动态图的概念曲线及观测更新箭头不作为该论文已经实现连续状态更新的证据。实际引用增加为 39 条，未新增预印本。
 
 2026-10-25 暂定题目调整为“连续动态世界模型的构建方法研究”，同步修改总体定位、研究内容及图示。沿用当前 38 条引用和既有方法事实，本轮不新增书目，也不将文献的连续时间表达、持续观测更新和动作条件预测混为同一能力；发表状态沿用下述既有核查记录。
 

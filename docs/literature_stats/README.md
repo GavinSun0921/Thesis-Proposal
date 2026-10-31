@@ -1,6 +1,6 @@
 # 1.2 主题论文统计与核查记录
 
-本目录支撑三个专题各自的年度数量图。统计量为**指定主要会议与期刊中的主题相关正式论文检索数量**，不是该领域全部产出，也不由报告参考文献表或时间轴中的代表工作计数替代。
+本目录保存三个专题的年度数量统计与时间轴节点数据。统计量为**指定主要会议与期刊中的主题相关正式论文检索数量**，不是该领域全部产出，也不由报告参考文献表或时间轴中的代表工作计数替代。
 
 ## 当前口径
 
@@ -72,11 +72,10 @@ python3 scripts/literature_catalogs.py fetch
 python3 scripts/literature_stats_v2.py fetch
 python3 scripts/literature_catalogs.py analyze
 python3 scripts/literature_stats_v2.py analyze
-python3 latex/figures/build_literature_trend_figures.py
 ```
 
-新抓取可能受索引更新影响，不能要求未来结果与当前快照完全一致。Crossref出版元数据缓存按DOI哈希命名，可用标准`https://api.crossref.org/works/{DOI}`重取。旧`literature_stats.py`只保留原清洗逻辑并拒绝读取升级后的配置，以免误覆盖当前统计。已入库的`yearly.json`、`timeline_nodes.json`等汇总值可直接用于重绘图形，无需联网。
+新抓取可能受索引更新影响，不能要求未来结果与当前快照完全一致。Crossref出版元数据缓存按DOI哈希命名，可用标准`https://api.crossref.org/works/{DOI}`重取。已入库的`yearly.json`、`timeline_nodes.json`等汇总值可直接查阅，无需联网。
 
-三张数量图分别放在相应专题中，保持11.2×4.0cm的自然尺寸；数量图横轴仍为等间隔年度。三张关键工作时间轴保留正式年份和预印本标识，近期年份分配更多空间，不强制铺满版心；图内和正文不额外解释横轴布局。节点数据见[timeline_nodes.json](timeline_nodes.json)。`--timelines-only`仅重建时间轴，不修改统计值。
+当前三张专题图分别位于 `latex/figures/chapters/ch01-basis/` 下的 `reconstruction-timeline/`、`world-model-evolution/` 和 `action-learning-timeline/`，每项保留 `diagram.svg` 与正文使用的 `figure.pdf`。图源编辑与 PDF 导出独立于统计脚本，入口见[图件说明](../../latex/figures/README.md)；更新统计数据不会自动重绘 SVG。节点数据见[timeline_nodes.json](timeline_nodes.json)。
 
-[analysis_manifest.json](analysis_manifest.json)保存输入及处理脚本哈希、独立对账结果与当前年度数值；图形的manifest另保留数据和节点哈希。清单中排除表、目录汇总及原始缓存的哈希对应抓取当日的本地快照，不随仓库分发。当前核验包括专题内唯一ID/DOI、正式年份范围、CSV与年度数独立对账、2026逐条截止证据，以及人工识别的排除项未进入最终统计。
+[analysis_manifest.json](analysis_manifest.json)保存统计快照的输入及处理脚本哈希、独立对账结果与年度数值；当前图源及导出件的校验值见[图件登记表](../../latex/figures/manifest.json)。统计清单中的哈希对应抓取当日的快照，其中排除表、目录汇总及原始缓存不随仓库分发。当前核验包括专题内唯一ID/DOI、正式年份范围、CSV与年度数独立对账、2026逐条截止证据，以及人工识别的排除项未进入最终统计。

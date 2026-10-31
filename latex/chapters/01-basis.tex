@@ -1,128 +1,108 @@
 % !TeX root = ../main.tex
 \subsection{选题依据及研究意义}
 
-世界模型是智能体用于表征环境并预测其演化的内部模型，通过从观测和交互经验中学习状态及变化规律，为推理、规划和行动提供依据\cite{cnworld2026,ref02}。这一方向已成为国内外人工智能研究的重要热点：国家自然科学基金委员会发布了“空间智能与世界模型”专项项目申请指南通告，美国国家科学基金会支持的相关 CAREER 项目探索利用世界模型增强机器推理\cite{nsfcworldmodel2026,nsfworldmodel2025}；Google DeepMind、NVIDIA 和腾讯也分别通过 Genie、Cosmos 及混元世界模型开展交互环境与三维场景生成等研究\cite{deepmindgenie2025,nvidiacosmos2025,tencentworld2025}。我国《关于深入实施“人工智能+”行动的意见》提出增强工业系统的智能感知与决策执行能力，发展智能机器人等新一代智能终端\cite{aiplus2025}，对联系环境感知、动态预测与自主交互的世界模型提出了广泛需求。
-
-世界模型的应用潜力覆盖智能制造、自动驾驶、机器人作业和数字仿真等领域，并可进一步服务国防科技与航空航天装备智能化。如图~\ref{fig:world-model-applications} 所示，无人平台自主作业需要理解动态环境并预判变化，装备维护保障需要掌握部件关系并判断操作影响，虚拟试验与任务训练需要可交互、可演化的环境支持过程推演和方案比较。图中采用无人机试验、飞机维护及飞行仿真平台的照片作为场景素材\cite{nasadrone2025,nasamaintenance2026,nasavms2026}。这些需求共同指向对环境状态的准确建模、对动态过程的连续描述以及对动作后果的有效预测。
+世界模型（World Model）是智能体通过环境观测与交互经验建立的、用于表征外部世界状态及预测其演化规律的内部模型\cite{worldmodels2018,ref02}。现实环境持续变化，而智能体通常只能获得离散且不完整的观测信息，因此需要结合历史观测与交互经验，形成并维护对当前环境状态的内部估计，而非仅依赖单次观测进行判断。如图~\ref{fig:world-model-loop} 所示，世界模型通过感知信息持续更新内部状态，并在给定动作等条件下推演未来可能的环境变化；智能体则利用预测结果进行规划与行动，再通过实际执行反馈修正内部状态，形成感知、预测与行动相互联系的闭环。世界模型的内部状态可以采用潜在变量、视觉特征或显式三维结构等不同形式，其核心价值在于建立能够反映环境状态与变化规律、支持未来预测的内部表征，为智能体从被动感知走向主动理解与自主交互提供基础。
 
 \begin{figure}[H]
-\centering
-\resizebox{\linewidth}{!}{\input{figures/world_model_applications.tex}}
-\caption{世界模型支撑的典型应用场景示意}
-\label{fig:world-model-applications}
+  \centering
+  \includegraphics[width=0.98\linewidth]{figures/chapters/ch01-basis/world-model-loop/figure.pdf}
+  \caption{世界模型与智能体的感知—预测—行动闭环示意}
+  \label{fig:world-model-loop}
 \end{figure}
 
-现有研究已在动态重建、连续时间表达和持续场景感知方面取得重要进展\cite{cndynamicgs2026,retimegs2026,cut3r2025}，但在采样稀疏、快速运动或遮挡较强时，观测对中间运动及不可见区域的约束仍然不足，几何恢复和跨时刻关联容易受到误差影响。对象或部件归属的不确定性会进一步影响历史信息的共享与积累；真实连接关系或表面边界发生变化时，原有运动联系和结构约束还可能局部失效。因此，动态状态构建需要使连续运动、空间组织及局部更新同有效观测相协调，在环境变化中延续有观测支持的历史并修正失效关系。
+世界模型已成为国际人工智能领域的重要前沿研究方向，也是推动人工智能从信息感知与内容生成走向物理世界理解、动态预测和自主决策的重要技术。国家自然科学基金委员会于2026年发布“空间智能与世界模型”专项项目申请指南，推动相关基础理论与关键技术研究\cite{nsfcworldmodel2026}；美国国家科学基金会（NSF）通过CAREER项目支持世界模型与机器推理等方向的研究\cite{nsfworldmodel2025}。工业界也在积极探索世界模型的技术潜力，Google DeepMind 推出 Genie 3，能够生成可实时交互的动态虚拟环境，探索世界模拟与智能体交互的结合\cite{deepmindgenie2025}；NVIDIA 发布 Cosmos 世界基础模型平台，面向机器人和自动驾驶等物理智能应用，支持环境生成与仿真研究\cite{nvidiacosmos2025}。这些科研布局与技术进展体现了世界模型在新一代人工智能基础研究和实际应用中的重要地位。
 
-面向交互预测，已有世界模型能够利用学习到的动力学、物理结构或三维点流推演动作后果\cite{ref02,phystwin2025,ref06}，其能力同时受到初始状态及演化假设的制约。例如，采用静态初始状态假设的模型，需要进一步考虑目标已有运动对响应的影响\cite{ref06}；当前几何相近但速度或连接关系不同的场景，也可能在相同动作下产生不同结果。如何将观测中恢复的运动及结构转化为有效的预测条件，使场景恢复与动作响应相衔接，仍是支撑复杂动态环境应用需要深入研究的问题。
+面向航天器在轨维护、无人系统自主作业等复杂任务，智能体需要在有限观测条件下持续理解动态环境，并预测自身行为可能引起的变化。美国国家航空航天局（NASA）开展的机器人在轨加注任务（Robotic Refueling Mission，RRM）为此类应用提供了实际案例：该项目利用国际空间站上的 Dextre 机器人，在地面远程操控下完成了保护覆层切割与翻起、线缆剪切、盖帽拆卸及阀门操作等技术演示，验证了复杂在轨机器人服务操作的可行性\cite{nasarrrm2026}。面向此类任务的进一步自主化，如图~\ref{fig:spacecraft-manipulation} 所示，世界模型需要具备四方面能力：（1）\textbf{连续时间建模}，现实中的运动连续发生，而视觉观测通常离散采集，需要恢复观测间的连续状态；（2）\textbf{对象时空一致性}，机械臂操作产生的遮挡、共动与局部形变，要求持续维持对象身份、归属及跨时刻关联；（3）\textbf{物理连接变化建模}，切割、分离等操作可能改变原有物理连接，需要及时更新内部结构，并区分真实边界形成与已有表面重新显露；（4）\textbf{动作后果预测}，执行牵引等动作前，需要预测当前运动与结构状态下可能产生的后续响应。上述四项能力共同构成面向在轨维护任务的动态环境建模需求。
 
-在导师的相关国家自然科学基金项目支持下，本课题围绕连续动态世界模型的构建方法，研究有限离散观测约束下的状态构建及动作条件演化。课题拟通过连续运动恢复、空间结构组织和拓扑变化适应，建立可连续查询、可随新观测修正的三维动态状态，并研究基于该状态的动作响应预测。其科学意义在于揭示观测证据、连续运动及有效结构共同约束状态形成和演化预测的机制；应用意义在于为复杂环境自主作业、装备维护保障及虚拟试验训练提供环境建模与过程推演的方法基础。本课题以表征构建及其预测作用为基础研究对象，通过公开数据上的方法比较与机制分析检验研究假设。
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\linewidth]{figures/chapters/ch01-basis/spacecraft-maintenance/figure.png}
+  \caption{面向在轨维护任务的世界模型动态环境建模需求}
+  \label{fig:spacecraft-manipulation}
+\end{figure}
 
-\Needspace{110pt}
+世界模型已在潜在状态预测、三维动态场景表征及动作条件演化预测等方面取得重要进展，但面对观测不完备、结构持续变化的复杂物理环境，仍存在以下局限：（1）\textbf{连续状态恢复受限：}离散观测难以充分约束非采样时刻的真实运动\cite{retimegs2026}；（2）\textbf{对象时空关联不稳定：}遮挡、共动及形变容易引起对象归属歧义\cite{consistentinstance2026}；（3）\textbf{物理结构变化适应不足：}连接关系改变后，局部结构更新与有效历史延续难以兼顾\cite{gaustar2025}；（4）\textbf{动作响应预测仍有局限：}如何充分利用已有运动及当前有效物理结构信息，提高复杂动态条件下的预测准确性，仍有待进一步研究\cite{ref06,phystwin2025}。
+
+在导师承担的国家自然科学基金项目与联合基金项目支持下，本课题面向复杂动态环境中有限视觉观测下的状态建模与演化预测需求，开展连续动态世界模型构建方法研究。课题拟研究动态场景中连续运动、空间组织及物理连接关系的协同表征，建立能够随新观测持续修正的三维动态状态，并进一步探索基于该状态的动作后果预测方法，形成贯通环境感知、动态表征与未来演化预测的模型构建框架。研究有望为复杂动态环境中的时空一致性建模和动作响应预测提供方法基础，并为空天无人系统自主作业、航空航天装备智能维护及虚拟试验训练等应用提供技术支撑。
+
 \subsection{国内外研究现状及发展态势}
 
-连续动态世界模型联系环境感知、演化预测和行动选择。四维动态场景重建研究如何从视觉观测恢复几何、外观与运动，为环境建模提供表征；面向交互的世界模型研究如何依据历史及给定条件预测环境变化；具身操作中的动作学习研究如何利用这些信息产生和选择动作。三个领域在表征形式、预测目标与使用方式上各有侧重，也为本课题提供了相互衔接的研究基础。
+连续动态世界模型的构建涉及状态恢复、演化预测与动作学习，相关研究主要分布于四维动态场景重建、世界模型和具身操作中的动作学习。四维重建从视觉观测恢复几何、外观及时空变化；世界模型学习内部状态及演化规律并推演未来；
+动作学习根据观测与任务信息生成动作，部分方法进一步利用环境预测辅助决策。三者分别在空间表征、时序建模和预测反馈上提供基础，并逐步融合。
 
-\input{figures/generated/literature_trend/stat_values.tex}
-
-\Needspace{130pt}
 \subsubsection{四维动态场景重建}
 
-四维动态场景重建从图像或视频恢复三维场景及其时间变化，支持新视角合成、表面重建和运动分析。随着神经场、三维高斯及学习式几何恢复的发展，这一方向已由逐场景变形估计拓展到高效渲染、连续运动表达和持续观测融合，国内外综述也从不同角度总结了相应进展\cite{cndynamic2024,cnnerf2025,cndynamicgs2026}。图~\ref{fig:literature-counts-reconstruction} 中，该主题的相关正式论文由 2021 年的 \litReconstructionRecent{} 篇增加到 2025 年的 \litReconstructionEnd{} 篇，显示所统计来源中近年研究持续活跃。本节的年度数量调查统一基于 Semantic Scholar 检索及正式发表记录核验，覆盖 2015—2026 年主要会议与期刊的相关论文；后续面向交互的世界模型和具身操作动作学习数量图沿用相同的数据来源和统计规则\cite{semanticscholarapi2026}。\footnote{检索及 2026 年统计截至 2026 年 10 月 29 日；各专题分别按正式发表年统计，并在专题内去重。}
-
 \begin{figure}[H]
   \centering
-  \input{figures/literature_counts_reconstruction.tex}
-  \caption{四维动态场景重建相关正式论文的年度检索数量（主要会议与期刊，2015—2026）}
-  \label{fig:literature-counts-reconstruction}
+  \includegraphics[width=\linewidth]{figures/chapters/ch01-basis/reconstruction-timeline/figure.pdf}
+  \caption{四维动态场景重建的代表性工作与发展脉络}
+  \label{fig:literature-evolution-reconstruction}
 \end{figure}
 
-按主要几何表征载体，已有方法可归为隐式场、显式图元和点级几何三类。图~\ref{fig:literature-timeline-reconstruction} 展示了各类方法的关键工作；连续时间、运动组织与增量更新在三类载体上交叉发展。
+四维动态场景重建旨在从图像或视频观测中恢复三维场景的几何、外观及其时间变化，为新视角合成、运动分析和动态状态建模提供基础。随着神经隐式场、显式图元及学习式几何模型的发展，相关研究逐渐从动态几何恢复拓展到连续运动表达、跨时刻空间关联与结构更新\cite{cndynamic2024,cnnerf2025,cndynamicgs2026}。图~\ref{fig:literature-evolution-reconstruction} 按隐式场、显式图元和点级几何三类汇总了 2021—2026 年的代表性工作。三类方法具有不同的表示特点，也可相互结合，共同推动动态场景重建技术的发展。
 
-\begin{figure}[H]
+\textbf{隐式场表征}主要利用连续函数描述场景几何与外观，并通过时间条件或空间变形建立不同时刻的联系。早期 DynamicFusion 通过非刚性变形实现动态表面的融合与跟踪\cite{dynamicfusion2015}；在 NeRF 基础上\cite{nerf2020}，D-NeRF、Nerfies 和 NSFF 分别通过规范空间映射、形变场及场景流描述动态场景\cite{dnerf2021,nerfies2021,nsff2021}，HyperNeRF 进一步利用高维表示适应复杂拓扑变化\cite{hypernerf2021}。这类方法具有灵活的连续空间表达能力，但其运动恢复仍受观测覆盖、时序对应及形变假设约束，连续函数表示并不意味着非采样时刻的真实运动已被充分确定。
+
+\textbf{显式图元表征}将场景组织为可直接操作的点、面元或高斯图元，在动态重建中兼顾表示效率与几何可操作性。3D Gaussian Splatting（3DGS）建立了高效的显式高斯表示与可微渲染基础\cite{gs2023}；Dynamic 3D Gaussians、4D-GS、Deformable 3D Gaussians 和 SC-GS 分别探索持久图元跟踪、时间条件变形及稀疏运动控制\cite{dynamicgs2024,gs4d2024,deformablegs2024,scgs2024}。在此基础上，RetimeGS、SplineGS 和 ParticleGS 进一步研究连续时间重建、运动样条表达与物理运动外推\cite{retimegs2026,splinegs2025,particlegs2026}，推动动态表示从离散帧拟合向连续运动建模发展。
+
+除运动表达外，显式重建也逐渐关注场景单元之间的空间组织、结构变化及观测不确定性。MoSca、Shape of Motion 和 MovingParts 利用运动线索组织跨时刻几何与部件关系\cite{ref05,shapeofmotion2025,movingparts2024}，Consistent Instance Field 通过概率式时空表示维护对象身份与可见性关系\cite{consistentinstance2026}。GauSTAR 结合表面跟踪与局部重建适应几何拓扑变化\cite{gaustar2025}，USplat4D 则利用时变不确定性引导可靠运动信息传播\cite{usplat4d2026}。这些研究拓展了显式动态表征的能力，但几何拓扑更新、对象身份关联与真实物理连接状态具有不同含义，遮挡造成的表面显露也不等同于物理连接改变，相关信息仍需结合观测证据加以区分。
+
+随着视觉基础模型的发展，\textbf{点级几何表征}逐渐成为动态场景重建的重要技术路线，相关学习式方法能够从图像或视频中直接预测三维几何及跨时刻对应。DUSt3R 和 VGGT 为点图、深度及相机参数的联合预测提供了基础\cite{dust3r2024,vggt2025}；MonST3R 将学习式几何恢复扩展到动态视频\cite{monst3r2025}，CUT3R 通过持久状态支持连续三维感知\cite{cut3r2025}，D4RT 则利用统一的时空查询机制恢复动态几何与对应关系\cite{d4rt2026}。此类方法提高了复杂观测条件下几何与运动信息的获取能力，为动态场景重建提供了重要先验，但如何将预测结果组织为时空一致、可随新观测持续修正的场景状态，仍有进一步研究空间。
+
+总体来看，隐式场提供灵活的连续表达，显式图元支持高效重建与局部操作，点级几何方法推动了学习式几何和运动恢复。DyCheck、TAP-Vid、TAPVid-3D 和 PointOdyssey 等基准从动态重建、二维及三维点跟踪等不同方面提供了评价依据\cite{dycheck2022,tapvid2022,tapvid3d2024,pointodyssey2023}。现有研究已在连续运动、空间关联和结构适应方面取得进展，但在有限观测条件下，如何协调运动恢复、对象空间组织与结构变化，形成可持续维护且保留有效历史信息的动态场景表征，仍是值得进一步研究的问题。
+
+
+\subsubsection{世界模型}
+
+世界模型通过环境观测与交互经验建立内部状态，并学习其演化规律，以支持未来预测与决策。根据内部状态的表示形式和预测目标，相关研究逐渐形成潜在状态与动力学模型、视觉表征预测模型、生成式世界模拟模型，以及三维结构与物理世界模型等技术路线。图~\ref{fig:literature-evolution-worldmodel} 汇总了 2018—2026 年的代表性工作，并标注了对 2026 年相关论文数量的预测。OpenAlex 的相关检索统计可用于观察领域发展趋势，但检索结果包含预印本、综述和应用论文，不等同于人工筛选的正式论文总数\cite{savostyanov2026}。随着强化学习、自监督学习和生成式模型的发展，世界模型的研究逐步从紧凑潜在状态预测拓展到视觉环境生成、三维空间表征及物理动态模拟。
+
+\begin{figure}[htbp]
   \centering
-  \input{figures/literature_timeline_reconstruction.tex}
-  \caption{四维动态场景重建的主要方法与关键工作}
-  \label{fig:literature-timeline-reconstruction}
+  \includegraphics[width=\linewidth]{figures/chapters/ch01-basis/world-model-evolution/figure.pdf}
+  \caption{世界模型的代表性工作与研究发展趋势}
+  \label{fig:literature-evolution-worldmodel}
 \end{figure}
 
-\textbf{隐式场表征。}这类方法以连续函数描述密度、辐射度或表面距离，通过变形与时间条件联系多时刻观测。DynamicFusion 以非刚性变形融合深度观测，SobolevFusion 研究隐式距离场的演化，为动态表面恢复提供了早期基础\cite{dynamicfusion2015,sobolevfusion2018}；对象级方法 BundleSDF 在刚体等条件下联合跟踪与神经表面重建，体现了运动假设对几何信息累积的作用\cite{bundlesdf2023}。在 NeRF 的辐射场表征上\cite{nerf2020}，D-NeRF 与 Nerfies 利用形变网络将观测映射到规范空间，神经场景流场则联合学习辐射属性与三维运动\cite{dnerf2021,nerfies2021,nsff2021}。HyperNeRF 进一步以高维空间切片表达拓扑变化，放宽单一规范形变对场景变化的限制\cite{hypernerf2021}；4DSurf 利用表面距离场流和分段联系改善大形变下的表面一致性\cite{surf4d2026}。这些方法通过共享场函数积累跨时刻证据，其几何与运动质量同时受到可见性、对应线索和变形约束的影响；具有连续函数形式，也仍需检验非采样时刻的恢复质量。
+\textbf{潜在状态与动力学模型}通常将历史观测和动作编码为紧凑的潜在状态，并学习其动态转移规律。World Models\cite{worldmodels2018}、PlaNet\cite{ref01} 和 Dreamer\cite{dreamer2020} 分别通过循环记忆、潜在空间规划和想象轨迹学习环境动态；MuZero\cite{muzero2020} 进一步学习与规划相关的奖励、价值及策略信息。PETS\cite{pets2018}、TD-MPC2\cite{tdmpc2_2024} 和 DreamerV3\cite{ref02} 在不确定性建模、连续控制和多任务学习方面取得进展，Task-Sufficient World Models\cite{tasksufficientwm2026} 则强调保留对任务决策充分的状态信息。这类方法为环境预测与规划提供了重要基础，但其潜在状态主要受到任务目标约束，并不必然具有明确的三维几何、对象关联及物理结构含义。
 
-\textbf{显式图元表征。}这类方法把几何与外观附着在点、面元或高斯等可直接操作的元素上。3D Gaussian Splatting 提供了高效渲染基础\cite{gs2023}，动态扩展分别通过图元属性、时间条件变形或共享控制描述运动：Dynamic 3D Gaussians 强调持久图元与局部刚性，4D-GS 与 Deformable 3D Gaussians 学习时间条件变形，SC-GS 和 Gaussian-Flow 则分别采用稀疏运动控制和时域—频域表达\cite{dynamicgs2024,gs4d2024,deformablegs2024,scgs2024,gaussianflow2024}。图元提供了清晰的空间操作对象，跨时刻联系的建立则依赖运动参数化及观测约束。
+\textbf{视觉表征预测模型}利用视觉特征或对象级表示描述环境状态，并在表征空间中预测未来变化。I-JEPA\cite{ijepa2023} 通过联合嵌入预测学习视觉语义特征，SAVi\cite{savi2022} 和 SlotFormer\cite{slotformer2023} 探索对象级表示及其时间演化；DINO-WM\cite{ref03} 利用预训练视觉特征进行动作条件预测与规划，V-JEPA 2\cite{vjepa2_2025} 进一步结合视频表征学习与机器人交互数据开展预测和规划研究。FR3D\cite{ref07}、Flow Equivariant World Models\cite{ref08} 和多视角掩蔽世界模型\cite{mvmwm2023} 则分别从三维潜在表征、运动等变记忆和多视角观测扩展世界建模能力。这类方法能够利用视觉先验学习具有预测价值的状态，但特征空间中的变化是否准确对应真实几何、运动及物理关系，仍需进一步验证。
 
-在显式图元表征内部，运动研究进一步从局部位移扩展到时间表达和空间组织。RetimeGS 加强帧间重建约束，SE(3) 样条方法自适应调整运动表达能力，SplineGS 通过运动自适应样条与控制点裁减组织连续轨迹，ParticleGS 研究连续动力学外推\cite{retimegs2026,se3bspline2026,splinegs2025,particlegs2026}。这些方法分别从区间内插值、轨迹参数化及区间外演化推进时间建模，所能利用的证据和误差累积条件不同。MoSca、Shape of Motion 与 MovingParts 则利用共享运动组织观测和图元，Consistent Instance Field 进一步处理实例身份与可见性的联系\cite{ref05,shapeofmotion2025,movingparts2024,consistentinstance2026}。由此，连续运动既承担时间关联，也参与对象或部件信息的组织，但运动相似、部件归属与对象身份仍需依据各方法的监督条件分别判断。
+\textbf{生成式世界模拟模型}以未来图像、视频或可交互环境为预测对象，利用生成模型模拟环境演化。Genie\cite{genie2024} 从无标注视频学习潜在动作与交互环境，GameNGen\cite{gamengen2024} 探索基于扩散模型的实时游戏模拟，Genie 2\cite{deepmindgenie2_2024} 进一步研究可交互的三维环境生成。DriveDreamer\cite{drivedreamer2024}、DriveDreamer-2\cite{drivedreamer2_2025} 和 Epona\cite{epona2025} 面向自动驾驶场景开展条件视频生成与环境预测；Cosmos\cite{nvidiacosmos2025} 提供面向物理智能的世界基础模型平台，Genie 3\cite{deepmindgenie2025}、Genie 4\cite{deepmindgenie4_2026} 和 Infinite-World\cite{infiniteworld2026} 则进一步探索实时交互生成与长序列空间一致性。这类方法推动了世界模拟的生成能力与交互能力，但视觉生成质量并不必然对应准确的三维运动、物理结构及动作响应，长期状态一致性和物理约束仍是重要研究问题。
 
-结构更新与观测不确定性也开始直接参与图元构建。GauSTAR 在稳定区域保持表面绑定、在变化区域调整绑定并重建，AT-GS 通过面元优化和容量调整适应动态几何\cite{gaustar2025,atgs2025}；USplat4D 则利用时变不确定性及运动信息传播，改善观测较弱区域的恢复\cite{usplat4d2026}。这些工作表明，表征可更新性与不确定性处理已有明确研究基础。进一步面向真实连接改变时，仍需区分表示单元调整、已有表面首次显露与材料边界新生，考察局部更新如何兼顾变化区域和稳定区域的历史；GauSTAR 对复杂或突发拓扑变化的讨论也说明了这一研究条件的重要性\cite{gaustar2025}。
+\textbf{三维结构与物理世界模型}通过显式或结构化的空间状态描述环境，并在此基础上学习动态演化。Graph Network-based Simulators（GNS）\cite{gns2020} 利用粒子交互学习物理动力学，OccWorld\cite{occworld2024} 和 GenieDrive\cite{geniedrive2026} 将三维或四维占据表示用于自动驾驶环境预测。PhysTwin\cite{phystwin2025} 从视频中恢复可变形对象及物理参数，GWM\cite{gwm2025} 将三维高斯表示与生成式动态模型相结合，PointWorld\cite{ref06} 则利用三维点流开展动作条件预测与规划。进一步地，PERSIST\cite{ref10} 通过持久三维状态维护空间信息，VectorWorld\cite{vectorworld2026} 利用结构化向量图进行流式世界建模与演化预测。这些研究表明，三维几何、运动及物理关系正逐渐成为世界模型内部状态的重要组成部分。但不同方法的观测条件、状态组织、历史利用方式及预测目标仍存在差异，连续运动历史与当前有效结构如何共同支持状态维护和动作响应预测，仍值得深入研究。
 
-\textbf{点级几何表征。}这类方法以点的三维位置组织几何，已从点图回归拓展到按需时空查询。DUSt3R 与 VGGT 分别提供两视图点图回归和联合几何预测基础\cite{dust3r2024,vggt2025}；面向动态内容，MonST3R 联合逐时刻几何估计与相机、场景对齐，CUT3R 从随观测更新的持久表征中读取点图\cite{monst3r2025,cut3r2025}。获得 CVPR 2026 最佳论文奖的 D4RT 进一步将视频编码为全局场景表征，依据源时空点、目标时刻和相机参考独立查询三维位置，以统一接口获取深度、时空对应及相机参数\cite{d4rt2026}。这一查询机制将重建与跟踪联系起来，并减少逐帧稠密解码和多任务解码器的开销。光流、场景流及长时点跟踪也为跨时刻关联提供了辅助运动证据\cite{raft2020,raft3d2021,tapir2023,cotracker3}。
+总体来看，世界模型已形成从潜在动力学、视觉特征预测到生成式模拟和结构化三维预测的多种技术路线。潜在模型强调紧凑状态与任务相关性，视觉模型利用预训练表征，生成模型关注环境演化的视觉模拟，三维模型则为几何、运动及物理关系提供更明确的表示基础。近年来，相关研究逐渐重视持续状态维护及其与未来预测的联系，但对于观测不完整、运动与结构持续变化的真实三维环境，如何构建可持续修正的内部状态，以及连续运动、对象归属、物理连接和交互历史等信息对动作后果预测的实际作用，仍有待进一步研究。
 
-总体而言，隐式场、显式图元和点级几何表征在连续几何表达、渲染效率与学习式恢复上各具优势，连续时间表达、按需时空查询、空间组织及局部更新正在不同载体上交叉发展。DyCheck、TAP-Vid 与 TAPVid-3D 等研究提供了几何、轨迹和可见性的评价依据，PointOdyssey 进一步提供带二维、三维轨迹及实例标注的合成序列\cite{dycheck2022,tapvid2022,tapvid3d2024,pointodyssey2023}，使表征质量能够超出外观重建单独检验。在这些进展基础上，本课题面向采样稀疏、长时遮挡及真实结构改变，进一步研究观测不确定性对运动与结构判断的约束、空间归属和联系的有效范围，以及所得表征对动作后果预测的作用。
 
-\Needspace{130pt}
-\subsubsection{面向交互的世界模型}
 
-面向交互的世界模型利用观测和经验学习环境的演化，在给定动作、目标或任务条件下推演未来，为规划和行为学习提供依据。部分可观测条件下，历史信息及状态信念是描述环境的重要基础\cite{pomdp1998}，不同方法因而需要选择既能保留历史、又适于预测的表征。图~\ref{fig:literature-counts-worldmodel} 中，相关正式论文由 2021 年的 \litWorldModelRecent{} 篇增至 2025 年的 \litWorldModelEnd{} 篇；近年来显式三维和生成式建模的加入，进一步拓宽了环境预测的研究范围。
-
-\begin{figure}[H]
-  \centering
-  \input{figures/literature_counts_worldmodel.tex}
-  \caption{面向交互的世界模型相关正式论文的年度检索数量（主要会议与期刊，2015—2026）}
-  \label{fig:literature-counts-worldmodel}
-\end{figure}
-
-按主要预测量，已有工作可分为潜在状态预测、视觉表征预测、三维结构预测和未来观测生成四类，关键工作如图~\ref{fig:literature-timeline-worldmodel} 所示。
-
-\begin{figure}[H]
-  \centering
-  \input{figures/literature_timeline_worldmodel.tex}
-  \caption{面向交互的世界模型的主要方法与关键工作}
-  \label{fig:literature-timeline-worldmodel}
-\end{figure}
-
-\textbf{潜在状态预测。}这类方法将观测历史压缩为潜在变量，在该空间学习动力学并支持规划或策略改进。World Models、PlaNet 和 Dreamer 分别探索潜在环境演化、模型规划及想象轨迹上的行为学习，DreamerV3 进一步验证了这一范式在多种控制任务中的通用性\cite{worldmodels2018,ref01,dreamer2020,ref02}。MuZero 围绕奖励、价值与策略学习支持规划的模型，PETS 与 TD-MPC2 则分别利用概率动力学和潜在轨迹优化辅助控制\cite{muzero2020,pets2018,tdmpc2_2024}。这些方法共同强调预测信息对决策的作用，差别在于重建、奖励或控制等学习目标所保留的信息；潜在表征的度量几何可读性，取决于额外的结构约束与监督。
-
-\textbf{视觉表征预测。}这类方法直接预测预训练特征或对象表征，以减少像素生成负担。I-JEPA 的特征预测和 SAVi 的对象槽学习提供了相关表征基础，SlotFormer 进一步建模对象槽的时间演化，DINO-WM 则学习动作条件下的预训练视觉特征变化，并通过目标特征优化动作\cite{ijepa2023,savi2022,slotformer2023,ref03}。FR3D 在重建模型的潜在表征中预测未来几何，Flow Equivariant World Models 与多视角掩蔽世界模型分别从运动等变记忆和多视角信息改善环境表征\cite{ref07,ref08,mvmwm2023}。这一类工作展示了表征先验对预测和历史保留的作用；其空间细节、对象分解和运动信息由训练目标及数据共同决定，是否足以支持特定响应预测需结合任务检验。
-
-\textbf{三维结构预测。}这类方法以三维点、几何图元或物理结构组织演化，便于表达空间位置及局部影响。图网络模拟器通过粒子间关系学习动力学，PhysTwin 将可变形对象重建与质点弹簧模拟结合，使观测识别的几何和物理参数参与响应预测\cite{gns2020,phystwin2025}。数据驱动的方法则直接学习结构变化：GWM 依据历史状态及动作生成未来高斯场景，PointWorld 将机器人动作与环境统一到三维点及点流表示，预测动作引起的场景位移\cite{gwm2025,ref06}。物理模拟的适用范围受到模型形式与参数辨识条件约束，学习式结构预测则依赖数据覆盖和初始表征；两者都需要检验输入中哪些运动与结构差异会影响后续演化。
-
-\textbf{未来观测生成。}这类方法以未来图像、视频或多模态观测为输出，通过生成过程呈现环境演化。Genie 从视频学习可交互环境，TesserAct 依据初始图像及任务指令联合生成 RGB、深度和法向视频并恢复四维场景，PERSIST 则借助持久三维场景记忆改善长时观测生成的一致性\cite{genie2024,tesseract2025,ref10}。它们分别体现了交互条件、任务条件和空间记忆的作用。生成观测提供了丰富的未来描述，但其条件是否对应可执行动作、生成的运动是否保持几何一致，需要依据各模型的输入输出及评价设置判断。
-
-综合来看，交互世界模型已形成从潜在动力学到视觉表征、三维结构和多模态观测的多种预测路线。预测量决定可检验的变化，历史利用方式决定可获得的初始信息，预测时域则影响误差累积；深度集成和校准研究也提供了估计与评价不确定性的通用基础\cite{ensembles2017,calibration2017}，其在连续三维运动上的适用性仍需专门检验。例如，PointWorld 因当前输入不含此前帧或速度而采用静态初始状态假设\cite{ref06}，这说明输入设定会直接限定动作响应的研究条件。面向持续变化的三维场景，进一步研究连续运动和有效结构如何成为预测依据，以及表征误差如何影响动作后果推演，具有明确的研究价值。
-
-\Needspace{130pt}
 \subsubsection{具身操作中的动作学习}
 
-具身操作中的动作学习依据环境观测、机器人状态和任务要求生成可执行动作，是检验环境表征与预测价值的重要应用领域。视觉语言模型、生成式动作模型及三维感知的发展，推动了操作策略在语义理解、空间定位和跨任务迁移方面的研究\cite{cnvla2026}。图~\ref{fig:literature-counts-action} 中，相关正式论文由 2021 年的 \litActionRecent{} 篇增至 2025 年的 \litActionEnd{} 篇，反映了所统计来源中近年的研究活跃程度。
-
 \begin{figure}[H]
   \centering
-  \input{figures/literature_counts_action.tex}
-  \caption{具身操作动作学习相关正式论文的年度检索数量（主要会议与期刊，2015—2026）}
-  \label{fig:literature-counts-action}
+  \includegraphics[width=\linewidth]{figures/chapters/ch01-basis/action-learning-timeline/figure.pdf}
+  \caption{具身操作动作学习的代表性工作与发展脉络（† 表示预印本）}
+  \label{fig:literature-evolution-action}
 \end{figure}
 
-按环境预测参与行动的方式，相关方法可分为直接策略学习、预测辅助决策和世界动作联合生成三类，关键工作如图~\ref{fig:literature-timeline-action} 所示。
+具身操作中的动作学习旨在根据视觉观测、机器人状态及任务要求生成动作，是连接环境感知与智能体交互的重要环节。随着视觉语言模型、三维感知和生成式模型的发展，相关研究逐渐从直接动作预测扩展到利用环境预测辅助决策，以及世界状态与动作的联合建模\cite{cnvla2026}。图~\ref{fig:literature-evolution-action} 汇总了 2020—2026 年的代表性工作，主要包括直接策略与动作生成、预测辅助决策和世界—动作联合生成三类技术路线。
 
-\begin{figure}[H]
-  \centering
-  \input{figures/literature_timeline_action.tex}
-  \caption{具身操作动作学习的主要方法与关键工作}
-  \label{fig:literature-timeline-action}
-\end{figure}
+\textbf{直接策略与动作生成}侧重从视觉观测、语言指令及机器人状态直接学习动作映射。RT-2 和 OpenVLA 将视觉语言模型扩展到机器人动作生成\cite{rt22023,openvla2025}，Diffusion Policy 和 $\pi_0$ 分别利用扩散模型与流匹配方法建模连续动作\cite{diffusionpolicy2025,pi02025}。RoboFlamingo、PerAct、RVT-2 和 BridgeVLA 则通过时序建模、体素表示、多视角几何或三维输入输出对齐增强空间感知与操作能力\cite{roboflamingo2024,peract2023,rvt22024,ref12}。这类方法推动了跨任务动作学习，但其主要目标是建立观测到动作的映射，并不必然要求显式恢复连续运动、对象关联及物理结构等内部状态。
 
-\textbf{直接策略学习。}这类方法从观测、任务条件及历史信息直接产生动作。RT-2 与 OpenVLA 将视觉语言知识迁移到动作生成，Diffusion Policy 与 $\pi_0$ 则分别利用扩散和流匹配表达连续、多模态的动作分布\cite{rt22023,openvla2025,diffusionpolicy2025,pi02025}。RoboFlamingo 通过历史编码汇总时序观测，PerAct、RVT-2 和 BridgeVLA 分别利用体素、多视角及三维输入输出对齐增强动作的空间定位\cite{roboflamingo2024,peract2023,rvt22024,ref12}。这些工作共同改善了策略的输入表征与动作表达，能力取决于示范覆盖、观测条件和动作接口。
+\textbf{预测辅助决策}通过预测未来环境或任务状态，为动作选择、优化与规划提供依据。Dreamer 在潜在空间中生成想象轨迹并学习控制策略\cite{dreamer2020}，DINO-WM 利用预训练视觉特征预测动作条件下的未来变化，并通过模型预测优化动作序列\cite{ref03}；PointWorld 则以三维点流预测场景运动，为模型预测控制提供支持\cite{ref06}。不同方法利用潜在状态、视觉特征或显式三维结构描述未来，其预测信息的形式和作用有所不同。如何使内部状态充分保留影响动作响应的动态信息，以及预测精度能否转化为实际任务收益，仍需结合具体交互条件进行检验。
 
-\textbf{预测辅助决策。}这类方法将环境演化预测用于行为学习或候选动作比较。Dreamer 利用想象轨迹改进行为，DINO-WM 在预测特征中优化目标误差，PointWorld 将三维响应预测用于模型预测控制\cite{dreamer2020,ref03,ref06}。其共同机制是让预测参与动作的评价与选择，差别在于预测量、优化目标和反馈方式。因此，预测是否保留影响目标达成的场景差异、真实观测能否及时修正表征，会共同影响任务收益，需要将预测质量与操作效果联系检验。
+\textbf{世界—动作联合生成}进一步将环境演化预测与动作生成纳入统一模型。WorldVLA 通过自回归建模联合预测未来图像与机器人动作\cite{worldvla2025}，DreamZero 则利用视频生成模型联合学习未来视觉变化和动作，探索世界动态知识对操作策略的支持\cite{dreamzero2026}。这类方法加强了环境预测与动作学习之间的联系，但未来视觉生成与动作输出的一致性，并不必然保证真实物理响应的准确性，仍需结合执行反馈和物理状态评价加以验证。
 
-\textbf{世界动作联合生成。}这类方法在同一过程中建立未来观测与动作的联系。WorldVLA 以自回归方式联合预测动作和后续图像，DreamZero 基于视频扩散模型联合建模未来视频与机器人动作，探索视觉演化先验对操作迁移的支持\cite{worldvla2025,dreamzero2026}。上述两项工作均为预印本。与给定动作后推演环境的预测用途相比，联合生成将动作本身也纳入建模对象，因而需要分别考察观测生成、动作可执行性及二者的一致性。
+具身操作研究依赖具有视觉观测、动作记录及任务评价条件的数据和实验平台。BridgeData V2 和 DROID 提供真实机器人操作数据\cite{bridgedata2023,droid2024}，RLBench、LIBERO 和 CALVIN 支持多任务与长程操作评价\cite{rlbench2020,libero2023,calvin2022}，RoboCasa、RoboTwin 和 SIMPLER 则提供不同场景和条件下的仿真验证环境\cite{robocasa2024,robotwin2025,simpler2025}。由于数据集在相机配置、动作空间、控制频率及任务判据上存在差异，相关比较需要明确观测条件与评价协议。
 
-BridgeData V2 和 DROID 提供真实操作示范，RLBench、LIBERO 和 CALVIN 分别支持多任务、迁移和长程语言条件操作评价；RoboCasa、RoboTwin 与 SIMPLER 则从家庭场景、双臂任务及仿真评价实际策略等方面扩展检验条件\cite{bridgedata2023,droid2024,rlbench2020,libero2023,calvin2022,robocasa2024,robotwin2025,simpler2025}。相关比较需明确观测、动作接口与任务成功判据。
+总体来看，具身操作研究正逐渐融合视觉语义、三维空间信息、动作生成与环境预测。直接策略学习侧重动作映射，预测辅助决策利用未来状态评价动作，联合生成模型则探索世界演化与动作之间的相互促进。对于连续动态世界模型而言，具身交互不仅提供动作条件和应用场景，也为检验动态状态的预测价值提供了依据：连续运动、对象归属及物理连接等信息能否改善动作后果预测，以及这种改善能否进一步支持实际交互，仍需要在一致的观测与动作条件下加以验证。
 
-总体而言，动作学习正在同时吸收语义与空间表征、连续动作生成和环境预测的进展，直接策略、预测辅助决策与联合生成各自对应不同的预测用途。对连续动态世界模型而言，关键在于检验运动与结构信息能否改善会影响操作结果的预测，以及这种改善在反馈和动作选择过程中能否转化为任务收益。代表性具身操作因此能够为本课题提供从表征、响应预测到实际使用效果的验证依据。
 
-三个领域在三维结构、历史利用及预测反馈上逐步衔接，为连续动态世界模型提供了方法基础。本课题进一步关注有限观测下连续运动、空间归属及结构演化的协同表征，以及这些信息对动作后果预测的约束作用。
+\subsubsection{总结}
 
-\Needspace{110pt}
+综上，四维动态场景重建、世界模型和具身操作中的动作学习，分别从动态三维状态恢复、内部状态演化预测及动作条件交互等方面提供了研究基础。四维重建已能够恢复复杂几何与连续运动，并探索对象关联和结构更新；世界模型将潜在状态、视觉特征或三维结构用于未来演化预测；具身操作则进一步将环境预测与动作生成、规划及交互验证相联系。三个领域逐渐交叉融合，但动态场景的几何与运动恢复、世界状态的持续维护及动作条件预测具有不同的研究目标，重建质量或交互性能并不能直接说明内部状态的完整性及其预测价值。
+
+面向有限视觉观测下的复杂动态环境，仍有两个相互关联的问题值得深入研究：一是离散采样、遮挡及物理连接变化可能使不同运动与结构状态产生相近的观测结果，需要研究\textbf{连续运动与场景结构的可区分条件}，以及如何在观测不完备时维护状态一致性、更新失效约束并保留有效历史；二是连续运动、对象归属和物理连接等状态信息对未来动作响应的作用尚需明确，需要研究\textbf{不同状态信息的预测价值及其估计误差对动作后果的影响}。围绕上述问题，本课题拟研究连续动态场景表征的构建与持续维护，并进一步探索其与动作条件演化预测的协同关系。
+
 \subsection{已有工作积累及研究基础}
 
 \subsubsection{连续时间重建的前期探索}
@@ -133,7 +113,7 @@ BridgeData V2 和 DROID 提供真实操作示范，RLBench、LIBERO 和 CALVIN �
 
 \begin{figure}[H]
   \centering
-  \input{figures/cofuse4d_method.tex}
+  \input{figures/chapters/ch01-basis/cofuse4d-method/diagram.tex}
   \caption{CoFuse4D 的方法框架}
   \label{fig:cofuse4d-method}
 \end{figure}
@@ -146,7 +126,7 @@ BridgeData V2 和 DROID 提供真实操作示范，RLBench、LIBERO 和 CALVIN �
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth]{figures/generated/psvla_method/figure.pdf}
+  \includegraphics[width=\linewidth]{figures/chapters/ch01-basis/psvla-method/figure.pdf}
   \caption{PS-VLA 的方法框架}
   \label{fig:psvla-method}
 \end{figure}

@@ -1,0 +1,151 @@
+{
+  "version": 1,
+  "root": "latex/figures",
+  "figures": {
+    "ch01.world-model-loop": {
+      "chapter": "1.1",
+      "caption": "世界模型与智能体的感知—预测—行动闭环示意",
+      "source": "chapters/ch01-basis/world-model-loop/diagram.svg",
+      "output": "chapters/ch01-basis/world-model-loop/figure.pdf",
+      "format": "editable SVG with embedded image resources",
+      "included": true,
+      "source_sha256": "ea6f268d22683274a12bee65c0a7529ab1874220aec8bb723db012d638cbfc41",
+      "output_sha256": "cacee86e6b983884fa840cad4f73de860c9fcb068b1b9503de501f36efc9a0fe"
+    },
+    "ch01.spacecraft-maintenance": {
+      "chapter": "1.1",
+      "caption": "面向在轨维护任务的世界模型动态环境建模需求",
+      "source": null,
+      "output": "chapters/ch01-basis/spacecraft-maintenance/figure.png",
+      "format": "source raster infographic; no editable source located",
+      "included": true,
+      "output_sha256": "5a6bfdd65bc3307fdad7faf2bb74b7d8921f3a63145d807ffec3ae9b7b53cf13"
+    },
+    "ch01.reconstruction-timeline": {
+      "chapter": "1.2.1",
+      "caption": "四维动态场景重建的代表性工作与发展脉络",
+      "source": "chapters/ch01-basis/reconstruction-timeline/diagram.svg",
+      "output": "chapters/ch01-basis/reconstruction-timeline/figure.pdf",
+      "format": "editable SVG exported to vector PDF",
+      "included": true,
+      "source_sha256": "b4582200e00f5a76e543ed475a04e2551495eaf941716fd44d5926ffbfa3aef8",
+      "output_sha256": "e20161a0df0acb39832ffa6a819d50167df73536a8ae075fec314b3378f011f2"
+    },
+    "ch01.world-model-evolution": {
+      "chapter": "1.2.2",
+      "caption": "世界模型的代表性工作与研究发展趋势",
+      "source": "chapters/ch01-basis/world-model-evolution/diagram.svg",
+      "output": "chapters/ch01-basis/world-model-evolution/figure.pdf",
+      "format": "editable SVG exported to vector PDF",
+      "included": true,
+      "source_sha256": "690f709793103cc2802ed3f84434bc91eb42fdd0eb7319b4db7188c65816bd0c",
+      "output_sha256": "43248ddfb37ccd2060912734ad29a39c23dd80a020cc8727c36e6092d55e1a2d"
+    },
+    "ch01.action-learning-timeline": {
+      "chapter": "1.2.3",
+      "caption": "具身操作动作学习的代表性工作与发展脉络（† 表示预印本）",
+      "source": "chapters/ch01-basis/action-learning-timeline/diagram.svg",
+      "output": "chapters/ch01-basis/action-learning-timeline/figure.pdf",
+      "format": "editable SVG exported to vector PDF",
+      "included": true,
+      "source_sha256": "e32c49930c48ba95f7734bb4d7124e2e828ed43900c7fa83ef715554999bc6e2",
+      "output_sha256": "48aecf599b64737d18f48ca22b2ee116809bc464306116062d76fcff17283277"
+    },
+    "ch01.cofuse4d-method": {
+      "chapter": "1.3.1",
+      "caption": "CoFuse4D 的方法框架",
+      "source": "chapters/ch01-basis/cofuse4d-method/diagram.tex",
+      "assets": "chapters/ch01-basis/cofuse4d-method/assets/",
+      "output": null,
+      "format": "TikZ included and compiled in main report",
+      "included": true,
+      "source_sha256": "d8c055517976e272c84179af761d379f7f0b240ba20957b689c9e00a91a609ee",
+      "asset_sha256": {
+        "chapters/ch01-basis/cofuse4d-method/assets/depth_118.png": "dcf8e1ecec698d24f99f21fac917a2703418b3d72edc856ca8b69ecff34958cc",
+        "chapters/ch01-basis/cofuse4d-method/assets/identity_118.png": "5276d76e340d72f66ef5e9478b569369427161ea6e274d2649a80aad36cff3af",
+        "chapters/ch01-basis/cofuse4d-method/assets/input_00000.png": "d95bbec8a4b18f181a3f66efb8a2ed7cbd07dd6d99cbcd8e02e16ffa591809bb",
+        "chapters/ch01-basis/cofuse4d-method/assets/input_00118.png": "07c18ec3ab070f131a67f4f2889da6c5ae48076b25060046050df593e9bcb8ce",
+        "chapters/ch01-basis/cofuse4d-method/assets/input_00237.png": "24f6c9a813de2f150ce623460ab99b3a842763686b66e98483f27392d4ad248f",
+        "chapters/ch01-basis/cofuse4d-method/assets/track_overlay_118.png": "0d020b23371dc03e165189fc5d56639feea45cd6b08668fe45602ab8e37710d9"
+      }
+    },
+    "ch01.psvla-method": {
+      "chapter": "1.3.2",
+      "caption": "PS-VLA 的方法框架",
+      "source": "chapters/ch01-basis/psvla-method/diagram.tex",
+      "output": "chapters/ch01-basis/psvla-method/figure.pdf",
+      "format": "standalone TikZ PDF; TeX source retained",
+      "included": true,
+      "source_sha256": "4a73846d86e1a208169000e83c1c4a6ce5548d057068f501fc4b8d7fde04e405",
+      "output_sha256": "8f55c201fb5db391a033b02570a1e451a2b033a56efc332635bf47980e16f0bb"
+    },
+    "ch02.research-framework": {
+      "chapter": "2.2",
+      "caption": "连续动态世界模型研究框架",
+      "source": "chapters/ch02-content/research-framework/diagram.svg",
+      "output": "chapters/ch02-content/research-framework/figure.pdf",
+      "format": "editable SVG exported to vector PDF with macOS WebKit",
+      "included": true,
+      "source_sha256": "49bda76598766d0a721b83425703a6a7c47046c0f4a3f534fe664453816629fa",
+      "output_sha256": "acfd1288318c93b1e6ca3fa4a8b255a70481153751d76e1e0dcf3a7984f732b2"
+    },
+    "ch03.overall-technical-route": {
+      "chapter": "3.3",
+      "caption": "连续动态场景表征与动作条件预测技术路线",
+      "source": "chapters/ch03-plan/overall-technical-route/diagram.svg",
+      "output": "chapters/ch03-plan/overall-technical-route/figure.pdf",
+      "format": "editable SVG exported to vector PDF; WebKit provenance retained",
+      "included": true,
+      "source_sha256": "4f9928be24304a14a8fbafe46fd00b1f2e2ff4aeeca18ddf04486342c7da7528",
+      "output_sha256": "f16b979b3c26e8ee285a6951e011d282aa26bd5e9f2acdde861e5383096975b9"
+    },
+    "ch03.continuous-time-route": {
+      "chapter": "3.3.1",
+      "caption": "不确定性感知的连续时间场景表征技术路线",
+      "source": "chapters/ch03-plan/continuous-time-route/diagram.svg",
+      "output": "chapters/ch03-plan/continuous-time-route/figure.pdf",
+      "format": "editable SVG; generated by scripts/export_route_diagrams.py",
+      "included": true,
+      "source_sha256": "26ea6fa4c97528acd06225e2b8cdb0f3e5033df68250de6c441b62d2cb537119",
+      "output_sha256": "051956cb3d07405bbcfa828717b01daecad6757373694ace11b05d8b8681af0b"
+    },
+    "ch03.object-consistency-route": {
+      "chapter": "3.3.2",
+      "caption": "连续运动引导的对象时空一致性建模技术路线",
+      "source": "chapters/ch03-plan/object-consistency-route/diagram.svg",
+      "output": "chapters/ch03-plan/object-consistency-route/figure.pdf",
+      "format": "editable SVG; generated by scripts/export_route_diagrams.py",
+      "included": true,
+      "source_sha256": "f1de128ba1cad0e790c0b1cbb77a3eca8e4b228e9aeea2077fc6126d179128ff",
+      "output_sha256": "a0ed0827c8d794c16c9f1222e0bb1dc6abb79ab7a7c5f15f5541ef2e57457659"
+    },
+    "ch03.topology-change-route": {
+      "chapter": "3.3.3",
+      "caption": "物理连接变化下的动态结构表征与更新技术路线",
+      "source": "chapters/ch03-plan/topology-change-route/diagram.svg",
+      "output": "chapters/ch03-plan/topology-change-route/figure.pdf",
+      "format": "editable SVG; generated by scripts/export_route_diagrams.py",
+      "included": true,
+      "source_sha256": "99d1b6da9a65d2abe517e03c7b7b69f5e7c7a52f613765076a670519ca96e7f1",
+      "output_sha256": "67a75f5ed160e5afa900eaa0ce987dfe2cfe997d69799e85beda49742fe2fb75"
+    },
+    "ch03.action-response-route": {
+      "chapter": "3.3.4",
+      "caption": "动作后果预测与连续动态表征协同建模技术路线",
+      "source": "chapters/ch03-plan/action-response-route/diagram.svg",
+      "output": "chapters/ch03-plan/action-response-route/figure.pdf",
+      "format": "editable SVG; generated by scripts/export_route_diagrams.py",
+      "included": true,
+      "source_sha256": "225ad5971884b0930c492db303b6d11e999511ed8afdb5d08b1eedaff14ffa21",
+      "output_sha256": "5c25880478c23cd5a98b850e22863c81fe388a29951cffe99d9edce5beece206",
+      "text_blocks": 49,
+      "font_sizes_px": [
+        42.0,
+        44.0,
+        46.0,
+        48.0,
+        50.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" baseProfile="full" height="1380px" version="1.1" viewBox="0 0 2280 1380" width="2280px">
+  <defs />
+  <rect fill="#FFFFFF" height="1380" rx="0" ry="0" stroke="none" stroke-width="1.6" width="2280" x="0" y="0" />
+  <rect fill="#F4F8FC" height="182" rx="15" ry="15" stroke="#CAD8E7" stroke-width="1.7" width="702" x="46" y="28" />
+  <rect fill="#E4EDF8" height="64" rx="14" ry="14" stroke="none" stroke-width="1.6" width="700" x="47" y="29" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="48" font-weight="700" text-anchor="middle" x="397" y="80" xml:space="preserve">真实输入</text>
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="46" font-weight="700" text-anchor="middle" x="398.5" y="169" xml:space="preserve">视频序列</text>
+  <rect fill="#F4F8FC" height="182" rx="15" ry="15" stroke="#CAD8E7" stroke-width="1.7" width="702" x="787" y="28" />
+  <rect fill="#E4EDF8" height="64" rx="14" ry="14" stroke="none" stroke-width="1.6" width="700" x="788" y="29" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="48" font-weight="700" text-anchor="middle" x="1138.5" y="80.5" xml:space="preserve">视觉基础模型估计先验</text>
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="46" font-weight="700" text-anchor="middle" x="1138" y="142" xml:space="preserve"><tspan x="1145.5" y="142">相机参数 · 深度 · </tspan><tspan x="1139" y="196">跨时二维对应</tspan></text>
+  <rect fill="#F4F8FC" height="182" rx="15" ry="15" stroke="#CAD8E7" stroke-width="1.7" width="702" x="1528" y="28" />
+  <rect fill="#E4EDF8" height="64" rx="14" ry="14" stroke="none" stroke-width="1.6" width="700" x="1529" y="29" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="48" font-weight="700" text-anchor="middle" x="1879" y="79.5" xml:space="preserve">统一初始化</text>
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="46" font-weight="700" text-anchor="middle" x="1879" y="142" xml:space="preserve"><tspan x="1880" y="142">几何线索、轨迹链与</tspan><tspan x="1878" y="196">时空观测集合</tspan></text>
+  <line stroke="#2167A6" stroke-linecap="round" stroke-width="4" x1="752" x2="779" y1="119" y2="119" />
+  <polygon fill="#2167A6" points="768,111 768,127 782,119" />
+  <line stroke="#2167A6" stroke-linecap="round" stroke-width="4" x1="1493" x2="1520" y1="119" y2="119" />
+  <polygon fill="#2167A6" points="1509,111 1509,127 1523,119" />
+  <line stroke="#2167A6" stroke-linecap="round" stroke-width="4" x1="1138" x2="1138" y1="214" y2="260" />
+  <polygon fill="#2167A6" points="1132,257 1144,257 1138,268" />
+  <rect fill="#FAFCFE" height="804" rx="17" ry="17" stroke="#A4C8E7" stroke-width="2.2" width="702" x="46" y="270" />
+  <rect fill="#E8F2FC" height="130" rx="16" ry="16" stroke="none" stroke-width="1.6" width="700" x="47" y="271" />
+  <rect fill="#2167A6" height="56" rx="28" ry="28" stroke="none" stroke-width="1.6" width="56" x="68" y="308" />
+  <text fill="#FFFFFF" font-family="Arial Unicode MS" font-size="42" font-weight="700" text-anchor="middle" x="97.5" y="351" xml:space="preserve">1</text>
+  <text fill="#2167A6" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="426" y="355.5" xml:space="preserve">可靠观测证据构建</text>
+  <rect fill="#FFFFFF" height="136" rx="12" ry="12" stroke="#A4C8E7" stroke-width="1.6" width="658" x="68" y="420" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="397" y="478.5" xml:space="preserve"><tspan x="396" y="478.5">1. 跨帧对应与</tspan><tspan x="396" y="536.5">三维轨迹初始化</tspan></text>
+  <line stroke="#2167A6" stroke-linecap="round" stroke-width="2.4" x1="397" x2="397" y1="557" y2="569" />
+  <polygon fill="#2167A6" points="391,565 403,565 397,575" />
+  <rect fill="#FFFFFF" height="136" rx="12" ry="12" stroke="#A4C8E7" stroke-width="1.6" width="658" x="68" y="580" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="397" y="638.5" xml:space="preserve"><tspan x="398" y="638.5">2. 观测一致性与</tspan><tspan x="396" y="696.5">可见性评估</tspan></text>
+  <line stroke="#2167A6" stroke-linecap="round" stroke-width="2.4" x1="397" x2="397" y1="717" y2="729" />
+  <polygon fill="#2167A6" points="391,725 403,725 397,735" />
+  <rect fill="#FFFFFF" height="136" rx="12" ry="12" stroke="#A4C8E7" stroke-width="1.6" width="658" x="68" y="740" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="397" y="798" xml:space="preserve"><tspan x="397.5" y="798">3. 证据加权与</tspan><tspan x="396" y="856">时间覆盖统计</tspan></text>
+  <rect fill="#E8F2FC" height="162" rx="11" ry="11" stroke="#A4C8E7" stroke-width="1.6" width="658" x="68" y="900" />
+  <text fill="#2167A6" font-family="Arial Unicode MS" font-size="42" font-weight="700" text-anchor="middle" x="395.5" y="945.5" xml:space="preserve">阶段结果</text>
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="46" font-weight="700" text-anchor="middle" x="397.5" y="1019.5" xml:space="preserve">加权观测约束与时间证据分布</text>
+  <rect fill="#FAFCFE" height="804" rx="17" ry="17" stroke="#EDC19B" stroke-width="2.2" width="702" x="787" y="270" />
+  <rect fill="#FFF2E5" height="130" rx="16" ry="16" stroke="none" stroke-width="1.6" width="700" x="788" y="271" />
+  <rect fill="#CD762A" height="56" rx="28" ry="28" stroke="none" stroke-width="1.6" width="56" x="809" y="308" />
+  <text fill="#FFFFFF" font-family="Arial Unicode MS" font-size="42" font-weight="700" text-anchor="middle" x="837" y="351.5" xml:space="preserve">2</text>
+  <text fill="#CD762A" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1169" y="355.5" xml:space="preserve">观测驱动的连续运动建模</text>
+  <rect fill="#FFFFFF" height="136" rx="12" ry="12" stroke="#EDC19B" stroke-width="1.6" width="658" x="809" y="420" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1136.5" y="508" xml:space="preserve">1. 稀疏运动支撑初始化</text>
+  <line stroke="#CD762A" stroke-linecap="round" stroke-width="2.4" x1="1138" x2="1138" y1="557" y2="569" />
+  <polygon fill="#CD762A" points="1132,565 1144,565 1138,575" />
+  <rect fill="#FFFFFF" height="136" rx="12" ry="12" stroke="#EDC19B" stroke-width="1.6" width="658" x="809" y="580" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1138.5" y="667" xml:space="preserve">2. 连续轨迹及图元变形</text>
+  <line stroke="#CD762A" stroke-linecap="round" stroke-width="2.4" x1="1138" x2="1138" y1="717" y2="729" />
+  <polygon fill="#CD762A" points="1132,725 1144,725 1138,735" />
+  <rect fill="#FFFFFF" height="136" rx="12" ry="12" stroke="#EDC19B" stroke-width="1.6" width="658" x="809" y="740" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1138" y="798.5" xml:space="preserve"><tspan x="1138" y="798.5">3. 局部运动复杂度</tspan><tspan x="1134" y="856.5">自适应配置</tspan></text>
+  <rect fill="#FFF2E5" height="162" rx="11" ry="11" stroke="#EDC19B" stroke-width="1.6" width="658" x="809" y="900" />
+  <text fill="#CD762A" font-family="Arial Unicode MS" font-size="42" font-weight="700" text-anchor="middle" x="1136.5" y="945.5" xml:space="preserve">阶段结果</text>
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="46" font-weight="700" text-anchor="middle" x="1138" y="995" xml:space="preserve"><tspan x="1152.5" y="995">连续运动 M(t)、</tspan><tspan x="1137" y="1045">支撑节点及控制参数</tspan></text>
+  <rect fill="#FAFCFE" height="804" rx="17" ry="17" stroke="#A9D9CF" stroke-width="2.2" width="702" x="1528" y="270" />
+  <rect fill="#E7F6F2" height="130" rx="16" ry="16" stroke="none" stroke-width="1.6" width="700" x="1529" y="271" />
+  <rect fill="#168477" height="56" rx="28" ry="28" stroke="none" stroke-width="1.6" width="56" x="1550" y="308" />
+  <text fill="#FFFFFF" font-family="Arial Unicode MS" font-size="42" font-weight="700" text-anchor="middle" x="1578" y="351.5" xml:space="preserve">3</text>
+  <text fill="#168477" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1909.5" y="356" xml:space="preserve">几何—运动联合恢复</text>
+  <rect fill="#FFFFFF" height="136" rx="12" ry="12" stroke="#A9D9CF" stroke-width="1.6" width="658" x="1550" y="420" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1877.5" y="508" xml:space="preserve">1. 多约束联合优化</text>
+  <line stroke="#168477" stroke-linecap="round" stroke-width="2.4" x1="1879" x2="1879" y1="557" y2="569" />
+  <polygon fill="#168477" points="1873,565 1885,565 1879,575" />
+  <rect fill="#FFFFFF" height="136" rx="12" ry="12" stroke="#A9D9CF" stroke-width="1.6" width="658" x="1550" y="580" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1879.5" y="667.5" xml:space="preserve">2. 几何回校正与交替更新</text>
+  <line stroke="#168477" stroke-linecap="round" stroke-width="2.4" x1="1879" x2="1879" y1="717" y2="729" />
+  <polygon fill="#168477" points="1873,725 1885,725 1879,735" />
+  <rect fill="#FFFFFF" height="136" rx="12" ry="12" stroke="#A9D9CF" stroke-width="1.6" width="658" x="1550" y="740" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1879" y="798" xml:space="preserve"><tspan x="1880.5" y="798">3. 弱观测区域的</tspan><tspan x="1881.5" y="856">运动歧义维护</tspan></text>
+  <rect fill="#E7F6F2" height="162" rx="11" ry="11" stroke="#A9D9CF" stroke-width="1.6" width="658" x="1550" y="900" />
+  <text fill="#168477" font-family="Arial Unicode MS" font-size="42" font-weight="700" text-anchor="middle" x="1877.5" y="945.5" xml:space="preserve">阶段结果</text>
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="46" font-weight="700" text-anchor="middle" x="1879" y="992" xml:space="preserve"><tspan x="1893.5" y="992">几何 G(t)、外观 C(t)、</tspan><tspan x="1879.5" y="1042">连续运动 M(t)</tspan></text>
+  <line stroke="#638BA9" stroke-linecap="round" stroke-width="5" x1="752" x2="779" y1="656" y2="656" />
+  <polygon fill="#638BA9" points="768,648 768,664 782,656" />
+  <line stroke="#638BA9" stroke-linecap="round" stroke-width="5" x1="1493" x2="1520" y1="656" y2="656" />
+  <polygon fill="#638BA9" points="1509,648 1509,664 1523,656" />
+  <rect fill="#F1F6FA" height="108" rx="12" ry="12" stroke="#C4D6E6" stroke-width="1.7" width="1988" x="146" y="1094" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="44" font-weight="700" text-anchor="middle" x="1140.5" y="1165" xml:space="preserve">迭代校正：几何残差反馈 → 证据可靠性复估 → 局部运动表达调整 → 再次联合求解</text>
+  <path d="M 1879,1075 L 1879,1084 L 2148,1084 L 2148,1148 L 2144,1148" fill="none" stroke="#82A5BF" stroke-dasharray="7 7" stroke-width="2.4" />
+  <polygon fill="#82A5BF" points="2146,1142 2146,1154 2135,1148" />
+  <path d="M 145,1148 L 132,1148 L 132,1084 L 397,1084 L 397,1081" fill="none" stroke="#82A5BF" stroke-dasharray="7 7" stroke-width="2.4" />
+  <polygon fill="#82A5BF" points="391,1086 403,1086 397,1075" />
+  <rect fill="#E8F1FA" height="124" rx="14" ry="14" stroke="#97BCD9" stroke-width="1.8" width="2184" x="46" y="1220" />
+  <rect fill="#2167A6" height="124" rx="2" ry="2" stroke="none" stroke-width="1.6" width="12" x="46" y="1220" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="48" font-weight="700" text-anchor="middle" x="1138" y="1297.5" xml:space="preserve">输出：任意时刻可查询的动态三维表征  G(t)、C(t)、M(t)</text>
+</svg>

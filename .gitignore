@@ -2,6 +2,7 @@
 /材料/
 /tmp/
 /.mimocode/
+/.dsh-office.*/
 
 # 文献统计的抓取缓存、逐条大表与过程预览只在本地生成，不纳入仓库。
 /docs/literature_stats/raw/
@@ -9,10 +10,16 @@
 /docs/literature_stats/excluded.csv
 /docs/revision-assets/
 
-# 编译结果和中间文件统一放入 latex/build；当前阅读版及命名版本 PDF 入库。
+# 隔离的版面审计构建仅供本地检查。
+/latex/.audit-build.*/
+
+# 正式发布版放入 output；候选 PDF 和图件预览不入库。
+/output/*.rc*.pdf
+/latex/figures/chapters/**/preview*.png
+
+# 编译结果和中间文件统一放入 latex/build；仅当前阅读版入库。
 /latex/build/*
 !/latex/build/main.pdf
-!/latex/build/main-*.pdf
 /latex/main.pdf
 *.aux
 *.bbl

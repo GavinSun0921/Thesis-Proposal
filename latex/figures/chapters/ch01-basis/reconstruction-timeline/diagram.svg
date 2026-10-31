@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2050" height="1435" viewBox="0 -210 2050 1435">
+<title>四维动态场景重建代表工作发展脉络（2021—2026）</title>
+<defs><marker id="ar" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="13" refY="8" orient="auto"><path d="M2,2 L14,8 L2,14" fill="none" stroke="#7B828B" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round" /></marker>
+<marker id="ax" markerWidth="11" markerHeight="11" refX="10" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#172B4D" /></marker>
+<filter id="shadow" x="-15%" y="-30%" width="130%" height="165%"><feGaussianBlur in="SourceAlpha" stdDeviation="2.2" result="b" /><feOffset in="b" dy="3" dx="2" result="off" /><feComponentTransfer in="off" result="a"><feFuncA type="linear" slope="0.14" /></feComponentTransfer><feMerge><feMergeNode in="a" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
+</defs>
+<rect width="2050" height="1400" fill="#FFFFFF" y="-175" />
+<rect x="35" y="-170" width="620" height="246" fill="#FFFFFF" opacity="0.94" /><rect x="55" y="-150" width="40" height="40" rx="6" fill="#F8E6F5" stroke="#D27DB2" stroke-width="2" />
+<text x="112" y="-120" fill="#25354D" font-size="46" font-family="Noto Sans CJK SC" font-weight="600">隐式场 / NeRF</text>
+<rect x="55" y="-88" width="40" height="40" rx="6" fill="#E1EAF9" stroke="#7F9BD1" stroke-width="2" />
+<text x="112" y="-58" fill="#25354D" font-size="46" font-family="Noto Sans CJK SC" font-weight="600">显式载体 / Gaussian·Planes</text>
+<rect x="55" y="-26" width="40" height="40" rx="6" fill="#E3F1E1" stroke="#8EBF88" stroke-width="2" />
+<text x="112" y="4" fill="#25354D" font-size="46" font-family="Noto Sans CJK SC" font-weight="600">点级几何 / PointMap</text>
+<line x1="175" y1="176" x2="175" y2="1150" stroke="#D8E0EC" stroke-width="2" stroke-dasharray="6 11" />
+<line x1="505" y1="176" x2="505" y2="1150" stroke="#D8E0EC" stroke-width="2" stroke-dasharray="6 11" />
+<line x1="835" y1="176" x2="835" y2="1150" stroke="#D8E0EC" stroke-width="2" stroke-dasharray="6 11" />
+<line x1="1165" y1="176" x2="1165" y2="1150" stroke="#D8E0EC" stroke-width="2" stroke-dasharray="6 11" />
+<line x1="1495" y1="176" x2="1495" y2="1150" stroke="#D8E0EC" stroke-width="2" stroke-dasharray="6 11" />
+<line x1="1825" y1="176" x2="1825" y2="1150" stroke="#D8E0EC" stroke-width="2" stroke-dasharray="6 11" />
+<path d="M 175.0 948.8 L 505.0 1001.6 L 835.0 905.4 L 1165.0 684.0 L 1495.0 193.1" fill="none" stroke="#858C95" stroke-opacity="0.80" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+<circle cx="175" cy="948.69" r="8" fill="#858C95" opacity=".75" stroke="white" stroke-width="3" />
+<circle cx="505" cy="1001.62" r="8" fill="#858C95" opacity=".75" stroke="white" stroke-width="3" />
+<circle cx="835" cy="905.38" r="8" fill="#858C95" opacity=".75" stroke="white" stroke-width="3" />
+<circle cx="1165" cy="684.00" r="8" fill="#858C95" opacity=".75" stroke="white" stroke-width="3" />
+<circle cx="1495" cy="193.12" r="8" fill="#858C95" opacity=".75" stroke="white" stroke-width="3" />
+<g id="forecast-2026">
+  <path d="M 1495 193.12 L 1825 -150" fill="none" stroke="#858C95" stroke-width="8" stroke-dasharray="10 9" opacity="0.75" stroke-linecap="round"/>
+  <circle cx="1825" cy="-150" r="9" fill="white" stroke="#858C95" stroke-width="4" opacity="0.95"/>
+  <text x="1825" y="-178" font-family="Arial Unicode MS" font-size="36" font-weight="700" text-anchor="middle" fill="#36445A">2026 预测 ≈300</text>
+</g>
+<g filter="url(#shadow)"><rect x="14.0" y="1035.0" width="322" height="100" rx="8" fill="#F8E6F5" stroke="#D27DB2" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="175" y="1078.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="33" text-anchor="middle" fill="#151D2B" font-weight="600">NSFF</text>
+<text x="175" y="1109" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">CVPR 2021</text>
+<g filter="url(#shadow)"><rect x="14.0" y="920.0" width="322" height="100" rx="8" fill="#F8E6F5" stroke="#D27DB2" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="175" y="963.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="33" text-anchor="middle" fill="#151D2B" font-weight="600">D-NeRF</text>
+<text x="175" y="994" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">CVPR 2021</text>
+<g filter="url(#shadow)"><rect x="14.0" y="805.0" width="322" height="100" rx="8" fill="#F8E6F5" stroke="#D27DB2" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="175" y="848.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="33" text-anchor="middle" fill="#151D2B" font-weight="600">HyperNeRF</text>
+<text x="175" y="879" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">SIGGRAPH Asia 2021</text>
+<g filter="url(#shadow)"><rect x="344.0" y="1035.0" width="322" height="100" rx="8" fill="#F8E6F5" stroke="#D27DB2" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="505" y="1078.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="33" text-anchor="middle" fill="#151D2B" font-weight="600">TiNeuVox</text>
+<text x="505" y="1109" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">NeurIPS 2022</text>
+<g filter="url(#shadow)"><rect x="674.0" y="1035.0" width="322" height="100" rx="8" fill="#E1EAF9" stroke="#7F9BD1" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="835" y="1078.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="33" text-anchor="middle" fill="#151D2B" font-weight="600">K-Planes</text>
+<text x="835" y="1109" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">CVPR 2023</text>
+<g filter="url(#shadow)"><rect x="674.0" y="920.0" width="322" height="100" rx="8" fill="#E1EAF9" stroke="#7F9BD1" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="835" y="963.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="33" text-anchor="middle" fill="#151D2B" font-weight="600">HexPlane</text>
+<text x="835" y="994" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">CVPR 2023</text>
+<g filter="url(#shadow)"><rect x="674.0" y="805.0" width="322" height="100" rx="8" fill="#E1EAF9" stroke="#7F9BD1" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="835" y="848.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="33" text-anchor="middle" fill="#151D2B" font-weight="600">3DGS</text>
+<text x="835" y="879" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">SIGGRAPH 2023</text>
+<g filter="url(#shadow)"><rect x="1004.0" y="1035.0" width="322" height="100" rx="8" fill="#F8E6F5" stroke="#D27DB2" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="1165" y="1078.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="33" text-anchor="middle" fill="#151D2B" font-weight="600">MovingParts</text>
+<text x="1165" y="1109" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">ICLR 2024</text>
+<g filter="url(#shadow)"><rect x="1004.0" y="920.0" width="322" height="100" rx="8" fill="#E1EAF9" stroke="#7F9BD1" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="1165" y="963.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="22.4" text-anchor="middle" fill="#151D2B" font-weight="600">Dynamic 3D Gaussians</text>
+<text x="1165" y="994" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">3DV 2024</text>
+<g filter="url(#shadow)"><rect x="1004.0" y="805.0" width="322" height="100" rx="8" fill="#E1EAF9" stroke="#7F9BD1" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="1165" y="848.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="33" text-anchor="middle" fill="#151D2B" font-weight="600">4D-GS</text>
+<text x="1165" y="879" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">CVPR 2024</text>
+<g filter="url(#shadow)"><rect x="1004.0" y="690.0" width="322" height="100" rx="8" fill="#E1EAF9" stroke="#7F9BD1" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="1165" y="733.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="27.1" text-anchor="middle" fill="#151D2B" font-weight="600">Deformable-GS</text>
+<text x="1165" y="764" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">CVPR 2024</text>
+<g filter="url(#shadow)"><rect x="1004.0" y="575.0" width="322" height="100" rx="8" fill="#E1EAF9" stroke="#7F9BD1" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="1165" y="618.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="33" text-anchor="middle" fill="#151D2B" font-weight="600">SC-GS</text>
+<text x="1165" y="649" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">CVPR 2024</text>
+<g filter="url(#shadow)"><rect x="1004.0" y="460.0" width="322" height="100" rx="8" fill="#E3F1E1" stroke="#8EBF88" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="1165" y="503.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="33" text-anchor="middle" fill="#151D2B" font-weight="600">DUSt3R</text>
+<text x="1165" y="534" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">CVPR 2024</text>
+<g filter="url(#shadow)"><rect x="1334.0" y="1035.0" width="322" height="100" rx="8" fill="#E1EAF9" stroke="#7F9BD1" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="1495" y="1078.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="33" text-anchor="middle" fill="#151D2B" font-weight="600">SplineGS</text>
+<text x="1495" y="1109" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">CVPR 2025</text>
+<g filter="url(#shadow)"><rect x="1334.0" y="920.0" width="322" height="100" rx="8" fill="#E1EAF9" stroke="#7F9BD1" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="1495" y="963.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="33" text-anchor="middle" fill="#151D2B" font-weight="600">MoSca</text>
+<text x="1495" y="994" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">CVPR 2025</text>
+<g filter="url(#shadow)"><rect x="1334.0" y="805.0" width="322" height="100" rx="8" fill="#E1EAF9" stroke="#7F9BD1" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="1495" y="848.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="33" text-anchor="middle" fill="#151D2B" font-weight="600">GauSTAR</text>
+<text x="1495" y="879" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">CVPR 2025</text>
+<g filter="url(#shadow)"><rect x="1334.0" y="690.0" width="322" height="100" rx="8" fill="#E1EAF9" stroke="#7F9BD1" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="1495" y="733.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="24.8" text-anchor="middle" fill="#151D2B" font-weight="600">Shape of Motion</text>
+<text x="1495" y="764" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">ICCV 2025</text>
+<g filter="url(#shadow)"><rect x="1334.0" y="575.0" width="322" height="100" rx="8" fill="#E1EAF9" stroke="#7F9BD1" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="1495" y="618.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="33" text-anchor="middle" fill="#151D2B" font-weight="600">Vivid4D</text>
+<text x="1495" y="649" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">ICCV 2025</text>
+<g filter="url(#shadow)"><rect x="1334.0" y="460.0" width="322" height="100" rx="8" fill="#E1EAF9" stroke="#7F9BD1" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="1495" y="503.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="33" text-anchor="middle" fill="#151D2B" font-weight="600">AT-GS</text>
+<text x="1495" y="534" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">WACV 2025</text>
+<g filter="url(#shadow)"><rect x="1334.0" y="345.0" width="322" height="100" rx="8" fill="#E3F1E1" stroke="#8EBF88" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="1495" y="388.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="33" text-anchor="middle" fill="#151D2B" font-weight="600">MonST3R</text>
+<text x="1495" y="419" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">ICLR 2025</text>
+<g filter="url(#shadow)"><rect x="1334.0" y="230.0" width="322" height="100" rx="8" fill="#E3F1E1" stroke="#8EBF88" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="1495" y="273.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="33" text-anchor="middle" fill="#151D2B" font-weight="600">CUT3R</text>
+<text x="1495" y="304" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">CVPR 2025</text>
+<g filter="url(#shadow)"><rect x="1664.0" y="1035.0" width="322" height="100" rx="8" fill="#E1EAF9" stroke="#7F9BD1" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="1825" y="1078.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="33" text-anchor="middle" fill="#151D2B" font-weight="600">RetimeGS</text>
+<text x="1825" y="1109" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">CVPR 2026</text>
+<g filter="url(#shadow)"><rect x="1664.0" y="920.0" width="322" height="100" rx="8" fill="#E1EAF9" stroke="#7F9BD1" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="1825" y="963.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="33" text-anchor="middle" fill="#151D2B" font-weight="600">4DSurf</text>
+<text x="1825" y="994" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">CVPR 2026</text>
+<g filter="url(#shadow)"><rect x="1664.0" y="805.0" width="322" height="100" rx="8" fill="#E1EAF9" stroke="#7F9BD1" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="1825" y="848.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="33" text-anchor="middle" fill="#151D2B" font-weight="600">ParticleGS</text>
+<text x="1825" y="879" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">CVPR 2026</text>
+<g filter="url(#shadow)"><rect x="1664.0" y="690.0" width="322" height="100" rx="8" fill="#E1EAF9" stroke="#7F9BD1" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="1825" y="733.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="33" text-anchor="middle" fill="#151D2B" font-weight="600">GP-4DGS</text>
+<text x="1825" y="764" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">CVPR 2026</text>
+<g filter="url(#shadow)"><rect x="1664.0" y="575.0" width="322" height="100" rx="8" fill="#E1EAF9" stroke="#7F9BD1" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="1825" y="618.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="33" text-anchor="middle" fill="#151D2B" font-weight="600">USplat4D</text>
+<text x="1825" y="649" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">ICLR 2026</text>
+<g filter="url(#shadow)"><rect x="1664.0" y="460.0" width="322" height="100" rx="8" fill="#E1EAF9" stroke="#7F9BD1" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="1825" y="503.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="33" text-anchor="middle" fill="#151D2B" font-weight="600">MotionScale</text>
+<text x="1825" y="534" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">CVPR 2026</text>
+<g filter="url(#shadow)"><rect x="1664.0" y="345.0" width="322" height="100" rx="8" fill="#E1EAF9" stroke="#7F9BD1" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="1825" y="388.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="33" text-anchor="middle" fill="#151D2B" font-weight="600">StreamSplat</text>
+<text x="1825" y="419" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">ICLR 2026</text>
+<g filter="url(#shadow)"><rect x="1664.0" y="230.0" width="322" height="100" rx="8" fill="#E1EAF9" stroke="#7F9BD1" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="1825" y="273.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="33" text-anchor="middle" fill="#151D2B" font-weight="600">4C4D</text>
+<text x="1825" y="304" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">CVPR 2026</text>
+<g filter="url(#shadow)"><rect x="1664.0" y="115.0" width="322" height="100" rx="8" fill="#E1EAF9" stroke="#7F9BD1" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="1825" y="158.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="22.4" text-anchor="middle" fill="#151D2B" font-weight="600">Consistent Instance Field</text>
+<text x="1825" y="189" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">CVPR 2026</text>
+<g filter="url(#shadow)"><rect x="1664.0" y="0.0" width="322" height="100" rx="8" fill="#E3F1E1" stroke="#8EBF88" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="1825" y="43.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="33" text-anchor="middle" fill="#151D2B" font-weight="600">DynamicVGGT</text>
+<text x="1825" y="74" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">CVPR 2026</text>
+<g filter="url(#shadow)"><rect x="1664.0" y="-115.0" width="322" height="100" rx="8" fill="#E3F1E1" stroke="#8EBF88" stroke-opacity=".48" stroke-width="1.7" fill-opacity="0.90" /></g>
+<text x="1825" y="-72.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="33" text-anchor="middle" fill="#151D2B" font-weight="600">D4RT</text>
+<text x="1825" y="-45.0" font-family="DejaVu Sans" font-size="26" text-anchor="middle" fill="#27354C">CVPR 2026</text>
+<line x1="50" y1="1172" x2="1982" y2="1172" stroke="#172B4D" stroke-width="4" marker-end="url(#ax)" />
+<line x1="175" y1="1148" x2="175" y2="1160" stroke="#172B4D" stroke-width="2" />
+<rect x="121" y="1149" width="108" height="45" rx="22" fill="white" stroke="#172B4D" stroke-width="2.5" />
+<text x="175" y="1180" text-anchor="middle" font-family="DejaVu Sans" font-weight="700" font-size="28.3" fill="#172B4D">2021</text>
+<line x1="505" y1="1148" x2="505" y2="1160" stroke="#172B4D" stroke-width="2" />
+<rect x="451" y="1149" width="108" height="45" rx="22" fill="white" stroke="#172B4D" stroke-width="2.5" />
+<text x="505" y="1180" text-anchor="middle" font-family="DejaVu Sans" font-weight="700" font-size="28.3" fill="#172B4D">2022</text>
+<line x1="835" y1="1148" x2="835" y2="1160" stroke="#172B4D" stroke-width="2" />
+<rect x="781" y="1149" width="108" height="45" rx="22" fill="white" stroke="#172B4D" stroke-width="2.5" />
+<text x="835" y="1180" text-anchor="middle" font-family="DejaVu Sans" font-weight="700" font-size="28.3" fill="#172B4D">2023</text>
+<line x1="1165" y1="1148" x2="1165" y2="1160" stroke="#172B4D" stroke-width="2" />
+<rect x="1111" y="1149" width="108" height="45" rx="22" fill="white" stroke="#172B4D" stroke-width="2.5" />
+<text x="1165" y="1180" text-anchor="middle" font-family="DejaVu Sans" font-weight="700" font-size="28.3" fill="#172B4D">2024</text>
+<line x1="1495" y1="1148" x2="1495" y2="1160" stroke="#172B4D" stroke-width="2" />
+<rect x="1441" y="1149" width="108" height="45" rx="22" fill="white" stroke="#172B4D" stroke-width="2.5" />
+<text x="1495" y="1180" text-anchor="middle" font-family="DejaVu Sans" font-weight="700" font-size="28.3" fill="#172B4D">2025</text>
+<line x1="1825" y1="1148" x2="1825" y2="1160" stroke="#172B4D" stroke-width="2" />
+<rect x="1771" y="1149" width="108" height="45" rx="22" fill="white" stroke="#172B4D" stroke-width="2.5" />
+<text x="1825" y="1180" text-anchor="middle" font-family="DejaVu Sans" font-weight="700" font-size="28.3" fill="#172B4D">2026</text>
+</svg>

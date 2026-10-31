@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" baseProfile="full" height="1380px" version="1.1" viewBox="0 0 2280 1380" width="2280px">
+  <defs />
+  <rect fill="#FFFFFF" height="1380" rx="0" ry="0" stroke="none" stroke-width="1.6" width="2280" x="0" y="0" />
+  <rect fill="#F4F8FC" height="182" rx="15" ry="15" stroke="#CAD8E7" stroke-width="1.7" width="702" x="46" y="28" />
+  <rect fill="#E4EDF8" height="64" rx="14" ry="14" stroke="none" stroke-width="1.6" width="700" x="47" y="29" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="48" font-weight="700" text-anchor="middle" x="397" y="78">承接第一项研究</text>
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="46" font-weight="700" text-anchor="middle" x="397" y="166">G(t) · C(t) · M(t) · 观测支持</text>
+  <rect fill="#F4F8FC" height="182" rx="15" ry="15" stroke="#CAD8E7" stroke-width="1.7" width="702" x="787" y="28" />
+  <rect fill="#E4EDF8" height="64" rx="14" ry="14" stroke="none" stroke-width="1.6" width="700" x="788" y="29" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="48" font-weight="700" text-anchor="middle" x="1138" y="79.5">视觉基础模型辅助先验</text>
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="46" font-weight="700" text-anchor="middle" x="1138" y="168.5">外观特征  ·  对象 / 部件分割提示</text>
+  <rect fill="#F4F8FC" height="182" rx="15" ry="15" stroke="#CAD8E7" stroke-width="1.7" width="702" x="1528" y="28" />
+  <rect fill="#E4EDF8" height="64" rx="14" ry="14" stroke="none" stroke-width="1.6" width="700" x="1529" y="29" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="48" font-weight="700" text-anchor="middle" x="1879" y="79">统一空间单元</text>
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="46" font-weight="700" text-anchor="middle" x="1879" y="141.5"><tspan x="1879" y="141.5">图元及其轨迹、</tspan><tspan x="1879" y="195.5">有效时间范围与候选邻域</tspan></text>
+  <line stroke="#2167A6" stroke-linecap="round" stroke-width="4" x1="752" x2="779" y1="119" y2="119" />
+  <polygon fill="#2167A6" points="768,111 768,127 782,119" />
+  <line stroke="#2167A6" stroke-linecap="round" stroke-width="4" x1="1493" x2="1520" y1="119" y2="119" />
+  <polygon fill="#2167A6" points="1509,111 1509,127 1523,119" />
+  <line stroke="#2167A6" stroke-linecap="round" stroke-width="4" x1="1138" x2="1138" y1="211" y2="257" />
+  <polygon fill="#2167A6" points="1132,249 1144,249 1138,263" />
+  <rect fill="#FAFCFE" height="804" rx="17" ry="17" stroke="#A4C8E7" stroke-width="2.2" width="702" x="46" y="270" />
+  <rect fill="#E8F2FC" height="130" rx="16" ry="16" stroke="none" stroke-width="1.6" width="700" x="47" y="271" />
+  <rect fill="#2167A6" height="56" rx="28" ry="28" stroke="none" stroke-width="1.6" width="56" x="68" y="308" />
+  <text fill="#FFFFFF" font-family="Arial Unicode MS" font-size="42" font-weight="700" text-anchor="middle" x="96" y="351">1</text>
+  <text fill="#2167A6" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="427" y="355.5">多证据空间关联</text>
+  <rect fill="#FFFFFF" height="136" rx="12" ry="12" stroke="#A4C8E7" stroke-width="1.6" width="658" x="68" y="420" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="397" y="507">1. 时空候选邻域构建</text>
+  <line stroke="#2167A6" stroke-linecap="round" stroke-width="2.4" x1="397" x2="397" y1="557" y2="568" />
+  <polygon fill="#2167A6" points="391,565 403,565 397,575" />
+  <rect fill="#FFFFFF" height="136" rx="12" ry="12" stroke="#A4C8E7" stroke-width="1.6" width="658" x="68" y="580" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="397" y="667.5">2. 长期运动与多线索一致性</text>
+  <line stroke="#2167A6" stroke-linecap="round" stroke-width="2.4" x1="397" x2="397" y1="717" y2="728" />
+  <polygon fill="#2167A6" points="391,725 403,725 397,735" />
+  <rect fill="#FFFFFF" height="136" rx="12" ry="12" stroke="#A4C8E7" stroke-width="1.6" width="658" x="68" y="740" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="397" y="827">3. 关联评分与冲突关系保留</text>
+  <rect fill="#E8F2FC" height="162" rx="11" ry="11" stroke="#A4C8E7" stroke-width="1.6" width="658" x="68" y="900" />
+  <text fill="#2167A6" font-family="Arial Unicode MS" font-size="42" font-weight="700" text-anchor="middle" x="397" y="945.5">阶段结果</text>
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="46" font-weight="700" text-anchor="middle" x="397" y="1017.5">带置信度的空间关联图 A</text>
+  <rect fill="#FAFCFE" height="804" rx="17" ry="17" stroke="#EDC19B" stroke-width="2.2" width="702" x="787" y="270" />
+  <rect fill="#FFF2E5" height="130" rx="16" ry="16" stroke="none" stroke-width="1.6" width="700" x="788" y="271" />
+  <rect fill="#CD762A" height="56" rx="28" ry="28" stroke="none" stroke-width="1.6" width="56" x="809" y="308" />
+  <text fill="#FFFFFF" font-family="Arial Unicode MS" font-size="42" font-weight="700" text-anchor="middle" x="837" y="351.5">2</text>
+  <text fill="#CD762A" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1168" y="356">部件软归属与身份维护</text>
+  <rect fill="#FFFFFF" height="136" rx="12" ry="12" stroke="#EDC19B" stroke-width="1.6" width="658" x="809" y="420" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1138" y="507.5">1. 高可信部件锚点初始化</text>
+  <line stroke="#CD762A" stroke-linecap="round" stroke-width="2.4" x1="1138" x2="1138" y1="557" y2="568" />
+  <polygon fill="#CD762A" points="1132,565 1144,565 1138,575" />
+  <rect fill="#FFFFFF" height="136" rx="12" ry="12" stroke="#EDC19B" stroke-width="1.6" width="658" x="809" y="580" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1138" y="667.5">2. 软归属与待定状态推断</text>
+  <line stroke="#CD762A" stroke-linecap="round" stroke-width="2.4" x1="1138" x2="1138" y1="717" y2="728" />
+  <polygon fill="#CD762A" points="1132,725 1144,725 1138,735" />
+  <rect fill="#FFFFFF" height="136" rx="12" ry="12" stroke="#EDC19B" stroke-width="1.6" width="658" x="809" y="740" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1138" y="827">3. 遮挡与首次显露区域维护</text>
+  <rect fill="#FFF2E5" height="162" rx="11" ry="11" stroke="#EDC19B" stroke-width="1.6" width="658" x="809" y="900" />
+  <text fill="#CD762A" font-family="Arial Unicode MS" font-size="42" font-weight="700" text-anchor="middle" x="1138" y="945.5">阶段结果</text>
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="46" font-weight="700" text-anchor="middle" x="1138" y="997.5"><tspan x="1138" y="997.5">空间归属 Z(t)、</tspan><tspan x="1138" y="1049.5">持续身份与待定关系</tspan></text>
+  <rect fill="#FAFCFE" height="804" rx="17" ry="17" stroke="#A9D9CF" stroke-width="2.2" width="702" x="1528" y="270" />
+  <rect fill="#E7F6F2" height="130" rx="16" ry="16" stroke="none" stroke-width="1.6" width="700" x="1529" y="271" />
+  <rect fill="#168477" height="56" rx="28" ry="28" stroke="none" stroke-width="1.6" width="56" x="1550" y="308" />
+  <text fill="#FFFFFF" font-family="Arial Unicode MS" font-size="42" font-weight="700" text-anchor="middle" x="1578" y="351.5">3</text>
+  <text fill="#168477" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1909" y="356">归属约束的联合恢复</text>
+  <rect fill="#FFFFFF" height="136" rx="12" ry="12" stroke="#A9D9CF" stroke-width="1.6" width="658" x="1550" y="420" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1879" y="508">1. 按部件归属生成共享门控</text>
+  <line stroke="#168477" stroke-linecap="round" stroke-width="2.4" x1="1879" x2="1879" y1="557" y2="568" />
+  <polygon fill="#168477" points="1873,565 1885,565 1879,575" />
+  <rect fill="#FFFFFF" height="136" rx="12" ry="12" stroke="#A9D9CF" stroke-width="1.6" width="658" x="1550" y="580" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1879" y="638.5"><tspan x="1879" y="638.5">2. 门控约束下的</tspan><tspan x="1879" y="696.5">几何运动优化</tspan></text>
+  <line stroke="#168477" stroke-linecap="round" stroke-width="2.4" x1="1879" x2="1879" y1="717" y2="728" />
+  <polygon fill="#168477" points="1873,725 1885,725 1879,735" />
+  <rect fill="#FFFFFF" height="136" rx="12" ry="12" stroke="#A9D9CF" stroke-width="1.6" width="658" x="1550" y="740" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1879" y="798.5"><tspan x="1879" y="798.5">3. 运动、几何与</tspan><tspan x="1879" y="856.5">归属双向更新</tspan></text>
+  <rect fill="#E7F6F2" height="162" rx="11" ry="11" stroke="#A9D9CF" stroke-width="1.6" width="658" x="1550" y="900" />
+  <text fill="#168477" font-family="Arial Unicode MS" font-size="42" font-weight="700" text-anchor="middle" x="1879" y="945.5">阶段结果</text>
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="46" font-weight="700" text-anchor="middle" x="1879" y="997.5"><tspan x="1879" y="997.5">更新的 G(t)、M(t) </tspan><tspan x="1879" y="1049.5">及信息共享范围</tspan></text>
+  <line stroke="#638BA9" stroke-linecap="round" stroke-width="5" x1="752" x2="779" y1="656" y2="656" />
+  <polygon fill="#638BA9" points="768,648 768,664 782,656" />
+  <line stroke="#638BA9" stroke-linecap="round" stroke-width="5" x1="1493" x2="1520" y1="656" y2="656" />
+  <polygon fill="#638BA9" points="1509,648 1509,664 1523,656" />
+  <rect fill="#F1F6FA" height="108" rx="12" ry="12" stroke="#C4D6E6" stroke-width="1.7" width="1988" x="146" y="1094" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="44" font-weight="700" text-anchor="middle" x="1140" y="1165">双向校正：几何 / 运动更新 → 关联权重重估 → 软归属修正 → 门控重建优化</text>
+  <path d="M 1879,1076 L 1879,1084 L 1879,1093" fill="none" stroke="#82A5BF" stroke-dasharray="7 7" stroke-width="2.4" />
+  <polygon fill="#82A5BF" points="1873,1083 1885,1083 1879,1094" />
+  <path d="M 397,1093 L 397,1084 L 397,1075" fill="none" stroke="#82A5BF" stroke-dasharray="7 7" stroke-width="2.4" />
+  <polygon fill="#82A5BF" points="391,1085 403,1085 397,1074" />
+  <rect fill="#E8F1FA" height="124" rx="14" ry="14" stroke="#97BCD9" stroke-width="1.8" width="2184" x="46" y="1220" />
+  <rect fill="#CD762A" height="124" rx="2" ry="2" stroke="none" stroke-width="1.6" width="12" x="46" y="1220" />
+  <text fill="#17324B" font-family="Arial Unicode MS" font-size="48" font-weight="700" text-anchor="middle" x="1138" y="1297.5">输出：持续对象 / 部件身份、软归属 Z(t) 与有效信息共享范围</text>
+</svg>
