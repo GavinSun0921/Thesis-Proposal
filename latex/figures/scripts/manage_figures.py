@@ -28,11 +28,12 @@ ROUTES = {
     "ch03.continuous-time-route", "ch03.object-consistency-route",
     "ch03.topology-change-route", "ch03.action-response-route",
 }
-CAIROSVG = {
+FONT_SVG = {
+    "ch01.world-model-loop",
     "ch01.reconstruction-timeline", "ch01.world-model-evolution",
-    "ch01.action-learning-timeline",
+    "ch01.action-learning-timeline", "ch02.research-framework",
+    "ch03.overall-technical-route", *ROUTES,
 }
-WEBKIT = {"ch02.research-framework", "ch03.overall-technical-route"}
 XELATEX = {"ch01.psvla-method"}
 
 
@@ -413,19 +414,15 @@ def check_project():
 
 def backend_for(figure_id: str) -> str:
     if figure_id in ROUTES:
-        return "route exporter (isolated temporary manifest)"
-    if figure_id in CAIROSVG:
-        return "CairoSVG (documented timeline conversion)"
-    if figure_id in WEBKIT:
-        return "unsupported here; preserve macOS WebKit backend"
+        return "font-aware route exporter; Computer Modern math"
+    if figure_id in FONT_SVG:
+        return "font-aware CairoSVG; Computer Modern math"
     if figure_id in XELATEX:
-        return "XeLaTeX standalone, fontset=fandol"
-    if figure_id == "ch01.world-model-loop":
-        return "unsupported; existing renderer undocumented"
+        return "XeLaTeX standalone; Times New Roman, SimSun, SimHei, Computer Modern math"
     if figure_id == "ch01.cofuse4d-method":
         return "unsupported standalone; included in main with assets"
     if figure_id == "ch01.spacecraft-maintenance":
-        return "unsupported; raster-only source"
+        return "PowerPoint source; no managed PDF exporter"
     return "unsupported; no backend configured"
 
 
@@ -483,8 +480,11 @@ def export_route(figure_id: str, entry: dict, output: Path) -> None:
         temp_source.parent.mkdir(parents=True, exist_ok=True)
         temp_output.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(exporter, temp_script)
+        shutil.copy2(exporter.with_name("figure_fonts.py"), temp_script.with_name("figure_fonts.py"))
         shutil.copy2(MANIFEST, temp_figures / "manifest.json")
         shutil.copy2(source, temp_source)
+        if output.is_file():
+            shutil.copy2(output, temp_output)
         result = subprocess.run(
             [sys.executable, str(temp_script), "--only", route_name],
             text=True, capture_output=True, check=False,
@@ -497,30 +497,42 @@ def export_route(figure_id: str, entry: dict, output: Path) -> None:
         atomic_install(temp_output, output)
 
 
+def export_font_svg(source: Path, output: Path) -> None:
+    from figure_fonts import export_svg
+    from pypdf import PdfReader
+
+    if not output.is_file():
+        raise ValueError(
+            'font-managed SVG export needs the existing PDF to preserve its page size: '
+            f'{repo_rel(output)}; restore the saved PDF before exporting'
+        )
+    with tempfile.TemporaryDirectory(prefix="manage-figure-font-svg-") as scratch:
+        generated = Path(scratch) / "figure.pdf"
+        box = PdfReader(output).pages[0].mediabox
+        export_svg(source, generated, page_size=(float(box.width), float(box.height)))
+        if not generated.is_file():
+            raise ValueError("font-aware SVG export completed without producing a PDF")
+        atomic_install(generated, output)
+
+
 def export_psvla(entry: dict, output: Path) -> None:
     xelatex = shutil.which("xelatex")
     if not xelatex:
         raise ValueError("PS-VLA export requires local XeLaTeX with ctex/Fandol fonts")
     source = figure_path(entry["source"], "PS-VLA source")
-    wrapper = r"""\documentclass[border=0pt]{standalone}
-\usepackage[UTF8,fontset=fandol]{ctex}
-\usepackage{xcolor}
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta,calc,positioning,fit,shapes.geometric}
-\pagestyle{empty}
-\begin{document}
-\input{@SOURCE@}
-\end{document}
-""".replace("@SOURCE@", source.name)
+    standalone = source.with_name("standalone.tex")
+    font_config = source.with_name("font-config.tex")
+    if not standalone.is_file() or not font_config.is_file():
+        raise ValueError("PS-VLA standalone font configuration is incomplete")
     with tempfile.TemporaryDirectory(prefix="manage-figure-psvla-") as scratch:
         work = Path(scratch)
         shutil.copy2(source, work / source.name)
-        tex = work / "standalone.tex"
-        tex.write_text(wrapper, encoding="utf-8")
+        shutil.copy2(standalone, work / standalone.name)
+        shutil.copy2(font_config, work / font_config.name)
         result = subprocess.run([
             xelatex, "-no-shell-escape", "-halt-on-error", "-interaction=nonstopmode",
-            f"-output-directory={work}", str(tex),
-        ], cwd=LATEX, text=True, capture_output=True, check=False)
+            "standalone.tex",
+        ], cwd=work, text=True, capture_output=True, check=False)
         generated = work / "standalone.pdf"
         if result.returncode or not generated.is_file():
             detail = (result.stderr or result.stdout).strip()
@@ -551,29 +563,13 @@ def run_export(figure_id: str, dry_run: bool) -> int:
         if external:
             raise ValueError("route SVG has external resource links: " + "; ".join(external))
         export_route(figure_id, entry, output)
-    elif figure_id in CAIROSVG:
+    elif figure_id in FONT_SVG:
         external = external_svg_resources(source)
         if external:
-            raise ValueError("SVG has external resource links: " + "; ".join(external))
-        try:
-            import cairosvg
-        except (ImportError, OSError) as exc:
-            raise ValueError(f"CairoSVG/Cairo required for documented export: {exc}") from exc
-        with tempfile.TemporaryDirectory(prefix="manage-figure-svg-") as scratch:
-            generated = Path(scratch) / "figure.pdf"
-            cairosvg.svg2pdf(bytestring=source.read_bytes(), write_to=str(generated))
-            if not generated.is_file():
-                raise ValueError("CairoSVG completed without producing a PDF")
-            atomic_install(generated, output)
+            raise ValueError("font-managed SVG has external resource links: " + "; ".join(external))
+        export_font_svg(source, output)
     elif figure_id in XELATEX:
         export_psvla(entry, output)
-    elif figure_id in WEBKIT:
-        raise ValueError(
-            "existing PDF uses the documented macOS WebKit backend; no WebKit exporter is configured, "
-            "so CairoSVG was not used and no file changed"
-        )
-    elif figure_id == "ch01.world-model-loop":
-        raise ValueError("existing PDF has no documented local renderer; refusing to guess a conversion")
     else:
         raise ValueError(f"no safe exporter configured for {figure_id}; no file changed")
     print("Exported declared PDF only; no preview or manifest was written.")

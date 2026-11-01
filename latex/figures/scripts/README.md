@@ -22,12 +22,13 @@ python3 -B latex/figures/scripts/manage_figures.py --export ch03.continuous-time
 python3 -B latex/figures/scripts/manage_figures.py --export ch01.psvla-method
 ```
 
-Only these backends are configured:
+Editable figure exports use one explicit font policy: Chinese text uses SimSun, Chinese headings use SimHei, Latin text and numbers use Times New Roman, and mathematical expressions use the report's default Computer Modern math fonts. Math is outlined in SVG so PDF output does not depend on a viewer's math-font fallback. The machine running the export must have the three text font families installed and fontconfig's `fc-match` available. Before writing a PDF, `figure_fonts.py` verifies that each requested family resolves to that family; missing fonts or a missing checker cause an explicit error instead of silent Cairo fallback.
 
-- The three Chapter 1 clean timeline SVGs use CairoSVG, matching their documented conversion.
-- The four detailed Chapter 3 routes delegate to `export_route_diagrams.py` in a temporary copy of the source, exporter, and manifest. Only the resulting PDF is copied to the declared output, so the primary manifest is not rewritten.
-- PS-VLA uses local XeLaTeX in a temporary directory with `ctex` and the report's `fontset=fandol` configuration. The source is compiled as-is; fonts and source text are not normalized.
+Configured backends:
 
-The research framework and overall route preserve their documented macOS WebKit provenance. This CLI has no WebKit exporter, so their exports fail clearly instead of using CairoSVG. The world-model-loop PDF has no documented local renderer and is also not regenerated here. CoFuse4D is compiled as part of the main report with its adjacent assets; the spacecraft infographic has no editable source. These cases are intentionally unsupported until their original build paths are established.
+- Font-managed SVG figures use CairoSVG through `figure_fonts.py`, preserving the existing PDF page size when replacing it. The manager requires the saved PDF for these general SVG exports; if it is absent, restore it before exporting. Page dimensions are not yet stored separately in the manifest. The helper can take an explicit `page_size`; without one or an existing target PDF it uses the SVG canvas size. Chapter 3's four detailed route exports also validate their source geometry and label-font policy and preserve the saved PDF size when present.
+- PS-VLA uses XeLaTeX with the adjacent standalone and font configuration files, matching the report's text and math fonts.
+
+CoFuse4D is compiled as part of the main report with its adjacent assets. The spacecraft infographic is maintained in PowerPoint; the current PDF is used directly, with no managed PPTX-to-PDF export configured.
 
 An explicit export replaces only that figure's declared PDF. It does not render previews, download material, or update the manifest; the manifest owner must update any recorded hashes after reviewing an export. Export dependencies are loaded only for the selected backend. No export command is run by `--check`, `--inventory`, or `--list`.

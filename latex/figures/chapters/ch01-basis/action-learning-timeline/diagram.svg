@@ -1,120 +1,313 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="2050" height="1335" viewBox="0 -110 2050 1335">
-<title>具身操作中的动作学习：代表性工作与发展脉络</title>
-<defs><marker id="ax" markerWidth="11" markerHeight="11" refX="10" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#1A2B49" /></marker><filter id="shadow" x="-14%" y="-25%" width="130%" height="160%"><feGaussianBlur in="SourceAlpha" stdDeviation="1.7" result="b" /><feOffset in="b" dy="2" dx="1" result="off" /><feComponentTransfer in="off" result="a"><feFuncA type="linear" slope="0.12" /></feComponentTransfer><feMerge><feMergeNode in="a" /><feMergeNode in="SourceGraphic" /></feMerge></filter></defs>
-<rect width="2050" height="1285" fill="#FFFFFF" y="-60" />
-<rect x="35" y="-55" width="620" height="246" fill="#FFFFFF" opacity="0.94" /><rect x="55" y="-35" width="40" height="40" rx="5" fill="#E2ECF9" stroke="#86A2D8" stroke-width="2" />
-<text x="112" y="-5" fill="#2A3950" font-family="Noto Sans CJK SC" font-size="46" font-weight="600">直接策略与动作生成</text>
-<rect x="55" y="27" width="40" height="40" rx="5" fill="#E3F1E6" stroke="#89BC9B" stroke-width="2" />
-<text x="112" y="57" fill="#2A3950" font-family="Noto Sans CJK SC" font-size="46" font-weight="600">预测辅助决策</text>
-<rect x="55" y="89" width="40" height="40" rx="5" fill="#F0E7FA" stroke="#AE91D7" stroke-width="2" />
-<text x="112" y="119" fill="#2A3950" font-family="Noto Sans CJK SC" font-size="46" font-weight="600">世界—动作联合生成</text>
-<line x1="175" y1="-180" x2="175" y2="1147" stroke="#D5DFEB" stroke-width="2" stroke-dasharray="5 11" />
-<line x1="505" y1="-180" x2="505" y2="1147" stroke="#D5DFEB" stroke-width="2" stroke-dasharray="5 11" />
-<line x1="835" y1="-180" x2="835" y2="1147" stroke="#D5DFEB" stroke-width="2" stroke-dasharray="5 11" />
-<line x1="1165" y1="-180" x2="1165" y2="1147" stroke="#D5DFEB" stroke-width="2" stroke-dasharray="5 11" />
-<line x1="1495" y1="-180" x2="1495" y2="1147" stroke="#D5DFEB" stroke-width="2" stroke-dasharray="5 11" />
-<line x1="1825" y1="-180" x2="1825" y2="1147" stroke="#D5DFEB" stroke-width="2" stroke-dasharray="5 11" />
-<polyline points="175.00,1022.69 505.00,959.46 835.00,885.96 1165.00,825.11 1495.00,652.81" fill="none" stroke="#9AA3AD" opacity="0.80" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
-<circle cx="175.00" cy="1022.69" r="8" fill="#858F9A" stroke="white" stroke-width="3" opacity="0.9" />
-<circle cx="505.00" cy="959.46" r="8" fill="#858F9A" stroke="white" stroke-width="3" opacity="0.9" />
-<circle cx="835.00" cy="885.96" r="8" fill="#858F9A" stroke="white" stroke-width="3" opacity="0.9" />
-<circle cx="1165.00" cy="825.11" r="8" fill="#858F9A" stroke="white" stroke-width="3" opacity="0.9" />
-<circle cx="1495.00" cy="652.81" r="8" fill="#858F9A" stroke="white" stroke-width="3" opacity="0.9" />
-<g id="forecast-2026">
-  <path d="M 1495 652.81 L 1825 -50" fill="none" stroke="#9AA3AD" stroke-width="8" stroke-dasharray="10 9" opacity="0.75" stroke-linecap="round"/>
-  <circle cx="1825" cy="-50" r="9" fill="white" stroke="#9AA3AD" stroke-width="4" opacity="0.95"/>
-  <text x="1825" y="-78" font-family="Arial Unicode MS" font-size="36" font-weight="700" text-anchor="middle" fill="#36445A">2026 预测 ≈800</text>
-</g>
-<g filter="url(#shadow)"><rect x="14.0" y="1035.0" width="322" height="100" rx="8" fill="#E3F1E6" stroke="#89BC9B" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
-<text x="175" y="1079.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">Dreamer</text>
-<text x="175" y="1109" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">ICLR 2020</text>
-<g filter="url(#shadow)"><rect x="344.0" y="1035.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
-<text x="505" y="1079.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">PerAct</text>
-<text x="505" y="1109" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">CoRL 2022</text>
-<g filter="url(#shadow)"><rect x="344.0" y="920.0" width="322" height="100" rx="8" fill="#E3F1E6" stroke="#89BC9B" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
-<text x="505" y="964.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="28.3" text-anchor="middle" fill="#152238" font-weight="700">DayDreamer</text>
-<text x="505" y="994" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">CoRL 2022</text>
-<g filter="url(#shadow)"><rect x="674.0" y="1035.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
-<text x="835" y="1079.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="24.8" text-anchor="middle" fill="#152238" font-weight="700">Diffusion Policy</text>
-<text x="835" y="1109" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">RSS 2023</text>
-<g filter="url(#shadow)"><rect x="674.0" y="920.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
-<text x="835" y="964.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">RT-2</text>
-<text x="835" y="994" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">CoRL 2023</text>
-<g filter="url(#shadow)"><rect x="674.0" y="805.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
-<text x="835" y="849.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">RVT</text>
-<text x="835" y="879" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">CoRL 2023</text>
-<g filter="url(#shadow)"><rect x="1004.0" y="1035.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
-<text x="1165" y="1079.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="27.1" text-anchor="middle" fill="#152238" font-weight="700">RoboFlamingo</text>
-<text x="1165" y="1109" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">ICLR 2024</text>
-<g filter="url(#shadow)"><rect x="1004.0" y="920.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
-<text x="1165" y="964.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">RVT-2</text>
-<text x="1165" y="994" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">RSS 2024</text>
-<g filter="url(#shadow)"><rect x="1004.0" y="805.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
-<text x="1165" y="849.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">Octo</text>
-<text x="1165" y="879" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">RSS 2024</text>
-<g filter="url(#shadow)"><rect x="1004.0" y="690.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
-<text x="1165" y="734.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">OpenVLA</text>
-<text x="1165" y="764" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">CoRL 2024</text>
-<g filter="url(#shadow)"><rect x="1334.0" y="1035.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
-<text x="1495" y="1079.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">π0</text>
-<text x="1495" y="1109" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">RSS 2025</text>
-<g filter="url(#shadow)"><rect x="1334.0" y="920.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
-<text x="1495" y="964.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">BridgeVLA</text>
-<text x="1495" y="994" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">NeurIPS 2025</text>
-<g filter="url(#shadow)"><rect x="1334.0" y="805.0" width="322" height="100" rx="8" fill="#E3F1E6" stroke="#89BC9B" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
-<text x="1495" y="849.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">DINO-WM</text>
-<text x="1495" y="879" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">ICML 2025</text>
-<g filter="url(#shadow)"><rect x="1334.0" y="690.0" width="322" height="100" rx="8" fill="#F0E7FA" stroke="#AE91D7" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
-<text x="1495" y="734.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">WorldVLA</text>
-<text x="1495" y="764" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">arXiv 2025†</text>
-<g filter="url(#shadow)"><rect x="1664.0" y="1035.0" width="322" height="100" rx="8" fill="#E3F1E6" stroke="#89BC9B" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
-<text x="1825" y="1079.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="28.3" text-anchor="middle" fill="#152238" font-weight="700">PointWorld</text>
-<text x="1825" y="1109" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">CVPR 2026</text>
-<g filter="url(#shadow)"><rect x="1664.0" y="920.0" width="322" height="100" rx="8" fill="#E3F1E6" stroke="#89BC9B" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
-<text x="1825" y="964.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">SIMPACT</text>
-<text x="1825" y="994" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">CVPR 2026</text>
-<g filter="url(#shadow)"><rect x="1664.0" y="805.0" width="322" height="100" rx="8" fill="#E3F1E6" stroke="#89BC9B" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
-<text x="1825" y="849.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">VLA-MBPO</text>
-<text x="1825" y="879" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">ICML 2026</text>
-<g filter="url(#shadow)"><rect x="1664.0" y="690.0" width="322" height="100" rx="8" fill="#F0E7FA" stroke="#AE91D7" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
-<text x="1825" y="734.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">Motus</text>
-<text x="1825" y="764" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">CVPR 2026</text>
-<g filter="url(#shadow)"><rect x="1664.0" y="575.0" width="322" height="100" rx="8" fill="#F0E7FA" stroke="#AE91D7" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
-<text x="1825" y="619.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">VITA</text>
-<text x="1825" y="649" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">CVPR 2026</text>
-<g filter="url(#shadow)"><rect x="1664.0" y="460.0" width="322" height="100" rx="8" fill="#F0E7FA" stroke="#AE91D7" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
-<text x="1825" y="504.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">MM-ACT</text>
-<text x="1825" y="534" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">CVPR 2026</text>
-<g filter="url(#shadow)"><rect x="1664.0" y="345.0" width="322" height="100" rx="8" fill="#F0E7FA" stroke="#AE91D7" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
-<text x="1825" y="389.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">DreamZero</text>
-<text x="1825" y="419" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">arXiv 2026†</text>
-<g filter="url(#shadow)"><rect x="1664.0" y="230.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
-<text x="1825" y="274.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="24.8" text-anchor="middle" fill="#152238" font-weight="700">Action-Sketcher</text>
-<text x="1825" y="304" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">CVPR 2026</text>
-<g filter="url(#shadow)"><rect x="1664.0" y="115.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
-<text x="1825" y="159.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="22.4" text-anchor="middle" fill="#152238" font-weight="700">Move-Then-Operate</text>
-<text x="1825" y="189" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">ICML 2026</text>
-<g filter="url(#shadow)"><rect x="1664.0" y="0.0" width="322" height="100" rx="8" fill="#F0E7FA" stroke="#AE91D7" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" /></g>
-<text x="1825" y="44.0" font-family="Noto Sans CJK SC,DejaVu Sans" font-size="30.7" text-anchor="middle" fill="#152238" font-weight="700">WLA-0</text>
-<text x="1825" y="74" font-family="DejaVu Sans,Noto Sans CJK SC" font-size="26" text-anchor="middle" fill="#334155">arXiv 2026†</text>
-<line x1="50" y1="1172" x2="1982" y2="1172" stroke="#1A2B49" stroke-width="4" marker-end="url(#ax)" />
-<line x1="175" y1="1148" x2="175" y2="1158" stroke="#1A2B49" stroke-width="2" />
-<rect x="119" y="1149" width="112" height="45" rx="22" fill="white" stroke="#1A2B49" stroke-width="2.5" />
-<text x="175" y="1180" text-anchor="middle" font-family="DejaVu Sans,Noto Sans CJK SC" font-weight="700" font-size="26.0" fill="#1A2B49">2020</text>
-<line x1="505" y1="1148" x2="505" y2="1158" stroke="#1A2B49" stroke-width="2" />
-<rect x="449" y="1149" width="112" height="45" rx="22" fill="white" stroke="#1A2B49" stroke-width="2.5" />
-<text x="505" y="1180" text-anchor="middle" font-family="DejaVu Sans,Noto Sans CJK SC" font-weight="700" font-size="26.0" fill="#1A2B49">2022</text>
-<line x1="835" y1="1148" x2="835" y2="1158" stroke="#1A2B49" stroke-width="2" />
-<rect x="779" y="1149" width="112" height="45" rx="22" fill="white" stroke="#1A2B49" stroke-width="2.5" />
-<text x="835" y="1180" text-anchor="middle" font-family="DejaVu Sans,Noto Sans CJK SC" font-weight="700" font-size="26.0" fill="#1A2B49">2023</text>
-<line x1="1165" y1="1148" x2="1165" y2="1158" stroke="#1A2B49" stroke-width="2" />
-<rect x="1109" y="1149" width="112" height="45" rx="22" fill="white" stroke="#1A2B49" stroke-width="2.5" />
-<text x="1165" y="1180" text-anchor="middle" font-family="DejaVu Sans,Noto Sans CJK SC" font-weight="700" font-size="26.0" fill="#1A2B49">2024</text>
-<line x1="1495" y1="1148" x2="1495" y2="1158" stroke="#1A2B49" stroke-width="2" />
-<rect x="1439" y="1149" width="112" height="45" rx="22" fill="white" stroke="#1A2B49" stroke-width="2.5" />
-<text x="1495" y="1180" text-anchor="middle" font-family="DejaVu Sans,Noto Sans CJK SC" font-weight="700" font-size="26.0" fill="#1A2B49">2025</text>
-<line x1="1825" y1="1148" x2="1825" y2="1158" stroke="#1A2B49" stroke-width="2" />
-<rect x="1769" y="1149" width="112" height="45" rx="22" fill="white" stroke="#1A2B49" stroke-width="2.5" />
-<text x="1825" y="1180" text-anchor="middle" font-family="DejaVu Sans,Noto Sans CJK SC" font-weight="700" font-size="26.0" fill="#1A2B49">2026</text>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2050" height="1335" viewBox="0 -110 2050 1335" data-font-policy="SimSun / SimHei / Times New Roman / Computer Modern">
+  <title>具身操作中的动作学习：代表性工作与发展脉络</title>
+  <defs>
+    <marker id="ax" markerWidth="11" markerHeight="11" refX="10" refY="5" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#1A2B49" />
+    </marker>
+    <filter id="shadow" x="-14%" y="-25%" width="130%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.7" result="b" />
+      <feOffset in="b" dy="2" dx="1" result="off" />
+      <feComponentTransfer in="off" result="a">
+        <feFuncA type="linear" slope="0.12" />
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="a" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="2050" height="1285" fill="#FFFFFF" y="-60" />
+  <rect x="35" y="-55" width="620" height="246" fill="#FFFFFF" opacity="0.94" />
+  <rect x="55" y="-35" width="40" height="40" rx="5" fill="#E2ECF9" stroke="#86A2D8" stroke-width="2" />
+  <g fill="#2A3950" font-size="46" data-figure-label="true" aria-label="直接策略与动作生成" data-text-anchor="start" data-font-role="heading" font-family="SimSun">
+    <text font-family="SimHei" font-size="46.0" font-weight="400" font-style="normal" text-anchor="start" fill="#2A3950" xml:space="preserve" x="112.000000" y="-5.000000">直接策略与动作生成</text>
+  </g>
+  <rect x="55" y="27" width="40" height="40" rx="5" fill="#E3F1E6" stroke="#89BC9B" stroke-width="2" />
+  <g fill="#2A3950" font-size="46" data-figure-label="true" aria-label="预测辅助决策" data-text-anchor="start" data-font-role="heading" font-family="SimSun">
+    <text font-family="SimHei" font-size="46.0" font-weight="400" font-style="normal" text-anchor="start" fill="#2A3950" xml:space="preserve" x="112.000000" y="57.000000">预测辅助决策</text>
+  </g>
+  <rect x="55" y="89" width="40" height="40" rx="5" fill="#F0E7FA" stroke="#AE91D7" stroke-width="2" />
+  <g fill="#2A3950" font-size="46" data-figure-label="true" aria-label="世界—动作联合生成" data-text-anchor="start" data-font-role="heading" font-family="SimSun">
+    <text font-family="SimHei" font-size="46.0" font-weight="400" font-style="normal" text-anchor="start" fill="#2A3950" xml:space="preserve" x="112.000000" y="119.000000">世界</text>
+    <text font-family="Times New Roman" font-size="46.0" font-weight="600" font-style="normal" text-anchor="start" fill="#2A3950" xml:space="preserve" x="204.000000" y="119.000000">—</text>
+    <text font-family="SimHei" font-size="46.0" font-weight="400" font-style="normal" text-anchor="start" fill="#2A3950" xml:space="preserve" x="250.875977" y="119.000000">动作联合生成</text>
+  </g>
+  <line x1="175" y1="-180" x2="175" y2="1147" stroke="#D5DFEB" stroke-width="2" stroke-dasharray="5 11" />
+  <line x1="505" y1="-180" x2="505" y2="1147" stroke="#D5DFEB" stroke-width="2" stroke-dasharray="5 11" />
+  <line x1="835" y1="-180" x2="835" y2="1147" stroke="#D5DFEB" stroke-width="2" stroke-dasharray="5 11" />
+  <line x1="1165" y1="-180" x2="1165" y2="1147" stroke="#D5DFEB" stroke-width="2" stroke-dasharray="5 11" />
+  <line x1="1495" y1="-180" x2="1495" y2="1147" stroke="#D5DFEB" stroke-width="2" stroke-dasharray="5 11" />
+  <line x1="1825" y1="-180" x2="1825" y2="1147" stroke="#D5DFEB" stroke-width="2" stroke-dasharray="5 11" />
+  <polyline points="175.00,1022.69 505.00,959.46 835.00,885.96 1165.00,825.11 1495.00,652.81" fill="none" stroke="#9AA3AD" opacity="0.80" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="175.00" cy="1022.69" r="8" fill="#858F9A" stroke="white" stroke-width="3" opacity="0.9" />
+  <circle cx="505.00" cy="959.46" r="8" fill="#858F9A" stroke="white" stroke-width="3" opacity="0.9" />
+  <circle cx="835.00" cy="885.96" r="8" fill="#858F9A" stroke="white" stroke-width="3" opacity="0.9" />
+  <circle cx="1165.00" cy="825.11" r="8" fill="#858F9A" stroke="white" stroke-width="3" opacity="0.9" />
+  <circle cx="1495.00" cy="652.81" r="8" fill="#858F9A" stroke="white" stroke-width="3" opacity="0.9" />
+  <g id="forecast-2026">
+    <path d="M 1495 652.81 L 1825 -50" fill="none" stroke="#9AA3AD" stroke-width="8" stroke-dasharray="10 9" opacity="0.75" stroke-linecap="round" />
+    <circle cx="1825" cy="-50" r="9" fill="white" stroke="#9AA3AD" stroke-width="4" opacity="0.95" />
+    <g font-size="36" fill="#36445A" data-figure-label="true" aria-label="2026 预测 ≈800" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+      <text font-family="Times New Roman" font-size="36.0" font-weight="700" font-style="normal" text-anchor="start" fill="#36445A" xml:space="preserve" x="1707.121094" y="-78.000000">2026 </text>
+      <text font-family="SimSun" font-size="36.0" font-weight="400" font-style="normal" text-anchor="start" fill="#36445A" xml:space="preserve" x="1788.121094" y="-78.000000">预测</text>
+      <text font-family="Times New Roman" font-size="36.0" font-weight="700" font-style="normal" text-anchor="start" fill="#36445A" xml:space="preserve" x="1860.121094" y="-78.000000"> ≈800</text>
+    </g>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="14.0" y="1035.0" width="322" height="100" rx="8" fill="#E3F1E6" stroke="#89BC9B" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" />
+  </g>
+  <g font-size="30.7" fill="#152238" data-figure-label="true" aria-label="Dreamer" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="30.7" font-weight="700" font-style="normal" text-anchor="start" fill="#152238" xml:space="preserve" x="116.200806" y="1079.000000">Dreamer</text>
+  </g>
+  <g font-size="26" fill="#334155" data-figure-label="true" aria-label="ICLR 2020" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="400" font-style="normal" text-anchor="start" fill="#334155" xml:space="preserve" x="116.138184" y="1109.000000">ICLR 2020</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="344.0" y="1035.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" />
+  </g>
+  <g font-size="30.7" fill="#152238" data-figure-label="true" aria-label="PerAct" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="30.7" font-weight="700" font-style="normal" text-anchor="start" fill="#152238" xml:space="preserve" x="458.987476" y="1079.000000">PerAct</text>
+  </g>
+  <g font-size="26" fill="#334155" data-figure-label="true" aria-label="CoRL 2022" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="400" font-style="normal" text-anchor="start" fill="#334155" xml:space="preserve" x="443.967285" y="1109.000000">CoRL 2022</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="344.0" y="920.0" width="322" height="100" rx="8" fill="#E3F1E6" stroke="#89BC9B" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" />
+  </g>
+  <g font-size="28.3" fill="#152238" data-figure-label="true" aria-label="DayDreamer" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="28.3" font-weight="700" font-style="normal" text-anchor="start" fill="#152238" xml:space="preserve" x="426.428809" y="964.000000">DayDreamer</text>
+  </g>
+  <g font-size="26" fill="#334155" data-figure-label="true" aria-label="CoRL 2022" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="400" font-style="normal" text-anchor="start" fill="#334155" xml:space="preserve" x="443.967285" y="994.000000">CoRL 2022</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="674.0" y="1035.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" />
+  </g>
+  <g font-size="24.8" fill="#152238" data-figure-label="true" aria-label="Diffusion Policy" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="24.8" font-weight="700" font-style="normal" text-anchor="start" fill="#152238" xml:space="preserve" x="749.568359" y="1079.000000">Diffusion Policy</text>
+  </g>
+  <g font-size="26" fill="#334155" data-figure-label="true" aria-label="RSS 2023" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="400" font-style="normal" text-anchor="start" fill="#334155" xml:space="preserve" x="782.619141" y="1109.000000">RSS 2023</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="674.0" y="920.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" />
+  </g>
+  <g font-size="30.7" fill="#152238" data-figure-label="true" aria-label="RT-2" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="30.7" font-weight="700" font-style="normal" text-anchor="start" fill="#152238" xml:space="preserve" x="800.889722" y="964.000000">RT-2</text>
+  </g>
+  <g font-size="26" fill="#334155" data-figure-label="true" aria-label="CoRL 2023" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="400" font-style="normal" text-anchor="start" fill="#334155" xml:space="preserve" x="773.967285" y="994.000000">CoRL 2023</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="674.0" y="805.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" />
+  </g>
+  <g font-size="30.7" fill="#152238" data-figure-label="true" aria-label="RVT" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="30.7" font-weight="700" font-style="normal" text-anchor="start" fill="#152238" xml:space="preserve" x="802.591113" y="849.000000">RVT</text>
+  </g>
+  <g font-size="26" fill="#334155" data-figure-label="true" aria-label="CoRL 2023" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="400" font-style="normal" text-anchor="start" fill="#334155" xml:space="preserve" x="773.967285" y="879.000000">CoRL 2023</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1004.0" y="1035.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" />
+  </g>
+  <g font-size="27.1" fill="#152238" data-figure-label="true" aria-label="RoboFlamingo" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="27.1" font-weight="700" font-style="normal" text-anchor="start" fill="#152238" xml:space="preserve" x="1079.174512" y="1079.000000">RoboFlamingo</text>
+  </g>
+  <g font-size="26" fill="#334155" data-figure-label="true" aria-label="ICLR 2024" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="400" font-style="normal" text-anchor="start" fill="#334155" xml:space="preserve" x="1106.138184" y="1109.000000">ICLR 2024</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1004.0" y="920.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" />
+  </g>
+  <g font-size="30.7" fill="#152238" data-figure-label="true" aria-label="RVT-2" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="30.7" font-weight="700" font-style="normal" text-anchor="start" fill="#152238" xml:space="preserve" x="1119.804443" y="964.000000">RVT-2</text>
+  </g>
+  <g font-size="26" fill="#334155" data-figure-label="true" aria-label="RSS 2024" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="400" font-style="normal" text-anchor="start" fill="#334155" xml:space="preserve" x="1112.619141" y="994.000000">RSS 2024</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1004.0" y="805.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" />
+  </g>
+  <g font-size="30.7" fill="#152238" data-figure-label="true" aria-label="Octo" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="30.7" font-weight="700" font-style="normal" text-anchor="start" fill="#152238" xml:space="preserve" x="1133.460547" y="849.000000">Octo</text>
+  </g>
+  <g font-size="26" fill="#334155" data-figure-label="true" aria-label="RSS 2024" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="400" font-style="normal" text-anchor="start" fill="#334155" xml:space="preserve" x="1112.619141" y="879.000000">RSS 2024</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1004.0" y="690.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" />
+  </g>
+  <g font-size="30.7" fill="#152238" data-figure-label="true" aria-label="OpenVLA" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="30.7" font-weight="700" font-style="normal" text-anchor="start" fill="#152238" xml:space="preserve" x="1096.764453" y="734.000000">OpenVLA</text>
+  </g>
+  <g font-size="26" fill="#334155" data-figure-label="true" aria-label="CoRL 2024" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="400" font-style="normal" text-anchor="start" fill="#334155" xml:space="preserve" x="1103.967285" y="764.000000">CoRL 2024</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1334.0" y="1035.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" />
+  </g>
+  <g data-latex="\pi_0" data-math-font="Computer Modern" data-font-size="30.7" fill="#152238" data-figure-label="true" aria-label="π₀" data-text-anchor="middle" data-font-role="body">
+    <svg version="1.1" width="31.272248" height="17.822946" viewBox="-72 -72 10.148344 5.783841" x="1479.363876" y="1065.781992" overflow="visible">
+      <defs>
+        <path id="math-2d28a27ac7-8-g0-25" d="M2.6401-3.716065H3.765878C3.437111-2.241594 3.347447-1.8132 3.347447-1.145704C3.347447-.996264 3.347447-.727273 3.427148-.388543C3.526775 .049813 3.636364 .109589 3.785803 .109589C3.985056 .109589 4.194271-.069738 4.194271-.268991C4.194271-.328767 4.194271-.348692 4.134496-.488169C3.845579-1.205479 3.845579-1.853051 3.845579-2.132005C3.845579-2.660025 3.915318-3.198007 4.024907-3.716065H5.160648C5.290162-3.716065 5.648817-3.716065 5.648817-4.054795C5.648817-4.293898 5.439601-4.293898 5.250311-4.293898H1.912827C1.693649-4.293898 1.315068-4.293898 .876712-3.825654C.52802-3.437111 .268991-2.978829 .268991-2.929016C.268991-2.919054 .268991-2.82939 .388543-2.82939C.468244-2.82939 .488169-2.86924 .547945-2.948941C1.036115-3.716065 1.613948-3.716065 1.8132-3.716065H2.381071C2.062267-2.510585 1.524284-1.305106 1.105853-.398506C1.026152-.249066 1.026152-.229141 1.026152-.159402C1.026152 .029888 1.185554 .109589 1.315068 .109589C1.613948 .109589 1.693649-.169365 1.8132-.537983C1.952677-.996264 1.952677-1.016189 2.082192-1.514321L2.6401-3.716065Z" />
+        <path id="math-2d28a27ac7-8-g1-48" d="M3.598506-2.224658C3.598506-2.991781 3.507846-3.542715 3.187049-4.030884C2.970859-4.351681 2.538481-4.630635 1.980573-4.630635C.36264-4.630635 .36264-2.726775 .36264-2.224658S.36264 .139477 1.980573 .139477S3.598506-1.72254 3.598506-2.224658ZM1.980573-.055791C1.659776-.055791 1.234371-.244085 1.094894-.81594C.99726-1.227397 .99726-1.799253 .99726-2.315318C.99726-2.824408 .99726-3.354421 1.101868-3.737983C1.248319-4.288917 1.694645-4.435367 1.980573-4.435367C2.357161-4.435367 2.719801-4.20523 2.84533-3.800747C2.956912-3.424159 2.963885-2.922042 2.963885-2.315318C2.963885-1.799253 2.963885-1.283188 2.873225-.843836C2.733748-.209215 2.259527-.055791 1.980573-.055791Z" />
+      </defs>
+      <g id="math-2d28a27ac7-8-page1">
+        <use x="-72.000004" y="-67.710548" xlink:href="#math-2d28a27ac7-8-g0-25" />
+        <use x="-66.321027" y="-66.216167" xlink:href="#math-2d28a27ac7-8-g1-48" />
+      </g>
+    </svg>
+  </g>
+  <g font-size="26" fill="#334155" data-figure-label="true" aria-label="RSS 2025" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="400" font-style="normal" text-anchor="start" fill="#334155" xml:space="preserve" x="1442.619141" y="1109.000000">RSS 2025</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1334.0" y="920.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" />
+  </g>
+  <g font-size="30.7" fill="#152238" data-figure-label="true" aria-label="BridgeVLA" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="30.7" font-weight="700" font-style="normal" text-anchor="start" fill="#152238" xml:space="preserve" x="1418.250000" y="964.000000">BridgeVLA</text>
+  </g>
+  <g font-size="26" fill="#334155" data-figure-label="true" aria-label="NeurIPS 2025" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="400" font-style="normal" text-anchor="start" fill="#334155" xml:space="preserve" x="1420.973633" y="994.000000">NeurIPS 2025</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1334.0" y="805.0" width="322" height="100" rx="8" fill="#E3F1E6" stroke="#89BC9B" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" />
+  </g>
+  <g font-size="30.7" fill="#152238" data-figure-label="true" aria-label="DINO-WM" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="30.7" font-weight="700" font-style="normal" text-anchor="start" fill="#152238" xml:space="preserve" x="1419.966382" y="849.000000">DINO-WM</text>
+  </g>
+  <g font-size="26" fill="#334155" data-figure-label="true" aria-label="ICML 2025" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="400" font-style="normal" text-anchor="start" fill="#334155" xml:space="preserve" x="1433.250000" y="879.000000">ICML 2025</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1334.0" y="690.0" width="322" height="100" rx="8" fill="#F0E7FA" stroke="#AE91D7" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" />
+  </g>
+  <g font-size="30.7" fill="#152238" data-figure-label="true" aria-label="WorldVLA" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="30.7" font-weight="700" font-style="normal" text-anchor="start" fill="#152238" xml:space="preserve" x="1419.951392" y="734.000000">WorldVLA</text>
+  </g>
+  <g font-size="26" fill="#334155" data-figure-label="true" aria-label="arXiv 2025†" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="400" font-style="normal" text-anchor="start" fill="#334155" xml:space="preserve" x="1429.650879" y="764.000000">arXiv 2025†</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1664.0" y="1035.0" width="322" height="100" rx="8" fill="#E3F1E6" stroke="#89BC9B" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" />
+  </g>
+  <g font-size="28.3" fill="#152238" data-figure-label="true" aria-label="PointWorld" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="28.3" font-weight="700" font-style="normal" text-anchor="start" fill="#152238" xml:space="preserve" x="1753.462354" y="1079.000000">PointWorld</text>
+  </g>
+  <g font-size="26" fill="#334155" data-figure-label="true" aria-label="CVPR 2026" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="400" font-style="normal" text-anchor="start" fill="#334155" xml:space="preserve" x="1761.790039" y="1109.000000">CVPR 2026</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1664.0" y="920.0" width="322" height="100" rx="8" fill="#E3F1E6" stroke="#89BC9B" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" />
+  </g>
+  <g font-size="30.7" fill="#152238" data-figure-label="true" aria-label="SIMPACT" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="30.7" font-weight="700" font-style="normal" text-anchor="start" fill="#152238" xml:space="preserve" x="1754.216113" y="964.000000">SIMPACT</text>
+  </g>
+  <g font-size="26" fill="#334155" data-figure-label="true" aria-label="CVPR 2026" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="400" font-style="normal" text-anchor="start" fill="#334155" xml:space="preserve" x="1761.790039" y="994.000000">CVPR 2026</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1664.0" y="805.0" width="322" height="100" rx="8" fill="#E3F1E6" stroke="#89BC9B" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" />
+  </g>
+  <g font-size="30.7" fill="#152238" data-figure-label="true" aria-label="VLA-MBPO" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="30.7" font-weight="700" font-style="normal" text-anchor="start" fill="#152238" xml:space="preserve" x="1741.436938" y="849.000000">VLA-MBPO</text>
+  </g>
+  <g font-size="26" fill="#334155" data-figure-label="true" aria-label="ICML 2026" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="400" font-style="normal" text-anchor="start" fill="#334155" xml:space="preserve" x="1763.250000" y="879.000000">ICML 2026</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1664.0" y="690.0" width="322" height="100" rx="8" fill="#F0E7FA" stroke="#AE91D7" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" />
+  </g>
+  <g font-size="30.7" fill="#152238" data-figure-label="true" aria-label="Motus" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="30.7" font-weight="700" font-style="normal" text-anchor="start" fill="#152238" xml:space="preserve" x="1783.214722" y="734.000000">Motus</text>
+  </g>
+  <g font-size="26" fill="#334155" data-figure-label="true" aria-label="CVPR 2026" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="400" font-style="normal" text-anchor="start" fill="#334155" xml:space="preserve" x="1761.790039" y="764.000000">CVPR 2026</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1664.0" y="575.0" width="322" height="100" rx="8" fill="#F0E7FA" stroke="#AE91D7" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" />
+  </g>
+  <g font-size="30.7" fill="#152238" data-figure-label="true" aria-label="VITA" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="30.7" font-weight="700" font-style="normal" text-anchor="start" fill="#152238" xml:space="preserve" x="1786.617505" y="619.000000">VITA</text>
+  </g>
+  <g font-size="26" fill="#334155" data-figure-label="true" aria-label="CVPR 2026" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="400" font-style="normal" text-anchor="start" fill="#334155" xml:space="preserve" x="1761.790039" y="649.000000">CVPR 2026</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1664.0" y="460.0" width="322" height="100" rx="8" fill="#F0E7FA" stroke="#AE91D7" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" />
+  </g>
+  <g font-size="30.7" fill="#152238" data-figure-label="true" aria-label="MM-ACT" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="30.7" font-weight="700" font-style="normal" text-anchor="start" fill="#152238" xml:space="preserve" x="1758.503320" y="504.000000">MM-ACT</text>
+  </g>
+  <g font-size="26" fill="#334155" data-figure-label="true" aria-label="CVPR 2026" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="400" font-style="normal" text-anchor="start" fill="#334155" xml:space="preserve" x="1761.790039" y="534.000000">CVPR 2026</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1664.0" y="345.0" width="322" height="100" rx="8" fill="#F0E7FA" stroke="#AE91D7" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" />
+  </g>
+  <g font-size="30.7" fill="#152238" data-figure-label="true" aria-label="DreamZero" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="30.7" font-weight="700" font-style="normal" text-anchor="start" fill="#152238" xml:space="preserve" x="1748.287476" y="389.000000">DreamZero</text>
+  </g>
+  <g font-size="26" fill="#334155" data-figure-label="true" aria-label="arXiv 2026†" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="400" font-style="normal" text-anchor="start" fill="#334155" xml:space="preserve" x="1759.650879" y="419.000000">arXiv 2026†</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1664.0" y="230.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" />
+  </g>
+  <g font-size="24.8" fill="#152238" data-figure-label="true" aria-label="Action-Sketcher" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="24.8" font-weight="700" font-style="normal" text-anchor="start" fill="#152238" xml:space="preserve" x="1738.908398" y="274.000000">Action-Sketcher</text>
+  </g>
+  <g font-size="26" fill="#334155" data-figure-label="true" aria-label="CVPR 2026" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="400" font-style="normal" text-anchor="start" fill="#334155" xml:space="preserve" x="1761.790039" y="304.000000">CVPR 2026</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1664.0" y="115.0" width="322" height="100" rx="8" fill="#E2ECF9" stroke="#86A2D8" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" />
+  </g>
+  <g font-size="22.4" fill="#152238" data-figure-label="true" aria-label="Move-Then-Operate" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="22.4" font-weight="700" font-style="normal" text-anchor="start" fill="#152238" xml:space="preserve" x="1726.715625" y="159.000000">Move-Then-Operate</text>
+  </g>
+  <g font-size="26" fill="#334155" data-figure-label="true" aria-label="ICML 2026" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="400" font-style="normal" text-anchor="start" fill="#334155" xml:space="preserve" x="1763.250000" y="189.000000">ICML 2026</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1664.0" y="0.0" width="322" height="100" rx="8" fill="#F0E7FA" stroke="#AE91D7" stroke-width="1.7" stroke-opacity=".65" fill-opacity="0.90" />
+  </g>
+  <g font-size="30.7" fill="#152238" data-figure-label="true" aria-label="WLA-0" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="30.7" font-weight="700" font-style="normal" text-anchor="start" fill="#152238" xml:space="preserve" x="1775.539722" y="44.000000">WLA-0</text>
+  </g>
+  <g font-size="26" fill="#334155" data-figure-label="true" aria-label="arXiv 2026†" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="400" font-style="normal" text-anchor="start" fill="#334155" xml:space="preserve" x="1759.650879" y="74.000000">arXiv 2026†</text>
+  </g>
+  <line x1="50" y1="1172" x2="1982" y2="1172" stroke="#1A2B49" stroke-width="4" marker-end="url(#ax)" />
+  <line x1="175" y1="1148" x2="175" y2="1158" stroke="#1A2B49" stroke-width="2" />
+  <rect x="119" y="1149" width="112" height="45" rx="22" fill="white" stroke="#1A2B49" stroke-width="2.5" />
+  <g font-size="26.0" fill="#1A2B49" data-figure-label="true" aria-label="2020" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="700" font-style="normal" text-anchor="start" fill="#1A2B49" xml:space="preserve" x="149.000000" y="1180.000000">2020</text>
+  </g>
+  <line x1="505" y1="1148" x2="505" y2="1158" stroke="#1A2B49" stroke-width="2" />
+  <rect x="449" y="1149" width="112" height="45" rx="22" fill="white" stroke="#1A2B49" stroke-width="2.5" />
+  <g font-size="26.0" fill="#1A2B49" data-figure-label="true" aria-label="2022" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="700" font-style="normal" text-anchor="start" fill="#1A2B49" xml:space="preserve" x="479.000000" y="1180.000000">2022</text>
+  </g>
+  <line x1="835" y1="1148" x2="835" y2="1158" stroke="#1A2B49" stroke-width="2" />
+  <rect x="779" y="1149" width="112" height="45" rx="22" fill="white" stroke="#1A2B49" stroke-width="2.5" />
+  <g font-size="26.0" fill="#1A2B49" data-figure-label="true" aria-label="2023" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="700" font-style="normal" text-anchor="start" fill="#1A2B49" xml:space="preserve" x="809.000000" y="1180.000000">2023</text>
+  </g>
+  <line x1="1165" y1="1148" x2="1165" y2="1158" stroke="#1A2B49" stroke-width="2" />
+  <rect x="1109" y="1149" width="112" height="45" rx="22" fill="white" stroke="#1A2B49" stroke-width="2.5" />
+  <g font-size="26.0" fill="#1A2B49" data-figure-label="true" aria-label="2024" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="700" font-style="normal" text-anchor="start" fill="#1A2B49" xml:space="preserve" x="1139.000000" y="1180.000000">2024</text>
+  </g>
+  <line x1="1495" y1="1148" x2="1495" y2="1158" stroke="#1A2B49" stroke-width="2" />
+  <rect x="1439" y="1149" width="112" height="45" rx="22" fill="white" stroke="#1A2B49" stroke-width="2.5" />
+  <g font-size="26.0" fill="#1A2B49" data-figure-label="true" aria-label="2025" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="700" font-style="normal" text-anchor="start" fill="#1A2B49" xml:space="preserve" x="1469.000000" y="1180.000000">2025</text>
+  </g>
+  <line x1="1825" y1="1148" x2="1825" y2="1158" stroke="#1A2B49" stroke-width="2" />
+  <rect x="1769" y="1149" width="112" height="45" rx="22" fill="white" stroke="#1A2B49" stroke-width="2.5" />
+  <g font-size="26.0" fill="#1A2B49" data-figure-label="true" aria-label="2026" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="26.0" font-weight="700" font-style="normal" text-anchor="start" fill="#1A2B49" xml:space="preserve" x="1799.000000" y="1180.000000">2026</text>
+  </g>
 </svg>

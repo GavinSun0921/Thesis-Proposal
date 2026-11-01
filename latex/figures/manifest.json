@@ -7,49 +7,50 @@
       "caption": "世界模型与智能体的感知—预测—行动闭环示意",
       "source": "chapters/ch01-basis/world-model-loop/diagram.svg",
       "output": "chapters/ch01-basis/world-model-loop/figure.pdf",
-      "format": "editable SVG with embedded image resources",
+      "format": "editable SVG with embedded image resources; math outlined in Computer Modern",
       "included": true,
-      "source_sha256": "ea6f268d22683274a12bee65c0a7529ab1874220aec8bb723db012d638cbfc41",
-      "output_sha256": "cacee86e6b983884fa840cad4f73de860c9fcb068b1b9503de501f36efc9a0fe"
+      "source_sha256": "7e22c6212555597efb85de3231381ffa1f1512a2ccd2549ac11620f11a69c7f2",
+      "output_sha256": "ac433bd2954a830c10256568788ce16d44c2e4fe398beed83b7df4af2b8bfad6"
     },
     "ch01.spacecraft-maintenance": {
       "chapter": "1.1",
       "caption": "面向在轨维护任务的世界模型动态环境建模需求",
-      "source": null,
-      "output": "chapters/ch01-basis/spacecraft-maintenance/figure.png",
-      "format": "source raster infographic; no editable source located",
+      "source": "chapters/ch01-basis/spacecraft-maintenance/figure.pptx",
+      "output": "chapters/ch01-basis/spacecraft-maintenance/figure.pdf",
+      "format": "editable PowerPoint with 11 text objects and one embedded image; PDF text uses embedded SimHei",
       "included": true,
-      "output_sha256": "5a6bfdd65bc3307fdad7faf2bb74b7d8921f3a63145d807ffec3ae9b7b53cf13"
+      "source_sha256": "88affe504d83a99d09fe94d87efafda8ad95a8e6f5eac145cadd8acaf47d6b21",
+      "output_sha256": "c40cdd5d38a3f35ed5ce2edae409f52be15aa13984d625dba57b34df42f5e9d3"
     },
     "ch01.reconstruction-timeline": {
       "chapter": "1.2.1",
       "caption": "四维动态场景重建的代表性工作与发展脉络",
       "source": "chapters/ch01-basis/reconstruction-timeline/diagram.svg",
       "output": "chapters/ch01-basis/reconstruction-timeline/figure.pdf",
-      "format": "editable SVG exported to vector PDF",
+      "format": "editable SVG exported to vector PDF with explicit fonts",
       "included": true,
-      "source_sha256": "b4582200e00f5a76e543ed475a04e2551495eaf941716fd44d5926ffbfa3aef8",
-      "output_sha256": "e20161a0df0acb39832ffa6a819d50167df73536a8ae075fec314b3378f011f2"
+      "source_sha256": "d558c9e105b6f623d9e50f3ab0abecd592db3fd4ab2573a7f1a6f272645505f3",
+      "output_sha256": "be4ba260a9c55b48a03773654b749d209e2b78e4987237766e6de9bf38c2ca19"
     },
     "ch01.world-model-evolution": {
       "chapter": "1.2.2",
       "caption": "世界模型的代表性工作与研究发展趋势",
       "source": "chapters/ch01-basis/world-model-evolution/diagram.svg",
       "output": "chapters/ch01-basis/world-model-evolution/figure.pdf",
-      "format": "editable SVG exported to vector PDF",
+      "format": "editable SVG exported to vector PDF with explicit fonts",
       "included": true,
-      "source_sha256": "690f709793103cc2802ed3f84434bc91eb42fdd0eb7319b4db7188c65816bd0c",
-      "output_sha256": "43248ddfb37ccd2060912734ad29a39c23dd80a020cc8727c36e6092d55e1a2d"
+      "source_sha256": "e5126026b86a10c2571feceb08d004f626f4a87afde0a002c399a1edc51cdc02",
+      "output_sha256": "852ae40e4ac0e069ea4e9c3e292528639dc3237f902766e064c7f6cf76da26d6"
     },
     "ch01.action-learning-timeline": {
       "chapter": "1.2.3",
       "caption": "具身操作动作学习的代表性工作与发展脉络（† 表示预印本）",
       "source": "chapters/ch01-basis/action-learning-timeline/diagram.svg",
       "output": "chapters/ch01-basis/action-learning-timeline/figure.pdf",
-      "format": "editable SVG exported to vector PDF",
+      "format": "editable SVG exported to vector PDF with explicit fonts",
       "included": true,
-      "source_sha256": "e32c49930c48ba95f7734bb4d7124e2e828ed43900c7fa83ef715554999bc6e2",
-      "output_sha256": "48aecf599b64737d18f48ca22b2ee116809bc464306116062d76fcff17283277"
+      "source_sha256": "7866646a51b4589a3969a8ad8d5462ae39832f8748b9e31144576d72b0af265f",
+      "output_sha256": "170cb27685805778bc4937da3210101e4ce489569f0e0871c5162b106dbaec0b"
     },
     "ch01.cofuse4d-method": {
       "chapter": "1.3.1",
@@ -74,70 +75,94 @@
       "caption": "PS-VLA 的方法框架",
       "source": "chapters/ch01-basis/psvla-method/diagram.tex",
       "output": "chapters/ch01-basis/psvla-method/figure.pdf",
-      "format": "standalone TikZ PDF; TeX source retained",
+      "format": "standalone TikZ PDF; SimSun/SimHei/Times New Roman and Computer Modern math configured",
       "included": true,
       "source_sha256": "4a73846d86e1a208169000e83c1c4a6ce5548d057068f501fc4b8d7fde04e405",
-      "output_sha256": "8f55c201fb5db391a033b02570a1e451a2b033a56efc332635bf47980e16f0bb"
+      "output_sha256": "e87fb7cf3a535958485e72f044b3ada77553ff335d643c7009df212640735c93"
     },
     "ch02.research-framework": {
       "chapter": "2.2",
       "caption": "连续动态世界模型研究框架",
       "source": "chapters/ch02-content/research-framework/diagram.svg",
       "output": "chapters/ch02-content/research-framework/figure.pdf",
-      "format": "editable SVG exported to vector PDF with macOS WebKit",
+      "format": "editable SVG exported to vector PDF with explicit fonts and Computer Modern math",
       "included": true,
-      "source_sha256": "49bda76598766d0a721b83425703a6a7c47046c0f4a3f534fe664453816629fa",
-      "output_sha256": "acfd1288318c93b1e6ca3fa4a8b255a70481153751d76e1e0dcf3a7984f732b2"
+      "source_sha256": "7792747d90fc7a65400315dc0cbc0a9d2ec331be23d9458ee73b907cf510334d",
+      "output_sha256": "5f1415b44f61da324e0993365891db44cf11333fc1d5c790f819a7d28e3d80cf"
     },
     "ch03.overall-technical-route": {
       "chapter": "3.3",
       "caption": "连续动态场景表征与动作条件预测技术路线",
       "source": "chapters/ch03-plan/overall-technical-route/diagram.svg",
       "output": "chapters/ch03-plan/overall-technical-route/figure.pdf",
-      "format": "editable SVG exported to vector PDF; WebKit provenance retained",
+      "format": "editable SVG exported to vector PDF with explicit fonts and Computer Modern math",
       "included": true,
-      "source_sha256": "4f9928be24304a14a8fbafe46fd00b1f2e2ff4aeeca18ddf04486342c7da7528",
-      "output_sha256": "f16b979b3c26e8ee285a6951e011d282aa26bd5e9f2acdde861e5383096975b9"
+      "source_sha256": "136261173e74b36c0321b769206a1f23555a8e2fd8ea013ed924893f50c37589",
+      "output_sha256": "be1467fc5fca966d83ede7b4fcb96720673bd23b5d533f95774f70971c118e2f"
     },
     "ch03.continuous-time-route": {
       "chapter": "3.3.1",
       "caption": "不确定性感知的连续时间场景表征技术路线",
       "source": "chapters/ch03-plan/continuous-time-route/diagram.svg",
       "output": "chapters/ch03-plan/continuous-time-route/figure.pdf",
-      "format": "editable SVG; generated by scripts/export_route_diagrams.py",
+      "format": "editable SVG with explicit SimSun/SimHei/Times New Roman fonts and Computer Modern math; generated by scripts/export_route_diagrams.py",
       "included": true,
-      "source_sha256": "26ea6fa4c97528acd06225e2b8cdb0f3e5033df68250de6c441b62d2cb537119",
-      "output_sha256": "051956cb3d07405bbcfa828717b01daecad6757373694ace11b05d8b8681af0b"
+      "source_sha256": "c91e848282d6e6c0584f7f2ee71c20ff21bfc5d3eec117e76dd13913dddd9bbf",
+      "output_sha256": "24a12f25bd5f11d58ff711f53f601a5976ba60ad7d747c8ae6fed5caab3ccbe3",
+      "text_blocks": 29,
+      "font_sizes_px": [
+        42.0,
+        44.0,
+        46.0,
+        48.0,
+        50.0
+      ]
     },
     "ch03.object-consistency-route": {
       "chapter": "3.3.2",
       "caption": "连续运动引导的对象时空一致性建模技术路线",
       "source": "chapters/ch03-plan/object-consistency-route/diagram.svg",
       "output": "chapters/ch03-plan/object-consistency-route/figure.pdf",
-      "format": "editable SVG; generated by scripts/export_route_diagrams.py",
+      "format": "editable SVG with explicit SimSun/SimHei/Times New Roman fonts and Computer Modern math; generated by scripts/export_route_diagrams.py",
       "included": true,
-      "source_sha256": "f1de128ba1cad0e790c0b1cbb77a3eca8e4b228e9aeea2077fc6126d179128ff",
-      "output_sha256": "a0ed0827c8d794c16c9f1222e0bb1dc6abb79ab7a7c5f15f5541ef2e57457659"
+      "source_sha256": "08969a930def40b834ff4981e6c25738e1586e0b496260fcb58d5687aa2bbd32",
+      "output_sha256": "fd9befda875d378801a232fa5236faf728bff836d9b2bbd4ad5bc9e953810741",
+      "text_blocks": 29,
+      "font_sizes_px": [
+        42.0,
+        44.0,
+        46.0,
+        48.0,
+        50.0
+      ]
     },
     "ch03.topology-change-route": {
       "chapter": "3.3.3",
-      "caption": "物理连接变化下的动态结构表征与更新技术路线",
+      "caption": "结构约束关系变化下的动态场景表征维护技术路线",
       "source": "chapters/ch03-plan/topology-change-route/diagram.svg",
       "output": "chapters/ch03-plan/topology-change-route/figure.pdf",
-      "format": "editable SVG; generated by scripts/export_route_diagrams.py",
+      "format": "editable SVG with explicit SimSun/SimHei/Times New Roman fonts and Computer Modern math; generated by scripts/export_route_diagrams.py",
       "included": true,
-      "source_sha256": "99d1b6da9a65d2abe517e03c7b7b69f5e7c7a52f613765076a670519ca96e7f1",
-      "output_sha256": "67a75f5ed160e5afa900eaa0ce987dfe2cfe997d69799e85beda49742fe2fb75"
+      "source_sha256": "20b87a8bf8da496c0dd8ca2c6335e4fa08cfd64ed3aeeb60514db54ae9ec8905",
+      "output_sha256": "75c639260a1db8b1fd3a9d8cbb1654160233a6b36d9f8bb1ad62aa0c1763bdcb",
+      "text_blocks": 29,
+      "font_sizes_px": [
+        42.0,
+        44.0,
+        46.0,
+        48.0,
+        50.0
+      ]
     },
     "ch03.action-response-route": {
       "chapter": "3.3.4",
       "caption": "动作后果预测与连续动态表征协同建模技术路线",
       "source": "chapters/ch03-plan/action-response-route/diagram.svg",
       "output": "chapters/ch03-plan/action-response-route/figure.pdf",
-      "format": "editable SVG; generated by scripts/export_route_diagrams.py",
+      "format": "editable SVG with explicit SimSun/SimHei/Times New Roman fonts and Computer Modern math; generated by scripts/export_route_diagrams.py",
       "included": true,
-      "source_sha256": "225ad5971884b0930c492db303b6d11e999511ed8afdb5d08b1eedaff14ffa21",
-      "output_sha256": "5c25880478c23cd5a98b850e22863c81fe388a29951cffe99d9edce5beece206",
+      "source_sha256": "5cebb5d086947874d6203ebc20ad86a0f4e4fc98d93cd8273295ed3f615efeb8",
+      "output_sha256": "4602640188901cb3f409f0c09193075d4f9cfa2083f730b225757228a5f61919",
       "text_blocks": 49,
       "font_sizes_px": [
         42.0,

@@ -1,6 +1,14 @@
 # 参考文献发表状态核查
 
-## 2026-10-30 当前引用与公开数据核查
+## 当前引用与公开数据核查
+
+2026-11-01：数据源表加入 Syn4D、Deform360、IMPACT 和 REASSEMBLE，并为原有数据源补充官方规模口径；新增 4 个引用键后，正文为 95 条实际引用。Syn4D、Deform360 为 ECCV 2026 正式论文，REASSEMBLE 为 RSS 2025 正式论文；IMPACT 数据已公开至 v1.1，但论文仍在审，按 arXiv 预印本著录。IMPACT 的组件状态标注可评价状态变化，不等同于完整关系图或部件级三维轨迹。所有数据规模均按各自发布单位记录，不作单一计数的直接横向比较。
+
+2026-11-01：为压缩参考文献末页，删除未纳入当前数据源表的 BridgeData V2 背景条目及其唯一引文；DROID、REASSEMBLE、IMPACT、PhysTwin 和 Deform360 仍覆盖相关数据类型。当前正文共 94 条实际引用，POMDP 经典文献保留。
+
+2026-11-01：1.1 增补自主空中操作场景，新增正式会议论文 `uavgrasp2026`，用于佐证视觉语言引导的自主无人机抓取；题录与页码按 IEEE DOI 登记核对。
+
+## 2026-10-30 引用与公开数据核查（历史）
 
 本轮撤销航空维修替代试件及实采、实机验证安排。`cairepublic`、`ifamscarf` 随案例退出正文，`probrobotics2005` 不再单独引用；`splinegs2025` 和 `pointodyssey2023` 在第一部分补引。第二、三部分均无编号引文，方法名保留归属。当前 96 条实际引用全部在第一部分出现，文献库由 121 条清理至 96 条；移除的是 25 条当前未引用记录，保留原有在用键名。
 
@@ -14,19 +22,23 @@
 
 2026-10-31：1.2.1“四维动态场景重建”按作者新稿重写，按隐式场、显式图元与点级几何三类组织，并以现行图 3（2021—2026 年代表性工作脉络，SVG 导出版）为纲；图题年份范围与图中刻度一致，未改图。新稿不再引用 `sobolevfusion2018`、`gaussianflow2024`、`se3bspline2026`、`atgs2025`、`raft2020`、`raft3d2021`、`tapir2023`、`cotracker3`，按“文献库只保留正文实际引用条目”的约定从 `references.bib` 清除，实际引用由 98 条调整为 90 条，文献库由 110 条调整为 102 条。编号由 BibTeX 按首次引用顺序重排，1.2.1 现为 DynamicFusion [16]、NeRF [17]、D-NeRF [18]、Nerfies [19]、NSFF [20]、HyperNeRF [21]、3DGS [22]、Dynamic 3D Gaussians [23]、4D-GS [24]、Deformable 3D Gaussians [25]、SC-GS [26]、SplineGS [27]、ParticleGS [28]、MoSca [29]、Shape of Motion [30]、MovingParts [31]、USplat4D [32]、DUSt3R [33]、VGGT [34]、MonST3R [35]、CUT3R [36]、D4RT [37]、DyCheck [38]、TAP-Vid [39]、TAPVid-3D [40]、PointOdyssey [41]；RetimeGS [8]、Consistent Instance Field [9]、GauSTAR [10] 已在 1.1 首次引用，此处沿用。新稿开头的三类综述引用 `cndynamic2024`、`cnnerf2025`、`cndynamicgs2026` 予以保留。图 3 仍列 AT-GS、4DSurf 等正文未逐一点名的节点，按代表性工作概览处理，不据此新增引用；`surf4d2026` 仅见于图 3 节点，与其余 11 条历史未引用记录暂留库中，未在本轮一并清理。
 
-下列为 2026-10-30 根据作者项目、官方代码或正式数据发布页面核对的验证来源；本次未下载完整数据，也未执行研究实验。
+下列为截至 2026-11-01 根据作者项目、正式论文、官方代码或正式数据发布页面核对的验证来源；本次未下载完整数据，也未执行研究实验。
 
-| 来源 | 可用证据与用途 | 核查入口与限制 |
+| 来源 | 规模与可用证据 | 核查入口与限制 |
 | --- | --- | --- |
-| DyCheck iPhone | 真实动态观测，共可见区域及关键点评价；按序列的相机和深度条件使用 | [官方数据说明](https://github.com/KAIR-BAIR/dycheck/blob/main/docs/DATASETS.md)、[PCK 实现](https://github.com/KAIR-BAIR/dycheck/blob/main/dycheck/core/metrics/keypoint.py) |
-| PointOdyssey | 合成 RGB、深度、实例、相机与二维／三维轨迹；部分序列有同步多视角 | [作者发布](https://pointodyssey.com/)。实例标注不直接等同于任意部件粒度 |
-| Nerfies-HyperNeRF | 公开动态序列及相应训练／测试划分，支持观测恢复与结构变化分析 | [HyperNeRF 官方数据发布](https://github.com/google/hypernerf/releases/tag/v0.1)、[DyCheck 处理说明](https://github.com/KAIR-BAIR/dycheck/blob/main/docs/DATASETS.md)。图像序列不直接提供完整材料连接或新生表面形成真值 |
-| DROID | 公开交互示范和动作记录，按片段筛选预测输入与后续参考 | [作者项目及读取说明](https://droid-dataset.github.io/) |
-| PointWorld-DROID | 作者处理后的三维轨迹及有效性信息 | [NVIDIA 数据发布](https://huggingface.co/datasets/nvidia/PointWorld-DROID)、[官方实现](https://github.com/NVlabs/PointWorld)。自动估计轨迹按带误差参考单列 |
-| PhysTwin | 作者公开原始数据、处理数据及结果，按具体片段核对响应参考 | [官方代码与数据下载说明](https://github.com/Jianghanxiao/PhysTwin)。不把重建或优化结果直接当作独立物理真值 |
+| DyCheck iPhone | 14 段采集（7 段多机位、7 段单机位），约 28 GB；提供 RGB、相机、部分深度、共可见区域及关键点 | [官方数据说明](https://github.com/KAIR-BAIR/dycheck/blob/main/docs/DATASETS.md)、[PCK 实现](https://github.com/KAIR-BAIR/dycheck/blob/main/dycheck/core/metrics/keypoint.py)；深度与关键点只覆盖部分帧 |
+| PointOdyssey | 159 段合成视频，平均约 2,000 帧/段；提供 RGB-D、实例、相机及二维／三维长时轨迹 | [作者发布](https://pointodyssey.com/)；实例标注不等同于任意部件粒度 |
+| Nerfies-HyperNeRF | 共 7 段动态视频，有训练／测试划分 | [HyperNeRF 数据发布](https://github.com/google/hypernerf/releases/tag/v0.1)、[DyCheck 数据说明](https://github.com/KAIR-BAIR/dycheck/blob/main/docs/DATASETS.md)；不提供完整部件关系真值 |
+| Syn4D | ECCV 2026 正式论文；4,700 段、140 万帧，多视角 RGB、深度、相机及稠密二维／三维轨迹 | [Springer 论文](https://link.springer.com/chapter/10.1007/978-3-032-37010-5_10)、[作者数据页](https://github.com/jzr99/Syn4D)；合成域，无装配关系标注 |
+| Deform360 | ECCV 2026 正式论文；198 种物体、1,980 段、215.7 小时、41 路同步视角，含双手触觉与稠密三维粒子轨迹 | [Springer 论文](https://link.springer.com/chapter/10.1007/978-3-032-37447-9_9)、[作者项目及数据页](https://deform360.lhy.xyz/)；以可变形对象为主，无装配关系标签 |
+| DROID | 7.6 万条示范轨迹、约 350 小时，覆盖 564 个场景和 86 项任务 | [作者项目及读取说明](https://droid-dataset.github.io/)；需筛选含历史及后续观测的预测片段 |
+| PointWorld-DROID | DROID 派生的三维点流全量包为多 TB | [NVIDIA 数据发布](https://huggingface.co/datasets/nvidia/PointWorld-DROID)、[官方实现](https://github.com/NVlabs/PointWorld)；自动估计轨迹按带误差参考处理 |
+| PhysTwin | 22 个交互场景、3 台 RGB-D 相机；每段视频 1–10 秒、每段标注 9 个轨迹点 | [ICCV 2025 论文](https://openaccess.thecvf.com/content/ICCV2025/html/Jiang_PhysTwin_Physics-Informed_Reconstruction_and_Simulation_of_Deformable_Objects_from_Videos_ICCV_2025_paper.html)、[作者代码与数据说明](https://github.com/Jianghanxiao/PhysTwin)；重建或仿真结果不视为独立物理真值 |
+| IMPACT | 112 次试验、13 名参与者、39.5 小时；4 路外置 RGB-D 与 1 路头戴 RGB，逐组件装配状态及纠错标注 | [作者数据页与 v1.1 发布说明](https://github.com/Kratos-Wen/IMPACT)、[arXiv 预印本](https://arxiv.org/abs/2604.10409)；论文仍在审，组件状态不是完整连接图或部件级三维轨迹 |
+| REASSEMBLE | 4,551 条机器人示范、17 个对象、781 分钟；包含多视角 RGB、事件、力/力矩及音频 | [RSS 2025 正式论文](https://www.roboticsproceedings.org/rss21/p059.html)、[作者项目页](https://tuwien-asl.github.io/REASSEMBLE_page/)；没有深度及逐帧部件结构真值 |
 | GauSTAR 比较条件 | 公开实现提供 ActorsHQ 数据处理路径 | [作者说明](https://github.com/eth-ait/GauSTAR)：论文捕获序列受许可限制未发布，不能据演示序列承诺公共切割基准 |
 
-PCK 的阈值与三维误差定义保留为评价约定，不属于性能目标。物理连接精确率、召回率及形成时间误差仅在存在直接参考时计算；其他公开序列的结论限于其可评价分量。默认验证不新增自建数据或实体实验。
+PCK 的阈值与三维误差定义保留为评价约定，不属于性能目标。IMPACT 可用于评价组件装配状态的变化，但其状态标签不等同于完整连接关系图，也不提供部件级三维轨迹；当前候选数据尚未找到同时提供逐帧关系图与部件级三维轨迹真值的完整标注。其他数据的结论限于各自可评价的运动维护、几何和稳定区域历史分量。默认验证不新增自建数据或实体实验。
 
 ## 历史核查记录
 
@@ -100,6 +112,7 @@ DreamZero 为 **2026 年预印本**：截至本轮核查，作者项目与 arXiv
 | `nsfworldmodel2025` | CAREER: From Language Models to World Models: New Inference, Learning, and Modeling for Machine Reasoning | NSF 官方项目记录，2025；项目 2443468 | [NSF 官方 API](https://api.nsf.gov/services/v1/awards/2443468.json) |
 | `deepmindgenie2025` | Genie 3: A new frontier for world models | Google DeepMind 官方发布，2025-08-05 | [官方发布](https://deepmind.google/blog/genie-3-a-new-frontier-for-world-models/) |
 | `nvidiacosmos2025` | NVIDIA Launches Cosmos World Foundation Model Platform to Accelerate Physical AI Development | NVIDIA 官方发布，2025-01-06 | [官方发布](https://investor.nvidia.com/news/press-release-details/2025/NVIDIA-Launches-Cosmos-World-Foundation-Model-Platform-to-Accelerate-Physical-AI-Development/default.aspx) |
+| `uavgrasp2026` | Vision-Language Guided Aerial Manipulation for Autonomous UAV Grasping | 2026 IEEE 22nd International Conference on Automation Science and Engineering (CASE)，2026：1908–1913 | [IEEE DOI](https://doi.org/10.1109/CASE69030.2026.11704162) |
 | `tencentworld2025` | 腾讯混元3D世界模型1.0 | 腾讯官方模型页，2025；以指定版本介绍为依据 | [官方模型页](https://3d-models.hunyuan.tencent.com/world/?currentTab=HunyuanWorld-1.0) |
 | `aiplus2025` | 关于深入实施“人工智能+”行动的意见 | 国务院政策文件，国发〔2025〕11号；2025-08-21 成文，网信办 2025-08-27 转载 | [官方转载全文](https://www.cac.gov.cn/2025-08/27/c_1758018277755538.htm) |
 | `nasadrone2025` | Testing Drones for Mars in the Mojave Desert | NASA 官方图片页，2025-12-05；图片署名 NASA/JPL-Caltech | [官方图源](https://www.nasa.gov/image-article/testing-drones-for-mars-in-the-mojave-desert/) |
@@ -177,8 +190,10 @@ DreamZero 为 **2026 年预印本**：截至本轮核查，作者项目与 arXiv
 | `diffusionpolicy2025` | Diffusion Policy: Visuomotor Policy Learning via Action Diffusion | The International Journal of Robotics Research，2025，卷 44（10–11）：1684–1704 | [出版或来源记录](https://doi.org/10.1177/02783649241273668) |
 | `roboflamingo2024` | Vision-Language Foundation Models as Effective Robot Imitators | International Conference on Learning Representations，2024 | [出版或来源记录](https://proceedings.iclr.cc/paper_files/paper/2024/hash/71639c317fb0bf398835627b4418693e-Abstract-Conference.html) |
 | `dreamzero2026` | World Action Models are Zero-shot Policies | arXiv 预印本，2026 | [出版或来源记录](https://arxiv.org/abs/2602.15922) |
-| `bridgedata2023` | BridgeData V2: A Dataset for Robot Learning at Scale | Proceedings of the 7th Conference on Robot Learning，2023，卷 229：1723–1736 | [出版或来源记录](https://proceedings.mlr.press/v229/walke23a.html) |
 | `droid2024` | DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset | Proceedings of Robotics: Science and Systems，2024 | [出版或来源记录](https://www.roboticsproceedings.org/rss20/p120.html) |
+| `reassemble2025` | Demonstrating REASSEMBLE: A Multimodal Dataset for Contact-rich Robotic Assembly and Disassembly | Proceedings of Robotics: Science and Systems，2025 | [出版或来源记录](https://www.roboticsproceedings.org/rss21/p059.html) |
+| `impact2026` | IMPACT: A Dataset for Multi-Granularity Human Procedural Action Understanding in Industrial Assembly | arXiv 预印本，2026，arXiv:2604.10409；稿件在审 | [作者数据发布](https://github.com/Kratos-Wen/IMPACT)、[arXiv](https://arxiv.org/abs/2604.10409) |
+| `deform3602026` | Deform360: A Massive Multi-view Visuotactile Dataset for Deformable World Models | Computer Vision -- ECCV 2026，2026：152–172 | [Springer 正式论文](https://link.springer.com/chapter/10.1007/978-3-032-37447-9_9) |
 | `rlbench2020` | RLBench: The Robot Learning Benchmark & Learning Environment | IEEE Robotics and Automation Letters，2020，卷 5（2）：3019–3026 | [出版或来源记录](https://doi.org/10.1109/LRA.2020.2974707) |
 | `libero2023` | LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning | Advances in Neural Information Processing Systems，2023，卷 36：44776–44791 | [出版或来源记录](https://proceedings.neurips.cc/paper_files/paper/2023/hash/8c3c666820ea055a77726d66fc7d447f-Abstract-Datasets_and_Benchmarks.html) |
 | `calvin2022` | CALVIN: A Benchmark for Language-Conditioned Policy Learning for Long-Horizon Robot Manipulation Tasks | IEEE Robotics and Automation Letters，2022，卷 7（3）：7327–7334 | [出版或来源记录](https://doi.org/10.1109/LRA.2022.3180108) |
@@ -187,6 +202,7 @@ DreamZero 为 **2026 年预印本**：截至本轮核查，作者项目与 arXiv
 | `simpler2025` | Evaluating Real-World Robot Manipulation Policies in Simulation | Proceedings of The 8th Conference on Robot Learning，2025，卷 270：3705–3728 | [出版或来源记录](https://proceedings.mlr.press/v270/li25c.html) |
 | `probrobotics2005` | Probabilistic Robotics | MIT Press，2005 | [出版或来源记录](https://mitpress.mit.edu/9780262201629/probabilistic-robotics/) |
 | `pointodyssey2023` | PointOdyssey: A Large-Scale Synthetic Dataset for Long-Term Point Tracking | Proceedings of the IEEE/CVF International Conference on Computer Vision，2023：19855–19865 | [出版或来源记录](https://openaccess.thecvf.com/content/ICCV2023/html/Zheng_PointOdyssey_A_Large-Scale_Synthetic_Dataset_for_Long-Term_Point_Tracking_ICCV_2023_paper.html) |
+| `syn4d2026` | Syn4D: A Multiview Synthetic 4D Dataset | Computer Vision -- ECCV 2026，Lecture Notes in Computer Science，卷 17007，2026：169–191 | [Springer 正式论文](https://link.springer.com/chapter/10.1007/978-3-032-37010-5_10) |
 
 ### 此前轮次的核查记录
 
@@ -356,7 +372,6 @@ PointWorld 的静态初始状态限制以[作者全文附录 A.1](https://arxiv.
 | worldvla2025 | WorldVLA | arXiv:2506.21539，2025-06-26；核对 12 位作者、题名和摘要，说明动作模型与世界模型的联合学习；本次未确认正式出版版本。 | [arXiv](https://arxiv.org/abs/2506.21539)、[作者发布页](https://huggingface.co/Alibaba-DAMO-Academy/WorldVLA) |
 | tapvid3d2024 | TAPVid-3D | NeurIPS 2024，37：82149–82165；正式论文集核对八位作者、卷页及 DOI 10.52202/079017-2611；真实视频三维点跟踪基准，按有效标注评价，与 TAP-Vid 的二维轨迹分别组织。 | [NeurIPS](https://proceedings.neurips.cc/paper_files/paper/2024/hash/9566607d423f8c32a2d5ce09a8b62232-Abstract-Datasets_and_Benchmarks_Track.html)、[项目页](https://tapvid3d.github.io/) |
 | pointodyssey2023 | PointOdyssey | ICCV 2023：19855–19865；采用正式会议版本，作者项目确认合成长序列、深度和二维／三维点轨迹，用于缺测预测学习和运动诊断规划。 | [CVF](https://openaccess.thecvf.com/content/ICCV2023/html/Zheng_PointOdyssey_A_Large-Scale_Synthetic_Dataset_for_Long-Term_Point_Tracking_ICCV_2023_paper.html)、[项目页](https://pointodyssey.com/) |
-| bridgedata2023 | BridgeData V2 | CoRL 2023，PMLR 229：1723–1736；正式论文集核对十四位作者，第一作者为 Homer Rich Walke；规划为真实操作数据候选，接入时核对观测与动作定义。 | [PMLR](https://proceedings.mlr.press/v229/walke23a.html)、[项目页](https://bridgedata-v2.github.io/) |
 | droid2024 | DROID | Robotics: Science and Systems 2024；正式论文集核对题名、作者及 DOI 10.15607/RSS.2024.XX.120，按前三位作者加 others 著录；规划为真实操作数据候选，不预设与实验室机械臂直接兼容。 | [RSS](https://www.roboticsproceedings.org/rss20/p120.html) |
 | libero2023 | LIBERO | NeurIPS 2023，36：44776–44791；正式论文集 BibTeX 确认七位作者、卷页及 DOI 10.52202/075280-1939，用于多任务操作与知识迁移评测资源概述。 | [NeurIPS](https://proceedings.neurips.cc/paper_files/paper/2023/hash/8c3c666820ea055a77726d66fc7d447f-Abstract-Datasets_and_Benchmarks.html) |
 | calvin2022 | CALVIN | IEEE RA-L 7(3)：7327–7334，2022；出版社记录及官方仓库确认四位作者及 DOI 10.1109/LRA.2022.3180108，用于语言条件长程操作评价。 | [IEEE](https://ieeexplore.ieee.org/document/9788026)、[官方代码](https://github.com/mees/calvin) |

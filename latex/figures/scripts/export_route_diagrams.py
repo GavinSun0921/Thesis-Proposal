@@ -14,6 +14,8 @@ import json
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
+from figure_fonts import export_svg
+
 FIGURES = Path(__file__).resolve().parents[1]
 NS = {"svg": "http://www.w3.org/2000/svg"}
 ROUTES = {
@@ -24,14 +26,31 @@ ROUTES = {
 }
 STEMS = tuple(ROUTES)
 COLUMNS = ("46", "787", "1528")
+# Share one height across input and numbered-stage dark title bands.
+TITLE_BAND_HEIGHT = "100"
+CANVAS_HEIGHT = 1440
 
 
 def check_rects(root: ET.Element, name: str) -> None:
     rects = root.findall(".//svg:rect", NS)
     dual_feedback = name == "action-response-route"
-    result_y, result_height = ("888", "174") if dual_feedback else ("900", "162")
+    object_consistency = name == "object-consistency-route"
+    if dual_feedback:
+        result_y, result_height = "858", "204"
+    elif object_consistency:
+        result_y, result_height = "900", "194"
+    else:
+        result_y, result_height = "870", "192"
     feedback_height = "166" if dual_feedback else "108"
-    output_y, output_height = ("1278", "76") if dual_feedback else ("1220", "124")
+    if dual_feedback:
+        feedback_y, output_y, output_height = "1114", "1318", "76"
+    elif object_consistency:
+        feedback_y, output_y, output_height = "1142", "1284", "124"
+    else:
+        feedback_y, output_y, output_height = "1114", "1260", "124"
+    panel_height = "836" if object_consistency else "804"
+    step_y = ("390", "564", "738") if object_consistency else ("390", "550", "710")
+    step_height = "144" if object_consistency else "136"
 
     def matching(x: str, y: str, width: str, height: str) -> list[ET.Element]:
         return [
@@ -41,12 +60,13 @@ def check_rects(root: ET.Element, name: str) -> None:
         ]
 
     groups = [
-        ([(x, "28", "702", "182") for x in COLUMNS], 3, "input frames"),
-        ([(str(int(x) + 1), "29", "700", "64") for x in COLUMNS], 3, "input title bands"),
-        ([(x, "270", "702", "804") for x in COLUMNS], 3, "main panels"),
-        ([(str(int(x) + 22), y, "658", "136") for x in COLUMNS for y in ("420", "580", "740")], 9, "step cards"),
+        ([(x, "14", "702", "208") for x in COLUMNS], 3, "input frames"),
+        ([(str(int(x) + 1), "15", "700", TITLE_BAND_HEIGHT) for x in COLUMNS], 3, "input title bands"),
+        ([(x, "270", "702", panel_height) for x in COLUMNS], 3, "main panels"),
+        ([(str(int(x) + 1), "271", "700", TITLE_BAND_HEIGHT) for x in COLUMNS], 3, "stage title bands"),
+        ([(str(int(x) + 22), y, "658", step_height) for x in COLUMNS for y in step_y], 9, "step cards"),
         ([(str(int(x) + 22), result_y, "658", result_height) for x in COLUMNS], 3, "result cards"),
-        ([("146", "1094", "1988", feedback_height)], 1, "feedback band"),
+        ([("146", feedback_y, "1988", feedback_height)], 1, "feedback band"),
         ([("46", output_y, "2184", output_height)], 1, "output band"),
     ]
     for coordinates, expected, label in groups:
@@ -63,6 +83,11 @@ def check_rects(root: ET.Element, name: str) -> None:
         "output band": ("1.8", "14"),
     }
     for coordinates, _, label in groups:
+        if label == "stage title bands":
+            matched = [rect for item in coordinates for rect in matching(*item)]
+            if any(rect.get("rx") != "16" for rect in matched):
+                raise SystemExit(f"Inconsistent {label} radius in {name}")
+            continue
         if label not in styles:
             continue
         stroke_width, radius = styles[label]
@@ -91,26 +116,27 @@ def main() -> None:
         target = figure_dir / "figure.pdf"
         data = source.read_bytes()
         root = ET.fromstring(data)
-        if root.attrib.get("viewBox") != "0 0 2280 1380":
+        if root.attrib.get("viewBox") != f"0 0 2280 {CANVAS_HEIGHT}":
             raise SystemExit(f"Unexpected canvas in {source}")
-        texts = root.findall(".//svg:text", NS)
-        expected_texts = 49 if stem == "action-response-route" else 29
-        if len(texts) != expected_texts:
-            raise SystemExit(f"Expected {expected_texts} text blocks in {source}, got {len(texts)}")
+        labels = root.findall('.//svg:g[@data-figure-label="true"]', NS)
+        expected_labels = 49 if stem == "action-response-route" else 29
+        if len(labels) != expected_labels:
+            raise SystemExit(f"Expected {expected_labels} figure labels in {source}, got {len(labels)}")
         check_rects(root, stem)
+        if root.get('data-font-policy') != 'SimSun / SimHei / Times New Roman / Computer Modern':
+            raise SystemExit(f"Missing shared font policy in {source}")
+        texts = root.findall('.//svg:text', NS)
         sizes = {float(text.attrib.get("font-size", 0)) for text in texts}
         if sizes != {42.0, 44.0, 46.0, 48.0, 50.0}:
             raise SystemExit(f"Unexpected shared typography in {source}: {sorted(sizes)}")
         for text in texts:
-            if text.attrib.get("text-anchor") != "middle":
-                raise SystemExit(f"Uncentred text block in {source}: {''.join(text.itertext())}")
-            if text.attrib.get("font-family") != "Arial Unicode MS":
+            if text.attrib.get("font-family") not in {"SimSun", "SimHei", "Times New Roman"}:
                 raise SystemExit(f"Unexpected export font in {source}")
-        cairosvg.svg2pdf(bytestring=data, write_to=str(target))
+        export_svg(source, target, page_size=(1710.0, CANVAS_HEIGHT * 0.75))
         record = {
             "source": str(source.relative_to(FIGURES)),
             "output": str(target.relative_to(FIGURES)),
-            "text_blocks": len(texts),
+            "text_blocks": len(labels),
             "font_sizes_px": sorted(sizes),
             "source_sha256": hashlib.sha256(data).hexdigest(),
             "output_sha256": hashlib.sha256(target.read_bytes()).hexdigest(),

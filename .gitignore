@@ -15,6 +15,7 @@
 
 # 正式发布版放入 output；候选 PDF 和图件预览不入库。
 /output/*.rc*.pdf
+/output/*-rc*.pdf
 /latex/figures/chapters/**/preview*.png
 
 # 编译结果和中间文件统一放入 latex/build；仅当前阅读版入库。

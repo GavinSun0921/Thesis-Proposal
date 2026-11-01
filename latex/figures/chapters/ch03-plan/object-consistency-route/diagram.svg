@@ -1,90 +1,259 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" baseProfile="full" height="1380px" version="1.1" viewBox="0 0 2280 1380" width="2280px">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" baseProfile="full" height="1440px" version="1.1" viewBox="0 0 2280 1440" width="2280px" font-family="SimSun" data-font-policy="SimSun / SimHei / Times New Roman / Computer Modern">
   <defs />
   <rect fill="#FFFFFF" height="1380" rx="0" ry="0" stroke="none" stroke-width="1.6" width="2280" x="0" y="0" />
-  <rect fill="#F4F8FC" height="182" rx="15" ry="15" stroke="#CAD8E7" stroke-width="1.7" width="702" x="46" y="28" />
-  <rect fill="#E4EDF8" height="64" rx="14" ry="14" stroke="none" stroke-width="1.6" width="700" x="47" y="29" />
-  <text fill="#17324B" font-family="Arial Unicode MS" font-size="48" font-weight="700" text-anchor="middle" x="397" y="78">承接第一项研究</text>
-  <text fill="#17324B" font-family="Arial Unicode MS" font-size="46" font-weight="700" text-anchor="middle" x="397" y="166">G(t) · C(t) · M(t) · 观测支持</text>
-  <rect fill="#F4F8FC" height="182" rx="15" ry="15" stroke="#CAD8E7" stroke-width="1.7" width="702" x="787" y="28" />
-  <rect fill="#E4EDF8" height="64" rx="14" ry="14" stroke="none" stroke-width="1.6" width="700" x="788" y="29" />
-  <text fill="#17324B" font-family="Arial Unicode MS" font-size="48" font-weight="700" text-anchor="middle" x="1138" y="79.5">视觉基础模型辅助先验</text>
-  <text fill="#17324B" font-family="Arial Unicode MS" font-size="46" font-weight="700" text-anchor="middle" x="1138" y="168.5">外观特征  ·  对象 / 部件分割提示</text>
-  <rect fill="#F4F8FC" height="182" rx="15" ry="15" stroke="#CAD8E7" stroke-width="1.7" width="702" x="1528" y="28" />
-  <rect fill="#E4EDF8" height="64" rx="14" ry="14" stroke="none" stroke-width="1.6" width="700" x="1529" y="29" />
-  <text fill="#17324B" font-family="Arial Unicode MS" font-size="48" font-weight="700" text-anchor="middle" x="1879" y="79">统一空间单元</text>
-  <text fill="#17324B" font-family="Arial Unicode MS" font-size="46" font-weight="700" text-anchor="middle" x="1879" y="141.5"><tspan x="1879" y="141.5">图元及其轨迹、</tspan><tspan x="1879" y="195.5">有效时间范围与候选邻域</tspan></text>
-  <line stroke="#2167A6" stroke-linecap="round" stroke-width="4" x1="752" x2="779" y1="119" y2="119" />
-  <polygon fill="#2167A6" points="768,111 768,127 782,119" />
-  <line stroke="#2167A6" stroke-linecap="round" stroke-width="4" x1="1493" x2="1520" y1="119" y2="119" />
-  <polygon fill="#2167A6" points="1509,111 1509,127 1523,119" />
-  <line stroke="#2167A6" stroke-linecap="round" stroke-width="4" x1="1138" x2="1138" y1="211" y2="257" />
-  <polygon fill="#2167A6" points="1132,249 1144,249 1138,263" />
-  <rect fill="#FAFCFE" height="804" rx="17" ry="17" stroke="#A4C8E7" stroke-width="2.2" width="702" x="46" y="270" />
-  <rect fill="#E8F2FC" height="130" rx="16" ry="16" stroke="none" stroke-width="1.6" width="700" x="47" y="271" />
-  <rect fill="#2167A6" height="56" rx="28" ry="28" stroke="none" stroke-width="1.6" width="56" x="68" y="308" />
-  <text fill="#FFFFFF" font-family="Arial Unicode MS" font-size="42" font-weight="700" text-anchor="middle" x="96" y="351">1</text>
-  <text fill="#2167A6" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="427" y="355.5">多证据空间关联</text>
-  <rect fill="#FFFFFF" height="136" rx="12" ry="12" stroke="#A4C8E7" stroke-width="1.6" width="658" x="68" y="420" />
-  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="397" y="507">1. 时空候选邻域构建</text>
-  <line stroke="#2167A6" stroke-linecap="round" stroke-width="2.4" x1="397" x2="397" y1="557" y2="568" />
-  <polygon fill="#2167A6" points="391,565 403,565 397,575" />
-  <rect fill="#FFFFFF" height="136" rx="12" ry="12" stroke="#A4C8E7" stroke-width="1.6" width="658" x="68" y="580" />
-  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="397" y="667.5">2. 长期运动与多线索一致性</text>
-  <line stroke="#2167A6" stroke-linecap="round" stroke-width="2.4" x1="397" x2="397" y1="717" y2="728" />
-  <polygon fill="#2167A6" points="391,725 403,725 397,735" />
-  <rect fill="#FFFFFF" height="136" rx="12" ry="12" stroke="#A4C8E7" stroke-width="1.6" width="658" x="68" y="740" />
-  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="397" y="827">3. 关联评分与冲突关系保留</text>
-  <rect fill="#E8F2FC" height="162" rx="11" ry="11" stroke="#A4C8E7" stroke-width="1.6" width="658" x="68" y="900" />
-  <text fill="#2167A6" font-family="Arial Unicode MS" font-size="42" font-weight="700" text-anchor="middle" x="397" y="945.5">阶段结果</text>
-  <text fill="#17324B" font-family="Arial Unicode MS" font-size="46" font-weight="700" text-anchor="middle" x="397" y="1017.5">带置信度的空间关联图 A</text>
-  <rect fill="#FAFCFE" height="804" rx="17" ry="17" stroke="#EDC19B" stroke-width="2.2" width="702" x="787" y="270" />
-  <rect fill="#FFF2E5" height="130" rx="16" ry="16" stroke="none" stroke-width="1.6" width="700" x="788" y="271" />
-  <rect fill="#CD762A" height="56" rx="28" ry="28" stroke="none" stroke-width="1.6" width="56" x="809" y="308" />
-  <text fill="#FFFFFF" font-family="Arial Unicode MS" font-size="42" font-weight="700" text-anchor="middle" x="837" y="351.5">2</text>
-  <text fill="#CD762A" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1168" y="356">部件软归属与身份维护</text>
-  <rect fill="#FFFFFF" height="136" rx="12" ry="12" stroke="#EDC19B" stroke-width="1.6" width="658" x="809" y="420" />
-  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1138" y="507.5">1. 高可信部件锚点初始化</text>
-  <line stroke="#CD762A" stroke-linecap="round" stroke-width="2.4" x1="1138" x2="1138" y1="557" y2="568" />
-  <polygon fill="#CD762A" points="1132,565 1144,565 1138,575" />
-  <rect fill="#FFFFFF" height="136" rx="12" ry="12" stroke="#EDC19B" stroke-width="1.6" width="658" x="809" y="580" />
-  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1138" y="667.5">2. 软归属与待定状态推断</text>
-  <line stroke="#CD762A" stroke-linecap="round" stroke-width="2.4" x1="1138" x2="1138" y1="717" y2="728" />
-  <polygon fill="#CD762A" points="1132,725 1144,725 1138,735" />
-  <rect fill="#FFFFFF" height="136" rx="12" ry="12" stroke="#EDC19B" stroke-width="1.6" width="658" x="809" y="740" />
-  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1138" y="827">3. 遮挡与首次显露区域维护</text>
-  <rect fill="#FFF2E5" height="162" rx="11" ry="11" stroke="#EDC19B" stroke-width="1.6" width="658" x="809" y="900" />
-  <text fill="#CD762A" font-family="Arial Unicode MS" font-size="42" font-weight="700" text-anchor="middle" x="1138" y="945.5">阶段结果</text>
-  <text fill="#17324B" font-family="Arial Unicode MS" font-size="46" font-weight="700" text-anchor="middle" x="1138" y="997.5"><tspan x="1138" y="997.5">空间归属 Z(t)、</tspan><tspan x="1138" y="1049.5">持续身份与待定关系</tspan></text>
-  <rect fill="#FAFCFE" height="804" rx="17" ry="17" stroke="#A9D9CF" stroke-width="2.2" width="702" x="1528" y="270" />
-  <rect fill="#E7F6F2" height="130" rx="16" ry="16" stroke="none" stroke-width="1.6" width="700" x="1529" y="271" />
-  <rect fill="#168477" height="56" rx="28" ry="28" stroke="none" stroke-width="1.6" width="56" x="1550" y="308" />
-  <text fill="#FFFFFF" font-family="Arial Unicode MS" font-size="42" font-weight="700" text-anchor="middle" x="1578" y="351.5">3</text>
-  <text fill="#168477" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1909" y="356">归属约束的联合恢复</text>
-  <rect fill="#FFFFFF" height="136" rx="12" ry="12" stroke="#A9D9CF" stroke-width="1.6" width="658" x="1550" y="420" />
-  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1879" y="508">1. 按部件归属生成共享门控</text>
-  <line stroke="#168477" stroke-linecap="round" stroke-width="2.4" x1="1879" x2="1879" y1="557" y2="568" />
-  <polygon fill="#168477" points="1873,565 1885,565 1879,575" />
-  <rect fill="#FFFFFF" height="136" rx="12" ry="12" stroke="#A9D9CF" stroke-width="1.6" width="658" x="1550" y="580" />
-  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1879" y="638.5"><tspan x="1879" y="638.5">2. 门控约束下的</tspan><tspan x="1879" y="696.5">几何运动优化</tspan></text>
-  <line stroke="#168477" stroke-linecap="round" stroke-width="2.4" x1="1879" x2="1879" y1="717" y2="728" />
-  <polygon fill="#168477" points="1873,725 1885,725 1879,735" />
-  <rect fill="#FFFFFF" height="136" rx="12" ry="12" stroke="#A9D9CF" stroke-width="1.6" width="658" x="1550" y="740" />
-  <text fill="#17324B" font-family="Arial Unicode MS" font-size="50" font-weight="700" text-anchor="middle" x="1879" y="798.5"><tspan x="1879" y="798.5">3. 运动、几何与</tspan><tspan x="1879" y="856.5">归属双向更新</tspan></text>
-  <rect fill="#E7F6F2" height="162" rx="11" ry="11" stroke="#A9D9CF" stroke-width="1.6" width="658" x="1550" y="900" />
-  <text fill="#168477" font-family="Arial Unicode MS" font-size="42" font-weight="700" text-anchor="middle" x="1879" y="945.5">阶段结果</text>
-  <text fill="#17324B" font-family="Arial Unicode MS" font-size="46" font-weight="700" text-anchor="middle" x="1879" y="997.5"><tspan x="1879" y="997.5">更新的 G(t)、M(t) </tspan><tspan x="1879" y="1049.5">及信息共享范围</tspan></text>
-  <line stroke="#638BA9" stroke-linecap="round" stroke-width="5" x1="752" x2="779" y1="656" y2="656" />
-  <polygon fill="#638BA9" points="768,648 768,664 782,656" />
-  <line stroke="#638BA9" stroke-linecap="round" stroke-width="5" x1="1493" x2="1520" y1="656" y2="656" />
-  <polygon fill="#638BA9" points="1509,648 1509,664 1523,656" />
-  <rect fill="#F1F6FA" height="108" rx="12" ry="12" stroke="#C4D6E6" stroke-width="1.7" width="1988" x="146" y="1094" />
-  <text fill="#17324B" font-family="Arial Unicode MS" font-size="44" font-weight="700" text-anchor="middle" x="1140" y="1165">双向校正：几何 / 运动更新 → 关联权重重估 → 软归属修正 → 门控重建优化</text>
-  <path d="M 1879,1076 L 1879,1084 L 1879,1093" fill="none" stroke="#82A5BF" stroke-dasharray="7 7" stroke-width="2.4" />
-  <polygon fill="#82A5BF" points="1873,1083 1885,1083 1879,1094" />
-  <path d="M 397,1093 L 397,1084 L 397,1075" fill="none" stroke="#82A5BF" stroke-dasharray="7 7" stroke-width="2.4" />
-  <polygon fill="#82A5BF" points="391,1085 403,1085 397,1074" />
-  <rect fill="#E8F1FA" height="124" rx="14" ry="14" stroke="#97BCD9" stroke-width="1.8" width="2184" x="46" y="1220" />
-  <rect fill="#CD762A" height="124" rx="2" ry="2" stroke="none" stroke-width="1.6" width="12" x="46" y="1220" />
-  <text fill="#17324B" font-family="Arial Unicode MS" font-size="48" font-weight="700" text-anchor="middle" x="1138" y="1297.5">输出：持续对象 / 部件身份、软归属 Z(t) 与有效信息共享范围</text>
+  <rect fill="#F4F8FC" height="208" rx="15" ry="15" stroke="#CAD8E7" stroke-width="1.7" width="702" x="46" y="14" />
+  <rect fill="#27679E" height="100" rx="14" ry="14" stroke="none" stroke-width="1.6" width="700" x="47" y="15" />
+  <g fill="#FFFFFF" font-size="48" data-figure-label="true" aria-label="连续时间动态场景表征" data-text-anchor="middle" data-font-role="heading" font-family="SimSun">
+    <text font-family="SimHei" font-size="48.0" font-weight="400" font-style="normal" text-anchor="start" fill="#FFFFFF" xml:space="preserve" x="157.000000" y="82">连续时间动态场景表征</text>
+  </g>
+  <g fill="#173D60" font-size="46" data-figure-label="true" aria-label="几何 · 外观 · 连续运动" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="SimSun" font-size="46.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="145.000000" y="178">几何 · 外观 · 连续运动</text>
+  </g>
+  <rect fill="#F4F8FC" height="208" rx="15" ry="15" stroke="#CAD8E7" stroke-width="1.7" width="702" x="787" y="14" />
+  <rect fill="#27679E" height="100" rx="14" ry="14" stroke="none" stroke-width="1.6" width="700" x="788" y="15" />
+  <g fill="#FFFFFF" font-size="48" data-figure-label="true" aria-label="视觉基础模型辅助先验" data-text-anchor="middle" data-font-role="heading" font-family="SimSun">
+    <text font-family="SimHei" font-size="48.0" font-weight="400" font-style="normal" text-anchor="start" fill="#FFFFFF" xml:space="preserve" x="898.000000" y="83.5">视觉基础模型辅助先验</text>
+  </g>
+  <g fill="#173D60" font-size="46" data-figure-label="true" aria-label="外观特征  ·  对象 / 部件分割提示" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="SimSun" font-size="46.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="813.394531" y="180.5">外观特征</text>
+    <text font-family="Times New Roman" font-size="46.0" font-weight="700" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="997.394531" y="180.5">  ·  </text>
+    <text font-family="SimSun" font-size="46.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="1058.735352" y="180.5">对象</text>
+    <text font-family="Times New Roman" font-size="46.0" font-weight="700" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="1150.735352" y="180.5"> / </text>
+    <text font-family="SimSun" font-size="46.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="1186.605469" y="180.5">部件分割提示</text>
+  </g>
+  <rect fill="#F4F8FC" height="208" rx="15" ry="15" stroke="#CAD8E7" stroke-width="1.7" width="702" x="1528" y="14" />
+  <rect fill="#27679E" height="100" rx="14" ry="14" stroke="none" stroke-width="1.6" width="700" x="1529" y="15" />
+  <g fill="#FFFFFF" font-size="48" data-figure-label="true" aria-label="统一空间单元" data-text-anchor="middle" data-font-role="heading" font-family="SimSun">
+    <text font-family="SimHei" font-size="48.0" font-weight="400" font-style="normal" text-anchor="start" fill="#FFFFFF" xml:space="preserve" x="1735.000000" y="83">统一空间单元</text>
+  </g>
+  <g fill="#173D60" font-size="46" data-figure-label="true" aria-label="图元及其轨迹、有效时间范围与候选邻域" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="SimSun" font-size="46.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="1718.000000" y="162">图元及其轨迹、</text>
+    <text font-family="SimSun" font-size="46.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="1626.000000" y="207.5">有效时间范围与候选邻域</text>
+  </g>
+  <line stroke="#27679E" stroke-linecap="round" stroke-width="4" x1="752" x2="779" y1="119" y2="119" />
+  <polygon fill="#27679E" points="768,111 768,127 782,119" />
+  <line stroke="#27679E" stroke-linecap="round" stroke-width="4" x1="1493" x2="1520" y1="119" y2="119" />
+  <polygon fill="#27679E" points="1509,111 1509,127 1523,119" />
+  <line stroke="#27679E" stroke-linecap="round" stroke-width="4" x1="1138" x2="1138" y1="223" y2="257" />
+  <polygon fill="#27679E" points="1132,249 1144,249 1138,263" />
+  <rect fill="#FAFCFE" height="836" rx="17" ry="17" stroke="#A4C8E7" stroke-width="2.2" width="702" x="46" y="270" />
+  <rect fill="#27679E" height="100" rx="16" ry="16" stroke="none" stroke-width="1.6" width="700" x="47" y="271" />
+  <rect fill="#3275A7" height="56" rx="28" ry="28" stroke="none" stroke-width="1.6" width="56" x="68" y="293" />
+  <g fill="#FFFFFF" font-size="42" data-figure-label="true" aria-label="1" data-text-anchor="middle" data-font-role="heading" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="42.0" font-weight="700" font-style="normal" text-anchor="start" fill="#FFFFFF" xml:space="preserve" x="85.500000" y="336">1</text>
+  </g>
+  <g fill="#FFFFFF" font-size="50" data-figure-label="true" aria-label="多证据空间关联" data-text-anchor="middle" data-font-role="heading" font-family="SimSun">
+    <text font-family="SimHei" font-size="50.0" font-weight="400" font-style="normal" text-anchor="start" fill="#FFFFFF" xml:space="preserve" x="252.000000" y="340.5">多证据空间关联</text>
+  </g>
+  <rect fill="#FFFFFF" height="144" rx="12" ry="12" stroke="#A4C8E7" stroke-width="1.6" width="658" x="68" y="390" />
+  <g fill="#173D60" font-size="50" data-figure-label="true" aria-label="1. 时空候选邻域构建" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="50.0" font-weight="700" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="172.000000" y="481">1. </text>
+    <text font-family="SimSun" font-size="50.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="222.000000" y="481">时空候选邻域构建</text>
+  </g>
+  <line stroke="#27679E" stroke-linecap="round" stroke-width="2.4" x1="397" x2="397" y1="535" y2="555" />
+  <polygon fill="#27679E" points="391,552 403,552 397,562" />
+  <rect fill="#FFFFFF" height="144" rx="12" ry="12" stroke="#A4C8E7" stroke-width="1.6" width="658" x="68" y="564" />
+  <g fill="#173D60" font-size="50" data-figure-label="true" aria-label="2. 长期运动与多线索一致性" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="50.0" font-weight="700" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="97.000000" y="655.5">2. </text>
+    <text font-family="SimSun" font-size="50.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="147.000000" y="655.5">长期运动与多线索一致性</text>
+  </g>
+  <line stroke="#27679E" stroke-linecap="round" stroke-width="2.4" x1="397" x2="397" y1="709" y2="729" />
+  <polygon fill="#27679E" points="391,726 403,726 397,736" />
+  <rect fill="#FFFFFF" height="144" rx="12" ry="12" stroke="#A4C8E7" stroke-width="1.6" width="658" x="68" y="738" />
+  <g fill="#173D60" font-size="50" data-figure-label="true" aria-label="3. 关联评分与冲突关系保留" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="50.0" font-weight="700" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="97.000000" y="829">3. </text>
+    <text font-family="SimSun" font-size="50.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="147.000000" y="829">关联评分与冲突关系保留</text>
+  </g>
+  <rect fill="#E8F2FC" height="194" rx="11" ry="11" stroke="#A4C8E7" stroke-width="1.6" width="658" x="68" y="900" />
+  <g fill="#27679E" font-size="42" data-figure-label="true" aria-label="阶段结果" data-text-anchor="middle" data-font-role="heading" font-family="SimSun">
+    <text font-family="SimHei" font-size="42.0" font-weight="400" font-style="normal" text-anchor="start" fill="#27679E" xml:space="preserve" x="313.000000" y="957.5">阶段结果</text>
+  </g>
+  <g fill="#173D60" font-size="46" data-figure-label="true" aria-label="带置信度的空间关联图 A" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="SimSun" font-size="46.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="143.999954" y="1029.5">带置信度的空间关联图</text>
+    <text font-family="Times New Roman" font-size="46.0" font-weight="700" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="603.999954" y="1029.5"> </text>
+    <g data-latex="A" data-math-font="Computer Modern" data-font-size="46.0" fill="#173D60" transform="translate(615.499954 1029.5)">
+      <svg version="1.1" width="34.500092" height="31.433226" viewBox="-72 -72 7.472 6.807781" x="0.000000" y="-31.433226" overflow="visible">
+        <defs>
+          <path id="math-559aead082-21-g0-65" d="M1.783313-1.145704C1.384807-.478207 .996264-.33873 .557908-.308842C.438356-.298879 .348692-.298879 .348692-.109589C.348692-.049813 .398506 0 .478207 0C.747198 0 1.05604-.029888 1.334994-.029888C1.663761-.029888 2.012453 0 2.331258 0C2.391034 0 2.520548 0 2.520548-.18929C2.520548-.298879 2.430884-.308842 2.361146-.308842C2.132005-.328767 1.892902-.408468 1.892902-.657534C1.892902-.777086 1.952677-.886675 2.032379-1.026152L2.789539-2.30137H5.290162C5.310087-2.092154 5.449564-.737235 5.449564-.637609C5.449564-.33873 4.931507-.308842 4.732254-.308842C4.592777-.308842 4.493151-.308842 4.493151-.109589C4.493151 0 4.612702 0 4.632628 0C5.041096 0 5.469489-.029888 5.877958-.029888C6.127024-.029888 6.75467 0 7.003736 0C7.063512 0 7.183064 0 7.183064-.199253C7.183064-.308842 7.083437-.308842 6.953923-.308842C6.336239-.308842 6.336239-.37858 6.306351-.667497L5.69863-6.894147C5.678705-7.0934 5.678705-7.13325 5.50934-7.13325C5.349938-7.13325 5.310087-7.063512 5.250311-6.963885L1.783313-1.145704ZM2.978829-2.610212L4.941469-5.897883L5.260274-2.610212H2.978829Z" />
+        </defs>
+        <g id="math-559aead082-21-page1">
+          <use x="-72.000004" y="-65.19222" xlink:href="#math-559aead082-21-g0-65" />
+        </g>
+      </svg>
+    </g>
+  </g>
+  <rect fill="#FAFCFE" height="836" rx="17" ry="17" stroke="#A4C8E7" stroke-width="2.2" width="702" x="787" y="270" />
+  <rect fill="#27679E" height="100" rx="16" ry="16" stroke="none" stroke-width="1.6" width="700" x="788" y="271" />
+  <rect fill="#3275A7" height="56" rx="28" ry="28" stroke="none" stroke-width="1.6" width="56" x="809" y="293" />
+  <g fill="#FFFFFF" font-size="42" data-figure-label="true" aria-label="2" data-text-anchor="middle" data-font-role="heading" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="42.0" font-weight="700" font-style="normal" text-anchor="start" fill="#FFFFFF" xml:space="preserve" x="826.500000" y="336.5">2</text>
+  </g>
+  <g fill="#FFFFFF" font-size="50" data-figure-label="true" aria-label="部件软归属与身份维护" data-text-anchor="middle" data-font-role="heading" font-family="SimSun">
+    <text font-family="SimHei" font-size="50.0" font-weight="400" font-style="normal" text-anchor="start" fill="#FFFFFF" xml:space="preserve" x="918.000000" y="341">部件软归属与身份维护</text>
+  </g>
+  <rect fill="#FFFFFF" height="144" rx="12" ry="12" stroke="#A4C8E7" stroke-width="1.6" width="658" x="809" y="390" />
+  <g fill="#173D60" font-size="50" data-figure-label="true" aria-label="1. 高可信部件锚点初始化" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="50.0" font-weight="700" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="863.000000" y="481.5">1. </text>
+    <text font-family="SimSun" font-size="50.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="913.000000" y="481.5">高可信部件锚点初始化</text>
+  </g>
+  <line stroke="#27679E" stroke-linecap="round" stroke-width="2.4" x1="1138" x2="1138" y1="535" y2="555" />
+  <polygon fill="#27679E" points="1132,552 1144,552 1138,562" />
+  <rect fill="#FFFFFF" height="144" rx="12" ry="12" stroke="#A4C8E7" stroke-width="1.6" width="658" x="809" y="564" />
+  <g fill="#173D60" font-size="50" data-figure-label="true" aria-label="2. 软归属与待定归属推断" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="50.0" font-weight="700" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="863.000000" y="655.5">2. </text>
+    <text font-family="SimSun" font-size="50.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="913.000000" y="655.5">软归属与待定归属推断</text>
+  </g>
+  <line stroke="#27679E" stroke-linecap="round" stroke-width="2.4" x1="1138" x2="1138" y1="709" y2="729" />
+  <polygon fill="#27679E" points="1132,726 1144,726 1138,736" />
+  <rect fill="#FFFFFF" height="144" rx="12" ry="12" stroke="#A4C8E7" stroke-width="1.6" width="658" x="809" y="738" />
+  <g fill="#173D60" font-size="50" data-figure-label="true" aria-label="3. 遮挡与首次显露区域维护" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="50.0" font-weight="700" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="838.000000" y="829">3. </text>
+    <text font-family="SimSun" font-size="50.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="888.000000" y="829">遮挡与首次显露区域维护</text>
+  </g>
+  <rect fill="#E8F2FC" height="194" rx="11" ry="11" stroke="#A4C8E7" stroke-width="1.6" width="658" x="809" y="900" />
+  <g fill="#27679E" font-size="42" data-figure-label="true" aria-label="阶段结果" data-text-anchor="middle" data-font-role="heading" font-family="SimSun">
+    <text font-family="SimHei" font-size="42.0" font-weight="400" font-style="normal" text-anchor="start" fill="#27679E" xml:space="preserve" x="1054.000000" y="957.5">阶段结果</text>
+  </g>
+  <g fill="#173D60" font-size="46" data-figure-label="true" aria-label="空间归属 Z(t)、持续身份与待定关系" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="SimSun" font-size="46.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="972.559643" y="1009.5">空间归属</text>
+    <text font-family="Times New Roman" font-size="46.0" font-weight="700" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="1156.559643" y="1009.5"> </text>
+    <g data-latex="\mathcal{Z}(t)" data-math-font="Computer Modern" data-font-size="46.0" fill="#173D60" transform="translate(1168.059643 1009.5)">
+      <svg version="1.1" width="89.380714" height="46.000000" viewBox="-72 -72 19.357998 9.96264" x="0.000000" y="-34.500000" overflow="visible">
+        <defs>
+          <path id="math-286d725e80-22-g0-90" d="M4.662516-3.496887C5.061021-3.486924 5.250311-3.447073 5.310087-3.39726C5.32005-3.387298 5.330012-3.347447 5.339975-3.327522C5.339975-3.227895 5.419676-3.227895 5.469489-3.227895C5.628892-3.227895 5.937733-3.39726 5.937733-3.606476C5.937733-3.855542 5.519303-3.905355 5.290162-3.915318C5.270237-3.915318 5.13076-3.92528 5.13076-3.935243C5.13076-3.955168 5.290162-4.104608 5.369863-4.194271C6.316314-5.140722 7.641345-6.635118 7.641345-6.734745C7.641345-6.764633 7.631382-6.804483 7.561644-6.804483S7.232877-6.744707 6.94396-6.525529C6.764633-6.525529 6.515567-6.525529 5.937733-6.635118C5.389788-6.734745 5.031133-6.804483 4.64259-6.804483C4.004981-6.804483 3.407223-6.575342 2.879203-6.256538C1.982565-5.688667 1.902864-5.110834 1.902864-5.100872C1.902864-5.070984 1.912827-5.021171 1.992528-5.021171C2.181818-5.021171 2.779577-5.310087 2.86924-5.579078C2.998755-5.967621 3.128269-6.1868 3.805729-6.1868C3.895392-6.1868 4.174346-6.1868 4.772105-6.07721C5.270237-5.987547 5.678705-5.907846 6.03736-5.907846C6.156912-5.907846 6.276463-5.907846 6.386052-5.937733C5.858032-5.32005 5.399751-4.811955 4.533001-3.92528H3.536737C3.008717-3.92528 2.919054-3.626401 2.919054-3.58655C2.919054-3.496887 3.008717-3.496887 3.178082-3.496887H4.084682C4.014944-3.417186 3.5467-2.948941 2.251557-1.783313C2.231631-1.763387 1.514321-1.115816 .687422-.418431C.557908-.308842 .368618-.139477 .368618-.069738C.368618-.039851 .37858 0 .448319 0C.577833 0 .787049-.099626 .916563-.179328C1.09589-.278954 1.265255-.278954 1.424658-.278954C1.872976-.278954 2.520548-.199253 2.978829-.14944C3.457036-.079701 4.124533 0 4.612702 0C5.339975 0 5.927771-.408468 6.246575-.697385C6.854296-1.235367 7.033624-1.942715 7.033624-2.002491S6.993773-2.072229 6.94396-2.072229C6.75467-2.072229 6.156912-1.783313 6.067248-1.494396C6.007472-1.305106 5.907846-.966376 5.599004-.617684C5.300125-.617684 4.951432-.617684 4.034869-.737235C3.536737-.797011 2.789539-.896638 2.261519-.896638C2.201743-.896638 1.96264-.896638 1.77335-.856787L4.662516-3.496887Z" />
+          <path id="math-286d725e80-22-g1-116" d="M2.052304-3.985056H2.988792C3.188045-3.985056 3.287671-3.985056 3.287671-4.184309C3.287671-4.293898 3.188045-4.293898 3.008717-4.293898H2.132005C2.49066-5.708593 2.540473-5.907846 2.540473-5.967621C2.540473-6.136986 2.420922-6.236613 2.251557-6.236613C2.221669-6.236613 1.942715-6.22665 1.853051-5.877958L1.464508-4.293898H.52802C.328767-4.293898 .229141-4.293898 .229141-4.104608C.229141-3.985056 .308842-3.985056 .508095-3.985056H1.384807C.667497-1.155666 .627646-.986301 .627646-.806974C.627646-.268991 1.006227 .109589 1.544209 .109589C2.560399 .109589 3.128269-1.344956 3.128269-1.424658C3.128269-1.524284 3.048568-1.524284 3.008717-1.524284C2.919054-1.524284 2.909091-1.494396 2.859278-1.384807C2.430884-.348692 1.902864-.109589 1.564134-.109589C1.354919-.109589 1.255293-.239103 1.255293-.56787C1.255293-.806974 1.275218-.876712 1.315068-1.046077L2.052304-3.985056Z" />
+          <path id="math-286d725e80-22-g2-40" d="M3.297634 2.391034C3.297634 2.361146 3.297634 2.34122 3.128269 2.171856C1.882939 .916563 1.564134-.966376 1.564134-2.49066C1.564134-4.224159 1.942715-5.957659 3.16812-7.202989C3.297634-7.32254 3.297634-7.342466 3.297634-7.372354C3.297634-7.442092 3.257783-7.47198 3.198007-7.47198C3.098381-7.47198 2.201743-6.794521 1.613948-5.529265C1.105853-4.433375 .986301-3.327522 .986301-2.49066C.986301-1.713574 1.09589-.508095 1.643836 .617684C2.241594 1.843088 3.098381 2.49066 3.198007 2.49066C3.257783 2.49066 3.297634 2.460772 3.297634 2.391034Z" />
+          <path id="math-286d725e80-22-g2-41" d="M2.879203-2.49066C2.879203-3.267746 2.769614-4.473225 2.221669-5.599004C1.62391-6.824408 .767123-7.47198 .667497-7.47198C.607721-7.47198 .56787-7.43213 .56787-7.372354C.56787-7.342466 .56787-7.32254 .757161-7.143213C1.733499-6.156912 2.30137-4.572852 2.30137-2.49066C2.30137-.787049 1.932752 .966376 .697385 2.221669C.56787 2.34122 .56787 2.361146 .56787 2.391034C.56787 2.450809 .607721 2.49066 .667497 2.49066C.767123 2.49066 1.663761 1.8132 2.251557 .547945C2.759651-.547945 2.879203-1.653798 2.879203-2.49066Z" />
+        </defs>
+        <g id="math-286d725e80-22-page1">
+          <use x="-72.000004" y="-64.528024" xlink:href="#math-286d725e80-22-g0-90" />
+          <use x="-63.988372" y="-64.528024" xlink:href="#math-286d725e80-22-g2-40" />
+          <use x="-60.113999" y="-64.528024" xlink:href="#math-286d725e80-22-g1-116" />
+          <use x="-56.516364" y="-64.528024" xlink:href="#math-286d725e80-22-g2-41" />
+        </g>
+      </svg>
+    </g>
+    <text font-family="SimSun" font-size="46.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="1257.440357" y="1009.5">、</text>
+    <text font-family="SimSun" font-size="46.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="931.000000" y="1061.5">持续身份与待定关系</text>
+  </g>
+  <rect fill="#FAFCFE" height="836" rx="17" ry="17" stroke="#A4C8E7" stroke-width="2.2" width="702" x="1528" y="270" />
+  <rect fill="#27679E" height="100" rx="16" ry="16" stroke="none" stroke-width="1.6" width="700" x="1529" y="271" />
+  <rect fill="#3275A7" height="56" rx="28" ry="28" stroke="none" stroke-width="1.6" width="56" x="1550" y="293" />
+  <g fill="#FFFFFF" font-size="42" data-figure-label="true" aria-label="3" data-text-anchor="middle" data-font-role="heading" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="42.0" font-weight="700" font-style="normal" text-anchor="start" fill="#FFFFFF" xml:space="preserve" x="1567.500000" y="336.5">3</text>
+  </g>
+  <g fill="#FFFFFF" font-size="50" data-figure-label="true" aria-label="归属约束的联合恢复" data-text-anchor="middle" data-font-role="heading" font-family="SimSun">
+    <text font-family="SimHei" font-size="50.0" font-weight="400" font-style="normal" text-anchor="start" fill="#FFFFFF" xml:space="preserve" x="1684.000000" y="341">归属约束的联合恢复</text>
+  </g>
+  <rect fill="#FFFFFF" height="144" rx="12" ry="12" stroke="#A4C8E7" stroke-width="1.6" width="658" x="1550" y="390" />
+  <g fill="#173D60" font-size="50" data-figure-label="true" aria-label="1. 按部件归属生成共享门控" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="50.0" font-weight="700" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="1579.000000" y="482">1. </text>
+    <text font-family="SimSun" font-size="50.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="1629.000000" y="482">按部件归属生成共享门控</text>
+  </g>
+  <line stroke="#27679E" stroke-linecap="round" stroke-width="2.4" x1="1879" x2="1879" y1="535" y2="555" />
+  <polygon fill="#27679E" points="1873,552 1885,552 1879,562" />
+  <rect fill="#FFFFFF" height="144" rx="12" ry="12" stroke="#A4C8E7" stroke-width="1.6" width="658" x="1550" y="564" />
+  <g fill="#173D60" font-size="50" data-figure-label="true" aria-label="2. 门控约束下的几何运动优化" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="50.0" font-weight="700" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="1704.000000" y="626.5">2. </text>
+    <text font-family="SimSun" font-size="50.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="1754.000000" y="626.5">门控约束下的</text>
+    <text font-family="SimSun" font-size="50.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="1729.000000" y="684.5">几何运动优化</text>
+  </g>
+  <line stroke="#27679E" stroke-linecap="round" stroke-width="2.4" x1="1879" x2="1879" y1="709" y2="729" />
+  <polygon fill="#27679E" points="1873,726 1885,726 1879,736" />
+  <rect fill="#FFFFFF" height="144" rx="12" ry="12" stroke="#A4C8E7" stroke-width="1.6" width="658" x="1550" y="738" />
+  <g fill="#173D60" font-size="50" data-figure-label="true" aria-label="3. 运动、几何与归属双向更新" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="Times New Roman" font-size="50.0" font-weight="700" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="1704.000000" y="800.5">3. </text>
+    <text font-family="SimSun" font-size="50.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="1754.000000" y="800.5">运动、几何与</text>
+    <text font-family="SimSun" font-size="50.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="1729.000000" y="858.5">归属双向更新</text>
+  </g>
+  <rect fill="#E8F2FC" height="194" rx="11" ry="11" stroke="#A4C8E7" stroke-width="1.6" width="658" x="1550" y="900" />
+  <g fill="#27679E" font-size="42" data-figure-label="true" aria-label="阶段结果" data-text-anchor="middle" data-font-role="heading" font-family="SimSun">
+    <text font-family="SimHei" font-size="42.0" font-weight="400" font-style="normal" text-anchor="start" fill="#27679E" xml:space="preserve" x="1795.000000" y="957.5">阶段结果</text>
+  </g>
+  <g fill="#173D60" font-size="46" data-figure-label="true" aria-label="更新的 G(t)、M(t) 及信息共享范围" data-text-anchor="middle" data-font-role="body" font-family="SimSun">
+    <text font-family="SimSun" font-size="46.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="1680.444450" y="1009.5">更新的</text>
+    <text font-family="Times New Roman" font-size="46.0" font-weight="700" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="1818.444450" y="1009.5"> </text>
+    <g data-latex="\mathcal{G}(t)" data-math-font="Computer Modern" data-font-size="46.0" fill="#173D60" transform="translate(1829.944450 1009.5)">
+      <svg version="1.1" width="82.480760" height="46.000000" viewBox="-72 -72 17.863611 9.96264" x="0.000000" y="-34.500000" overflow="visible">
+        <defs>
+          <path id="math-909ef214d7-23-g0-71" d="M4.343711-1.58406C4.07472-.67746 3.815691-.219178 3.716065-.059776C3.327522 .617684 3.118306 .637609 2.779577 .637609C2.610212 .637609 1.902864 .607721 1.315068 .209215C.86675 .229141 .518057 .577833 .518057 .687422C.518057 .777086 1.195517 1.185554 2.122042 1.185554C2.839352 1.185554 4.014944 .806974 4.762142-.816936C5.021171-1.374844 5.190535-1.942715 5.220423-2.062267C5.419676-2.749689 5.628892-3.5467 5.628892-3.58655C5.628892-3.646326 5.608966-3.676214 5.519303-3.676214S5.260274-3.626401 5.051059-3.486924C4.821918-3.337484 4.811955-3.287671 4.742217-3.038605C4.64259-2.699875 4.054795-1.225405 2.819427-1.225405C1.853051-1.225405 1.285181-2.012453 1.285181-3.138232C1.285181-3.905355 1.594022-4.931507 2.171856-5.628892C2.440847-5.947696 2.929016-6.475716 4.054795-6.475716C4.244085-6.475716 4.533001-6.445828 4.782067-6.366127C4.891656-6.336239 5.140722-6.256538 5.140722-5.937733C5.140722-5.599004 4.622665-4.961395 4.582814-4.901619C4.542964-4.861768 4.513076-4.821918 4.513076-4.782067C4.513076-4.712329 4.562889-4.712329 4.622665-4.712329C4.911582-4.712329 5.240349-4.98132 5.50934-5.349938C5.589041-5.459527 5.987547-6.017435 5.987547-6.356164C5.987547-6.764633 5.678705-6.864259 5.559153-6.90411C5.190535-7.023661 4.851806-7.023661 4.712329-7.023661C2.460772-7.023661 .438356-5.051059 .438356-2.709838C.438356-1.703611 .886675-.67746 2.171856-.67746C2.919054-.67746 3.686177-1.05604 4.343711-1.58406Z" />
+          <path id="math-909ef214d7-23-g1-116" d="M2.052304-3.985056H2.988792C3.188045-3.985056 3.287671-3.985056 3.287671-4.184309C3.287671-4.293898 3.188045-4.293898 3.008717-4.293898H2.132005C2.49066-5.708593 2.540473-5.907846 2.540473-5.967621C2.540473-6.136986 2.420922-6.236613 2.251557-6.236613C2.221669-6.236613 1.942715-6.22665 1.853051-5.877958L1.464508-4.293898H.52802C.328767-4.293898 .229141-4.293898 .229141-4.104608C.229141-3.985056 .308842-3.985056 .508095-3.985056H1.384807C.667497-1.155666 .627646-.986301 .627646-.806974C.627646-.268991 1.006227 .109589 1.544209 .109589C2.560399 .109589 3.128269-1.344956 3.128269-1.424658C3.128269-1.524284 3.048568-1.524284 3.008717-1.524284C2.919054-1.524284 2.909091-1.494396 2.859278-1.384807C2.430884-.348692 1.902864-.109589 1.564134-.109589C1.354919-.109589 1.255293-.239103 1.255293-.56787C1.255293-.806974 1.275218-.876712 1.315068-1.046077L2.052304-3.985056Z" />
+          <path id="math-909ef214d7-23-g2-40" d="M3.297634 2.391034C3.297634 2.361146 3.297634 2.34122 3.128269 2.171856C1.882939 .916563 1.564134-.966376 1.564134-2.49066C1.564134-4.224159 1.942715-5.957659 3.16812-7.202989C3.297634-7.32254 3.297634-7.342466 3.297634-7.372354C3.297634-7.442092 3.257783-7.47198 3.198007-7.47198C3.098381-7.47198 2.201743-6.794521 1.613948-5.529265C1.105853-4.433375 .986301-3.327522 .986301-2.49066C.986301-1.713574 1.09589-.508095 1.643836 .617684C2.241594 1.843088 3.098381 2.49066 3.198007 2.49066C3.257783 2.49066 3.297634 2.460772 3.297634 2.391034Z" />
+          <path id="math-909ef214d7-23-g2-41" d="M2.879203-2.49066C2.879203-3.267746 2.769614-4.473225 2.221669-5.599004C1.62391-6.824408 .767123-7.47198 .667497-7.47198C.607721-7.47198 .56787-7.43213 .56787-7.372354C.56787-7.342466 .56787-7.32254 .757161-7.143213C1.733499-6.156912 2.30137-4.572852 2.30137-2.49066C2.30137-.787049 1.932752 .966376 .697385 2.221669C.56787 2.34122 .56787 2.361146 .56787 2.391034C.56787 2.450809 .607721 2.49066 .667497 2.49066C.767123 2.49066 1.663761 1.8132 2.251557 .547945C2.759651-.547945 2.879203-1.653798 2.879203-2.49066Z" />
+        </defs>
+        <g id="math-909ef214d7-23-page1">
+          <use x="-72.000004" y="-64.528024" xlink:href="#math-909ef214d7-23-g0-71" />
+          <use x="-65.482753" y="-64.528024" xlink:href="#math-909ef214d7-23-g2-40" />
+          <use x="-61.608379" y="-64.528024" xlink:href="#math-909ef214d7-23-g1-116" />
+          <use x="-58.010745" y="-64.528024" xlink:href="#math-909ef214d7-23-g2-41" />
+        </g>
+      </svg>
+    </g>
+    <text font-family="SimSun" font-size="46.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="1912.425210" y="1009.5">、</text>
+    <g data-latex="\mathcal{M}(t)" data-math-font="Computer Modern" data-font-size="46.0" fill="#173D60" transform="translate(1958.425210 1009.5)">
+      <svg version="1.1" width="107.630340" height="46.000000" viewBox="-72 -72 23.310486 9.96264" x="0.000000" y="-34.500000" overflow="visible">
+        <defs>
+          <path id="math-b54d0d9576-24-g0-77" d="M3.835616-5.569116C4.104608-4.273973 4.542964-2.141968 5.110834-.986301C5.330012-.557908 5.439601-.33873 5.539228-.33873C5.579078-.33873 5.599004-.33873 5.778331-.518057C6.535492-1.24533 7.053549-1.823163 7.750934-2.620174L9.932752-5.160648C9.793275-4.313823 9.43462-2.072229 9.43462-.9066C9.43462-.637609 9.444583-.37858 9.474471-.109589C9.484433 0 9.524284 .288917 9.942715 .288917S11.118306-.14944 11.118306-.348692C11.118306-.408468 11.058531-.418431 11.028643-.418431C10.899128-.418431 10.699875-.328767 10.590286-.259029C10.351183-.288917 10.331258-.448319 10.311333-.67746C10.281445-.996264 10.281445-1.295143 10.281445-1.334994C10.281445-2.440847 10.719801-5.459527 11.008717-6.694894C11.01868-6.764633 11.028643-6.784558 11.028643-6.864259C11.028643-6.90411 11.01868-7.013699 10.948941-7.013699C10.909091-7.013699 10.899128-7.003736 10.709838-6.784558C9.77335-5.648817 6.864259-2.161893 5.877958-1.325031C5.628892-1.853051 5.449564-2.231631 5.100872-3.626401C4.811955-4.752179 4.64259-5.579078 4.473225-6.545455C4.443337-6.684932 4.393524-6.953923 4.393524-6.973848C4.363636-7.023661 4.313823-7.023661 4.283935-7.023661C4.104608-7.023661 3.686177-6.804483 3.656289-6.595268C3.536737-5.758406 3.337484-4.443337 2.6401-2.540473C1.843088-.418431 1.62391-.418431 1.43462-.418431C1.305106-.418431 .936488-.498132 .71731-.697385C.667497-.747198 .647572-.747198 .627646-.747198C.488169-.747198 .268991-.298879 .268991-.019925C.268991 .069738 .268991 .18929 .587796 .358655C.836862 .488169 1.075965 .498132 1.125778 .498132C1.743462 .498132 2.331258-.926526 2.530511-1.43462C2.998755-2.560399 3.556663-4.134496 3.835616-5.569116Z" />
+          <path id="math-b54d0d9576-24-g1-116" d="M2.052304-3.985056H2.988792C3.188045-3.985056 3.287671-3.985056 3.287671-4.184309C3.287671-4.293898 3.188045-4.293898 3.008717-4.293898H2.132005C2.49066-5.708593 2.540473-5.907846 2.540473-5.967621C2.540473-6.136986 2.420922-6.236613 2.251557-6.236613C2.221669-6.236613 1.942715-6.22665 1.853051-5.877958L1.464508-4.293898H.52802C.328767-4.293898 .229141-4.293898 .229141-4.104608C.229141-3.985056 .308842-3.985056 .508095-3.985056H1.384807C.667497-1.155666 .627646-.986301 .627646-.806974C.627646-.268991 1.006227 .109589 1.544209 .109589C2.560399 .109589 3.128269-1.344956 3.128269-1.424658C3.128269-1.524284 3.048568-1.524284 3.008717-1.524284C2.919054-1.524284 2.909091-1.494396 2.859278-1.384807C2.430884-.348692 1.902864-.109589 1.564134-.109589C1.354919-.109589 1.255293-.239103 1.255293-.56787C1.255293-.806974 1.275218-.876712 1.315068-1.046077L2.052304-3.985056Z" />
+          <path id="math-b54d0d9576-24-g2-40" d="M3.297634 2.391034C3.297634 2.361146 3.297634 2.34122 3.128269 2.171856C1.882939 .916563 1.564134-.966376 1.564134-2.49066C1.564134-4.224159 1.942715-5.957659 3.16812-7.202989C3.297634-7.32254 3.297634-7.342466 3.297634-7.372354C3.297634-7.442092 3.257783-7.47198 3.198007-7.47198C3.098381-7.47198 2.201743-6.794521 1.613948-5.529265C1.105853-4.433375 .986301-3.327522 .986301-2.49066C.986301-1.713574 1.09589-.508095 1.643836 .617684C2.241594 1.843088 3.098381 2.49066 3.198007 2.49066C3.257783 2.49066 3.297634 2.460772 3.297634 2.391034Z" />
+          <path id="math-b54d0d9576-24-g2-41" d="M2.879203-2.49066C2.879203-3.267746 2.769614-4.473225 2.221669-5.599004C1.62391-6.824408 .767123-7.47198 .667497-7.47198C.607721-7.47198 .56787-7.43213 .56787-7.372354C.56787-7.342466 .56787-7.32254 .757161-7.143213C1.733499-6.156912 2.30137-4.572852 2.30137-2.49066C2.30137-.787049 1.932752 .966376 .697385 2.221669C.56787 2.34122 .56787 2.361146 .56787 2.391034C.56787 2.450809 .607721 2.49066 .667497 2.49066C.767123 2.49066 1.663761 1.8132 2.251557 .547945C2.759651-.547945 2.879203-1.653798 2.879203-2.49066Z" />
+        </defs>
+        <g id="math-b54d0d9576-24-page1">
+          <use x="-72.000004" y="-64.528024" xlink:href="#math-b54d0d9576-24-g0-77" />
+          <use x="-60.035869" y="-64.528024" xlink:href="#math-b54d0d9576-24-g2-40" />
+          <use x="-56.161495" y="-64.528024" xlink:href="#math-b54d0d9576-24-g1-116" />
+          <use x="-52.56386" y="-64.528024" xlink:href="#math-b54d0d9576-24-g2-41" />
+        </g>
+      </svg>
+    </g>
+    <text font-family="Times New Roman" font-size="46.0" font-weight="700" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="2066.055550" y="1009.5"> </text>
+    <text font-family="SimSun" font-size="46.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="1718.000000" y="1061.5">及信息共享范围</text>
+  </g>
+  <line stroke="#638BA9" stroke-linecap="round" stroke-width="5" x1="752" x2="779" y1="636" y2="636" />
+  <polygon fill="#638BA9" points="768,628 768,644 782,636" />
+  <line stroke="#638BA9" stroke-linecap="round" stroke-width="5" x1="1493" x2="1520" y1="636" y2="636" />
+  <polygon fill="#638BA9" points="1509,628 1509,644 1523,636" />
+  <rect fill="#F1F6FA" height="108" rx="12" ry="12" stroke="#C4D6E6" stroke-width="1.7" width="1988" x="146" y="1142" />
+  <g fill="#173D60" font-size="44" data-figure-label="true" aria-label="双向校正：几何 / 运动更新 → 关联权重重估 → 软归属修正 → 门控重建优化" data-text-anchor="middle" data-font-role="body" font-family="SimSun" transform="translate(0 20)">
+    <text font-family="SimSun" font-size="44.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="407.844727" y="1193">双向校正：几何</text>
+    <text font-family="Times New Roman" font-size="44.0" font-weight="700" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="715.844727" y="1193"> / </text>
+    <text font-family="SimSun" font-size="44.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="750.155273" y="1193">运动更新</text>
+    <text font-family="Times New Roman" font-size="44.0" font-weight="700" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="926.155273" y="1193"> → </text>
+    <text font-family="SimSun" font-size="44.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="992.155273" y="1193">关联权重重估</text>
+    <text font-family="Times New Roman" font-size="44.0" font-weight="700" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="1256.155273" y="1193"> → </text>
+    <text font-family="SimSun" font-size="44.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="1322.155273" y="1193">软归属修正</text>
+    <text font-family="Times New Roman" font-size="44.0" font-weight="700" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="1542.155273" y="1193"> → </text>
+    <text font-family="SimSun" font-size="44.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="1608.155273" y="1193">门控重建优化</text>
+  </g>
+  <path d="M 1879,1108 L 1879,1134 L 1879,1141" fill="none" stroke="#82A5BF" stroke-dasharray="7 7" stroke-width="2.4" />
+  <polygon fill="#82A5BF" points="1873,1131 1885,1131 1879,1142" />
+  <path d="M 397,1141 L 397,1134 L 397,1107" fill="none" stroke="#82A5BF" stroke-dasharray="7 7" stroke-width="2.4" />
+  <polygon fill="#82A5BF" points="391,1113 403,1113 397,1106" />
+  <rect fill="#E8F1FA" height="124" rx="14" ry="14" stroke="#97BCD9" stroke-width="1.8" width="2184" x="46" y="1284" />
+  <rect fill="#27679E" height="124" rx="2" ry="2" stroke="none" stroke-width="1.6" width="12" x="46" y="1284" />
+  <g fill="#173D60" font-size="48" data-figure-label="true" aria-label="输出：持续对象 / 部件身份、软归属 Z(t) 与有效信息共享范围" data-text-anchor="middle" data-font-role="body" font-family="SimSun" transform="translate(0 40)">
+    <text font-family="SimSun" font-size="48.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="484.651740" y="1321.5">输出：持续对象</text>
+    <text font-family="Times New Roman" font-size="48.0" font-weight="700" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="820.651740" y="1321.5"> / </text>
+    <text font-family="SimSun" font-size="48.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="858.081428" y="1321.5">部件身份、软归属</text>
+    <text font-family="Times New Roman" font-size="48.0" font-weight="700" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="1242.081428" y="1321.5"> </text>
+    <g data-latex="\mathcal{Z}(t)" data-math-font="Computer Modern" data-font-size="48.0" fill="#173D60" transform="translate(1254.081428 1321.5)">
+      <svg version="1.1" width="93.266832" height="48.000000" viewBox="-72 -72 19.357998 9.96264" x="0.000000" y="-36.000000" overflow="visible">
+        <defs>
+          <path id="math-286d725e80-25-g0-90" d="M4.662516-3.496887C5.061021-3.486924 5.250311-3.447073 5.310087-3.39726C5.32005-3.387298 5.330012-3.347447 5.339975-3.327522C5.339975-3.227895 5.419676-3.227895 5.469489-3.227895C5.628892-3.227895 5.937733-3.39726 5.937733-3.606476C5.937733-3.855542 5.519303-3.905355 5.290162-3.915318C5.270237-3.915318 5.13076-3.92528 5.13076-3.935243C5.13076-3.955168 5.290162-4.104608 5.369863-4.194271C6.316314-5.140722 7.641345-6.635118 7.641345-6.734745C7.641345-6.764633 7.631382-6.804483 7.561644-6.804483S7.232877-6.744707 6.94396-6.525529C6.764633-6.525529 6.515567-6.525529 5.937733-6.635118C5.389788-6.734745 5.031133-6.804483 4.64259-6.804483C4.004981-6.804483 3.407223-6.575342 2.879203-6.256538C1.982565-5.688667 1.902864-5.110834 1.902864-5.100872C1.902864-5.070984 1.912827-5.021171 1.992528-5.021171C2.181818-5.021171 2.779577-5.310087 2.86924-5.579078C2.998755-5.967621 3.128269-6.1868 3.805729-6.1868C3.895392-6.1868 4.174346-6.1868 4.772105-6.07721C5.270237-5.987547 5.678705-5.907846 6.03736-5.907846C6.156912-5.907846 6.276463-5.907846 6.386052-5.937733C5.858032-5.32005 5.399751-4.811955 4.533001-3.92528H3.536737C3.008717-3.92528 2.919054-3.626401 2.919054-3.58655C2.919054-3.496887 3.008717-3.496887 3.178082-3.496887H4.084682C4.014944-3.417186 3.5467-2.948941 2.251557-1.783313C2.231631-1.763387 1.514321-1.115816 .687422-.418431C.557908-.308842 .368618-.139477 .368618-.069738C.368618-.039851 .37858 0 .448319 0C.577833 0 .787049-.099626 .916563-.179328C1.09589-.278954 1.265255-.278954 1.424658-.278954C1.872976-.278954 2.520548-.199253 2.978829-.14944C3.457036-.079701 4.124533 0 4.612702 0C5.339975 0 5.927771-.408468 6.246575-.697385C6.854296-1.235367 7.033624-1.942715 7.033624-2.002491S6.993773-2.072229 6.94396-2.072229C6.75467-2.072229 6.156912-1.783313 6.067248-1.494396C6.007472-1.305106 5.907846-.966376 5.599004-.617684C5.300125-.617684 4.951432-.617684 4.034869-.737235C3.536737-.797011 2.789539-.896638 2.261519-.896638C2.201743-.896638 1.96264-.896638 1.77335-.856787L4.662516-3.496887Z" />
+          <path id="math-286d725e80-25-g1-116" d="M2.052304-3.985056H2.988792C3.188045-3.985056 3.287671-3.985056 3.287671-4.184309C3.287671-4.293898 3.188045-4.293898 3.008717-4.293898H2.132005C2.49066-5.708593 2.540473-5.907846 2.540473-5.967621C2.540473-6.136986 2.420922-6.236613 2.251557-6.236613C2.221669-6.236613 1.942715-6.22665 1.853051-5.877958L1.464508-4.293898H.52802C.328767-4.293898 .229141-4.293898 .229141-4.104608C.229141-3.985056 .308842-3.985056 .508095-3.985056H1.384807C.667497-1.155666 .627646-.986301 .627646-.806974C.627646-.268991 1.006227 .109589 1.544209 .109589C2.560399 .109589 3.128269-1.344956 3.128269-1.424658C3.128269-1.524284 3.048568-1.524284 3.008717-1.524284C2.919054-1.524284 2.909091-1.494396 2.859278-1.384807C2.430884-.348692 1.902864-.109589 1.564134-.109589C1.354919-.109589 1.255293-.239103 1.255293-.56787C1.255293-.806974 1.275218-.876712 1.315068-1.046077L2.052304-3.985056Z" />
+          <path id="math-286d725e80-25-g2-40" d="M3.297634 2.391034C3.297634 2.361146 3.297634 2.34122 3.128269 2.171856C1.882939 .916563 1.564134-.966376 1.564134-2.49066C1.564134-4.224159 1.942715-5.957659 3.16812-7.202989C3.297634-7.32254 3.297634-7.342466 3.297634-7.372354C3.297634-7.442092 3.257783-7.47198 3.198007-7.47198C3.098381-7.47198 2.201743-6.794521 1.613948-5.529265C1.105853-4.433375 .986301-3.327522 .986301-2.49066C.986301-1.713574 1.09589-.508095 1.643836 .617684C2.241594 1.843088 3.098381 2.49066 3.198007 2.49066C3.257783 2.49066 3.297634 2.460772 3.297634 2.391034Z" />
+          <path id="math-286d725e80-25-g2-41" d="M2.879203-2.49066C2.879203-3.267746 2.769614-4.473225 2.221669-5.599004C1.62391-6.824408 .767123-7.47198 .667497-7.47198C.607721-7.47198 .56787-7.43213 .56787-7.372354C.56787-7.342466 .56787-7.32254 .757161-7.143213C1.733499-6.156912 2.30137-4.572852 2.30137-2.49066C2.30137-.787049 1.932752 .966376 .697385 2.221669C.56787 2.34122 .56787 2.361146 .56787 2.391034C.56787 2.450809 .607721 2.49066 .667497 2.49066C.767123 2.49066 1.663761 1.8132 2.251557 .547945C2.759651-.547945 2.879203-1.653798 2.879203-2.49066Z" />
+        </defs>
+        <g id="math-286d725e80-25-page1">
+          <use x="-72.000004" y="-64.528024" xlink:href="#math-286d725e80-25-g0-90" />
+          <use x="-63.988372" y="-64.528024" xlink:href="#math-286d725e80-25-g2-40" />
+          <use x="-60.113999" y="-64.528024" xlink:href="#math-286d725e80-25-g1-116" />
+          <use x="-56.516364" y="-64.528024" xlink:href="#math-286d725e80-25-g2-41" />
+        </g>
+      </svg>
+    </g>
+    <text font-family="Times New Roman" font-size="48.0" font-weight="700" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="1347.348260" y="1321.5"> </text>
+    <text font-family="SimSun" font-size="48.0" font-weight="400" font-style="normal" text-anchor="start" fill="#173D60" xml:space="preserve" x="1359.348260" y="1321.5">与有效信息共享范围</text>
+  </g>
 </svg>

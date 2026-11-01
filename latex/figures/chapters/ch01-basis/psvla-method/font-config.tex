@@ -1,0 +1,11 @@
+% Match npu-report-style.sty without importing the report page layout.
+% Fail explicitly if a required font is absent; do not silently restore Fandol.
+\setmainfont{Times New Roman}
+\setCJKmainfont{SimSun}[AutoFakeBold=2]
+\setCJKfamilyfont{zhsong}{SimSun}[AutoFakeBold=2]
+\setCJKfamilyfont{zhhei}{SimHei}[AutoFakeBold=2]
+\providecommand{\songti}{\CJKfamily{zhsong}}
+\providecommand{\heiti}{\CJKfamily{zhhei}}
+
+% Keep the report's default Computer Modern mathematics.  No unicode-math
+% package or text-font substitution is applied to the equations.

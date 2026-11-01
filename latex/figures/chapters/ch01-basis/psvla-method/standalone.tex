@@ -1,0 +1,14 @@
+% Compile from this directory with XeLaTeX; diagram.tex keeps the original
+% text, mathematics, font sizes, colours, and coordinates.
+% Preserve the retained 518 x 312 bp viewport and drawing position.  These
+% crop margins change only the surrounding whitespace, never the diagram scale.
+\documentclass[tikz,border={-0.748bp 3.339bp 0.008bp -1.729bp}]{standalone}
+\usepackage[UTF8,fontset=none]{ctex}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor,tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,fit,shapes.geometric}
+\input{font-config.tex}
+\pagestyle{empty}
+\begin{document}
+\input{diagram.tex}
+\end{document}
